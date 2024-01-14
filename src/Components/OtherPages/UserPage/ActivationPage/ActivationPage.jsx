@@ -139,10 +139,31 @@ const ActivationPage = () => {
             })
 
     }
-    
 
+    // Rules Norif section funcs and states
+    const [notif, setNotif] = useState(true);
+    
     return ( 
         <div className={styles.ActivationPage_Container}>
+            { notif ?
+                <section className={styles.RulesNotif_sec}>
+                    <div className={styles.rules_div}>
+                        <h2>قوانین و مقررات</h2>
+                        <p>متن یا صدا نباید ناقص قوانین و مقررات حال حاضر کشور باشند.</p>
+                        <p>از آپلود صدای خوانندگان یا آهنگ خودداری کنید.</p>
+                        <p>امکان استفاده از اسما جلاله، آیات متبرک قرآن، ادعیه، اسامی و القاب امامان و معصومین وجود ندارد.</p>
+                        <p>استارت آپ لحظه کارت بر اساس الزامات و قوانین حاکم، اختیار تام در تایید یا رد صدا و متن ثبت شده و در حال بارگذاری را دارد.</p>
+                        <p>تمامی جریان های مالی بین مشتری و فروشنده کارت لحظه کارت می باشد و استارت آپ لحظه کارت هیچ مسئولیتی در این قبال ندارد.</p>
+                        <p>به دلیل موارد امنیتی پس از ثبت صدا و متن امکان پاک کردن و ادیت کردن آن از جانب شما وجود ندارد.</p>
+                        <div>
+                            <button className={styles.cancel_btn} onClick={()=>{Navigate("/home")}}>انصراف</button>
+                            <button className={styles.accept_btn} onClick={()=>{setNotif(false)}}>می پذیرم</button>
+                        </div>
+                    </div>
+                </section>
+                :
+                undefined
+            }
             <section className={styles.right_sec}>
                 <img src={step1} alt="first step" />
             </section>
