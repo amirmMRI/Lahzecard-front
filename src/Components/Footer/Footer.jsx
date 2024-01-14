@@ -1,11 +1,12 @@
 import React from 'react'
+import { Link } from 'react-router-dom';
 
 // Styles
 import styles from './Footer.module.css'
 
 // Images
 import logoforfooter from '../../Images/logoforfooter.png'
-import phone from '../../Images/phone.png'
+import email from '../../Images/email.png'
 import location from '../../Images/location.png'
 import telegram from '../../Images/telegram.png'
 import instagram from '../../Images/instagram.png'
@@ -18,8 +19,8 @@ const Footer = () => {
             <section className={styles.foot_contact_sec}>
                 <h3>راه های ارتباطی</h3>
                 <section>
-                    <img src={phone} alt="telephone" />
-                    <p>0284368482</p>
+                    <img src={email} alt="email" />
+                    <p>Lahzecard@gmail.com</p>
                 </section>
                 <section>
                     <img src={location} alt="address" />
@@ -28,9 +29,13 @@ const Footer = () => {
             </section>  
             <section className={styles.foot_lahze_sec}>
                 <h3>با لحظه کارت</h3>
-                <button>تیم لحظه کارت</button>
-                <button>قوانین و مقررات</button>
-                <button>ثبت نظر</button>
+                <Link to="/Coop"><button className={styles.btn_nav}>همکاری با ما</button></Link>
+                <Link to="/QandAPage">
+                    <button className={styles.btn_nav}>سوالات متداول</button>
+                </Link>
+                <Link to='/AboutUs'>
+                    <button className={styles.btn_nav}>درباره ما</button>
+                </Link>
             </section>
             <section className={styles.foot_social_sec}>
                 <h3>شبکه های اجتماعی</h3>

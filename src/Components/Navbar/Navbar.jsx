@@ -29,7 +29,7 @@ const Navbar = () => {
         <div className={styles.Navbar_container}>
             <nav>
                 <section className={styles.navbared}> {/* <div></div> */}
-                <section className={styles.logo} ><img src={logo} alt="logo" /></section>
+                <section className={styles.logo} ><a href="/home"><img src={logo} alt="logo" /></a></section>
                 {/* <div></div>
                 <div></div> */}
                 <section className={styles.btnvip}>{ pathIsHome ? "" :
