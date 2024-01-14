@@ -121,7 +121,6 @@ const ActivationPage = () => {
         let formeData = new FormData();
         formeData.append("text", data.text);
         formeData.append("voice", theVoice);
-        const CARD_NEW_DATA = formeData;
         // Log the formdata
         for (var pair of formeData.entries()) {
             console.log(pair[0]+ ', ' + pair[1]); 
@@ -130,16 +129,13 @@ const ActivationPage = () => {
         axios.post(`https://api.lahzecard.com/api/user/uploadData?cardNumber=${localCN.slice(1, -1)}`, formeData, axiosConficPost)
             .then((response)=> {
                 alert("پیام و ویس شما با موفقیت آپلود شد. زمان تقریبی تایید آن: یک روز")
-                // setWelcomeMassage(true)
                 console.log(response);
                 setTimeout(() => Navigate("/home"), 100);
-                // setIsError_1("")
             })
 
             .catch((errors)=> {
-                // setIsError_1(errors.response.data.message)
                 console.log(errors)
-                // setButtonDisable(false)
+                setButtonDisable(false)
             })
 
     }
@@ -164,7 +160,7 @@ const ActivationPage = () => {
                             </div>
                             <div>
                                 <img src={instagram} alt="user info" />
-                                <p><a href={partnerInsta ?? partnerInsta}>instagram Page</a></p>
+                                <p><a href={partnerInsta ?? partnerInsta}>Instagram Page</a></p>
                             </div>
                             <div>
                                 <img src={phone} alt="user info" />
@@ -209,9 +205,13 @@ const ActivationPage = () => {
                             <img src={attetiongrey} alt="attention sign" />
                             <p>در صورت نقض قوانین جمهوری اسلامی صدای شما حذف می شود.</p>
                         </div>
-                        <button className={styles.submit_btn} onClick={submitHandler}>
-                            ثبت پیام
-                        </button>
+                        { buttonDisable ? 
+                            undefined
+                            :
+                            <button className={styles.submit_btn} onClick={submitHandler}>
+                                ثبت پیام
+                            </button>
+                        }
                     </section>
                 </div>
             </section>

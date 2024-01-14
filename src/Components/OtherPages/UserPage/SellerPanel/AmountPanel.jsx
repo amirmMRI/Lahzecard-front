@@ -215,7 +215,7 @@ const AmountPanel = () => {
                     <input
                         className={styles.formInput}
                         placeHolder="شماره کارت مد نظر را وارد کنید"
-                        type='text'
+                        type='number'
                         name='cardNumber'
                         value={amountData.cardNumber}
                         onChange={amountcarChangeHandler}
@@ -248,7 +248,7 @@ const AmountPanel = () => {
                             <p>مقدار برداشتی</p>
                             <input
                                 className={styles.formInput}
-                                type='text'
+                                type='number'
                                 name='amount'
                                 value={data.amount}
                                 onChange={amountChangeHandler}

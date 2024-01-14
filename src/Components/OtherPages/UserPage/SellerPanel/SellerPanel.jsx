@@ -192,7 +192,7 @@ const SellerPanel = () => {
                                 <p>شماره تلفن</p>
                                 <input
                                     className={styles.formInput}
-                                    type='text'
+                                    type='number'
                                     name='user_phone'
                                     value={data.user_phone}
                                     onChange={changeHandler}
@@ -202,7 +202,8 @@ const SellerPanel = () => {
                                 <p>شماره کارت</p>
                                 <input
                                     className={styles.formInput}
-                                    type='text'
+                                    type='number'
+                                    placeholder="تنها عدد وارد کنید"
                                     name='cardNumber'
                                     value={data.cardNumber}
                                     onChange={changeHandler}
@@ -212,7 +213,7 @@ const SellerPanel = () => {
                                 <p>مبلغ شارژ</p>
                                 <input
                                     className={styles.formInput}
-                                    type='text'
+                                    type='number'
                                     name='primaryAmount'
                                     value={data.primaryAmount}
                                     onChange={changeHandler}
@@ -223,7 +224,11 @@ const SellerPanel = () => {
                                 <p>{isError_1}</p>
                             </section>
                             <section className={styles.activation_btn_sec}>
-                                <button ><img src={tic} alt="" />فعالسازی</button>
+                                { buttonDisable ?
+                                    undefined
+                                    :
+                                    <button ><img src={tic} alt="tic icon" />فعالسازی</button>
+                                }
                                 <div></div>
                                 <div></div>
                             </section>

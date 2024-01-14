@@ -160,7 +160,7 @@ const HistoryPanel = () => {
                         <input
                             className={styles.formInput}
                             placeHolder="شماره کارت مد نظر را وارد کنید"
-                            type='text'
+                            type='number'
                             name='cardnumber'
                             value={data.cardnumber}
                             onChange={changeHandler}
