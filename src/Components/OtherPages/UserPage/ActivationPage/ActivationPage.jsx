@@ -16,6 +16,7 @@ import attetiongrey from '../../../../Images/attentiongrey.png'
 import trash from '../../../../Images/trash.png'
 import step1 from '../../../../Images/activationpage1.png'
 import step2 from '../../../../Images/activationpage2.png'
+import tic2 from '../../../../Images/tic2.png'
 
 // Componentes
 
@@ -153,7 +154,7 @@ const ActivationPage = () => {
                         <p>تمامیه امورات مالی فی مابین مشتری و فروشنده های لحظه کارت می باشد و استارتاپ لحظه کارت هیچگونه مسئولیتی در این خصوص نخواهد داشت.</p>
                         <p>استفاده از اسامی و القاب امامان و ... مقدور نمی باشد.</p>
                         <p>پس از ثبت صدا و متن شما، امکان ویرایش و پاک کردن از جانب مشتری وجود نداشته.</p>
-                        <div>
+                        <div className={styles.rules_btn_div}>
                             <button className={styles.cancel_btn} onClick={()=>{Navigate("/home")}}>انصراف</button>
                             <button className={styles.accept_btn} onClick={()=>{setNotif(false)}}>می پذیرم</button>
                         </div>
@@ -224,13 +225,20 @@ const ActivationPage = () => {
                             <img src={attetiongrey} alt="attention sign" />
                             <p>در صورت نقض قوانین جمهوری اسلامی صدای شما حذف می شود.</p>
                         </div>
-                        { buttonDisable ? 
-                            undefined
-                            :
-                            <button className={styles.submit_btn} onClick={submitHandler}>
-                                ثبت پیام
-                            </button>
-                        }
+                        <div>
+                            <img src={tic2} alt="attention sign" />
+                            <p>قوانین و مقررات را مطالعه کرده و می پذیرم.</p>
+                        </div>
+                        <div className={styles.btn_div}>
+                            { buttonDisable ? 
+                                undefined
+                                :
+                                <button className={styles.submit_btn} onClick={submitHandler}>
+                                    ثبت پیام
+                                </button>
+                            }
+                            <button className={styles.cancel_btn} onClick={()=> {Navigate("/home")}}>بازگشت</button>
+                        </div>
                     </section>
                 </div>
             </section>
