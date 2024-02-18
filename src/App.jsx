@@ -1,5 +1,5 @@
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
-
+//صفحات ورود خریدار تا انتهای وارد کردن کارت تکمیل شد و در جریان  باشید که صفحات اخر متفاوت تر دیزاین میشوند
 // Main Component
 import FullPage from "./Components/FullPage/FullPage";
 

@@ -2,11 +2,16 @@ import React, { useContext, useState,useEffect } from 'react';
 import styles from "./comp.module.css";
 import { Link,useNavigate } from 'react-router-dom';
 import axios from "axios";
-
-
+import Loading from '../Loading/Loading';
+ //image
+ import giftpic from "../../Images/its your gift.png"
 
 
 const Compo = () => {
+    const [load,setload]=useState(false)
+    const [State,SetState]=useState( {
+        isbuttondisabled: false
+    })
     const[Data,SetData]=useState({
         phone:""
         })
@@ -56,14 +61,24 @@ const Compo = () => {
     const Focused=event=>{
         SetTouched({...Touched,[event.target.name]:true})
     }
+            
+
     const Submithandler = (event)=>{
+        setload(true)
         event.preventDefault();
-        // const phone=`${Data.phone}`;
+        console.log(load)
+        SetState({
+            isbuttondisabled:true
+        })
         console.log(Data)
         axios.post("https://api.lahzecard.com/api/operator/login",Data)
         .then((response)=> {
             
             if (response) {
+
+                setTimeout(() => {        SetState({
+                    isbuttondisabled:false
+                })}, 10000);
                 console.log("post shod")
                 console.log(response)
                 
@@ -79,6 +94,10 @@ const Compo = () => {
                 // })
 
         .catch((errors)=> {
+            setTimeout(() => {        SetState({
+                isbuttondisabled:false
+            })}, 10000);
+            setload(false)
             console.log(errors);
             SetErr(errors.response.data.message)
             console.log(err);
@@ -88,8 +107,8 @@ const Compo = () => {
 
 
     return (
-       <div className={styles.login_seller}>
-
+        <div>       <div className={styles.login_seller}>
+            {load?<Loading/>:""}
         <div className={styles.left}>
 
         
@@ -119,7 +138,7 @@ const Compo = () => {
                                 <input className={styles.Rectangle131} onChange={Changehandler} value={Data.phone} type="text" name="phone" onFocus={Focused} />
                                 {error.phone && Touched.phone && <span className={styles.error}>{error.phone}</span>}
                                 {err && <span className={styles.error}>{err}</span>}                                
-                                <button  className={styles.Rectangle132prim} type='submit'><span className={styles.links}>ارسال کد</span></button>
+                                <button disabled={State.isbuttondisabled}  className={styles.Rectangle132prim} type='submit'><span className={styles.links}>ارسال کد</span></button>
                             </form> 
                         {/* </div> */}
                         
@@ -133,11 +152,19 @@ const Compo = () => {
              
         </div>
         
-        <div className={styles.Group420}><div className={styles.image4}></div><div className={styles.Group153 }>چند قدم تا ساخت لحظات شیرین برای نزدیکانت با لحظه کارت</div></div>
-
+        <div className={styles.Group420}>
+    <div className={styles.image4}></div>
+    <section>
+        <div className={styles.Group153 }>چند قدم تا ساخت لحظات شیرین برای نزدیکانت با لحظه کارت</div>
+        
+        <img className={styles.picholder} src={giftpic} alt="gif picture" width="320px" />
+    </section>
+</div>
     
 
     </div>
+    </div>
+
 
     );
 };

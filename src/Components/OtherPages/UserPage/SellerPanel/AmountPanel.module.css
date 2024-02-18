@@ -326,20 +326,25 @@
 }
 
 .rowbtn1 {
-    color: #261e35;
-    border-radius: 20px 20px 20px 0px;
-    background-color: #ffffff;
+    border-radius: 20px 20px 00px 20px;
     /* border-top: 4px solid rgba(140, 140, 140, 0.41); */
 }
 
 .rowbtn2 {
-    border-radius: 0px 0px 20px 0px;
+    background-color: #ffffff;
+    color: #261e35;
+    border-radius: 20px 20px 20px 0px;
+}
+
+.rowbtn3 {
+    border-radius: 20px 20px 20px 0px;
+    /* border-top: 4px solid rgba(140, 140, 140, 0.41); */
 }
 
 .threebtninf {
     width: 100%;
     height: 100%;
-    border-radius: 20px 0 20px 20px;
+    border-radius: 20px 20px 20px 20px;
     /* border: 4px solid rgba(140, 140, 140, 0.41);
     border-top: 0px; */
     background-color: #ffffff;
@@ -376,7 +381,7 @@
 
 .remaining_input_sec img {
     cursor: pointer;
-}   
+}
 
 .remaining_sec {
     width: 100%;
@@ -390,7 +395,6 @@
     width: 90%;
     height: 90%;
     padding: 1%;
-    
 }
 
 .Activation_Container form {
@@ -678,11 +682,9 @@
     .user_btn_sec {
         display: none;
     }
-
     .threebtn div {
         font-size: 20px;
     }
-
     .left_sec {
         width: 95%;
         height: 100%;
@@ -743,35 +745,29 @@
         justify-content: center;
         align-items: center;
     }
-
     .Activation_Container form {
         margin-top: 10%;
         margin-right: 5%;
     }
-
     .activation_input_sec {
         width: 100%;
     }
-
     .activation_input_sec p {
         width: 20%;
         margin-left: 5%;
     }
-
     .activation_input_sec input {
         width: 60%;
         height: 2.5rem;
         border-radius: 5px;
         border: 2px solid #261E354D;
     }
-
     .activation_btn_sec {
         width: 100%;
         margin: 5% 0;
         justify-content: center;
         align-items: center;
     }
-
     .activation_btn_sec button {
         width: 50%;
         height: 3rem;

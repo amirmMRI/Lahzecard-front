@@ -2,16 +2,22 @@ import React, { useState,useEffect } from 'react';
 import styles from "./Kharidar.module.css";
 import { Link,useNavigate } from 'react-router-dom';
 import axios from "axios";
-
+import Loading from '../Loading/Loading';
+ //image
+ import giftpic from "../../Images/giftmaking.png"
 
 
 
 const Kharidar = () => {
-const[Data,SetData]=useState({
-    phone:""
-    })
+    const [load,setload]=useState(false)
+    const [State,SetState]=useState( {
+            isbuttondisabled: false
+        })
+    const[Data,SetData]=useState({
+        phone:""
+        })
 
-const Changehandler = (event)=>{
+    const Changehandler = (event)=>{
         SetData({
             ...Data,[event.target.name]:event.target.value
 
@@ -54,13 +60,20 @@ const Changehandler = (event)=>{
         SetTouched({...Touched,[event.target.name]:true})
     }
     const Submithandler = (event)=>{
+        console.log("bekandiii bra")
         event.preventDefault();
-        // const phone=`${Data.phone}`;
+        setload(true)
+        SetState({
+            isbuttondisabled:true
+        })
         console.log(Data)
         axios.post("https://api.lahzecard.com/api/user/login",Data)
         .then((response)=> {
             
             if (response) {
+                setTimeout(() => {        SetState({
+                    isbuttondisabled:false
+                })}, 10000);
                 console.log("post shod")
                 console.log(response)
                 
@@ -76,6 +89,10 @@ const Changehandler = (event)=>{
                 // })
 
         .catch((errors)=> {
+            setTimeout(() => {        SetState({
+                isbuttondisabled:false
+            })}, 1000);
+            setload(false)
             console.log(errors);
             SetErr(errors.response.data.message)
             console.log(err);
@@ -88,10 +105,11 @@ const Changehandler = (event)=>{
     return (
 
         <div>
+    
     <div className={styles.login_seller}>
 
+    {load?<Loading/>:""}
     <div className={styles.left}>
-
 
 
 
@@ -116,10 +134,10 @@ const Changehandler = (event)=>{
                         {/* </div> */}
                         <form className={styles.phonenumber} onSubmit={Submithandler}>
                             <label className={styles.labelrect}>شماره همراه</label>
-                        <input className={styles.Rectangle131} onChange={Changehandler} value={Data.phone} type="text" name="phone"  onFocus={Focused}  />
+                        <input  className={styles.Rectangle131} onChange={Changehandler} value={Data.phone} type="text" name="phone"  onFocus={Focused}  />
                         {error.phone && Touched.phone && <span className={styles.error}>{error.phone}</span>}
                         {err && <span className={styles.error}>{err}</span>}
-                        <button  className={styles.Rectangle132prim} type='submit'><span className={styles.links}>ارسال کد</span></button>
+                        <button disabled={State.isbuttondisabled} className={styles.Rectangle132prim} type='submit'><span className={styles.links}>ارسال کد</span></button>
                     </form>
                 {/* </div> */}
                 
@@ -133,12 +151,19 @@ const Changehandler = (event)=>{
      
 </div>
 
-<div className={styles.Group420}><div className={styles.image4}></div><div className={styles.Group153 }>چند قدم تا ساخت لحظات شیرین برای نزدیکانت با لحظه کارت</div></div>
+<div className={styles.Group420}>
+    <div className={styles.image4}></div>
+    <section>
+        <div className={styles.Group153 }>چند قدم تا ساخت لحظات شیرین برای نزدیکانت با لحظه کارت</div>
+        
+        <img className={styles.picholder} src={giftpic} alt="gif picture" width="320px" />
+    </section>
+</div>
 
 
 
 </div>
-        </div>
+  </div>
     );
 };
 

@@ -154,6 +154,16 @@
     /* background-color: #261e35; */
 }
 
+.Group420>section {
+    z-index: 20;
+    /* width: 100%; */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 300px;
+    margin-left: 10rem;
+}
+
 .joziyat {
     display: flex;
     flex-direction: column;
@@ -231,6 +241,7 @@ input:focus {
 .Rectangle132pp,
 .Rectangle132prim {
     box-sizing: border-box;
+    transition: background-color 0.4s ease-in;
     /* position: absolute; */
     display: flex;
     cursor: pointer;
@@ -249,6 +260,21 @@ input:focus {
     border: 3px solid #261E35;
     box-shadow: 0px 4px 10px rgba(38, 30, 53, 0.35);
     border-radius: 10px;
+}
+
+.Rectangle132prim {
+    display: inline-block;
+    text-align: center;
+    /* default color */
+    /* "to left" / "to right" - affects initial color */
+    background: linear-gradient(to left, #773b9d 10%, #261E35 60%) right;
+    background-size: 200%;
+    transition: .7s ease-out;
+}
+
+.Rectangle132prim:hover {
+    background-position: left;
+    border: none;
 }
 
 .Rectangle132pp {
@@ -288,6 +314,9 @@ input:focus {
 .Group153 {
     margin-top: 68px;
     z-index: 20;
+    /* width: fit-content; */
+    font-size: 1.3rem;
+    margin-bottom: 5rem;
 }
 
 @media screen and (max-width:720px) {
@@ -303,6 +332,17 @@ input:focus {
 }
 
 @media screen and (max-width:420px) {
+    .Group420>section {
+        z-index: 20;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin: 0rem;
+    }
+    .picholder {
+        width: 120px;
+    }
     .login_seller {
         height: fit-content;
         width: 100%;
@@ -321,7 +361,7 @@ input:focus {
     }
     .left {
         /* position: fixed; */
-        height: 400px;
+        height: 550px;
         width: 100%;
         padding-top: 1rem;
         display: flex;
@@ -416,7 +456,8 @@ input:focus {
     }
     .Group153 {
         width: 80%;
-        margin-bottom: 100px;
+        /* margin-bottom: 100px; */
+        margin: 5px 0;
         font-size: 16px;
     }
     .errore {
@@ -433,7 +474,10 @@ input:focus {
     .Rectangle132prim {
         width: 130px;
         height: 35px;
-        font-size: 10px;
+        /* font-size: 2px; */
+    }
+    .links {
+        font-size: 16px;
     }
     /* 
         .Group154 {
