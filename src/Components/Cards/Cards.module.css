@@ -114,6 +114,13 @@
     text-align: center;
 }
 
+@media (max-width: 1336px) {
+    .gifts_sec {
+        position: relative;
+        top: -16%;
+    }
+}
+
 @media (max-width: 720px) {
 
     .Cards_Container {
