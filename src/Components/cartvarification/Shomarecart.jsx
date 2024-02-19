@@ -5,6 +5,11 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faTriangleExclamation,faArrowLeftLong} from '@fortawesome/free-solid-svg-icons'
 import { Helmet } from "react-helmet";
 import axios from "axios";
+
+ //image
+ import giftpic from "../../Images/its your gift.png"
+
+
 const Shomarecart = () => {
     const Navigate = useNavigate();
     
@@ -27,8 +32,11 @@ const Shomarecart = () => {
         const ref16 = useRef(null);
 
         const Keyup=(event)=>{
-            
-            if(event.code==="ArrowRight"){
+            console.log(event.code);
+            if(event.code==="Backspace"){
+                
+            }
+            else{
 
                 if(event.target.id=="ref2")
                 {ref2.current.focus();}
@@ -75,56 +83,57 @@ const Shomarecart = () => {
                 if(event.target.id=="ref16")
                 {ref16.current.focus();}
                 
-            }else if(event.code==="ArrowLeft"){
-                
-                // if(event.target.id=="ref2")
-                // {ref.current.focus();}
-                // else
-                if(event.target.id=="ref3")
-                {ref.current.focus();}
-                else
-                if(event.target.id=="ref4")
-                {ref2.current.focus();}
-                else
-                if(event.target.id=="ref5")
-                {ref3.current.focus();}
-                else
-                if(event.target.id=="ref6")
-                {ref4.current.focus();}
-                else
-                if(event.target.id=="ref7")
-                {ref5.current.focus();}
-                else
-                if(event.target.id=="ref8")
-                {ref6.current.focus();}
-                else
-                if(event.target.id=="ref9")
-                {ref7.current.focus();}
-                else
-                if(event.target.id=="ref10")
-                {ref8.current.focus();}
-                else
-                if(event.target.id=="ref11")
-                {ref9.current.focus();}
-                else
-                if(event.target.id=="ref12")
-                {ref10.current.focus();}
-                else
-                if(event.target.id=="ref13")
-                {ref11.current.focus();}
-                else
-                if(event.target.id=="ref14")
-                {ref12.current.focus();}
-                else
-                if(event.target.id=="ref15")
-                {ref13.current.focus();}
-                else
-                if(event.target.id=="ref16")
-                {ref14.current.focus();}
-
-                if(event.target.id=="ref17")
-                {ref15.current.focus();}
             }
+            // else if(event.code==="ArrowLeft"){
+                
+            //     // if(event.target.id=="ref2")
+            //     // {ref.current.focus();}
+            //     // else
+            //     if(event.target.id=="ref3")
+            //     {ref.current.focus();}
+            //     else
+            //     if(event.target.id=="ref4")
+            //     {ref2.current.focus();}
+            //     else
+            //     if(event.target.id=="ref5")
+            //     {ref3.current.focus();}
+            //     else
+            //     if(event.target.id=="ref6")
+            //     {ref4.current.focus();}
+            //     else
+            //     if(event.target.id=="ref7")
+            //     {ref5.current.focus();}
+            //     else
+            //     if(event.target.id=="ref8")
+            //     {ref6.current.focus();}
+            //     else
+            //     if(event.target.id=="ref9")
+            //     {ref7.current.focus();}
+            //     else
+            //     if(event.target.id=="ref10")
+            //     {ref8.current.focus();}
+            //     else
+            //     if(event.target.id=="ref11")
+            //     {ref9.current.focus();}
+            //     else
+            //     if(event.target.id=="ref12")
+            //     {ref10.current.focus();}
+            //     else
+            //     if(event.target.id=="ref13")
+            //     {ref11.current.focus();}
+            //     else
+            //     if(event.target.id=="ref14")
+            //     {ref12.current.focus();}
+            //     else
+            //     if(event.target.id=="ref15")
+            //     {ref13.current.focus();}
+            //     else
+            //     if(event.target.id=="ref16")
+            //     {ref14.current.focus();}
+
+            //     if(event.target.id=="ref17")
+            //     {ref15.current.focus();}
+            // }
         }
 
 
@@ -270,7 +279,17 @@ const Shomarecart = () => {
             
         </div>
         
-<div className={styles.Group420}><div className={styles.image4}></div></div>
+<div className={styles.Group420}>
+       <section>
+        {/* <div className={styles.Group153 }>چند قدم تا ساخت لحظات شیرین برای نزدیکانت با لحظه کارت</div> */}
+        
+        <img className={styles.picholder} src={giftpic} alt="gif picture" width="280px" />
+    </section>
+     <div className={styles.image4}></div>
+
+
+
+</div>
     
 
     </div>

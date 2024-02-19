@@ -6,10 +6,15 @@ import axios from "axios";
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import styles from "./codevorod.module.css"
-
+ //image
+ import giftpic from "../../Images/giftmaking.png"
 
 const Codevorod = () => {
-   
+    const [State,SetState]=useState( {
+        isbuttondisabled: false,
+        isbuttondisabled2: false
+
+    })
     const[Data,SetData]=useState({
         ref2:"",
         ref3:"",
@@ -29,12 +34,20 @@ const Codevorod = () => {
     const phone={phone:JSON.parse(localStorage.getItem('Customerphone'))}
 
     const Buttonhandler =event=>{
-
+        SetState({...State,
+            isbuttondisabled2:true
+        })
         axios.post("https://api.lahzecard.com/api/user/login",phone)
         .then((response)=> {
             
             if (response) {
-                SetErr("درخواست کد جدید دادیم منتظر بمونید")
+
+                SetErr("...درخواست کد جدید دادیم منتظر بمونید")
+                
+                
+                setTimeout(() => {        SetState({
+                    isbuttondisabled2:false
+                })}, 30000);
             }
         })
     }
@@ -103,6 +116,11 @@ const Codevorod = () => {
 
 
     const Keyup=(event)=>{
+        if(event.code==="Backspace"){
+        
+        }
+        else{
+            
         if(event.target.name=="ref2")
         {ref2.current.focus();}
         else
@@ -114,7 +132,8 @@ const Codevorod = () => {
         else
         if(event.target.name=="ref5")
         {ref5.current.focus();}
-        
+
+        }
         // if(event.target.name=="ref6")
         // {ref6.current.focus();}
     }
@@ -129,6 +148,9 @@ const Codevorod = () => {
 
     const Submithandler = (event)=>{
         event.preventDefault();
+        SetState({...State,
+            isbuttondisabled:true
+        })
         
         if(Code.code.length < 5)
         {    console.log(Code)
@@ -143,6 +165,9 @@ const Codevorod = () => {
             .then((response)=> {
                 
                 if (response) {
+                    setTimeout(() => {        SetState({
+                        isbuttondisabled:false
+                    })}, 30000);
                     console.log("post shod")
                     console.log(response)
                     // localStorage.setItem('customerData', JSON.stringify(response.data.operator))
@@ -209,8 +234,8 @@ const Codevorod = () => {
                                 {err && <span className={styles.error}>{err}</span>}
 
 
-                                <button className={styles.Rectangle132prim} type='submit'>  <span className={styles.links} >تایید کد</span></button>
-                                <div className={styles.Rectangle132pp} onClick={Buttonhandler}> ارسال مجدد کد</div>
+                                <button disabled={State.isbuttondisabled} className={styles.Rectangle132prim} type='submit'>  <span className={styles.links} >تایید کد</span></button>
+                                <button disabled={State.isbuttondisabled2} className={styles.Rectangle132pp} onClick={Buttonhandler}> ارسال مجدد کد</button>
                             
                             {/*  */}
                             {/*  */}
@@ -231,9 +256,13 @@ const Codevorod = () => {
           
         
         <div className={styles.Group420}>
-            <div className={styles.image4}></div>
-            <div className={styles.Group153}>چند قدم تا ساخت لحظات شیرین برای نزدیکانت با لحظه کارت</div>     
-        </div>
+    <div className={styles.image4}></div>
+    <section>
+        <div className={styles.Group153 }>چند قدم تا ساخت لحظات شیرین برای نزدیکانت با لحظه کارت</div>
+        
+        <img className={styles.picholder} src={giftpic} alt="gif picture" width="320px" />
+    </section>
+    </div>
 
     
 
