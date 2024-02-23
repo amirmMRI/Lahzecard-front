@@ -114,7 +114,14 @@
     text-align: center;
 }
 
-@media (max-width: 1336px) {
+@media (max-width: 1400px) {
+    .gifts_sec {
+        position: relative;
+        top: -18%;
+    }
+}
+
+@media (max-width: 1350px) {
     .gifts_sec {
         position: relative;
         top: -16%;
