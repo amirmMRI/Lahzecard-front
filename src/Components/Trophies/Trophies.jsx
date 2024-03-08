@@ -15,7 +15,8 @@ const Trophies = () => {
         <div className={styles.Trophies_Container}>
            <img src={trophies} alt="example card" className={styles.header_pic}/>
            <section className={styles.pid_sec}>
-                <a href="https://ictu.qiau.ac.ir/">
+                <a href="https://ictu.qazvin.iau.ir/">
+                
                     <img src={roshd} alt="roshd org logo" />
                 </a>
                {/* <img src={enamad} alt="enamad logo" /> */}

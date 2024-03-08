@@ -47,7 +47,7 @@ const Footer = () => {
                 </section>
             </section>
             <section className={styles.foot_logo_sec}>
-                <img src={logoforfooter} alt="Lahzecard Logo" />
+            <a href="/home"><img src={logoforfooter} alt="Lahzecard Logo" /></a>
             </section>
         </div>
      );
