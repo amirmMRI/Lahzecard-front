@@ -114,13 +114,6 @@
     text-align: center;
 }
 
-@media (min-width: 1360px) {
-    .gifts_sec {
-        position: relative;
-        top: -20%;
-    }
-}
-
 @media (max-width: 720px) {
     .Cards_Container {
         height: 70vh;
