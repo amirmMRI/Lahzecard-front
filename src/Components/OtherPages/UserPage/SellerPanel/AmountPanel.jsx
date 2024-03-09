@@ -2,6 +2,8 @@ import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import axios from 'axios';
 import { Link } from 'react-router-dom';
+import Loading from '../../../Loading/Loading';
+
 // Style
 import styles from './AmountPanel.module.css'
 
@@ -81,6 +83,7 @@ const AmountPanel = () => {
     const partnerPhone = localCN.contractParties.phone;
     const [cardData, setCardData] = useState()
     const [voiceError, setVoiceError] = useState()
+    const [load,setload]=useState(false)
 
     const amountcarChangeHandler = (event) => {
         setAmountData({
@@ -90,10 +93,12 @@ const AmountPanel = () => {
 
     const getCardInfo = (event) => {
         event.preventDefault();
-        setButtonDisable(true)
+        setButtonDisable(true);
+        setload(true)
         axios.get(`https://api.lahzecard.com/api/user/readCard${amountData.cardNumber}`, axiosConficPostForGet)
             .then((response)=> {
                 if (response) {
+                    setload(false);
                     console.log(response);
                     setVoiceError(response.data.message)
                     setCardData(response.data.cardInfo);
@@ -102,6 +107,7 @@ const AmountPanel = () => {
 
             .catch((errors)=> {
                 if (errors) {
+                    setload(false);
                     console.log(errors);
                     alert('مشکلی پیش آمده. دوباره امتحان کنید.')
                 }
@@ -137,11 +143,13 @@ const AmountPanel = () => {
         event.preventDefault();
         const WITHDRAWL_DATA = amount;
         setButtonDisable(true)
+        setload(true)
         axios.post(`https://api.lahzecard.com/api/spentlist/createSpentList/${amountData.cardNumber}`, WITHDRAWL_DATA, axiosConficPost)
             .then((response)=> {
                 if (response) {
                     setAlertSuc("موفقیت آمیز بود!")
                     setAlertFai()
+                    setload(false)
                     // console.log(response);
                     setTimeout(()=>window.location.reload(), 2000)
                 }
@@ -151,6 +159,7 @@ const AmountPanel = () => {
                 if (errors) {
                     setAlertFai("بعدن دوباره امتحان کنید!")
                     setAlertSuc()
+                    setload(false)
                     setButtonDisable(false)
                     // console.log(errors);
                 }
@@ -159,7 +168,8 @@ const AmountPanel = () => {
 
     return ( 
         <div className={styles.UserPage_Container}>
-            <section className={styles.right_sec}>
+            {load ? <Loading/> : undefined}
+                <section className={styles.right_sec}>
                 <section className={styles.user_profile_info}>
                     <img src={partnerLogo ?? partnerLogo} alt="user profile" className={styles.user_prof_img}/>
                     <h3>{partnerName ?? partnerName}</h3>

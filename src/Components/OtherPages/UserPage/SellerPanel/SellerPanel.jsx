@@ -2,6 +2,8 @@ import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import axios from 'axios';
 import { Link } from 'react-router-dom';
+import Loading from '../../../Loading/Loading';
+
 // Style
 import styles from './Sellerpanel.module.css'
 
@@ -27,6 +29,7 @@ const SellerPanel = () => {
     const partnerLogo = localCN.contractParties.logoAddress;
     const partnerPhone = localCN.contractParties.phone;
     const partnerId = localCN.contractParties.id
+    const [load,setload]=useState(false)
 
     // button handlers
     
@@ -105,9 +108,11 @@ const SellerPanel = () => {
     const submitHandler = (event) => {
         event.preventDefault();
         const CreateCard_Data = data;
+        setload(true)
         setButtonDisable(true)
         axios.post("https://api.lahzecard.com/api/card", CreateCard_Data, axiosConficPost)
             .then((response)=> {
+                setload(false)
                 setWelcomeMassage(true)
                 AlertHandler();
                 console.log(response);
@@ -115,6 +120,7 @@ const SellerPanel = () => {
             })
 
             .catch((errors)=> {
+                setload(false)
                 console.log(errors)
                 setIsError_1(errors.response.data.message)
                 setButtonDisable(false)
@@ -124,6 +130,7 @@ const SellerPanel = () => {
 
     return ( 
         <div className={styles.UserPage_Container}>
+            {load ? <Loading/> : undefined}
             <section className={styles.right_sec}>
                 <section className={styles.user_profile_info}>
                     <img src={userprof} alt="user profile" className={styles.user_prof_img}/>

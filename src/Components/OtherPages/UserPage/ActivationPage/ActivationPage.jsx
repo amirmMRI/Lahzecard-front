@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import axios from 'axios';
 import { AudioRecorder } from 'react-audio-voice-recorder';
+import Loading from '../../../Loading/Loading';
 
 // Style
 import styles from './ActivationPage.module.css'
@@ -78,6 +79,7 @@ const ActivationPage = () => {
     const [partnerNumber, setPartnerNumber] = useState()
     const [partnerInsta, setPartnerInsta] = useState()
     const [partnerLogo, setPartnerLogo] = useState()
+    const [load,setload]=useState(false)
 
     useEffect(()=> {
         const getCardInfo = (event) => {
@@ -122,6 +124,7 @@ const ActivationPage = () => {
         let formeData = new FormData();
         formeData.append("text", data.text);
         formeData.append("voice", theVoice);
+        setload(true)
         // Log the formdata
         for (var pair of formeData.entries()) {
             console.log(pair[0]+ ', ' + pair[1]); 
@@ -129,12 +132,14 @@ const ActivationPage = () => {
         setButtonDisable(true)
         axios.post(`https://api.lahzecard.com/api/user/uploadData?cardNumber=${localCN.slice(1, -1)}`, formeData, axiosConficPost)
             .then((response)=> {
+                setload(false);
                 alert("پیام و ویس شما با موفقیت آپلود شد. زمان تقریبی تایید آن: یک روز")
                 console.log(response);
                 setTimeout(() => Navigate("/home"), 100);
             })
 
             .catch((errors)=> {
+                setload(false);
                 console.log(errors)
                 setButtonDisable(false)
             })
@@ -146,6 +151,7 @@ const ActivationPage = () => {
     
     return ( 
         <div className={styles.ActivationPage_Container}>
+            {load ? <Loading/> : undefined}
             { notif ?
                 <section className={styles.RulesNotif_sec}>
                     <div className={styles.rules_div}>

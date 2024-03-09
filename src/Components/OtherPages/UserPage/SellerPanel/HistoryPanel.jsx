@@ -2,6 +2,8 @@ import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import axios from 'axios';
 import { Link } from 'react-router-dom';
+import Loading from '../../../Loading/Loading';
+
 // Style
 import styles from './HistoryPanel.module.css'
 
@@ -28,6 +30,7 @@ const HistoryPanel = () => {
     const partnerInsta = localCN.contractParties.instaAddress;
     const partnerLogo = localCN.contractParties.logoAddress;
     const partnerPhone = localCN.contractParties.phone;
+    const [load,setload]=useState(false)
 
     // Save the data
     const [history, setHistory] = useState()
@@ -59,10 +62,12 @@ const HistoryPanel = () => {
 
     const submitHandler = (event) => {
         event.preventDefault();
+        setload(true)
         axios.get(`https://api.lahzecard.com/api/spentlist/${data.cardnumber}`, axiosConficPost)
             .then((response)=> {
                 if (response) {
                     // Get data that must be shown, here. the const is history.
+                    setload(false)
                     console.log(response);
                     setHistory(response.data.spentList)
                 }
@@ -70,6 +75,7 @@ const HistoryPanel = () => {
 
             .catch((errors)=> {
                 if (errors) {
+                    setload(false)
                     console.log(errors)
                 }
             })
@@ -104,6 +110,7 @@ const HistoryPanel = () => {
 
     return ( 
         <div className={styles.UserPage_Container}>
+            {load ? <Loading/> : undefined}
             <section className={styles.right_sec}>
                 <section className={styles.user_profile_info}>
                     <img src={userprof} alt="user profile" className={styles.user_prof_img}/>
