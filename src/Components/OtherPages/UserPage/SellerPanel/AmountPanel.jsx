@@ -151,7 +151,7 @@ const AmountPanel = () => {
                     setAlertFai()
                     setload(false)
                     // console.log(response);
-                    setTimeout(()=>window.location.reload(), 2000)
+                    setTimeout(()=>window.location.reload(), 500)
                 }
             })
 

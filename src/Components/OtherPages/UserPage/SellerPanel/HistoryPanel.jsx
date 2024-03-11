@@ -36,7 +36,6 @@ const HistoryPanel = () => {
     const [history, setHistory] = useState()
 
     // Gathering data
-
     const [data, setData] = useState({
         cardnumber: "",
     });
