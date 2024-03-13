@@ -47,10 +47,11 @@ const HistoryPanel = () => {
         console.log(data);
     }
 
-    const jwtToken = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhZG1pblVzZXJuYW1lIjoic2luYWtoIiwiaWF0IjoxNjcwMzUxNTE4LCJleHAiOjE2NzEyMTU1MTh9.zUx8Imt-8g7RecOZ39Jez3esTRJ-huQP99uGmArPVqA"
+    const jwtToken = localStorage.getItem('OperatorToken');
     const axiosConficPost = {
         headers: {
             "Content-type": "application/x-www-form-urlencoded",
+            "Authorization": "Bearer " + jwtToken,
             "Access-Control-Allow-Origin": "*",
             "Access-Control-Allow-Headers":"*",
             "Access-Control-Allow-Methods":"*"

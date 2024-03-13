@@ -173,6 +173,7 @@ import styles from "./codevorod.module.css"
                             console.log(response)
                             
                             localStorage.setItem('OperatorData', JSON.stringify(response.data.operator))
+                            localStorage.setItem('OperatorToken', JSON.stringify(response.data.accessToken))
                             
                             setTimeout(()=>Navigate("/UserPage"), 100)
                         }

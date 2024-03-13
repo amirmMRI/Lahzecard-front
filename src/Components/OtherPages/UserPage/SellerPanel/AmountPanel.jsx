@@ -61,9 +61,11 @@ const AmountPanel = () => {
     }
 
     // Gathering data for withdrawl
+    const jwtToken = localStorage.getItem('OperatorToken');
     const axiosConficPostForGet = {
         headers: {
             "Content-type": "application/json",
+            "Authorization": "Bearer " + jwtToken,
             // "Access-Control-Allow-Origin": "*",
             // "Access-Control-Allow-Headers":"*",
             // "Access-Control-Allow-Methods":"*"
@@ -129,10 +131,10 @@ const AmountPanel = () => {
         });
     }
     
-    const jwtToken = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhZG1pblVzZXJuYW1lIjoic2luYWtoIiwiaWF0IjoxNjcwMzUxNTE4LCJleHAiOjE2NzEyMTU1MTh9.zUx8Imt-8g7RecOZ39Jez3esTRJ-huQP99uGmArPVqA"
     const axiosConficPost = {
         headers: {
             "Content-type": "application/x-www-form-urlencoded",
+            "Authorization": "Bearer " + jwtToken,
             // "Access-Control-Allow-Origin": "*",
             // "Access-Control-Allow-Headers":"*",
             // "Access-Control-Allow-Methods":"*"

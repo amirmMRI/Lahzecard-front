@@ -22,6 +22,7 @@ import greentic from '../../../../Images/green_tic.png'
 const SellerPanel = () => {
 
     // Gathering data
+    const jwtToken = localStorage.getItem('OperatorToken');
     const localCN = JSON.parse(localStorage.getItem('OperatorData'));
     const partnerName = localCN.contractParties.name;
     const partnerAddress = localCN.contractParties.address;
@@ -58,9 +59,6 @@ const SellerPanel = () => {
         setNavbarActive(!navbarAvtive)
     }
     
-    // Making cp_id
-    const cp_id = "c18b4dba-14b2-4805-82b0-193fc07adebe"
-    
     // Gathering data func and states
     const [data, setData] = useState({
         user_name: "",
@@ -90,11 +88,10 @@ const SellerPanel = () => {
     const [buttonDisable, setButtonDisable] = useState(false);
     const [welcomeMassage, setWelcomeMassage] = useState(false);
 
-    const jwtToken = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI0MTNiOWE0OS04MDFlLTRmZWQtOTM3Yi1lODQ4MzAxYzc2YWUiLCJwaG9uZSI6IjA5MDM3MTU4NzU1Iiwicm9sZSI6Ik9QRVJBVE9SIiwiaWF0IjoxNzAxMTE1MDM0fQ.CiqttZnvBe10JCIBtXQvPLKKenDw6ABHmlzi-cvmZsc"
     const axiosConficPost = {
         headers: {
             "accept": "*/*",
-            "Authorization": "Bearer " + "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI0MTNiOWE0OS04MDFlLTRmZWQtOTM3Yi1lODQ4MzAxYzc2YWUiLCJwaG9uZSI6IjA5MDM3MTU4NzU1Iiwicm9sZSI6Ik9QRVJBVE9SIiwiaWF0IjoxNzAxMTE1MDM0fQ.CiqttZnvBe10JCIBtXQvPLKKenDw6ABHmlzi-cvmZsc",
+            "Authorization": "Bearer " + jwtToken,
             'Content-Type': 'application/x-www-form-urlencoded',
             
             // "origin": "*",

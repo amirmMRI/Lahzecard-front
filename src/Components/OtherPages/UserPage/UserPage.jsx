@@ -22,9 +22,11 @@ import Remaining from "./Remaining/Remaining";
 const UserPage = () => {
 
     // Getting card info
+    const jwtToken = localStorage.getItem('OperatorToken');
     const axiosConficGet = {
         headers: {
             "Content-type": "application/json",
+            "Authorization": "Bearer " + jwtToken,
             // "Access-Control-Allow-Origin": "*",
             // "Access-Control-Allow-Headers":"*",
             // "Access-Control-Allow-Methods":"*"
