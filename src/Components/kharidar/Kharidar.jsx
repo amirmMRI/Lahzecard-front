@@ -45,7 +45,7 @@ const Kharidar = () => {
     }
     //error
     const [error,SetError]=useState({})
-    const [err,SetErr]=useState()
+    const [err,SetErr]=useState("")
 
 
     //check for error
@@ -60,7 +60,7 @@ const Kharidar = () => {
         SetTouched({...Touched,[event.target.name]:true})
     }
     const Submithandler = (event)=>{
-        console.log("bekandiii bra")
+        // console.log("bekandiii bra")
         event.preventDefault();
         setload(true)
         SetState({
@@ -69,8 +69,18 @@ const Kharidar = () => {
         console.log(Data)
         axios.post("https://api.lahzecard.com/api/user/login",Data)
         .then((response)=> {
-            
-            if (response) {
+            if (response.data.statusCode==400) {
+                setTimeout(() => {        SetState({
+                    isbuttondisabled:false
+                })}, 1000);
+                setload(false)
+                console.log(response);
+                SetErr(response.data.message)
+                console.log(err);
+                console.log("hi");
+
+            }
+            else if (response) {
                 setTimeout(() => {        SetState({
                     isbuttondisabled:false
                 })}, 10000);

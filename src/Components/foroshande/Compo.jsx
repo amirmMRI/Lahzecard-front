@@ -47,7 +47,7 @@ const Compo = () => {
     }
     //error
     const [error,SetError]=useState({})
-    const [err,SetErr]=useState()
+    const [err,SetErr]=useState("")
 
 
     //check for error
@@ -73,8 +73,18 @@ const Compo = () => {
         console.log(Data)
         axios.post("https://api.lahzecard.com/api/operator/login",Data)
         .then((response)=> {
-            
-            if (response) {
+            if (response.data.statusCode==404) {
+                setTimeout(() => {        SetState({
+                    isbuttondisabled:false
+                })}, 1000);
+                setload(false)
+                console.log(response);
+                SetErr(response.data.message)
+                console.log(err);
+                console.log("hi");
+
+            }
+            else if (response) {
 
                 setTimeout(() => {        SetState({
                     isbuttondisabled:false
