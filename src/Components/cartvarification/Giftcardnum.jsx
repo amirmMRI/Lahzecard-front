@@ -5,7 +5,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faTriangleExclamation,faArrowLeftLong} from '@fortawesome/free-solid-svg-icons'
 import { Helmet } from "react-helmet";
 import axios from "axios";
-
+import Loading from '../Loading/Loading';
 
  //image
  import giftpic from "../../Images/giftmaking.png"
@@ -13,6 +13,11 @@ import axios from "axios";
 
 const Giftcardnum = () => {
          const Navigate = useNavigate();
+         const [err,SetErr]=useState("");
+         const [load,setload]=useState(false)
+         const [State,SetState]=useState( {
+             isbuttondisabled: false
+         })
 
         //for input focus
         const ref = useRef(null);    
@@ -215,25 +220,52 @@ const Giftcardnum = () => {
           }) 
         const Submithandler = (event)=>{
             event.preventDefault();
+            setload(true)
+            SetState({
+                isbuttondisabled:true
+            })
             axios.get(`https://api.lahzecard.com/api/user/readCard${cardNumber}`,header)
+            
                             .then((response)=> {
-                                
-                                console.log(response)
-                                localStorage.setItem('GiftData', JSON.stringify(response.data.cardInfo.cardNumber))
 
-                                setTimeout(()=>Navigate("/CardPage"), 100)
+                                if (response.data.statusCode==404) {
+                                    setTimeout(() => {        SetState({
+                                        isbuttondisabled:false
+                                    })}, 5000);
+                                    setload(false)
+                                    console.log(response);
+                                    SetError({
+                                        cardNum:response.data.message
+                                    })
+                                    console.log(error);
+                                    console.log("hi");
+                                }
+
+                                else  if (response) {
+                                    setTimeout(() => {        SetState({
+                                        isbuttondisabled:false
+                                    })}, 5000);    
+                                    console.log(response)
+                                    localStorage.setItem('GiftData', JSON.stringify(response.data.cardInfo.cardNumber))
+
+                                    setTimeout(()=>Navigate("/CardPage"), 100)
                                
+                                }
                             })
             
                             .catch((errors)=> {
+                                setTimeout(() => {        SetState({
+                                    isbuttondisabled:false
+                                })}, 5000);
+                                setload(false)
+                                console.log(errors)
                                 console.log(errors)
         
                             })
                     
-            //نیاز به ریسپانس از بک اند هست که چک شود
             console.log(cardNumber)
             // console.log(Data)
-            // Navigate("/ActivationPage")
+            // Navigate("/CardPage")
     
         }
     return (
@@ -242,7 +274,7 @@ const Giftcardnum = () => {
             <meta name="viewport" content="width=device-width, initial-scale=1"></meta>
         </Helmet>
         <div className={styles.left}>
-
+        {load?<Loading/>:""}
         
 
 

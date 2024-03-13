@@ -5,6 +5,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faTriangleExclamation,faArrowLeftLong} from '@fortawesome/free-solid-svg-icons'
 import { Helmet } from "react-helmet";
 import axios from "axios";
+import Loading from '../Loading/Loading';
 
  //image
  import giftpic from "../../Images/its your gift.png"
@@ -12,7 +13,12 @@ import axios from "axios";
 
 const Shomarecart = () => {
     const Navigate = useNavigate();
-    
+    const [err,SetErr]=useState("");
+    const [load,setload]=useState(false)
+    const [State,SetState]=useState( {
+        isbuttondisabled: false
+    })
+
         //for input focus
         const ref = useRef(null);    
         const ref2 = useRef(null);
@@ -215,22 +221,48 @@ const Shomarecart = () => {
       }) 
     const Submithandler = (event)=>{
         event.preventDefault();
+        setload(true)
+        SetState({
+            isbuttondisabled:true
+        })
         axios.get(`https://api.lahzecard.com/api/user/readCard${cardNumber}`,header)
                         .then((response)=> {
+                            if (response.data.statusCode==404) {
+                                setTimeout(() => {        SetState({
+                                    isbuttondisabled:false
+                                })}, 5000);
+                                setload(false)
+                                console.log(response);
+                                SetError({
+                                    cardNum:response.data.message
+                                })
+                                console.log(error);
+                                console.log("hi");
+                
+                            }
+                            else  if (response) {
+                                setTimeout(() => {        SetState({
+                                    isbuttondisabled:false
+                                })}, 5000);
+                                console.log(response)
+                                localStorage.setItem('CustomerData', JSON.stringify(cardNumber))
+                                setTimeout(()=>Navigate("/ActivationPage"), 100)    
+                
+                            }
                             
-                            console.log(response)
-                            localStorage.setItem('CustomerData', JSON.stringify(cardNumber))
-                            setTimeout(()=>Navigate("/ActivationPage"), 100)
                            
                         })
         
                         .catch((errors)=> {
+                            setTimeout(() => {        SetState({
+                                isbuttondisabled:false
+                            })}, 5000);
+                            setload(false)
                             console.log(errors)
-                            localStorage.setItem('CustomerData', JSON.stringify(cardNumber))
+                            // localStorage.setItem('CustomerData', JSON.stringify(cardNumber))
     
                         })
                 
-        //نیاز به ریسپانس از بک اند هست که چک شود
         console.log(cardNumber)
         // console.log(Data)
         // Navigate("/ActivationPage")
@@ -243,6 +275,7 @@ const Shomarecart = () => {
             <meta name="viewport" content="width=device-width, initial-scale=1"></meta>
         </Helmet>
         <div className={styles.left}>
+        {load?<Loading/>:""}
 
         
 
