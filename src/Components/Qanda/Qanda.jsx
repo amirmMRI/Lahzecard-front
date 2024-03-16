@@ -106,7 +106,7 @@ const Qanda = () => {
                   <p>چگونه می‌توانم لحظه کارت را تهیه کنم؟</p>
                   <img src={q1state ? openmark : closemark} alt="question mark closed icon" />
                </div>
-               <span className={q1state ? styles.span_active : styles.spandeActive}>شما می توانید با مراجعه به مراکز و فروشگاه های تحت قرارداد با ما ، لحظه کارت خود را تهیه نمایید . همچنین می‌توانید با مراجعه به سایت ما به آدرس .......... از مراکز و فروشگاه های تحت قرار داد با ما آگاهی حاصل فرمایید.</span>
+               <span className={q1state ? styles.span_active : styles.spandeActive}>شما می توانید با مراجعه به مراکز و فروشگاه های تحت قرارداد با ما ، لحظه کارت خود را تهیه نمایید . همچنین می‌توانید با مراجعه به سایت ما به آدرس <a href="Lahzecard.com">Lahzecard.com</a> از مراکز و فروشگاه های تحت قرار داد با ما آگاهی حاصل فرمایید.</span>
             </div>
             <div className={styles.certainq_div}>
                <div onClick={q2Handler}>
@@ -135,7 +135,7 @@ const Qanda = () => {
                   <p>آیا لحظه کارت تاریخ انقضاء دارد؟</p>
                   <img src={q5state ? openmark : closemark} alt="question mark closed icon" />
                </div>
-               <span className={q5state ? styles.span_active : styles.spandeActive}>بله ، پس از فال سازی لحظه کارت شما توسط صندوقدار ، کارت شما به مدت ...... اعتبار دارد . همچنین شما می توانید با اسکن qr code پشت کارت و وارد کردن رمز آن ، از زمان اتمام اعتبار کارت خود مطلع شوید .</span>
+               <span className={q5state ? styles.span_active : styles.spandeActive}>بله ، پس از فعال سازی لحظه کارت شما توسط صندوقدار ، کارت شما به مدت ...... اعتبار دارد . همچنین شما می توانید با اسکن qr code پشت کارت و وارد کردن رمز آن ، از زمان اتمام اعتبار کارت خود مطلع شوید .</span>
             </div>
             <div className={styles.moreQ_div}>
                <Link to="/QandAPage">

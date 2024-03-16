@@ -74,6 +74,14 @@ const Codevorod = () => {
 
     const Navigate = useNavigate();
 
+    useEffect(() => {
+        if (!localStorage.getItem("Customerphone")) {
+            Navigate("/customer");
+           
+            
+        }
+    }, []);
+
         //valid
         const validate = (event,Data)=>{
             // const error={};
@@ -116,8 +124,8 @@ const Codevorod = () => {
 
 
     const Keyup=(event)=>{
-        if(event.code==="Backspace"){
         
+        if(event.code==="Backspace" || event.keyCode=="8"){
         }
         else{
             

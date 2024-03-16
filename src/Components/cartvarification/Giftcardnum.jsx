@@ -39,7 +39,7 @@ const Giftcardnum = () => {
 
         const Keyup=(event)=>{
             console.log(event.code);
-            if(event.code==="Backspace"){
+            if(event.code==="Backspace" || event.keyCode=="8"){
                 
             }
             else{

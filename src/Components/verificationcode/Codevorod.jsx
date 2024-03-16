@@ -74,6 +74,16 @@ import styles from "./codevorod.module.css"
 
             const Navigate = useNavigate();
 
+
+            useEffect(() => {
+                
+                if (!localStorage.getItem("phone")) {
+                    Navigate("/seller");
+                    
+                    
+                }
+            }, []);
+            
                 //valid
                 const validate = (event,Data)=>{
                     // const error={};
