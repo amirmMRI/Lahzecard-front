@@ -125,7 +125,19 @@ const Codevorod = () => {
 
     const Keyup=(event)=>{
         
-        if(event.code==="Backspace" || event.keyCode=="8"){
+        if(event.code==="Backspace" || event.keyCode=="8" ){
+            console.log(`${event.target.value}${event.target.name}`)
+            if(event.target.name=="ref3")
+            {ref.current.focus();}
+            else
+            if(event.target.name=="ref4")
+            {ref2.current.focus();}
+            else
+            if(event.target.name=="ref5")
+            {ref3.current.focus();}
+            else
+            if(event.target.name=="ref6")
+            {ref4.current.focus();}
         }
         else{
             
@@ -163,7 +175,9 @@ const Codevorod = () => {
         if(Code.code.length < 5)
         {    console.log(Code)
             console.log(Data)
-            
+            setTimeout(() => {        SetState({
+                isbuttondisabled:false
+            })}, 1000);
             error.phone=" ! کد کامل نیست"
             
         }else{
@@ -175,7 +189,7 @@ const Codevorod = () => {
                 if (response) {
                     setTimeout(() => {        SetState({
                         isbuttondisabled:false
-                    })}, 30000);
+                    })}, 3000);
                     console.log("post shod")
                     console.log(response)
                     // localStorage.setItem('customerData', JSON.stringify(response.data.operator))
@@ -185,6 +199,9 @@ const Codevorod = () => {
             })
             .catch((errors)=> {
                 console.log(errors);
+                setTimeout(() => {        SetState({
+                    isbuttondisabled:false
+                })}, 1000);
                 // SetErr(errors.response.data.message)
                 console.log(err);
     
@@ -228,11 +245,11 @@ const Codevorod = () => {
                                
                                     
                                 <div className={styles.input} >
-                                    <input className={styles.input1} onChange={Changehandler} onKeyUp={Keyup} ref={ref} name='ref2' id='input1' type='text' maxLength="1" />
-                                    <input className={styles.input2} onChange={Changehandler} onKeyUp={Keyup} ref={ref2} name='ref3' id='input2' type='text' maxLength="1" />
-                                    <input className={styles.input3} onChange={Changehandler} onKeyUp={Keyup} ref={ref3} id='input3' name='ref4' type='text' maxLength="1" />
-                                    <input className={styles.input4} onChange={Changehandler} onKeyUp={Keyup} ref={ref4} id='input4' name='ref5' type='text' maxLength="1" />
-                                    <input className={styles.input5} onChange={Changehandler} onKeyUp={Keyup} ref={ref5} id='input5' name='ref6' type='text' maxLength="1" />
+                                    <input className={styles.input1} onChange={Changehandler} onKeyUp={Keyup} ref={ref} name='ref2' id='input1'  inputmode="numeric" maxLength="1" type='text' pattern="[0-9]{1}" title='عدد لاتین در رمز یکبار مصرف را وارد کنید' />
+                                    <input className={styles.input2} onChange={Changehandler} onKeyUp={Keyup} ref={ref2} name='ref3' id='input2' inputmode="numeric" maxLength="1" type='text' pattern="[0-9]{1}" title='عدد لاتین در رمز یکبار مصرف را وارد کنید'  />
+                                    <input className={styles.input3} onChange={Changehandler} onKeyUp={Keyup} ref={ref3} id='input3' name='ref4' inputmode="numeric" maxLength="1" type='text' pattern="[0-9]{1}" title='عدد لاتین در رمز یکبار مصرف را وارد کنید' />
+                                    <input className={styles.input4} onChange={Changehandler} onKeyUp={Keyup} ref={ref4} id='input4' name='ref5' inputmode="numeric" maxLength="1" type='text' pattern="[0-9]{1}" title='عدد لاتین در رمز یکبار مصرف را وارد کنید' />
+                                    <input className={styles.input5} onChange={Changehandler} onKeyUp={Keyup} ref={ref5} id='input5' name='ref6' inputmode="numeric" maxLength="1" type='text' pattern="[0-9]{1}" title='عدد لاتین در رمز یکبار مصرف را وارد کنید' />
                                 </div>
                                 {/*  */}
                             {/*  */}

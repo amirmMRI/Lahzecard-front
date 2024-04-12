@@ -20,7 +20,7 @@ const FullPage = () => {
     return ( 
         <div className={styles.fullpage_container}>
         <Helmet>
-        <title>لحظه کارت</title>
+        <title>324236</title>
         <meta name="enamad" content="324236"/>
         <meta name="لحظه کارت کارت هدیه ان اف تی" content="PAGE FOR DETAIL AND SHOP GIFT CARDS lahzecard" />
         <meta name="لحظه کارت" content="لحظه کارت, لحظهکارت, گیفت,کارت هدیه,gift card,lahze,card,lahze card " />
