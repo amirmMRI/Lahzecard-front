@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 
 // Images
-import cardexample from '../../Images/examplecard.png'
-import cardexampleflip from '../../Images/examplecardflip.png'
+import cardexample from '../../Images/examplecard1.png'
+import cardexampleflip from '../../Images/examplecard2.png'
 import cardphone1 from '../../Images/cardexamplephone1.png'
 import cardphone2 from '../../Images/cardexamplephone2.png'
 

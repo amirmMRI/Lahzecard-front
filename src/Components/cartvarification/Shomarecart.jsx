@@ -13,6 +13,15 @@ import Loading from '../Loading/Loading';
 
 const Shomarecart = () => {
     const Navigate = useNavigate();
+
+    useEffect(() => {
+        if (!localStorage.getItem("Customerphone")) {
+            Navigate("/customer");
+           
+            
+        }
+    }, []);
+
     const [err,SetErr]=useState("");
     const [load,setload]=useState(false)
     const [State,SetState]=useState( {
@@ -39,7 +48,7 @@ const Shomarecart = () => {
 
         const Keyup=(event)=>{
             console.log(event.code);
-            if(event.code==="Backspace"){
+            if(event.code==="Backspace" || event.keyCode=="8"){
                 
             }
             else{

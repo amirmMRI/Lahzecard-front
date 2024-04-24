@@ -28,7 +28,7 @@ const Cards = () => {
                     <img src={privecy} alt="card image" />
                     <section className={styles.card_text}>
                         <h3>حفظ حریم خصوصی</h3>
-                        <p>صدای شما تا همیشه در خانه امن لحظه کارت باقی میماند.</p>
+                        <p>صدای شما در خانه امن لحظه کارت باقی میماند.</p>
                     </section>
                 </div>
                 <div className={styles.card_div3}>

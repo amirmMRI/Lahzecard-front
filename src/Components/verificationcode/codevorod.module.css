@@ -203,8 +203,15 @@ input:focus {
     margin: 10PX 0 10PX 60px;
     display: flex;
     border-radius: 50%;
-    background-color: #261e35;
+    background: linear-gradient(to left, #9949cb 10%, #261E35 70%) left;
+    background-size: 200%;
+    transition: .4s ease-in;
     color: #FFFFFF;
+}
+
+.circle:hover {
+    background-position: right;
+    border: none;
 }
 
 .errore {
@@ -444,7 +451,8 @@ input:focus {
     .Rectangle132prim {
         margin-bottom: 5px;
         width: 130px;
-        height: 35px;
+        height: 50px;
+        align-items: center;
         font-size: 10px;
     }
     /* 
