@@ -40,7 +40,232 @@ const Giftcardnum = () => {
         const Keyup=(event)=>{
             console.log(event.code);
             if(event.code==="Backspace" || event.keyCode=="8"){
+
                 
+                if(event.target.id=="ref3" && !(Value.cardNum2))
+                {ref.current.focus();}
+                else
+                if(event.target.id=="ref3" && (Value.cardNum2))
+                {
+                    ref2.current.focus();
+    
+                    SetValue({
+                        ...Value,[event.target.name]:false
+            
+                    })  
+                }
+                else
+                if(event.target.id=="ref4" && !(Value.cardNum3))
+                {ref2.current.focus();}
+                else
+                if(event.target.id=="ref4" && (Value.cardNum3))
+                {
+                    ref3.current.focus();
+                    SetValue({
+                        ...Value,[event.target.name]:false
+            
+                    })  }
+                else
+                if(event.target.id=="ref5" && !(Value.cardNum4))
+                {ref3.current.focus();}
+                else
+                if(event.target.id=="ref5" && (Value.cardNum4))
+                {
+                    ref4.current.focus();
+                    SetValue({
+                        ...Value,[event.target.name]:false
+            
+                    })    
+                }
+                else
+                if(event.target.id=="ref6" && !(Value.cardNum5))
+                {
+                    ref4.current.focus();
+                    console.log(Data)
+                }
+                else
+                if(event.target.id=="ref6" && (Value.cardNum5))
+                { 
+                    ref5.current.focus();
+                        SetValue({
+                            ...Value,[event.target.name]:false
+                
+                        })        
+                }
+                else
+                if(event.target.id=="ref7" && !(Value.cardNum6))
+                {
+                    ref5.current.focus();
+                    console.log(Data)
+                }
+                else
+                if(event.target.id=="ref7" && (Value.cardNum6))
+                { 
+                    ref6.current.focus();
+                        SetValue({
+                            ...Value,[event.target.name]:false
+                
+                        })        
+                }
+                else
+                if(event.target.id=="ref8" && !(Value.cardNum7))
+                {
+                    ref6.current.focus();
+                    console.log(Data)
+                }
+                else
+                if(event.target.id=="ref8" && (Value.cardNum7))
+                { 
+                    ref7.current.focus();
+                        SetValue({
+                            ...Value,[event.target.name]:false
+                
+                        })        
+                }
+                else
+                if(event.target.id=="ref9" && !(Value.cardNum8))
+                {
+                    ref7.current.focus();
+                    console.log(Data)
+                }
+                else
+                if(event.target.id=="ref9" && (Value.cardNum8))
+                { 
+                    ref8.current.focus();
+                        SetValue({
+                            ...Value,[event.target.name]:false
+                
+                        })        
+                }
+                else
+                if(event.target.id=="ref10" && !(Value.cardNum9))
+                {
+                    ref8.current.focus();
+                    console.log(Data)
+                }
+                else
+                if(event.target.id=="ref10" && (Value.cardNum9))
+                { 
+                    ref9.current.focus();
+                        SetValue({
+                            ...Value,[event.target.name]:false
+                
+                        })        
+                }
+                else
+                if(event.target.id=="ref11" && !(Value.cardNum10))
+                {
+                    ref9.current.focus();
+                    console.log(Data)
+                }
+                else
+                if(event.target.id=="ref11" && (Value.cardNum10))
+                { 
+                    ref10.current.focus();
+                        SetValue({
+                            ...Value,[event.target.name]:false
+                
+                        })        
+                }
+                else
+                if(event.target.id=="ref12" && !(Value.cardNum11))
+                {
+                    ref10.current.focus();
+                    console.log(Data)
+                }
+                else
+                if(event.target.id=="ref12" && (Value.cardNum11))
+                { 
+                    ref11.current.focus();
+                        SetValue({
+                            ...Value,[event.target.name]:false
+                
+                        })        
+                }
+                else
+                if(event.target.id=="ref13" && !(Value.cardNum12))
+                {
+                    ref11.current.focus();
+                    console.log(Data)
+                }
+                else
+                if(event.target.id=="ref13" && (Value.cardNum12))
+                { 
+                    ref12.current.focus();
+                        SetValue({
+                            ...Value,[event.target.name]:false
+                
+                        })        
+                }
+                else
+                if(event.target.id=="ref14" && !(Value.cardNum13))
+                {
+                    ref12.current.focus();
+                    console.log(Data)
+                }
+                else
+                if(event.target.id=="ref14" && (Value.cardNum13))
+                { 
+                    ref13.current.focus();
+                        SetValue({
+                            ...Value,[event.target.name]:false
+                
+                        })        
+                }
+                else
+                if(event.target.id=="ref15" && !(Value.cardNum14))
+                {
+                    ref13.current.focus();
+                    console.log(Data)
+                }
+                else
+                if(event.target.id=="ref15" && (Value.cardNum14))
+                { 
+                    ref14.current.focus();
+                        SetValue({
+                            ...Value,[event.target.name]:false
+                
+                        })        
+                }
+                else
+                if(event.target.id=="ref16" && !(Value.cardNum15))
+                {
+                    ref14.current.focus();
+                    console.log(Data)
+                }
+                else
+                if(event.target.id=="ref16" && (Value.cardNum15))
+                { 
+                    ref15.current.focus();
+                        SetValue({
+                            ...Value,[event.target.name]:false
+                
+                        })        
+                }
+                else
+                if(event.target.id=="ref17" && !(Value.cardNum16))
+                {
+                    ref15.current.focus();
+                    console.log(Data)
+                }
+                else
+                if(event.target.id=="ref17" && (Value.cardNum16))
+                { 
+                    ref16.current.focus();
+                        SetValue({
+                            ...Value,[event.target.name]:false
+                
+                        })        
+                }
+                // if(event.target.name=="ref4")
+                // {ref2.current.focus();}
+                // else
+                // if(event.target.name=="ref5")
+                // {ref3.current.focus();}
+                // else
+                // if(event.target.name=="ref6")
+                // {ref4.current.focus();}
+            
             }
             else{
 
@@ -162,11 +387,34 @@ const Giftcardnum = () => {
         cardNum16:""
 
     })
+    const[Value,SetValue]=useState({
+        cardNum1:"",
+        cardNum2:"",
+        cardNum3:"",
+        cardNum4:"",
+        cardNum5:"",
+        cardNum6:"",
+        cardNum7:"",
+        cardNum8:"",
+        cardNum9:"",
+        cardNum10:"",
+        cardNum11:"",
+        cardNum12:"",
+        cardNum13:"",
+        cardNum14:"",
+        cardNum15:"",
+        cardNum16:""
+
+    })
     const[cardNumber,SetCardnumber]=useState("")
   
 
     const Changehandler = (event)=>{
         SetData({...Data,[event.target.name]:event.target.value})
+        SetValue({
+            ...Value,[event.target.name]:true
+
+        })
         // SetData()
         SetCardnumber(`${Data.cardNum1}${Data.cardNum2}${Data.cardNum3}${Data.cardNum4}${Data.cardNum5}${Data.cardNum6}${Data.cardNum7}${Data.cardNum8}${Data.cardNum9}${Data.cardNum10}${Data.cardNum11}${Data.cardNum12}${Data.cardNum13}${Data.cardNum14}${Data.cardNum15}${Data.cardNum16}`)
         console.log(cardNumber)
@@ -185,11 +433,12 @@ const Giftcardnum = () => {
             console.log("cardNumber")
 
             
-        }else
-        if(isNaN(Data))
-        {
-         error.cardNum=" !شماره کارت را درست وارد کنید" 
         }
+        // else
+        // if(isNaN(Data))
+        // {
+        //  error.cardNum=" !شماره کارت را درست وارد کنید" 
+        // }
         else{
             delete error.cardNum;
         }
@@ -285,22 +534,22 @@ const Giftcardnum = () => {
 
             <form className={styles.cardNum} onSubmit={Submithandler}>
                     <div className={styles.input} >
-                    <input className={styles.inputs} onChange={Changehandler} onFocus={Focused} onKeyUp={Keyup} ref={ref}   id='ref2'  name="cardNum1" type='text' maxLength="1" />
-                                    <input className={styles.inputs} onChange={Changehandler} onFocus={Focused} onKeyUp={Keyup} ref={ref2}  id='ref3'  name="cardNum2" type='text' maxLength="1" />
-                                    <input className={styles.inputs} onChange={Changehandler} onFocus={Focused} onKeyUp={Keyup} ref={ref3}  id='ref4'  name="cardNum3" type='text' maxLength="1" />
-                                    <input className={styles.inputs} onChange={Changehandler} onFocus={Focused} onKeyUp={Keyup} ref={ref4}  id='ref5'  name="cardNum4" type='text' maxLength="1" />
-                                    <input className={styles.inputs} onChange={Changehandler} onFocus={Focused} onKeyUp={Keyup} ref={ref5}  id='ref6'  name="cardNum5" type='text' maxLength="1" />
-                                    <input className={styles.inputs} onChange={Changehandler} onFocus={Focused} onKeyUp={Keyup} ref={ref6}  id='ref7'  name="cardNum6" type='text' maxLength="1" />
-                                    <input className={styles.inputs} onChange={Changehandler} onFocus={Focused} onKeyUp={Keyup} ref={ref7}  id='ref8'  name="cardNum7" type='text' maxLength="1" />
-                                    <input className={styles.inputs} onChange={Changehandler} onFocus={Focused} onKeyUp={Keyup} ref={ref8}  id='ref9'  name="cardNum8" type='text' maxLength="1" />
-                                    <input className={styles.inputs} onChange={Changehandler} onFocus={Focused} onKeyUp={Keyup} ref={ref9}  id='ref10' name="cardNum9" type='text' maxLength="1" />
-                                    <input className={styles.inputs} onChange={Changehandler} onFocus={Focused} onKeyUp={Keyup} ref={ref10} id='ref11' name="cardNum10" type='text' maxLength="1" />
-                                    <input className={styles.inputs} onChange={Changehandler} onFocus={Focused} onKeyUp={Keyup} ref={ref11} id='ref12' name="cardNum11" type='text' maxLength="1" />
-                                    <input className={styles.inputs} onChange={Changehandler} onFocus={Focused} onKeyUp={Keyup} ref={ref12} id='ref13' name="cardNum12" type='text' maxLength="1" />
-                                    <input className={styles.inputs} onChange={Changehandler} onFocus={Focused} onKeyUp={Keyup} ref={ref13} id='ref14' name="cardNum13" type='text' maxLength="1" />
-                                    <input className={styles.inputs} onChange={Changehandler} onFocus={Focused} onKeyUp={Keyup} ref={ref14} id='ref15' name="cardNum14" type='text' maxLength="1" />
-                                    <input className={styles.inputs} onChange={Changehandler} onFocus={Focused} onKeyUp={Keyup} ref={ref15} id='ref16' name="cardNum15" type='text' maxLength="1" />
-                                    <input className={styles.inputs} onChange={Changehandler} onFocus={Focused} onKeyUp={Keyup} ref={ref16} id='ref17' name="cardNum16" type='text' maxLength="1" />
+                                    <input className={styles.inputs} onChange={Changehandler} onFocus={Focused} onKeyUp={Keyup} ref={ref}   id='ref2'  name="cardNum1" inputmode="numeric" maxLength="1" type='text' pattern="[0-9]{1}" title='اینجای عدد روی کارتت رو اشتباه وارد کردی'  />
+                                    <input className={styles.inputs} onChange={Changehandler} onFocus={Focused} onKeyUp={Keyup} ref={ref2}  id='ref3'  name="cardNum2" inputmode="numeric" maxLength="1" type='text' pattern="[0-9]{1}" title='اینجای عدد روی کارتت رو اشتباه وارد کردی'  />
+                                    <input className={styles.inputs} onChange={Changehandler} onFocus={Focused} onKeyUp={Keyup} ref={ref3}  id='ref4'  name="cardNum3" inputmode="numeric" maxLength="1" type='text' pattern="[0-9]{1}" title='اینجای عدد روی کارتت رو اشتباه وارد کردی'  />
+                                    <input className={styles.inputs} onChange={Changehandler} onFocus={Focused} onKeyUp={Keyup} ref={ref4}  id='ref5'  name="cardNum4" inputmode="numeric" maxLength="1" type='text' pattern="[0-9]{1}" title='اینجای عدد روی کارتت رو اشتباه وارد کردی'  />
+                                    <input className={styles.inputs} onChange={Changehandler} onFocus={Focused} onKeyUp={Keyup} ref={ref5}  id='ref6'  name="cardNum5" inputmode="numeric" maxLength="1" type='text' pattern="[0-9]{1}" title='اینجای عدد روی کارتت رو اشتباه وارد کردی'  />
+                                    <input className={styles.inputs} onChange={Changehandler} onFocus={Focused} onKeyUp={Keyup} ref={ref6}  id='ref7'  name="cardNum6" inputmode="numeric" maxLength="1" type='text' pattern="[0-9]{1}" title='اینجای عدد روی کارتت رو اشتباه وارد کردی'  />
+                                    <input className={styles.inputs} onChange={Changehandler} onFocus={Focused} onKeyUp={Keyup} ref={ref7}  id='ref8'  name="cardNum7" inputmode="numeric" maxLength="1" type='text' pattern="[0-9]{1}" title='اینجای عدد روی کارتت رو اشتباه وارد کردی'  />
+                                    <input className={styles.inputs} onChange={Changehandler} onFocus={Focused} onKeyUp={Keyup} ref={ref8}  id='ref9'  name="cardNum8" inputmode="numeric" maxLength="1" type='text' pattern="[0-9]{1}" title='اینجای عدد روی کارتت رو اشتباه وارد کردی'  />
+                                    <input className={styles.inputs} onChange={Changehandler} onFocus={Focused} onKeyUp={Keyup} ref={ref9}  id='ref10' name="cardNum9" inputmode="numeric" maxLength="1" type='text' pattern="[0-9]{1}" title='اینجای عدد روی کارتت رو اشتباه وارد کردی'  />
+                                    <input className={styles.inputs} onChange={Changehandler} onFocus={Focused} onKeyUp={Keyup} ref={ref10} id='ref11' name="cardNum10" inputmode="numeric" maxLength="1" type='text' pattern="[0-9]{1}" title='اینجای عدد روی کارتت رو اشتباه وارد کردی'  />
+                                    <input className={styles.inputs} onChange={Changehandler} onFocus={Focused} onKeyUp={Keyup} ref={ref11} id='ref12' name="cardNum11" inputmode="numeric" maxLength="1" type='text' pattern="[0-9]{1}" title='اینجای عدد روی کارتت رو اشتباه وارد کردی'  />
+                                    <input className={styles.inputs} onChange={Changehandler} onFocus={Focused} onKeyUp={Keyup} ref={ref12} id='ref13' name="cardNum12" inputmode="numeric" maxLength="1" type='text' pattern="[0-9]{1}" title='اینجای عدد روی کارتت رو اشتباه وارد کردی'  />
+                                    <input className={styles.inputs} onChange={Changehandler} onFocus={Focused} onKeyUp={Keyup} ref={ref13} id='ref14' name="cardNum13" inputmode="numeric" maxLength="1" type='text' pattern="[0-9]{1}" title='اینجای عدد روی کارتت رو اشتباه وارد کردی'  />
+                                    <input className={styles.inputs} onChange={Changehandler} onFocus={Focused} onKeyUp={Keyup} ref={ref14} id='ref15' name="cardNum14" inputmode="numeric" maxLength="1" type='text' pattern="[0-9]{1}" title='اینجای عدد روی کارتت رو اشتباه وارد کردی'  />
+                                    <input className={styles.inputs} onChange={Changehandler} onFocus={Focused} onKeyUp={Keyup} ref={ref15} id='ref16' name="cardNum15" inputmode="numeric" maxLength="1" type='text' pattern="[0-9]{1}" title='اینجای عدد روی کارتت رو اشتباه وارد کردی'  />
+                                    <input className={styles.inputs} onChange={Changehandler} onFocus={Focused} onKeyUp={Keyup} ref={ref16} id='ref17' name="cardNum16" inputmode="numeric" maxLength="1" type='text' pattern="[0-9]{1}" title='اینجای عدد روی کارتت رو اشتباه وارد کردی'  />
                     
                     
                     </div>
@@ -312,7 +561,7 @@ const Giftcardnum = () => {
         
         <div className={styles.Group420}>
        <section>
-        {/* <div className={styles.Group153 }>چند قدم تا ساخت لحظات شیرین برای نزدیکانت با لحظه کارت</div> */}
+        {/* <div className={styles.Group153 }>چند قدم تا ساخت لحظات شیرین بروی نزدیکا با لحظه کارت</div> */}
         
         <img className={styles.picholder} src={giftpic} alt="gif picture" />
     </section>

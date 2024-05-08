@@ -3,13 +3,14 @@ import ReactDOM from 'react-dom'
 import { faTriangleExclamation,faArrowLeftLong} from '@fortawesome/free-solid-svg-icons'
 import { Link,useNavigate } from 'react-router-dom';
 import axios from "axios";
-
+import Loading from '../Loading/Loading';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import styles from "./codevorod.module.css"
  //image
  import giftpic from "../../Images/giftmaking.png"
 
 const Codevorod = () => {
+    const [load,setload]=useState(false)
     const [State,SetState]=useState( {
         isbuttondisabled: false,
         isbuttondisabled2: false
@@ -24,6 +25,15 @@ const Codevorod = () => {
 
     
     })
+    const[Value,SetValue]=useState({
+        ref2:false,
+        ref3:false,
+        ref4:false,
+        ref5:false,
+        ref6:false,
+
+    
+    })
     const[header,setHeader]=useState({
         headers:{
             'accept': '*/*',
@@ -34,6 +44,7 @@ const Codevorod = () => {
     const phone={phone:JSON.parse(localStorage.getItem('Customerphone'))}
 
     const Buttonhandler =event=>{
+        setload(true)
         SetState({...State,
             isbuttondisabled2:true
         })
@@ -43,7 +54,7 @@ const Codevorod = () => {
             if (response) {
 
                 SetErr("...درخواست کد جدید دادیم منتظر بمونید")
-                
+                setload(false)
                 
                 setTimeout(() => {        SetState({
                     isbuttondisabled2:false
@@ -56,7 +67,12 @@ const Codevorod = () => {
         SetData({
             ...Data,[event.target.name]:event.target.value
 
-        }) 
+        })
+        SetValue({
+            ...Value,[event.target.name]:true
+
+        })
+
         validate(event.target.value,Data)
         // SetCode(
         //     {
@@ -126,18 +142,65 @@ const Codevorod = () => {
     const Keyup=(event)=>{
         
         if(event.code==="Backspace" || event.keyCode=="8" ){
-            console.log(`${event.target.value}${event.target.name}`)
-            if(event.target.name=="ref3")
+            
+            if(event.target.name=="ref3" && !(Value.ref3))
             {ref.current.focus();}
             else
-            if(event.target.name=="ref4")
+            if(event.target.name=="ref3" && (Value.ref3))
+            {
+                ref2.current.focus();
+
+                SetValue({
+                    ...Value,[event.target.name]:false
+        
+                })  
+            }
+            else
+            if(event.target.name=="ref4" && !(Value.ref4))
             {ref2.current.focus();}
             else
-            if(event.target.name=="ref5")
+            if(event.target.name=="ref4" && (Value.ref4))
+            {
+                ref3.current.focus();
+                SetValue({
+                    ...Value,[event.target.name]:false
+        
+                })  }
+            else
+            if(event.target.name=="ref5" && !(Value.ref5))
             {ref3.current.focus();}
             else
-            if(event.target.name=="ref6")
-            {ref4.current.focus();}
+            if(event.target.name=="ref5" && (Value.ref5))
+            {
+                ref4.current.focus();
+                SetValue({
+                    ...Value,[event.target.name]:false
+        
+                })    
+            }
+            else
+            if(event.target.name=="ref6" && !(Value.ref6))
+            {
+                ref4.current.focus();
+                console.log(Data)
+            }
+            else
+            if(event.target.name=="ref6" && (Value.ref6))
+            { 
+                ref5.current.focus();
+                    SetValue({
+                        ...Value,[event.target.name]:false
+            
+                    })        
+            }
+            // if(event.target.name=="ref4")
+            // {ref2.current.focus();}
+            // else
+            // if(event.target.name=="ref5")
+            // {ref3.current.focus();}
+            // else
+            // if(event.target.name=="ref6")
+            // {ref4.current.focus();}
         }
         else{
             
@@ -190,6 +253,7 @@ const Codevorod = () => {
                     setTimeout(() => {        SetState({
                         isbuttondisabled:false
                     })}, 3000);
+                    
                     console.log("post shod")
                     console.log(response)
                     // localStorage.setItem('customerData', JSON.stringify(response.data.operator))
@@ -218,7 +282,7 @@ const Codevorod = () => {
 
 
     <div className={styles.login_seller}>
-
+        {load?<Loading/>:""}
 
         <div className={styles.left}>
 

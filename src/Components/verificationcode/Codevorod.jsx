@@ -3,13 +3,14 @@ import ReactDOM from 'react-dom'
 import { faTriangleExclamation,faArrowLeftLong} from '@fortawesome/free-solid-svg-icons'
 import { Link,useNavigate } from 'react-router-dom';
 import axios from "axios";
-
+import Loading from '../Loading/Loading';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import styles from "./codevorod.module.css"
  //image
  import giftpic from "../../Images/giftmaking.png"
 
     const Codevorod = () => {
+        const [load,setload]=useState(false)
         const [State,SetState]=useState( {
             isbuttondisabled: false,
             isbuttondisabled2: false
@@ -24,6 +25,15 @@ import styles from "./codevorod.module.css"
 
             
             })
+            const[Value,SetValue]=useState({
+                ref2:false,
+                ref3:false,
+                ref4:false,
+                ref5:false,
+                ref6:false,
+        
+            
+            })
             const[header,setHeader]=useState({
                 headers:{
                     'accept': '*/*',
@@ -34,6 +44,7 @@ import styles from "./codevorod.module.css"
             const phone={phone:JSON.parse(localStorage.getItem('Operatorphone'))}
 
             const Buttonhandler =event=>{
+                setload(true)
                 SetState({...State,
                     isbuttondisabled2:true
                 })
@@ -41,13 +52,13 @@ import styles from "./codevorod.module.css"
                 .then((response)=> {
                     
                     if (response) {
+
                         SetErr("...درخواست کد جدید دادیم منتظر بمونید")
-                
-                
+                        setload(false)
+                        
                         setTimeout(() => {        SetState({
                             isbuttondisabled2:false
                         })}, 30000);
-                        SetErr("درخواست کد جدید دادیم منتظر بمونید")
                     }
                 })
             }
@@ -56,7 +67,12 @@ import styles from "./codevorod.module.css"
                 SetData({
                     ...Data,[event.target.name]:event.target.value
 
+                })
+                SetValue({
+                    ...Value,[event.target.name]:true
+        
                 }) 
+
                 validate(event.target.value,Data)
                 // SetCode(
                 //     {
@@ -77,7 +93,7 @@ import styles from "./codevorod.module.css"
 
             useEffect(() => {
                 
-                if (!localStorage.getItem("phone")) {
+                if (!localStorage.getItem("Operatorphone")) {
                     Navigate("/seller");
                     
                     
@@ -125,29 +141,87 @@ import styles from "./codevorod.module.css"
             const ref6 = useRef(null);
 
 
-            const Keyup=(event)=>{
-                if(event.code==="Backspace"){
-                }
-                else{
-                    
-                if(event.target.name=="ref2")
-                {ref2.current.focus();}
-                else
-                if(event.target.name=="ref3")
-                {ref3.current.focus();}
-                else
-                if(event.target.name=="ref4")
-                {ref4.current.focus();}
-                else
-                if(event.target.name=="ref5")
-                {ref5.current.focus();}
-
-                }
-
+   const Keyup=(event)=>{
+        
+        if(event.code==="Backspace" || event.keyCode=="8" ){
+            
+            if(event.target.name=="ref3" && !(Value.ref3))
+            {ref.current.focus();}
+            else
+            if(event.target.name=="ref3" && (Value.ref3))
+            {
+                ref2.current.focus();
                 
-                // if(event.target.name=="ref6")
-                // {ref6.current.focus();}
+                SetValue({
+                    ...Value,[event.target.name]:false
+        
+                })  
             }
+            else
+            if(event.target.name=="ref4" && !(Value.ref4))
+            {ref2.current.focus();}
+            else
+            if(event.target.name=="ref4" && (Value.ref4))
+            {
+                ref3.current.focus();
+                SetValue({
+                    ...Value,[event.target.name]:false
+        
+                })  }
+            else
+            if(event.target.name=="ref5" && !(Value.ref5))
+            {ref3.current.focus();}
+            else
+            if(event.target.name=="ref5" && (Value.ref5))
+            {
+                ref4.current.focus();
+                SetValue({
+                    ...Value,[event.target.name]:false
+        
+                })    
+            }
+            else
+            if(event.target.name=="ref6" && !(Value.ref6))
+            {
+                ref4.current.focus();
+                console.log(Data)
+            }
+            else
+            if(event.target.name=="ref6" && (Value.ref6))
+            { 
+                ref5.current.focus();
+                    SetValue({
+                        ...Value,[event.target.name]:false
+            
+                    })        
+            }
+            // if(event.target.name=="ref4")
+            // {ref2.current.focus();}
+            // else
+            // if(event.target.name=="ref5")
+            // {ref3.current.focus();}
+            // else
+            // if(event.target.name=="ref6")
+            // {ref4.current.focus();}
+        }
+        else{
+            
+        if(event.target.name=="ref2")
+        {ref2.current.focus();}
+        else
+        if(event.target.name=="ref3")
+        {ref3.current.focus();}
+        else
+        if(event.target.name=="ref4")
+        {ref4.current.focus();}
+        else
+        if(event.target.name=="ref5")
+        {ref5.current.focus();}
+
+        }
+        // if(event.target.name=="ref6")
+        // {ref6.current.focus();}
+    }
             useEffect(()=>{
                 SetCode(
                     {
@@ -177,7 +251,7 @@ import styles from "./codevorod.module.css"
                         if (response) {
                             setTimeout(() => {        SetState({
                                 isbuttondisabled:false
-                            })}, 30000);
+                            })}, 3000);
 
                             console.log("post shod")
                             console.log(response)
@@ -190,6 +264,9 @@ import styles from "./codevorod.module.css"
                     })
                     .catch((errors)=> {
                         console.log(errors);
+                        setTimeout(() => {        SetState({
+                            isbuttondisabled:false
+                        })}, 1000);
                         // SetErr(errors.response.data.message)
                         console.log(err);
             
@@ -205,7 +282,7 @@ import styles from "./codevorod.module.css"
 
 
             <div className={styles.login_seller}>
-
+                {load?<Loading/>:""}
 
                 <div className={styles.left}>
 
@@ -232,12 +309,12 @@ import styles from "./codevorod.module.css"
                                     
                                             
                                         <div className={styles.input} >
-                                            <input className={styles.input1} onChange={Changehandler} onKeyUp={Keyup} ref={ref} name='ref2' id='input1' type='text' maxLength="1" />
-                                            <input className={styles.input2} onChange={Changehandler} onKeyUp={Keyup} ref={ref2} name='ref3' id='input2' type='text' maxLength="1" />
-                                            <input className={styles.input3} onChange={Changehandler} onKeyUp={Keyup} ref={ref3} id='input3' name='ref4' type='text' maxLength="1" />
-                                            <input className={styles.input4} onChange={Changehandler} onKeyUp={Keyup} ref={ref4} id='input4' name='ref5' type='text' maxLength="1" />
-                                            <input className={styles.input5} onChange={Changehandler} onKeyUp={Keyup} ref={ref5} id='input5' name='ref6' type='text' maxLength="1" />
-                                        </div>
+                                    <input className={styles.input1} onChange={Changehandler} onKeyUp={Keyup} ref={ref}  id='input1' name='ref2' inputmode="numeric" maxLength="1" type='text' pattern="[0-9]{1}" title='عدد لاتین در رمز یکبار مصرف را وارد کنید' />
+                                    <input className={styles.input2} onChange={Changehandler} onKeyUp={Keyup} ref={ref2} id='input2' name='ref3' inputmode="numeric" maxLength="1" type='text' pattern="[0-9]{1}" title='عدد لاتین در رمز یکبار مصرف را وارد کنید'  />
+                                    <input className={styles.input3} onChange={Changehandler} onKeyUp={Keyup} ref={ref3} id='input3' name='ref4' inputmode="numeric" maxLength="1" type='text' pattern="[0-9]{1}" title='عدد لاتین در رمز یکبار مصرف را وارد کنید' />
+                                    <input className={styles.input4} onChange={Changehandler} onKeyUp={Keyup} ref={ref4} id='input4' name='ref5' inputmode="numeric" maxLength="1" type='text' pattern="[0-9]{1}" title='عدد لاتین در رمز یکبار مصرف را وارد کنید' />
+                                    <input className={styles.input5} onChange={Changehandler} onKeyUp={Keyup} ref={ref5} id='input5' name='ref6' inputmode="numeric" maxLength="1" type='text' pattern="[0-9]{1}" title='عدد لاتین در رمز یکبار مصرف را وارد کنید' />
+                                </div>
 
                                     {/*  */}
                                     {/*  */}
