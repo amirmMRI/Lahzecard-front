@@ -191,7 +191,7 @@ nav {
 
 @media (max-width: 750px) {
     nav {
-        margin-top: 2%;
+        /* margin-top: 2%; */
     }
     .HanMenu {
         width: 10%;

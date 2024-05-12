@@ -177,7 +177,7 @@
     }
 }
 
-@media (max-width: 420px) {
+@media (max-width: 440px) {
     .Cards_Container {
         height: 135vh;
     }

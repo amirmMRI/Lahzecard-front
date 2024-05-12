@@ -114,7 +114,7 @@
 }
 
 .phone_img {
-    width: 450px;
+    width: 435px;
 }
 
 .phone_img_deactive {
@@ -159,14 +159,12 @@
 }
 
 @media (max-width: 720px) {
-
     .Qanda_Container {
         display: flex;
         flex-direction: column-reverse;
         justify-content: center;
         align-items: center;
     }
-
     .qanda_sec {
         width: 70%;
         height: 100%;
@@ -176,11 +174,9 @@
         /* justify-content: center; */
         align-items: center;
     }
-
 }
 
 @media (max-width: 420px) {
-
     .qanda_sec {
         width: 100%;
         height: 100%;
@@ -190,9 +186,7 @@
         /* justify-content: center; */
         align-items: center;
     }
-
     .phone_img {
         width: 380px;
     }
-
 }

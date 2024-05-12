@@ -234,6 +234,7 @@ const Codevorod = () => {
         SetState({...State,
             isbuttondisabled:true
         })
+        setload(true)
         
         if(Code.code.length < 5)
         {    console.log(Code)

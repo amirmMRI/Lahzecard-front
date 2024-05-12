@@ -331,7 +331,7 @@ input:focus {
     }
 }
 
-@media screen and (max-width:420px) {
+@media screen and (max-width:440px) {
     .Group420>section {
         z-index: 20;
         width: 100%;
