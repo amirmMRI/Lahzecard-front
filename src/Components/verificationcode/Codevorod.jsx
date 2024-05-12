@@ -110,7 +110,7 @@ import styles from "./codevorod.module.css"
                     {
                         if(isNaN(event)){
 
-                            error.phone=" ! فرمت و تعداد کد را درست نیست" 
+                            error.phone=" ! فرمت و تعداد کد درست نیست" 
                         }else
                         {error.phone=" ! کد را تکمیل کنید"}
                     }
@@ -236,6 +236,8 @@ import styles from "./codevorod.module.css"
                 SetState({...State,
                     isbuttondisabled:true
                 })
+                setload(true);
+                
 
                 if(Code.code.length < 5)
                 {    console.log(Code)
@@ -247,9 +249,8 @@ import styles from "./codevorod.module.css"
                     console.log(Code)
                     axios.post("https://api.lahzecard.com/api/operator/checkOtp",Code,header)
                     .then((response)=> {
-                        
                         if (response) {
-                            setTimeout(() => {        SetState({
+                            setTimeout(() => {        SetState({...State,
                                 isbuttondisabled:false
                             })}, 3000);
 
@@ -263,13 +264,24 @@ import styles from "./codevorod.module.css"
                         }
                     })
                     .catch((errors)=> {
-                        console.log(errors);
-                        setTimeout(() => {        SetState({
+                        if (errors.code=="ERR_NETWORK") {
+                            setTimeout(() => {        SetState({
+                                isbuttondisabled:false
+                            })}, 2000);
+                            setload(false)
+                            console.log(errors);
+                            SetErr(" !کد اشتباه است")
+                            
+            
+                        }else
+                        {console.log(errors);
+                        setTimeout(() => {        SetState({...State,
                             isbuttondisabled:false
                         })}, 1000);
+                        setload(false)
                         // SetErr(errors.response.data.message)
-                        console.log(err);
-            
+                        console.log(errors.code);
+                    }
             
             
                     })

@@ -41,27 +41,25 @@
 
 .info_pic {
     margin: 5% 0;
+    width: 80%;
 }
 
 .info_pic_for_phone {
     display: none;
+    width: 80%;
 }
 
 @media (max-width: 720px) {
-
     .info_pic {
         display: none;
     }
-
     .info_pic_for_phone {
         display: block;
         margin: 5% 0;
     }
-
 }
 
 @media (max-width: 420px) {
-
     .main_qnada_sec {
         width: 100%;
         margin-top: 0;
@@ -74,30 +72,24 @@
         align-items: center;
         background-color: #AC91B64A;
     }
-
     .AboutUs_info_sec {
         width: 90%;
         margin-top: 5%;
     }
-
     .AboutUs_info_sec h1 {
         font-size: 20px;
         font-weight: bold;
     }
-
     .AboutUs_info_sec p {
         font-size: 14px;
         font-weight: 400;
         padding: 0 2%;
     }
-
     .info_pic {
         display: none;
     }
-
     .info_pic_for_phone {
         display: block;
         margin: 5% 0;
     }
-
 }

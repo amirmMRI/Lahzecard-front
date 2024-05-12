@@ -262,13 +262,23 @@ const Codevorod = () => {
                 }
             })
             .catch((errors)=> {
-                console.log(errors);
+                if (errors.code=="ERR_NETWORK") {
+                    setTimeout(() => {        SetState({
+                        isbuttondisabled:false
+                    })}, 2000);
+                    setload(false)
+                    console.log(errors);
+                    SetErr(" !کد اشتباه است")
+    
+                }else
+                {console.log(errors);
                 setTimeout(() => {        SetState({
                     isbuttondisabled:false
                 })}, 1000);
+                setload(false)
                 // SetErr(errors.response.data.message)
                 console.log(err);
-    
+                }
     
     
             })
