@@ -34,12 +34,18 @@
     -ms-user-select: none;
 }
 
+.Hologram_img {
+    width: 180px;
+    height: 210px;
+    margin-right: 20px;
+}
+
 @media (max-width: 720px) {
 
     .Trophies_Container {
         padding-top: 10%;
     }
-    
+
 
     .header_pic {
         width: 380px;
@@ -63,7 +69,7 @@
         -moz-user-select: none;
         -webkit-user-select: none;
         -ms-user-select: none;
-    }   
+    }
 
 }
 
@@ -73,7 +79,7 @@
         padding-top: 20%;
         height: 50vh;
     }
-    
+
 
     .header_pic {
         width: 300px;
@@ -97,6 +103,6 @@
         -moz-user-select: none;
         -webkit-user-select: none;
         -ms-user-select: none;
-    }   
+    }
 
 }

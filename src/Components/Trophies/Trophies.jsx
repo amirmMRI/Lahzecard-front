@@ -1,29 +1,37 @@
-import React from 'react';
+import React from "react";
 
 // Images
-import trophies from '../../Images/trophies.png'
-import roshd from '../../Images/roshd.png'
-import samane from '../../Images/samane.png'
-import enamad from '../../Images/enamad.png'
+import trophies from "../../Images/trophies.png";
+import roshd from "../../Images/roshd.png";
+import Hologram from "../../Images/Hologram.png";
+import samane from "../../Images/samane.png";
+import enamad from "../../Images/enamad.png";
 
 // Styles
-import styles from './Trophies.module.css'
+import styles from "./Trophies.module.css";
 
 const Trophies = () => {
-
-    return ( 
+    return (
         <div className={styles.Trophies_Container}>
-           <img src={trophies} alt="example card" className={styles.header_pic}/>
-           <section className={styles.pid_sec}>
+            <img
+                src={trophies}
+                alt="example card"
+                className={styles.header_pic}
+            />
+            <section className={styles.pid_sec}>
                 <a href="https://ictu.qazvin.iau.ir/">
-                
                     <img src={roshd} alt="roshd org logo" />
                 </a>
-               {/* <img src={enamad} alt="enamad logo" /> */}
-               {/* <img src={samane} alt="sabt org logo" /> */}
-           </section>
+                <img
+                    className={styles.Hologram_img}
+                    src={Hologram}
+                    alt="roshd org logo"
+                />
+                {/* <img src={enamad} alt="enamad logo" /> */}
+                {/* <img src={samane} alt="sabt org logo" /> */}
+            </section>
         </div>
-     );
-}
- 
+    );
+};
+
 export default Trophies;
