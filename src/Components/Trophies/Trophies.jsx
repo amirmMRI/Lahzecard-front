@@ -22,7 +22,7 @@ const Trophies = () => {
                 <a href="https://ictu.qazvin.iau.ir/">
                     <img src={roshd} alt="roshd org logo" />
                 </a>
-                <a referrerpolicy='origin' target='_blank' href='https://trustseal.enamad.ir/?id=745941&Code=zR1UHy9DrBqxcXyWa9wEk0KVuQwt4Ljv'><img referrerpolicy='origin' src='https://trustseal.enamad.ir/logo.aspx?id=745941&Code=zR1UHy9DrBqxcXyWa9wEk0KVuQwt4Ljv' alt='' style={{cursor:pointer}} code='zR1UHy9DrBqxcXyWa9wEk0KVuQwt4Ljv'/></a>
+                <a referrerpolicy='origin' target='_blank' href='https://trustseal.enamad.ir/?id=493207&Code=zR1UHy9DrBqxcXyWa9wEk0KVuQwt4Ljv'><img referrerpolicy='origin' src='https://trustseal.enamad.ir/logo.aspx?id=493207&Code=zR1UHy9DrBqxcXyWa9wEk0KVuQwt4Ljv' alt='' style='cursor:pointer' code='zR1UHy9DrBqxcXyWa9wEk0KVuQwt4Ljv'/></a>                
                 <img
                     className={styles.Hologram_img}
                     src={Hologram}
