@@ -18,6 +18,7 @@ import attention from "../../../../Images/attantion.png";
 import close from "../../../../Images/close.png";
 import tic from "../../../../Images/tic.png";
 import greentic from "../../../../Images/green_tic.png";
+import Num2persian from "num2persian";
 
 const SellerPanel = () => {
     // Gathering data
@@ -29,6 +30,7 @@ const SellerPanel = () => {
     const partnerLogo = localCN.contractParties.logoAddress;
     const partnerPhone = localCN.contractParties.phone;
     const partnerId = localCN.contractParties.id;
+    const [amountInPersian, setAmountInPersian] = useState(false);
     const [load, setload] = useState(false);
 
     // button handlers
@@ -68,6 +70,10 @@ const SellerPanel = () => {
     });
 
     const changeHandler = (event) => {
+        if (event.target.name === "primaryAmount") {
+            setAmountInPersian(Num2persian(event.target.value));
+            console.log(amountInPersian);
+        }
         setData({
             ...data,
             [event.target.name]: event.target.value,
@@ -105,6 +111,7 @@ const SellerPanel = () => {
         event.preventDefault();
         const CreateCard_Data = data;
         setload(true);
+        console.log("load before");
         setButtonDisable(true);
         axios
             .post(
@@ -114,6 +121,7 @@ const SellerPanel = () => {
             )
             .then((response) => {
                 setload(false);
+                console.log("load then");
                 setWelcomeMassage(true);
                 AlertHandler();
                 console.log(response);
@@ -122,6 +130,7 @@ const SellerPanel = () => {
 
             .catch((errors) => {
                 setload(false);
+                console.log("load catch");
                 console.log(errors);
                 setIsError_1(errors.response.data.message);
                 setButtonDisable(false);
@@ -211,6 +220,8 @@ const SellerPanel = () => {
                                 <input
                                     className={styles.formInput}
                                     type="text"
+                                    pattern="[A-Za-z]+"
+                                    title="English words only"
                                     name="user_name"
                                     value={data.user_name}
                                     onChange={changeHandler}
@@ -220,6 +231,7 @@ const SellerPanel = () => {
                                 <p>شماره تلفن</p>
                                 <input
                                     className={styles.formInput}
+                                    placeholder="تنها عدد وارد کنید"
                                     type="number"
                                     name="user_phone"
                                     value={data.user_phone}
@@ -241,13 +253,20 @@ const SellerPanel = () => {
                                 <p>مبلغ شارژ</p>
                                 <input
                                     className={styles.formInput}
-                                    type="number"
                                     name="primaryAmount"
+                                    placeholder="تنها عدد وارد کنید"
+                                    type="number"
                                     value={data.primaryAmount}
                                     onChange={changeHandler}
                                 />
+                                {/* removed arrows in input by adding chrome and firefox css direct codes in the css file. */}
                                 <span>ریال</span>
                             </section>
+                            {amountInPersian && (
+                                <span className={styles.amountInPersianSpan}>
+                                    {amountInPersian}
+                                </span>
+                            )}
                             <section className={styles.err_sec}>
                                 <p>{isError_1}</p>
                             </section>
