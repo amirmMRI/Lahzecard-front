@@ -22,7 +22,7 @@ import Num2persian from "num2persian";
 
 const SellerPanel = () => {
     // Gathering data
-    const jwtToken = localStorage.getItem("OperatorToken");
+    const jwtToken = JSON.parse(localStorage.getItem("OperatorToken"));
     const localCN = JSON.parse(localStorage.getItem("OperatorData"));
     const partnerName = localCN.contractParties.name;
     const partnerAddress = localCN.contractParties.address;
@@ -72,12 +72,28 @@ const SellerPanel = () => {
     const changeHandler = (event) => {
         if (event.target.name === "primaryAmount") {
             setAmountInPersian(Num2persian(event.target.value));
-            console.log(amountInPersian);
+            setData({
+                ...data,
+                [event.target.name]: toString(event.target.value),
+            });
+        }
+        if (event.target.name === "user_phone") {
+            setData({
+                ...data,
+                [event.target.name]: toString(event.target.value),
+            });
+        }
+        if (event.target.name === "cardNumber") {
+            setData({
+                ...data,
+                [event.target.name]: toString(event.target.value),
+            });
         }
         setData({
             ...data,
             [event.target.name]: event.target.value,
         });
+        console.log(data);
     };
 
     // Alert message state
