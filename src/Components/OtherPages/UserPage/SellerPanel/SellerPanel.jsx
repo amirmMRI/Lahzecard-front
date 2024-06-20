@@ -237,8 +237,10 @@ const SellerPanel = () => {
                                     className={styles.formInput}
                                     type="text"
                                     pattern="[A-Za-z]+"
-                                    title="English words only"
+                                    maxlength="21"
+                                    title="از حروف انگلیسی استفاده کنید"
                                     name="user_name"
+                                    placeholder="از حروف انگلیسی استفاده کنید"
                                     value={data.user_name}
                                     onChange={changeHandler}
                                 />
