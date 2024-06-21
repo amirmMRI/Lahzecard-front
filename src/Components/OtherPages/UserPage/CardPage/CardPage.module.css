@@ -26,6 +26,7 @@
 
 .cardexampleforuser {
     margin-bottom: 10%;
+    width: 100%;
 }
 
 .leftover_sec {
@@ -64,7 +65,7 @@
     width: 60%;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
 }
 
@@ -78,6 +79,7 @@
 
 .info_sec div p {
     font-weight: bold;
+    /* font-size: 1rem; */
 }
 
 .left_sec {
@@ -102,6 +104,7 @@
 .activation_info_div_sec_img {
     width: 10%;
     height: 100%;
+    margin-left: 1rem;
 }
 
 .activation_info_div_sec_img img {
@@ -114,7 +117,7 @@
 .activation_info_div_sec_info {
     width: 70%;
     height: 100%;
-    margin-right: 2%;
+    margin-right: 5%;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -269,28 +272,23 @@
         justify-content: center;
         align-items: center;
     }
-
     .right_sec {
         width: 80%;
         margin-bottom: 5%;
     }
-
     .left_sec {
         width: 80%;
         margin-bottom: 5%;
     }
-
     .activation_info_div {
         width: 100%;
         height: 100%;
         flex-direction: column;
         justify-content: center;
     }
-
     .activation_info_div_sec_img {
         width: 50%;
     }
-
     .activation_info_div_sec_info {
         width: 100%;
         height: 100%;
@@ -300,7 +298,6 @@
         justify-content: center;
         align-items: center;
     }
-
     .btn_sec div p {
         font-size: 14px;
     }

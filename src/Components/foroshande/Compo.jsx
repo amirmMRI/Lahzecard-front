@@ -79,7 +79,8 @@ const Compo = () => {
                 })}, 1000);
                 setload(false)
                 console.log(response);
-                SetErr(response.data.message)
+                // SetErr(response.data.message)
+                SetErr("!این شماره تلفن ثبت نشده")
                 console.log(err);
                 console.log("hi");
 

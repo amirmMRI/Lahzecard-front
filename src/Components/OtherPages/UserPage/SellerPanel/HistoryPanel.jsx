@@ -47,14 +47,12 @@ const HistoryPanel = () => {
         console.log(data);
     };
 
-    const jwtToken = localStorage.getItem("OperatorToken");
+    const jwtToken =JSON.parse(localStorage.getItem("OperatorToken"));
     const axiosConficPost = {
         headers: {
             "Content-type": "application/x-www-form-urlencoded",
-            Authorization: "Bearer " + jwtToken,
-            "Access-Control-Allow-Origin": "*",
-            "Access-Control-Allow-Headers": "*",
-            "Access-Control-Allow-Methods": "*",
+            "Authorization": "Bearer " + jwtToken,
+            
         },
     };
 

@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import { Link } from "react-router-dom";
 import Loading from "../../../Loading/Loading";
-
+//بعد از 12 ساعت بپره بیرون رو باید یه یوز افکت بزنم
 // Style
 import styles from "./Sellerpanel.module.css";
 
@@ -21,7 +21,7 @@ import greentic from "../../../../Images/green_tic.png";
 
 const SellerPanel = () => {
     // Gathering data
-    const jwtToken = localStorage.getItem("OperatorToken");
+    const jwtToken = JSON.parse(localStorage.getItem("OperatorToken"));
     const localCN = JSON.parse(localStorage.getItem("OperatorData"));
     const partnerName = localCN.contractParties.name;
     const partnerAddress = localCN.contractParties.address;
@@ -89,9 +89,10 @@ const SellerPanel = () => {
 
     const axiosConficPost = {
         headers: {
-            accept: "*/*",
-            Authorization: "Bearer " + jwtToken,
-            "Content-Type": "application/x-www-form-urlencoded",
+            'accept': '*/*',
+            'Content-Type': 'application/x-www-form-urlencoded',
+            Authorization: "Bearer " +jwtToken,
+            
 
             // "origin": "*",
             // "Access-Control-Allow-Origin": "*",
@@ -102,17 +103,18 @@ const SellerPanel = () => {
     const [isError_1, setIsError_1] = useState("");
 
     const submitHandler = (event) => {
+        console.log("Bearer " +jwtToken);
         event.preventDefault();
         const CreateCard_Data = data;
         setload(true);
         setButtonDisable(true);
-        axios
-            .post(
+        axios.post(
                 "https://api.lahzecard.com/api/card",
                 CreateCard_Data,
                 axiosConficPost
             )
             .then((response) => {
+                console.log(axiosConficPost)
                 setload(false);
                 setWelcomeMassage(true);
                 AlertHandler();

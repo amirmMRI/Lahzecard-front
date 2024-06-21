@@ -2,7 +2,8 @@ import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import axios from 'axios';
 import { AudioRecorder } from 'react-audio-voice-recorder';
-
+import { CircularProgressbar, buildStyles } from 'react-circular-progressbar';
+import 'react-circular-progressbar/dist/styles.css';
 // Styles
 import styles from './CardPage.module.css'
 
@@ -14,10 +15,52 @@ import website from '../../../../Images/website.png'
 import map from '../../../../Images/map.png'
 import attetiongrey from '../../../../Images/attentiongrey.png'
 import trash from '../../../../Images/trash.png'
-import cardexample from '../../../../Images/cardexampleforuser.png'
+import cardexample from '../../../../Images/JustCard.png'
 
 const CardPage = () => {
+    const Navigate = useNavigate();
+//show circular progress
+    const CircularProgress = ({ value }) => {
+    
 
+    
+    if(value <= 50){
+        return (
+            <div style={{ width: '100px', height: '100px' }}>
+            <CircularProgressbar
+                value={value}
+                text={`${value}%`}
+            
+                    styles={buildStyles({
+                        textColor: '#111111',
+                        pathColor: 'red',
+                        trailColor: '#d6d6d6'
+                    })}
+                
+
+            /></div>
+            )
+        }
+      else{
+        return(
+            <div style={{ width: '100px', height: '100px' }}>
+            <CircularProgressbar
+            value={value}
+            text={`${value}%`}
+        
+                styles={buildStyles({
+                    textColor: '#111111',
+                    pathColor: 'blue',
+                    trailColor: '#d6d6d6'
+                })}
+            
+
+        /></div>
+      )}
+            
+    
+  
+};
     // Getting card info
     const axiosConficGet = {
         headers: {
@@ -37,12 +80,19 @@ const CardPage = () => {
     const [cardVoice, setCardVoice] = useState()
     const [cardAmount, setCardAmount] = useState()
 
+
     useEffect(()=> {
+        if (!localStorage.getItem("GiftData")) {
+            Navigate("/customer");
+            alert('شما فعلا مجوز ورود به این صفحه رو ندارید')
+            
+            
+        }else{
         const getCardInfo = (event) => {
             axios.get(`https://api.lahzecard.com/api/user/NotFilter${localCN.slice(1, -1)}`, axiosConficGet)
                 .then((response)=> {
                     if (response) {
-                        // console.log(response);
+                        console.log(response);
                         setPartnerName(response.data.cardInfo.contractParties.name)
                         setPartnerNumber(response.data.cardInfo.contractParties.phone)
                         setPartnerInsta(response.data.cardInfo.contractParties.instaAddress)
@@ -50,6 +100,9 @@ const CardPage = () => {
                         setCardText(response.data.cardInfo.text)
                         setCardVoice(response.data.cardInfo.voice)
                         setCardAmount(response.data.cardInfo.primaryAmount)
+                        setTimeout(() => {   
+                            localStorage.clear("GiftData");    
+                        }, 3600000);
                     }
                 })
     
@@ -62,26 +115,31 @@ const CardPage = () => {
         }
     
         getCardInfo();
-
-    }, [])
+    }
+    
+}, [])
     
     return ( 
         <div className={styles.CardPage_Container}>
             <section className={styles.right_sec}>
                 <img src={cardexample} alt="user card example" className={styles.cardexampleforuser}/>
-                <section className={styles.leftover_sec}>
+                {/* <section className={styles.leftover_sec}>
                     <section className={styles.leftover_percent_sec}>
                         <p>25%</p>
                     </section>
-                </section>
+                </section> */}
+
+                {/* <CircularProgress value={50} /> */}
+
+
                 <section className={styles.info_sec}>
-                    <div>
+                    {/* <div>
                         <p>موجودیه اولیه:</p>
                         {cardAmount && <p>{cardAmount} ریال</p>}
-                    </div>
+                    </div> */}
                     <div>
-                        <p>موجودیه باقی مانده:</p>
-                        <p>125.000.000 ریال</p>
+                        <p>موجودی کارت:</p>
+                        {cardAmount}
                     </div>
                 </section>
             </section>
