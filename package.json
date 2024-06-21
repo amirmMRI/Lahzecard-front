@@ -13,6 +13,7 @@
     "@testing-library/user-event": "^13.5.0",
     "axios": "^1.2.2",
     "cors": "^2.8.5",
+    "num2persian": "^3.2.2",
     "react": "^18.2.0",
     "react-audio-voice-recorder": "^2.1.2",
     "react-circular-progressbar": "^2.1.0",
