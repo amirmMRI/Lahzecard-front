@@ -1,66 +1,56 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import axios from 'axios';
-import { AudioRecorder } from 'react-audio-voice-recorder';
-import { CircularProgressbar, buildStyles } from 'react-circular-progressbar';
-import 'react-circular-progressbar/dist/styles.css';
+import axios from "axios";
+import { AudioRecorder } from "react-audio-voice-recorder";
+import { CircularProgressbar, buildStyles } from "react-circular-progressbar";
+import "react-circular-progressbar/dist/styles.css";
 // Styles
-import styles from './CardPage.module.css'
+import styles from "./CardPage.module.css";
 
 // Images
-import userlogo from '../../../../Images/partner2.png'
-import instagram from '../../../../Images/instagram.png'
-import phone from '../../../../Images/phone.png'
-import website from '../../../../Images/website.png'
-import map from '../../../../Images/map.png'
-import attetiongrey from '../../../../Images/attentiongrey.png'
-import trash from '../../../../Images/trash.png'
-import cardexample from '../../../../Images/JustCard.png'
+import userlogo from "../../../../Images/partner2.png";
+import instagram from "../../../../Images/instagram.png";
+import phone from "../../../../Images/phone.png";
+import website from "../../../../Images/website.png";
+import map from "../../../../Images/map.png";
+import attetiongrey from "../../../../Images/attentiongrey.png";
+import trash from "../../../../Images/trash.png";
+import cardexample from "../../../../Images/JustCard.png";
 
 const CardPage = () => {
     const Navigate = useNavigate();
-//show circular progress
+    //show circular progress
     const CircularProgress = ({ value }) => {
-    
-
-    
-    if(value <= 50){
-        return (
-            <div style={{ width: '100px', height: '100px' }}>
-            <CircularProgressbar
-                value={value}
-                text={`${value}%`}
-            
-                    styles={buildStyles({
-                        textColor: '#111111',
-                        pathColor: 'red',
-                        trailColor: '#d6d6d6'
-                    })}
-                
-
-            /></div>
-            )
+        if (value <= 50) {
+            return (
+                <div style={{ width: "100px", height: "100px" }}>
+                    <CircularProgressbar
+                        value={value}
+                        text={`${value}%`}
+                        styles={buildStyles({
+                            textColor: "#111111",
+                            pathColor: "red",
+                            trailColor: "#d6d6d6",
+                        })}
+                    />
+                </div>
+            );
+        } else {
+            return (
+                <div style={{ width: "100px", height: "100px" }}>
+                    <CircularProgressbar
+                        value={value}
+                        text={`${value}%`}
+                        styles={buildStyles({
+                            textColor: "#111111",
+                            pathColor: "blue",
+                            trailColor: "#d6d6d6",
+                        })}
+                    />
+                </div>
+            );
         }
-      else{
-        return(
-            <div style={{ width: '100px', height: '100px' }}>
-            <CircularProgressbar
-            value={value}
-            text={`${value}%`}
-        
-                styles={buildStyles({
-                    textColor: '#111111',
-                    pathColor: 'blue',
-                    trailColor: '#d6d6d6'
-                })}
-            
-
-        /></div>
-      )}
-            
-    
-  
-};
+    };
     // Getting card info
     const axiosConficGet = {
         headers: {
@@ -71,58 +61,80 @@ const CardPage = () => {
         },
     };
 
-    const localCN = localStorage.getItem('GiftData');
-    const [partnerName, setPartnerName] = useState()
-    const [partnerNumber, setPartnerNumber] = useState()
-    const [partnerInsta, setPartnerInsta] = useState()
-    const [partnerLogo, setPartnerLogo] = useState()
-    const [cardText, setCardText] = useState()
-    const [cardVoice, setCardVoice] = useState()
-    const [cardAmount, setCardAmount] = useState()
+    const localCN = localStorage.getItem("GiftData");
+    const [partnerName, setPartnerName] = useState();
+    const [partnerNumber, setPartnerNumber] = useState();
+    const [partnerInsta, setPartnerInsta] = useState();
+    const [partnerLogo, setPartnerLogo] = useState();
+    const [partnerWeb, setPartnerWeb] = useState();
+    const [cardText, setCardText] = useState();
+    const [cardVoice, setCardVoice] = useState();
+    const [cardAmount, setCardAmount] = useState();
 
-
-    useEffect(()=> {
+    useEffect(() => {
         if (!localStorage.getItem("GiftData")) {
             Navigate("/customer");
-            alert('شما فعلا مجوز ورود به این صفحه رو ندارید')
-            
-            
-        }else{
-        const getCardInfo = (event) => {
-            axios.get(`https://api.lahzecard.com/api/user/NotFilter${localCN.slice(1, -1)}`, axiosConficGet)
-                .then((response)=> {
-                    if (response) {
-                        console.log(response);
-                        setPartnerName(response.data.cardInfo.contractParties.name)
-                        setPartnerNumber(response.data.cardInfo.contractParties.phone)
-                        setPartnerInsta(response.data.cardInfo.contractParties.instaAddress)
-                        setPartnerLogo(response.data.cardInfo.contractParties.logoAddress)
-                        setCardText(response.data.cardInfo.text)
-                        setCardVoice(response.data.cardInfo.voice)
-                        setCardAmount(response.data.cardInfo.primaryAmount)
-                        setTimeout(() => {   
-                            localStorage.clear("GiftData");    
-                        }, 3600000);
-                    }
-                })
-    
-                .catch((errors)=> {
-                    if (errors) {
-                        console.log(errors);
-                        alert('مشکلی پیش آمده. دوباره امتحان کنید.')
-                    }
-                })
+            alert("شما فعلا مجوز ورود به این صفحه رو ندارید");
+        } else {
+            const getCardInfo = (event) => {
+                axios
+                    .get(
+                        `https://api.lahzecard.com/api/user/NotFilter${localCN.slice(
+                            1,
+                            -1
+                        )}`,
+                        axiosConficGet
+                    )
+                    .then((response) => {
+                        if (response) {
+                            // console.log(response);
+                            setPartnerName(
+                                response.data.cardInfo.contractParties.name
+                            );
+                            setPartnerNumber(
+                                response.data.cardInfo.contractParties.phone
+                            );
+                            setPartnerInsta(
+                                response.data.cardInfo.contractParties
+                                    .instaAddress
+                            );
+                            setPartnerLogo(
+                                response.data.cardInfo.contractParties
+                                    .logoAddress
+                            );
+                            setPartnerWeb(
+                                response.data.cardInfo.contractParties
+                                    .webAddress
+                            );
+                            setCardText(response.data.cardInfo.text);
+                            setCardVoice(response.data.cardInfo.voice);
+                            setCardAmount(response.data.cardInfo.primaryAmount);
+                            setTimeout(() => {
+                                localStorage.clear("GiftData");
+                            }, 3600000);
+                        }
+                    })
+
+                    .catch((errors) => {
+                        if (errors) {
+                            // console.log(errors);
+                            alert("مشکلی پیش آمده. دوباره امتحان کنید.");
+                        }
+                    });
+            };
+
+            getCardInfo();
         }
-    
-        getCardInfo();
-    }
-    
-}, [])
-    
-    return ( 
+    }, []);
+
+    return (
         <div className={styles.CardPage_Container}>
             <section className={styles.right_sec}>
-                <img src={cardexample} alt="user card example" className={styles.cardexampleforuser}/>
+                <img
+                    src={cardexample}
+                    alt="user card example"
+                    className={styles.cardexampleforuser}
+                />
                 {/* <section className={styles.leftover_sec}>
                     <section className={styles.leftover_percent_sec}>
                         <p>25%</p>
@@ -130,7 +142,6 @@ const CardPage = () => {
                 </section> */}
 
                 {/* <CircularProgress value={50} /> */}
-
 
                 <section className={styles.info_sec}>
                     {/* <div>
@@ -150,14 +161,24 @@ const CardPage = () => {
                     </section>
                     <section className={styles.activation_info_div_sec_info}>
                         <h2>{partnerName ?? partnerName}</h2>
-                        <div className={styles.activation_info_div_sec_info_div}>
+                        <div
+                            className={styles.activation_info_div_sec_info_div}
+                        >
                             <div>
                                 <img src={website} alt="user info" />
-                                <p>website</p>
+                                <p>
+                                    <a href={partnerWeb ?? partnerWeb}>
+                                        Website
+                                    </a>
+                                </p>
                             </div>
                             <div>
                                 <img src={instagram} alt="user info" />
-                                <p><a href={partnerInsta ?? partnerInsta}>instagram Page</a></p>
+                                <p>
+                                    <a href={partnerInsta ?? partnerInsta}>
+                                        instagram Page
+                                    </a>
+                                </p>
                             </div>
                             <div>
                                 <img src={phone} alt="user info" />
@@ -167,23 +188,27 @@ const CardPage = () => {
                     </section>
                 </div>
                 <div className={styles.activation_input_div}>
-                    <img src={map} alt="user map address" className={styles.user_map_address}/>
+                    <img
+                        src={map}
+                        alt="user map address"
+                        className={styles.user_map_address}
+                    />
                     <section className={styles.activation_input_sec}>
                         <input
                             className={styles.activation_input}
-                            type='text'
-                            name='text'
+                            type="text"
+                            name="text"
                             value={cardText && cardText}
                             disabled
                         />
                     </section>
                     <section className={styles.voice_input_sec} id="voiceRec">
-                        <audio src={cardVoice && cardVoice} controls></audio>                        
+                        <audio src={cardVoice && cardVoice} controls></audio>
                     </section>
                 </div>
             </section>
         </div>
-     );
-}
- 
+    );
+};
+
 export default CardPage;

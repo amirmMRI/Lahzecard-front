@@ -17,6 +17,7 @@ import exit from "../../../../Images/exit.png";
 import attention from "../../../../Images/attantion.png";
 import close from "../../../../Images/close.png";
 import search from "../../../../Images/search.png";
+import pin from "../../../../Images/locationpinforuserpanel.png";
 
 // Components
 import Remaningcard from "../Remaining/Remaningcard/Remaningcard";
@@ -47,12 +48,11 @@ const HistoryPanel = () => {
         console.log(data);
     };
 
-    const jwtToken =JSON.parse(localStorage.getItem("OperatorToken"));
+    const jwtToken = JSON.parse(localStorage.getItem("OperatorToken"));
     const axiosConficPost = {
         headers: {
             "Content-type": "application/x-www-form-urlencoded",
-            "Authorization": "Bearer " + jwtToken,
-            
+            Authorization: "Bearer " + jwtToken,
         },
     };
 
@@ -98,8 +98,7 @@ const HistoryPanel = () => {
 
     const logoutActivate = () => {
         // Delete the user data from the computer.
-        // localStorage.clear("user");
-        console.log("askljfgalsg");
+        localStorage.clear("OperatorData");
         Navigate("/home");
     };
 
@@ -115,7 +114,7 @@ const HistoryPanel = () => {
             <section className={styles.right_sec}>
                 <section className={styles.user_profile_info}>
                     <img
-                        src={userprof}
+                        src={partnerLogo ?? partnerLogo}
                         alt="user profile"
                         className={styles.user_prof_img}
                     />
@@ -138,6 +137,7 @@ const HistoryPanel = () => {
                 </section>
                 <section className={styles.user_info_sec}>
                     <section>
+                        <img src={pin} alt="telephone" />
                         <p>{partnerAddress ?? partnerAddress}</p>
                     </section>
                     <section>

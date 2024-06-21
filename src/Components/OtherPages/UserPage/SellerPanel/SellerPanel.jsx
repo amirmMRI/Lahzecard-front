@@ -19,6 +19,7 @@ import close from "../../../../Images/close.png";
 import tic from "../../../../Images/tic.png";
 import greentic from "../../../../Images/green_tic.png";
 import Num2persian from "num2persian";
+import pin from "../../../../Images/locationpinforuserpanel.png";
 
 const SellerPanel = () => {
     // Gathering data
@@ -49,8 +50,7 @@ const SellerPanel = () => {
 
     const logoutActivate = () => {
         // Delete the user data from the computer.
-        // localStorage.clear("user");
-        console.log("askljfgalsg");
+        localStorage.clear("OperatorData");
         Navigate("/home");
     };
 
@@ -111,10 +111,9 @@ const SellerPanel = () => {
 
     const axiosConficPost = {
         headers: {
-            'accept': '*/*',
-            'Content-Type': 'application/x-www-form-urlencoded',
-            Authorization: "Bearer " +jwtToken,
-            
+            accept: "*/*",
+            "Content-Type": "application/x-www-form-urlencoded",
+            Authorization: "Bearer " + jwtToken,
 
             // "origin": "*",
             // "Access-Control-Allow-Origin": "*",
@@ -125,34 +124,44 @@ const SellerPanel = () => {
     const [isError_1, setIsError_1] = useState("");
 
     const submitHandler = (event) => {
-        console.log("Bearer " +jwtToken);
         event.preventDefault();
-        const CreateCard_Data = data;
-        setload(true);
-        console.log("load before");
-        setButtonDisable(true);
-        axios.post(
-                "https://api.lahzecard.com/api/card",
-                CreateCard_Data,
-                axiosConficPost
-            )
-            .then((response) => {
-                console.log(axiosConficPost)
-                setload(false);
-                console.log("load then");
-                setWelcomeMassage(true);
-                AlertHandler();
-                console.log(response);
-                setIsError_1("");
-            })
+        if (
+            data.user_name &&
+            data.user_phone &&
+            data.primaryAmount &&
+            data.cardNumber
+        ) {
+            // console.log("Bearer " + jwtToken);
+            const CreateCard_Data = data;
+            setload(true);
+            // console.log("load before");
+            setButtonDisable(true);
+            axios
+                .post(
+                    "https://api.lahzecard.com/api/card",
+                    CreateCard_Data,
+                    axiosConficPost
+                )
+                .then((response) => {
+                    // console.log(axiosConficPost);
+                    setload(false);
+                    // console.log("load then");
+                    setWelcomeMassage(true);
+                    AlertHandler();
+                    // console.log(response);
+                    setIsError_1("");
+                })
 
-            .catch((errors) => {
-                setload(false);
-                console.log("load catch");
-                console.log(errors);
-                setIsError_1(errors.response.data.message);
-                setButtonDisable(false);
-            });
+                .catch((errors) => {
+                    setload(false);
+                    // console.log("load catch");
+                    // console.log(errors);
+                    setIsError_1(errors.response.data.message);
+                    setButtonDisable(false);
+                });
+        } else {
+            setIsError_1("تمام فیلد ها را کامل کنید");
+        }
     };
 
     return (
@@ -161,7 +170,7 @@ const SellerPanel = () => {
             <section className={styles.right_sec}>
                 <section className={styles.user_profile_info}>
                     <img
-                        src={userprof}
+                        src={partnerLogo ?? partnerLogo}
                         alt="user profile"
                         className={styles.user_prof_img}
                     />
@@ -184,6 +193,7 @@ const SellerPanel = () => {
                 </section>
                 <section className={styles.user_info_sec}>
                     <section>
+                        <img src={pin} alt="telephone" />
                         <p>{partnerAddress ?? partnerAddress}</p>
                     </section>
                     <section>

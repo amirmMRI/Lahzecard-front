@@ -17,6 +17,7 @@ import exit from "../../../../Images/exit.png";
 import attention from "../../../../Images/attantion.png";
 import close from "../../../../Images/close.png";
 import search from "../../../../Images/search.png";
+import pin from "../../../../Images/locationpinforuserpanel.png";
 
 // Components
 import Remaningcard from "../Remaining/Remaningcard/Remaningcard";
@@ -49,8 +50,8 @@ const AmountPanel = () => {
 
     const logoutActivate = () => {
         // Delete the user data from the computer.
-        // localStorage.clear("user");
-        console.log("logged out!");
+        localStorage.clear("OperatorData");
+        // console.log("logged out!");
         Navigate("/home");
     };
 
@@ -208,6 +209,7 @@ const AmountPanel = () => {
                 </section>
                 <section className={styles.user_info_sec}>
                     <section>
+                        <img src={pin} alt="telephone" />
                         <p>{partnerAddress ?? partnerAddress}</p>
                     </section>
                     <section>
