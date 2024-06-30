@@ -67,6 +67,7 @@ const CardPage = () => {
     const [partnerInsta, setPartnerInsta] = useState();
     const [partnerLogo, setPartnerLogo] = useState();
     const [partneraddress, setPartneraddress] = useState();
+    const [partnerWeb, setPartnerWeb] = useState();
     const [cardText, setCardText] = useState();
     const [cardVoice, setCardVoice] = useState();
     const [cardAmount, setCardAmount] = useState();
@@ -105,6 +106,9 @@ const CardPage = () => {
                             setPartnerWeb(
                                 response.data.cardInfo.contractParties
                                     .webAddress
+                            );
+                            setPartneraddress(
+                                response.data.cardInfo.contractParties.address
                             );
                             setCardText(response.data.cardInfo.text);
                             setCardVoice(response.data.cardInfo.voice);
@@ -166,7 +170,11 @@ const CardPage = () => {
                         >
                             <div>
                                 <img src={website} alt="user info" />
-                                <p>وبسایت {partnerName}</p>
+                                <p>
+                                    <a href={partnerWeb ?? partnerWeb}>
+                                        وبسایت {partnerName}
+                                    </a>
+                                </p>
                             </div>
                             <div>
                                 <img src={instagram} alt="user info" />
