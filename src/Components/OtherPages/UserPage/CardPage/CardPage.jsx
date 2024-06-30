@@ -87,7 +87,7 @@ const CardPage = () => {
                     )
                     .then((response) => {
                         if (response) {
-                            // console.log(response);
+                            console.log(response);
                             setPartnerName(
                                 response.data.cardInfo.contractParties.name
                             );
@@ -198,12 +198,16 @@ const CardPage = () => {
                             className={styles.activation_input}
                             type="text"
                             name="text"
-                            value={cardText && cardText}
+                            value={cardText ?? cardText}
                             disabled
                         />
                     </section>
                     <section className={styles.voice_input_sec} id="voiceRec">
-                        <audio src={cardVoice && cardVoice} controls></audio>
+                        <audio
+                            src={cardVoice ?? cardVoice}
+                            preload="auto"
+                            controls
+                        ></audio>
                     </section>
                 </div>
             </section>
