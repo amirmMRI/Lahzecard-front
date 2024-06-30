@@ -12,7 +12,7 @@ import userlogo from "../../../../Images/partner2.png";
 import instagram from "../../../../Images/instagram.png";
 import phone from "../../../../Images/phone.png";
 import website from "../../../../Images/website.png";
-import map from "../../../../Images/map.png";
+import location from "../../../../Images/location.png";
 import attetiongrey from "../../../../Images/attentiongrey.png";
 import trash from "../../../../Images/trash.png";
 import cardexample from "../../../../Images/JustCard.png";
@@ -66,7 +66,7 @@ const CardPage = () => {
     const [partnerNumber, setPartnerNumber] = useState();
     const [partnerInsta, setPartnerInsta] = useState();
     const [partnerLogo, setPartnerLogo] = useState();
-    const [partnerWeb, setPartnerWeb] = useState();
+    const [partneraddress, setPartneraddress] = useState();
     const [cardText, setCardText] = useState();
     const [cardVoice, setCardVoice] = useState();
     const [cardAmount, setCardAmount] = useState();
@@ -87,7 +87,7 @@ const CardPage = () => {
                     )
                     .then((response) => {
                         if (response) {
-                            console.log(response);
+                            // console.log(response);
                             setPartnerName(
                                 response.data.cardInfo.contractParties.name
                             );
@@ -166,17 +166,13 @@ const CardPage = () => {
                         >
                             <div>
                                 <img src={website} alt="user info" />
-                                <p>
-                                    <a href={partnerWeb ?? partnerWeb}>
-                                        Website
-                                    </a>
-                                </p>
+                                <p>وبسایت {partnerName}</p>
                             </div>
                             <div>
                                 <img src={instagram} alt="user info" />
                                 <p>
                                     <a href={partnerInsta ?? partnerInsta}>
-                                        instagram Page
+                                        مشاهده اینستاگرام
                                     </a>
                                 </p>
                             </div>
@@ -188,26 +184,25 @@ const CardPage = () => {
                     </section>
                 </div>
                 <div className={styles.activation_input_div}>
-                    <img
-                        src={map}
-                        alt="user map address"
+                    <a
                         className={styles.user_map_address}
-                    />
+                        href={partneraddress}
+                    >
+                        <img src={location} alt="location" />
+                        <span>برای مسیریابی به {partnerName} کلیک کنید </span>
+                    </a>
+                    {/* <img src={map} alt="user map address" className={styles.user_map_address}/> */}
                     <section className={styles.activation_input_sec}>
                         <input
                             className={styles.activation_input}
                             type="text"
                             name="text"
-                            value={cardText ?? cardText}
+                            value={cardText && cardText}
                             disabled
                         />
                     </section>
                     <section className={styles.voice_input_sec} id="voiceRec">
-                        <audio
-                            src={cardVoice ?? cardVoice}
-                            preload="auto"
-                            controls
-                        ></audio>
+                        <audio src={cardVoice && cardVoice} controls></audio>
                     </section>
                 </div>
             </section>

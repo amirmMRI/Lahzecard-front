@@ -24,6 +24,11 @@
     background-color: var(--white);
 }
 
+a {
+    text-decoration: none;
+    color: #373737;
+}
+
 .cardexampleforuser {
     margin-bottom: 10%;
     width: 100%;
@@ -164,11 +169,24 @@
 }
 
 .user_map_address {
-    width: 80%;
-    height: 50%;
-    border-radius: 30px;
+    background-image: url("../../../../Images/map_animated.gif");
+    background-position: 55% 70%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 82%;
+    font-size: 90%;
+    height: 5rem;
+    border-radius: 10px;
     margin-bottom: 3%;
+    text-decoration: none;
+    color: #373737;
     box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+}
+
+.user_map_address img {
+    margin: 0 0.2rem;
 }
 
 .activation_input_sec {
