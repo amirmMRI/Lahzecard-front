@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import { AudioRecorder } from "react-audio-voice-recorder";
 import Loading from "../../../Loading/Loading";
+import { useReactMediaRecorder } from "react-media-recorder";
 
 // Style
 import styles from "./ActivationPage.module.css";
