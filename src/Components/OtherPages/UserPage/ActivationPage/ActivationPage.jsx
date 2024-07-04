@@ -34,46 +34,39 @@ const ActivationPage = () => {
 
     // Voice recording Funcs and
     const [theVoice, setTheVoice] = useState();
-    // const [voiceFile, setVoiceFile] = useState(false);
-    // const addAudioElement = (blob) => {
-    //     const url = URL.createObjectURL(blob);
-    //     const audio = document.createElement("audio");
-    //     audio.src = url;
-    //     setTheVoice(blob);
-    //     audio.controls = true;
-    //     if (voiceFile) return;
-    //     document.getElementById("voiceRec").appendChild(audio);
-    //     setVoiceFile(true);
-    // };
+    const [voiceFile, setVoiceFile] = useState(false);
+    const addAudioElement = (blob) => {
+        const url = URL.createObjectURL(blob);
+        const audio = document.createElement("audio");
+        audio.src = url;
+        setTheVoice(blob);
+        audio.controls = true;
+        if (voiceFile) return;
+        document.getElementById("voiceRec").appendChild(audio);
+        setVoiceFile(true);
+    };
 
-    // const removeChildHandler = () => {
-    //     setVoiceFile(false);
-    //     const parent = document.getElementById("voiceRec");
-    //     parent.removeChild(parent.firstElementChild);
-    // };
+    const removeChildHandler = () => {
+        setVoiceFile(false);
+        const parent = document.getElementById("voiceRec");
+        parent.removeChild(parent.firstElementChild);
+    };
 
     // Initialize the recorder controls using the hook
-    const recorderControls = useVoiceVisualizer();
-    const {
-        // ... (Extracted controls and states, if necessary)
-        recordedBlob,
-        error,
-        audioRef,
-    } = recorderControls;
+    // const recorderControls = useVoiceVisualizer();
+    // const { recordedBlob, error, audioRef } = recorderControls;
 
-    // Get the recorded audio blob
-    useEffect(() => {
-        if (!recordedBlob) return;
-        setTheVoice(recordedBlob);
-        // console.log(recordedBlob);
-    }, [recordedBlob, error]);
+    // useEffect(() => {
+    //     if (!recordedBlob) return;
+    //     setTheVoice(recordedBlob);
+    //     // console.log(recordedBlob);
+    // }, [recordedBlob, error]);
 
-    // Get the error when it occurs
-    useEffect(() => {
-        if (!error) return;
+    // useEffect(() => {
+    //     if (!error) return;
 
-        console.log(error);
-    }, [error]);
+    //     console.log(error);
+    // }, [error]);
 
     // Gathering data
 
@@ -303,13 +296,13 @@ const ActivationPage = () => {
                         />
                     </section>
                     <section className={styles.voice_input_sec} id="voiceRec">
-                        <VoiceVisualizer
+                        {/* <VoiceVisualizer
                             isDownloadAudioButtonShown={true}
                             height={50}
                             controls={recorderControls}
                             ref={audioRef}
-                        />
-                        {/* {voiceFile ? (
+                        /> */}
+                        {voiceFile ? (
                             <div
                                 className={styles.trash_icon}
                                 onClick={removeChildHandler}
@@ -324,9 +317,9 @@ const ActivationPage = () => {
                                     echoCancellation: true,
                                 }}
                                 downloadOnSavePress={false}
-                                downloadFileExtension="webm"
+                                downloadFileExtension="mp3"
                             />
-                        )} */}
+                        )}
                         {/* THe Audio file will be created here: */}
                     </section>
                     <section className={styles.btn_sec}>

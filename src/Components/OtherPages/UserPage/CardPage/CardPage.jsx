@@ -210,7 +210,14 @@ const CardPage = () => {
                         />
                     </section>
                     <section className={styles.voice_input_sec} id="voiceRec">
-                        <audio src={cardVoice && cardVoice} controls></audio>
+                        {/* <audio src={cardVoice && cardVoice} controls></audio> */}
+                        <audio controls preload="auto">
+                            <source
+                                src={cardVoice && cardVoice}
+                                type="audio/mpeg"
+                            />
+                            Your browser does not support the audio element.
+                        </audio>
                     </section>
                 </div>
             </section>
