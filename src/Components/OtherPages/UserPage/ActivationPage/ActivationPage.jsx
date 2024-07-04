@@ -313,6 +313,7 @@ const ActivationPage = () => {
                             <AudioRecorder
                                 onRecordingComplete={addAudioElement}
                                 audioTrackConstraints={{
+                                    sampleRate: 22050,
                                     noiseSuppression: true,
                                     echoCancellation: true,
                                 }}
