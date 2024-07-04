@@ -70,7 +70,6 @@ const CardPage = () => {
     const [partnerWeb, setPartnerWeb] = useState();
     const [cardText, setCardText] = useState();
     const [cardVoice, setCardVoice] = useState();
-    const [cardVoiceEdited, setCardVoiceEdited] = useState();
     const [cardAmount, setCardAmount] = useState();
 
     useEffect(() => {
@@ -113,9 +112,6 @@ const CardPage = () => {
                             );
                             setCardText(response.data.cardInfo.text);
                             setCardVoice(response.data.cardInfo.voice);
-                            setCardVoiceEdited(
-                                cardVoice.slice(0, -4) + ".mp3.AAC"
-                            );
                             setCardAmount(response.data.cardInfo.primaryAmount);
                             setTimeout(() => {
                                 localStorage.clear("GiftData");
@@ -135,7 +131,7 @@ const CardPage = () => {
         }
     }, []);
 
-    console.log(cardVoice.slice(0, -3) + "mp3.AAC");
+    // console.log(cardVoice.slice(0, -3) + "mp3.AAC");
 
     return (
         <div className={styles.CardPage_Container}>
