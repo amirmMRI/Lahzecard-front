@@ -131,8 +131,6 @@ const CardPage = () => {
         }
     }, []);
 
-    // console.log(cardVoice.slice(0, -3) + "mp3.AAC");
-
     return (
         <div className={styles.CardPage_Container}>
             <section className={styles.right_sec}>
