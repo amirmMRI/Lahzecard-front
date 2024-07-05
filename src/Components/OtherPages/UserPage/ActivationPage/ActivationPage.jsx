@@ -38,7 +38,8 @@ const ActivationPage = () => {
     const addAudioElement = (blob) => {
         const url = URL.createObjectURL(blob);
         const audio = document.createElement("audio");
-        audio.src = url + ".mp3";
+
+        console.log((audio.src = url + ".mp3.ACC"));
         setTheVoice(blob);
         audio.controls = true;
         if (voiceFile) return;
