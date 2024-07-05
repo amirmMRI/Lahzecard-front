@@ -4,6 +4,8 @@ import axios from "axios";
 import { AudioRecorder } from "react-audio-voice-recorder";
 import { CircularProgressbar, buildStyles } from "react-circular-progressbar";
 import "react-circular-progressbar/dist/styles.css";
+import * as FileSaver from "file-saver";
+
 // Styles
 import styles from "./CardPage.module.css";
 
@@ -131,6 +133,10 @@ const CardPage = () => {
         }
     }, []);
 
+    const handleDownload = () => {
+        FileSaver.saveAs(cardVoice, "mp3");
+    };
+
     return (
         <div className={styles.CardPage_Container}>
             <section className={styles.right_sec}>
@@ -215,6 +221,7 @@ const CardPage = () => {
                             controls
                             type="audio/aac"
                         ></audio>
+                        <button onClick={handleDownload}>download</button>
                         {/* <audio controls preload="auto">
                             <source
                                 src={cardVoice && cardVoice}
