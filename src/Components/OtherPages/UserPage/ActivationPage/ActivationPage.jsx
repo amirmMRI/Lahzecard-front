@@ -5,7 +5,12 @@ import { AudioRecorder } from "react-audio-voice-recorder";
 import Loading from "../../../Loading/Loading";
 import { useReactMediaRecorder } from "react-media-recorder";
 import { VoiceVisualizer, useVoiceVisualizer } from "react-voice-visualizer";
-
+import audiobufferToBlob from "audiobuffer-to-blob";
+import vmsg from "vmsg";
+import lamejs from "lamejs";
+import { MPEGMode } from "lamejs";
+import { ReactMediaRecorder } from "react-media-recorder";
+import AudioAnalyser from "react-audio-analyser";
 // Style
 import styles from "./ActivationPage.module.css";
 
@@ -25,23 +30,47 @@ import tic2 from "../../../../Images/tic2.png";
 
 const ActivationPage = () => {
     const Navigate = useNavigate();
+    // const [os, setOs] = useState();
 
     useEffect(() => {
         if (!localStorage.getItem("CustomerData")) {
             Navigate("/home");
         }
+        // if (window.navigator.platform == "Win32") {
+        //     setOs(true);
+        // }
     }, []);
 
     // Voice recording Funcs and
     const [theVoice, setTheVoice] = useState();
     const [voiceFile, setVoiceFile] = useState(false);
+    const [isLoading, setIsLoading] = useState(false);
     const addAudioElement = (blob) => {
         const url = URL.createObjectURL(blob);
         const audio = document.createElement("audio");
         audio.src = url;
-        // console.log(url + ".ACC");
-        setTheVoice(blob);
         audio.controls = true;
+        // if (!os) {
+        // }
+        setTheVoice(blob);
+        // the code below changes the blob type and not the file format
+        // const convertWebmToMp3 = async () => {
+        //     console.log("converttomp3");
+        //     setIsLoading(true);
+        //     try {
+        //         await recorder.initAudio();
+        //         await recorder.initWorker();
+        //         await recorder.startRecording(blob);
+        //         const mp3Blob = await recorder.stopRecording();
+        //         setTheVoice(mp3Blob);
+        //         console.log(theVoice);
+        //     } catch (error) {
+        //         console.error("Error converting WebM to MP3:", error);
+        //     } finally {
+        //         setIsLoading(false);
+        //     }
+        // };
+        // convertWebmToMp3();
         if (voiceFile) return;
         document.getElementById("voiceRec").appendChild(audio);
         setVoiceFile(true);
@@ -53,21 +82,15 @@ const ActivationPage = () => {
         parent.removeChild(parent.firstElementChild);
     };
 
-    // Initialize the recorder controls using the hook
-    // const recorderControls = useVoiceVisualizer();
-    // const { recordedBlob, error, audioRef } = recorderControls;
+    const fileChangeHandler = (event) => {
+        const Voice = {
+            preview: URL.createObjectURL(event.target.files[0]),
+            data: event.target.files[0],
+        };
 
-    // useEffect(() => {
-    //     if (!recordedBlob) return;
-    //     setTheVoice(recordedBlob);
-    //     // console.log(recordedBlob);
-    // }, [recordedBlob, error]);
-
-    // useEffect(() => {
-    //     if (!error) return;
-
-    //     console.log(error);
-    // }, [error]);
+        setTheVoice(Voice.data);
+        console.log(theVoice);
+    };
 
     // Gathering data
 
@@ -297,12 +320,6 @@ const ActivationPage = () => {
                         />
                     </section>
                     <section className={styles.voice_input_sec} id="voiceRec">
-                        {/* <VoiceVisualizer
-                            isDownloadAudioButtonShown={true}
-                            height={50}
-                            controls={recorderControls}
-                            ref={audioRef}
-                        /> */}
                         {voiceFile ? (
                             <div
                                 className={styles.trash_icon}
@@ -314,17 +331,25 @@ const ActivationPage = () => {
                             <AudioRecorder
                                 onRecordingComplete={addAudioElement}
                                 audioTrackConstraints={{
-                                    sampleRate: 22050,
                                     noiseSuppression: true,
                                     echoCancellation: true,
                                 }}
                                 downloadOnSavePress={false}
-                                downloadFileExtension="mp3"
+                                downloadFileExtension="webm"
                             />
                         )}
                         {/* THe Audio file will be created here: */}
                     </section>
                     <section className={styles.btn_sec}>
+                        {/* {os ? (
+                            <input
+                                type="file"
+                                name="resume"
+                                id="files"
+                                onChange={fileChangeHandler}
+                                class="hidden"
+                            />
+                        ) : undefined} */}
                         <div>
                             <img src={attetiongrey} alt="attention sign" />
                             <p>

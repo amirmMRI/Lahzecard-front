@@ -133,9 +133,9 @@ const CardPage = () => {
         }
     }, []);
 
-    const handleDownload = () => {
-        FileSaver.saveAs(cardVoice, "mp3");
-    };
+    // const handleDownload = () => {
+    //     FileSaver.saveAs(cardVoice, "mp3");
+    // };
 
     return (
         <div className={styles.CardPage_Container}>
@@ -221,7 +221,7 @@ const CardPage = () => {
                             controls
                             type="audio/aac"
                         ></audio>
-                        <button onClick={handleDownload}>download</button>
+                        {/* <button onClick={handleDownload}>download</button> */}
                         {/* <audio controls preload="auto">
                             <source
                                 src={cardVoice && cardVoice}
