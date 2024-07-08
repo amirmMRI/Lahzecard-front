@@ -361,8 +361,8 @@ const ActivationPage = () => {
                             <div>
                                 <img src={attetiongrey} alt="attention sign" />
                                 <p>
-                                    ویس خود را با استفاده از کلید بالا آپلود
-                                    کنید.
+                                    ویس خود را با ریکوردر تلفن ضبط و سپس با
+                                    استفاده از کلید بالا آپلود کنید.
                                 </p>
                             </div>
                         ) : undefined}

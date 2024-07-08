@@ -207,13 +207,9 @@ const CardPage = () => {
                     </a>
                     {/* <img src={map} alt="user map address" className={styles.user_map_address}/> */}
                     <section className={styles.activation_input_sec}>
-                        <input
-                            className={styles.activation_input}
-                            type="text"
-                            name="text"
-                            value={cardText && cardText}
-                            disabled
-                        />
+                        <p className={styles.activation_input}>
+                            {cardText && cardText}
+                        </p>
                     </section>
                     <section className={styles.voice_input_sec} id="voiceRec">
                         <audio
