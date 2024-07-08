@@ -78,7 +78,14 @@ const ActivationPage = () => {
 
     const fileChangeHandler = (event) => {
         const maxsize = 3 * 1024 * 1024;
-        if (event.target.files[0].size < maxsize) {
+        const type = "audio/x-m4a";
+        if (event.target.files[0].size > maxsize) {
+            alert("فایل مورد نظر نباید بیشتر از 3 مگابایت حجم داشته باشد.");
+        } else if (event.target.files[0].type !== type) {
+            alert(
+                "مشکلی در فرمت ویس ضبط شده ی شما وجود دارد، یا کارت را با تلفن همراه دیگری اسکن کنید و سپس ضبط کنید یا آنکه با استفاده از تبدیل کننده های آنلاین ویس خود را به فرمت ام فور ای در بیاورید."
+            );
+        } else {
             const Voice = {
                 // preview: URL.createObjectURL(event.target.files[0]),
                 data: event.target.files[0],
@@ -86,8 +93,6 @@ const ActivationPage = () => {
 
             setTheVoice(Voice.data);
             console.log(theVoice);
-        } else {
-            alert("فایل انتخابی بیش از 3 مگابایت است!");
         }
     };
 
