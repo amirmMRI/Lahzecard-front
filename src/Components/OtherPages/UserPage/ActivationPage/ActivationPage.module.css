@@ -1,7 +1,7 @@
 .ActivationPage_Container {
     width: 100%;
-    /* height: 100vh; */
     height: auto;
+    /* height: 100vh; */
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -48,7 +48,8 @@
 .rules_div p {
     width: 90%;
     margin: 2% 0;
-    text-justify: inter-word;;
+    text-justify: inter-word;
+    ;
     text-align: right;
 }
 
@@ -99,7 +100,7 @@
     .rules_div h2 {
         font-size: 20px;
     }
-    
+
     .rules_div p {
         font-size: 16px;
     }
@@ -124,7 +125,7 @@
     .rules_div h2 {
         font-size: 18px;
     }
-    
+
     .rules_div p {
         width: 100%;
         font-size: 14px;
@@ -150,7 +151,7 @@
     .rules_div h2 {
         font-size: 16px;
     }
-    
+
     .rules_div p {
         font-size: 12px;
     }
@@ -185,7 +186,7 @@
 }
 
 .left_sec {
-    margin-top: 5%;
+    /* margin-top: 5%; */
     width: 50%;
     /* height: 100%; */
     border-radius: 30px;
@@ -296,7 +297,7 @@
 .voice_input_sec {
     width: 80%;
     height: 50%;
-    margin: 3% 0;
+    margin: 3% 0 0 0;
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -329,7 +330,7 @@
 
 .btn_sec div {
     width: 100%;
-    margin-bottom: 5%;
+    margin-bottom: 3%;
     display: flex;
     flex-direction: row;
     /* justify-content: flex-start; */
@@ -377,6 +378,36 @@
     text-align: center;
     user-select: none;
     box-shadow: 0px 4px 25px 0px rgba(95, 64, 100, 0.6);
+}
+
+
+.input_but::-webkit-file-upload-button {
+    visibility: hidden;
+}
+
+.input_but::before {
+    content: 'اینجا کلیک کنید!';
+    display: inline-block;
+    background: linear-gradient(top, #f9f9f9, #e3e3e3);
+    border: 1px solid #999;
+    border-radius: 3px;
+    padding: 5px 15px;
+    margin-bottom: 10px;
+    outline: none;
+    white-space: nowrap;
+    -webkit-user-select: none;
+    cursor: pointer;
+    text-shadow: 1px 1px #fff;
+    font-weight: 700;
+    font-size: 10pt;
+}
+
+.input_but:hover::before {
+    border-color: black;
+}
+
+.input_but:active::before {
+    background: -webkit-linear-gradient(top, #e3e3e3, #f9f9f9);
 }
 
 @media (max-width: 720px) {

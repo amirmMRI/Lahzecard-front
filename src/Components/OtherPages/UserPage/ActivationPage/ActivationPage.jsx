@@ -3,14 +3,6 @@ import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import { AudioRecorder } from "react-audio-voice-recorder";
 import Loading from "../../../Loading/Loading";
-import { useReactMediaRecorder } from "react-media-recorder";
-import { VoiceVisualizer, useVoiceVisualizer } from "react-voice-visualizer";
-import audiobufferToBlob from "audiobuffer-to-blob";
-import vmsg from "vmsg";
-import lamejs from "lamejs";
-import { MPEGMode } from "lamejs";
-import { ReactMediaRecorder } from "react-media-recorder";
-import AudioAnalyser from "react-audio-analyser";
 // Style
 import styles from "./ActivationPage.module.css";
 
@@ -30,15 +22,17 @@ import tic2 from "../../../../Images/tic2.png";
 
 const ActivationPage = () => {
     const Navigate = useNavigate();
-    // const [os, setOs] = useState();
+    const [os, setOs] = useState();
 
     useEffect(() => {
         if (!localStorage.getItem("CustomerData")) {
             Navigate("/home");
         }
-        // if (window.navigator.platform == "Win32") {
-        //     setOs(true);
-        // }
+        const userAgent = navigator.userAgent;
+        const isAndroid = userAgent.includes("Android");
+        if (isAndroid) {
+            setOs(true);
+        }
     }, []);
 
     // Voice recording Funcs and
@@ -83,13 +77,18 @@ const ActivationPage = () => {
     };
 
     const fileChangeHandler = (event) => {
-        const Voice = {
-            preview: URL.createObjectURL(event.target.files[0]),
-            data: event.target.files[0],
-        };
+        const maxsize = 3 * 1024 * 1024;
+        if (event.target.files[0].size < maxsize) {
+            const Voice = {
+                // preview: URL.createObjectURL(event.target.files[0]),
+                data: event.target.files[0],
+            };
 
-        setTheVoice(Voice.data);
-        console.log(theVoice);
+            setTheVoice(Voice.data);
+            console.log(theVoice);
+        } else {
+            alert("فایل انتخابی بیش از 3 مگابایت است!");
+        }
     };
 
     // Gathering data
@@ -328,28 +327,40 @@ const ActivationPage = () => {
                                 <img src={trash} alt="trash icon" />
                             </div>
                         ) : (
-                            <AudioRecorder
-                                onRecordingComplete={addAudioElement}
-                                audioTrackConstraints={{
-                                    noiseSuppression: true,
-                                    echoCancellation: true,
-                                }}
-                                downloadOnSavePress={false}
-                                downloadFileExtension="webm"
-                            />
+                            !os && (
+                                <AudioRecorder
+                                    onRecordingComplete={addAudioElement}
+                                    audioTrackConstraints={{
+                                        noiseSuppression: true,
+                                        echoCancellation: true,
+                                    }}
+                                    downloadOnSavePress={false}
+                                    downloadFileExtension="webm"
+                                />
+                            )
                         )}
                         {/* THe Audio file will be created here: */}
                     </section>
                     <section className={styles.btn_sec}>
-                        {/* {os ? (
+                        {os ? (
                             <input
+                                class="hidden"
+                                className={styles.input_but}
                                 type="file"
                                 name="resume"
                                 id="files"
                                 onChange={fileChangeHandler}
-                                class="hidden"
                             />
-                        ) : undefined} */}
+                        ) : undefined}
+                        {os ? (
+                            <div>
+                                <img src={attetiongrey} alt="attention sign" />
+                                <p>
+                                    ویس خود را با استفاده از کلید بالا آپلود
+                                    کنید.
+                                </p>
+                            </div>
+                        ) : undefined}
                         <div>
                             <img src={attetiongrey} alt="attention sign" />
                             <p>
