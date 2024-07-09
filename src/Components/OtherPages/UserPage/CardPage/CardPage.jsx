@@ -133,9 +133,9 @@ const CardPage = () => {
         }
     }, []);
 
-    // const handleDownload = () => {
-    //     FileSaver.saveAs(cardVoice, "mp3");
-    // };
+    const handleDownload = () => {
+        FileSaver.saveAs(cardVoice, "m4a");
+    };
 
     return (
         <div className={styles.CardPage_Container}>
@@ -217,14 +217,12 @@ const CardPage = () => {
                             controls
                             type="audio/aac"
                         ></audio>
-                        {/* <button onClick={handleDownload}>download</button> */}
-                        {/* <audio controls preload="auto">
-                            <source
-                                src={cardVoice && cardVoice}
-                                type="audio/aac"
-                            />
-                            Your browser does not support the audio element.
-                        </audio> */}
+                        <button
+                            onClick={handleDownload}
+                            className={styles.download_btn}
+                        >
+                            دانلود کنید!
+                        </button>
                     </section>
                 </div>
             </section>
