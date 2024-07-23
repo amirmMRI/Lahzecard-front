@@ -30,7 +30,9 @@ const ActivationPage = () => {
         }
         const userAgent = navigator.userAgent;
         const isAndroid = userAgent.includes("Android");
-        if (isAndroid) {
+        const isWindoes = userAgent.includes("Windows");
+        console.log(userAgent);
+        if (isAndroid || isWindoes) {
             setOs(true);
         }
     }, []);
