@@ -359,6 +359,12 @@ const ActivationPage = () => {
                                 onChange={fileChangeHandler}
                             />
                         ) : undefined}
+                        {os && theVoice ? (
+                            <div>
+                                <img src={attetiongrey} alt="attention sign" />
+                                <p>ویس شما با موفقیت آپلود شد.</p>
+                            </div>
+                        ) : undefined}
                         {os ? (
                             <div>
                                 <img src={attetiongrey} alt="attention sign" />

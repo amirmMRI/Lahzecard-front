@@ -206,24 +206,35 @@ const CardPage = () => {
                         <span>برای مسیریابی به {partnerName} کلیک کنید </span>
                     </a>
                     {/* <img src={map} alt="user map address" className={styles.user_map_address}/> */}
-                    <section className={styles.activation_input_sec}>
-                        <p className={styles.activation_input}>
-                            {cardText && cardText}
-                        </p>
-                    </section>
-                    <section className={styles.voice_input_sec} id="voiceRec">
-                        <audio
-                            src={cardVoice && cardVoice}
-                            controls
-                            type="audio/aac"
-                        ></audio>
-                        <button
-                            onClick={handleDownload}
-                            className={styles.download_btn}
+                    {cardText ? (
+                        <section className={styles.activation_input_sec}>
+                            <p className={styles.activation_input}>
+                                {cardText && cardText}
+                            </p>
+                        </section>
+                    ) : (
+                        <p>برای کارت شما پیام متنی ثبت نشده است.</p>
+                    )}
+                    {cardVoice ? (
+                        <section
+                            className={styles.voice_input_sec}
+                            id="voiceRec"
                         >
-                            دانلود کنید!
-                        </button>
-                    </section>
+                            <audio
+                                src={cardVoice && cardVoice}
+                                controls
+                                type="audio/aac"
+                            ></audio>
+                            <button
+                                onClick={handleDownload}
+                                className={styles.download_btn}
+                            >
+                                دانلود کنید!
+                            </button>
+                        </section>
+                    ) : (
+                        <p>برای کارت شما پیام صوتی ثبت نشده است.</p>
+                    )}
                 </div>
             </section>
         </div>
