@@ -203,9 +203,9 @@ input:focus {
     margin: 10PX 0 10PX 60px;
     display: flex;
     border-radius: 50%;
-    background: linear-gradient(to left, #9949cb 10%, #261E35 70%) left;
+    background: linear-gradient(to left, #682b72 20%, #562c5d 50%) left;
     background-size: 200%;
-    transition: .4s ease-in;
+    transition: .2s ease-in;
     color: #FFFFFF;
 }
 
@@ -255,16 +255,16 @@ input:focus {
 .Rectangle132prim {
     display: inline-block;
     text-align: center;
+    border: none;
     /* default color */
     /* "to left" / "to right" - affects initial color */
-    background: linear-gradient(to left, #773b9d 10%, #261E35 50%) right;
+    background: linear-gradient(to left, #682b72 30%, #562c5d 60%) right;
     background-size: 200%;
     transition: .7s ease-out;
 }
 
 .Rectangle132prim:hover {
     background-position: left;
-    border: none;
 }
 
 .Rectangle132pp {
@@ -275,7 +275,7 @@ input:focus {
     /* "to left" / "to right" - affects initial color */
     background: linear-gradient(to right, #fafafa 10%, #c1a3d4 60%) left;
     background-size: 200%;
-    transition: .2s ease-out;
+    transition: .7s ease-out;
 }
 
 .Rectangle132pp:hover {

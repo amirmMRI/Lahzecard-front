@@ -64,7 +64,7 @@
     text-align: center;
     /* default color */
     /* "to left" / "to right" - affects initial color */
-    background: linear-gradient(to left, #5f2b7f 10%, #261E35 60%) right;
+    background: linear-gradient(to left, #682b72 30%, #562c5d 60%) right;
     background-size: 200%;
     transition: .7s ease-out;
 }

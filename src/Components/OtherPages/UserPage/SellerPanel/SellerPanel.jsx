@@ -143,12 +143,20 @@ const SellerPanel = () => {
                     axiosConficPost
                 )
                 .then((response) => {
-                    // console.log(axiosConficPost);
                     setload(false);
-                    // console.log("load then");
                     setWelcomeMassage(true);
-                    AlertHandler();
-                    // console.log(response);
+                    setButtonDisable(false);
+                    AlertHandler(); 
+                        setData({
+                            ...data,
+                        user_name: " ",
+                        user_phone: " ",
+                        cardNumber: " ",
+                        primaryAmount: " ",
+                        cp_id:" ",  
+                        })
+                     console.log(data)
+                    
                     setIsError_1("");
                 })
 
@@ -193,7 +201,7 @@ const SellerPanel = () => {
                 </section>
                 <section className={styles.user_info_sec}>
                     <section>
-                        <img src={pin} alt="telephone" />
+                        <img src={pin} alt="address" />
                         <p>{partnerAddress ?? partnerAddress}</p>
                     </section>
                     <section>

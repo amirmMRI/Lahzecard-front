@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import { Link } from "react-router-dom";
 import Loading from "../../../Loading/Loading";
-
+import Num2persian from "num2persian";
 // Style
 import styles from "./AmountPanel.module.css";
 
@@ -87,6 +87,7 @@ const AmountPanel = () => {
     const [cardData, setCardData] = useState();
     const [voiceError, setVoiceError] = useState();
     const [load, setload] = useState(false);
+    const [amountInPersian, setAmountInPersian] = useState(false);
 
     const amountcarChangeHandler = (event) => {
         setAmountData({
@@ -132,9 +133,10 @@ const AmountPanel = () => {
     });
 
     const amountChangeHandler = (event) => {
-        setAmount({
-            ...amount,
-            [event.target.name]: event.target.value,
+        setAmountInPersian(Num2persian(event.target.value));
+        setData({
+            ...data,
+            [event.target.name]: (event.target.value),
         });
     };
 
@@ -302,8 +304,22 @@ const AmountPanel = () => {
                                     onChange={amountChangeHandler}
                                     placeholder="مقدار برداشتی را وارد کنید"
                                 />
+
                                 <button onClick={withdrawlHandler}>کسر</button>
-                            </section>
+                            
+
+                            </section>                                
+                            {amountInPersian && (
+                                <div>
+                                    <span className={styles.amountInPersianSpan}>
+                                    {amountInPersian}
+                                </span>
+                                <span>ریال</span>
+                                </div>
+                                
+                                
+                            )}
+                            
                         </section>
                     ) : undefined}
                     <section className={styles.request_alert}>

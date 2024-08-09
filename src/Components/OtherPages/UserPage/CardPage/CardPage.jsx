@@ -5,6 +5,7 @@ import { AudioRecorder } from "react-audio-voice-recorder";
 import { CircularProgressbar, buildStyles } from "react-circular-progressbar";
 import "react-circular-progressbar/dist/styles.css";
 import * as FileSaver from "file-saver";
+import Num2persian from "num2persian";
 
 // Styles
 import styles from "./CardPage.module.css";
@@ -18,9 +19,12 @@ import location from "../../../../Images/location.png";
 import attetiongrey from "../../../../Images/attentiongrey.png";
 import trash from "../../../../Images/trash.png";
 import cardexample from "../../../../Images/JustCard.png";
+import Logomade from "../../../../Images/logolahze.png";
+
 
 const CardPage = () => {
     const Navigate = useNavigate();
+    const [amountInPersian, setAmountInPersian] = useState(false);
     //show circular progress
     const CircularProgress = ({ value }) => {
         if (value <= 50) {
@@ -115,6 +119,7 @@ const CardPage = () => {
                             setCardText(response.data.cardInfo.text);
                             setCardVoice(response.data.cardInfo.voice);
                             setCardAmount(response.data.cardInfo.primaryAmount);
+                            setAmountInPersian(Num2persian(response.data.cardInfo.primaryAmount));
                             setTimeout(() => {
                                 localStorage.clear("GiftData");
                             }, 3600000);
@@ -161,6 +166,15 @@ const CardPage = () => {
                     <div>
                         <p>موجودی کارت:</p>
                         {cardAmount}
+                        {amountInPersian && (
+                               <span>
+                                <span className={styles.amountInPersianSpan}>
+                                    {amountInPersian}
+                                </span>
+                                <span>ریال</span>
+                               </span> 
+                            )}
+
                     </div>
                 </section>
             </section>
@@ -235,9 +249,14 @@ const CardPage = () => {
                     ) : (
                         <p>برای کارت شما پیام صوتی ثبت نشده است.</p>
                     )}
-                </div>
+                   
+                </div> 
+                
             </section>
+           <a className={styles.madeByLahzecard} href="/home"><img src={Logomade} alt="LahzeCard" /><span >ساخته شده توسط لحظه کارت</span>  
+            </a>
         </div>
+       
     );
 };
 

@@ -42,12 +42,20 @@ const Footer = () => {
             <section className={styles.foot_social_sec}>
                 <h3>شبکه های اجتماعی</h3>
                 <section>
+                
+                  <a  className={styles.socials} href="https://t.me/lahzecard">
                     <img src={telegram} alt="telegram channel" />
+                </a>  
+                <a href="https://www.instagram.com/lahzecard?igsh=cDJuYnNxZnNlZnUy">
                     <img src={instagram} alt="instagram page" />
+                </a>
+                <a href="https://www.linkedin.com/company/lahze-card/">
                     <img src={linkedin} alt="linkedin page" />
+                </a>
+                    
                 </section>
             </section>
-            <section className={styles.foot_logo_sec}>
+            <section >
                 <a href="/home">
                     <img src={logoforfooter} alt="Lahzecard Logo" />
                 </a>
