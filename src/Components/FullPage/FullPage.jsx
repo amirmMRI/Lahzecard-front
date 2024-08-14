@@ -19,12 +19,17 @@ const FullPage = () => {
 
     return ( 
         <div className={styles.fullpage_container}>
-        <Helmet>
+        <Helmet>      <header>
         <title>J2MKDQS</title>
+        <meta name="samandehi" content="338449838"/>
         <meta name="لحظه کارت کارت هدیه ان اف تی" content="PAGE FOR DETAIL AND SHOP GIFT CARDS lahzecard" />
         <meta name="لحظه کارت" content="لحظه کارت, لحظه کارت, گیفت,کارت هدیه,gift card,lahze,card,lahze card " />
-
+ 
+        <meta name="enamad" content="324236"/>
+        <meta name="samandehi" content="338449838"/>
+        </header>
        </Helmet>
+
             <main>
                 <section className={styles.Navbar_section}>
                     <  Navbar  />

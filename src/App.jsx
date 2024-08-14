@@ -18,7 +18,7 @@ import AboutUs from "./Components/OtherPages/AboutUs/AboutUs";
 import SellerOtpCode from "./Components/verificationcode/Codevorod"
 import CustomerOtpCode from "./Components/verificationcode/Costumercodevorod"
 import Hamkari from "./Components/HamkariBaMa/Hamkari";
-
+import Ershad from "./661373.txt";
 function App() {
   <header>
   <meta name="enamad" content="324236"/>
@@ -43,6 +43,7 @@ function App() {
         <Route path="/ActivationPage" element={ <  ActivationPage/>}/>
         <Route path="/CardPage" element={ <  CardPage/>}/>
         <Route path="/AboutUs" element={ <  AboutUs/>}/>
+        <Route path="/661373.txt" element={ <  Ershad/>}/>
 
         {/* Redirect */}
         <Route path="/" element={<Navigate to="/home" />} />
