@@ -20,10 +20,10 @@ import CustomerOtpCode from "./Components/verificationcode/Costumercodevorod"
 import Hamkari from "./Components/HamkariBaMa/Hamkari";
 
 function App() {
-  // <header>
-  // <meta name="enamad" content="324236"/>
-  // <meta name="samandehi" content="338449838"/>
-  // </header>
+  <header>
+  <meta name="enamad" content="324236"/>
+  <meta name="samandehi" content="338449838"/>
+  </header>
   return (
     <BrowserRouter>
       <Routes>
