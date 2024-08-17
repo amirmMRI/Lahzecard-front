@@ -148,12 +148,11 @@ const SellerPanel = () => {
                     setButtonDisable(false);
                     AlertHandler(); 
                         setData({
-                            ...data,
-                        user_name: " ",
-                        user_phone: " ",
-                        cardNumber: " ",
-                        primaryAmount: " ",
-                        cp_id:" ",  
+                        user_name: "",
+                        user_phone: "",
+                        cardNumber: "",
+                        primaryAmount: "",
+                        cp_id: partnerId, 
                         })
                      console.log(data)
                     
