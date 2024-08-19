@@ -134,7 +134,7 @@ const AmountPanel = () => {
 
     const amountChangeHandler = (event) => {
         setAmountInPersian(Num2persian(event.target.value));
-        setData({
+        setAmount({
             ...data,
             [event.target.name]: (event.target.value),
         });
@@ -166,8 +166,8 @@ const AmountPanel = () => {
                     setAlertSuc("موفقیت آمیز بود!");
                     setAlertFai();
                     setload(false);
-                    // console.log(response);
-                    setTimeout(() => window.location.reload(), 500);
+                    console.log(response);
+                    // setTimeout(() => window.location.reload(), 500);
                 }
             })
 
@@ -177,7 +177,7 @@ const AmountPanel = () => {
                     setAlertSuc();
                     setload(false);
                     setButtonDisable(false);
-                    // console.log(errors);
+                    console.log(errors);
                 }
             });
     };
