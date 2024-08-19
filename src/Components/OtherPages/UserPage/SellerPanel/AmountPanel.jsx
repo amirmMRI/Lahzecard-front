@@ -166,7 +166,7 @@ const AmountPanel = () => {
                     setAlertSuc("موفقیت آمیز بود!");
                     setAlertFai();
                     setload(false);
-                    console.log(response);
+                    console.log("response");
                     // setTimeout(() => window.location.reload(), 500);
                 }
             })
