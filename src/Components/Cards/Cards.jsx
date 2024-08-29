@@ -18,21 +18,21 @@ const Cards = () => {
             </section>
             <section className={styles.cards_sec}>
                 <div className={styles.card_div1}>
-                    <img src={gift} alt="card image" />
+                    <img src={gift} alt="lahze card" />
                     <section className={styles.card_text}>
                         <h3>هدیه ایی خاص</h3>
                         <p>با لحظه کارت یک هدیه خاص با قیمت دلخواهتون برای عزیزانتون آماده کنید.</p>
                     </section>
                 </div>
                 <div className={styles.card_div2}>
-                    <img src={privecy} alt="card image" />
+                    <img src={privecy} alt="lahze card" />
                     <section className={styles.card_text}>
                         <h3>حفظ حریم خصوصی</h3>
                         <p>صدای شما در خانه امن لحظه کارت باقی میماند.</p>
                     </section>
                 </div>
                 <div className={styles.card_div3}>
-                    <img src={qrcode} alt="card image" />
+                    <img src={qrcode} alt="lahze card" />
                     <section className={styles.card_text}>
                         <h3>بارکد</h3>
                         <p>با اسکن کردن بارکد روی کارت هدیه تونو باز کنید.</p>
