@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import { Link } from "react-router-dom";
 import Loading from "../../../Loading/Loading";
-import Num2persian from "num2persian";
+import Num2persian from "num2persian"; 
 // Style
 import styles from "./AmountPanel.module.css";
 
@@ -166,8 +166,8 @@ const AmountPanel = () => {
                     setAlertSuc("موفقیت آمیز بود!");
                     setAlertFai();
                     setload(false);
-                    console.log("response");
-                    // setTimeout(() => window.location.reload(), 500);
+                    // console.log("response");
+                    setTimeout(() => window.location.reload(), 1000);
                 }
             })
 

@@ -23,6 +23,10 @@ const Trophies = () => {
                     <img src={roshd} alt="roshd org logo" />
                 </a>
                 <a referrerpolicy='origin' target='_blank' href='https://trustseal.enamad.ir/?id=493207&Code=zR1UHy9DrBqxcXyWa9wEk0KVuQwt4Ljv'><img referrerpolicy='origin' src='https://trustseal.enamad.ir/logo.aspx?id=493207&Code=zR1UHy9DrBqxcXyWa9wEk0KVuQwt4Ljv' alt='' style={{cursor:"pointer",width:"auto",height:"auto"}} code='zR1UHy9DrBqxcXyWa9wEk0KVuQwt4Ljv'/></a>                
+                <img referrerpolicy='origin' id = 'rgvjfukzoeukjzpesizpjxlz' className={styles.samane} onClick={() => {
+                     window.open("https://logo.samandehi.ir/Verify.aspx?id=368791&p=xlaogvkamcsijyoepfvlrfth", "Popup", "toolbar=no, location=no, statusbar=no, menubar=no, scrollbars=1, resizable=0, width=580, height=600, top=30")
+                }}
+                alt = 'logo-samandehi' src = 'https://logo.samandehi.ir/logo.aspx?id=368791&p=qftiwlbqaqgwyndtbsiynbpd' />
                 <img
                     className={styles.Hologram_img}
                     src={Hologram}

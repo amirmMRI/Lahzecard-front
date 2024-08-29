@@ -17,6 +17,10 @@
     -ms-user-select: none;
 }
 
+.samane {
+    cursor: pointer;
+}
+
 .pid_sec {
     width: 40%;
     display: flex;
@@ -41,17 +45,13 @@
 }
 
 @media (max-width: 720px) {
-
     .Trophies_Container {
         padding-top: 10%;
     }
-
-
     .header_pic {
         width: 380px;
         margin-bottom: 10%;
     }
-
     .pid_sec {
         width: 80%;
         display: flex;
@@ -59,7 +59,6 @@
         align-items: center;
         justify-content: center;
     }
-
     .pid_sec img {
         width: 150px;
         height: 150px;
@@ -70,22 +69,17 @@
         -webkit-user-select: none;
         -ms-user-select: none;
     }
-
 }
 
 @media (max-width: 420px) {
-
     .Trophies_Container {
         padding-top: 20%;
         height: 50vh;
     }
-
-
     .header_pic {
         width: 300px;
         margin-bottom: 10%;
     }
-
     .pid_sec {
         width: 80%;
         display: flex;
@@ -93,7 +87,6 @@
         align-items: center;
         justify-content: center;
     }
-
     .pid_sec img {
         width: 100px;
         height: 100px;
@@ -104,5 +97,4 @@
         -webkit-user-select: none;
         -ms-user-select: none;
     }
-
 }
