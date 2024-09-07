@@ -30,6 +30,10 @@
 
 .foot_contact_sec h3 {}
 
+.logooffooter {
+    width: 60%;
+}
+
 .foot_contact_sec section {
     width: 100%;
     margin: 1% 0;
@@ -99,7 +103,7 @@
     }
 }
 
-@media (max-width: 420px) {
+@media (max-width: 432px) {
     .Footer_Container {
         height: 100vh;
         background-image: url('../../Images/footerbackphone.png');

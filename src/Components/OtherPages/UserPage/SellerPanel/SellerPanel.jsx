@@ -68,32 +68,45 @@ const SellerPanel = () => {
         primaryAmount: "",
         cp_id: partnerId,
     });
+    const [amount, setAmount] = useState({
+        primaryAmount: "",
+    });
 
     const changeHandler = (event) => {
+
         if (event.target.name === "primaryAmount") {
             setAmountInPersian(Num2persian(event.target.value));
             setData({
                 ...data,
-                [event.target.name]: toString(event.target.value),
+                [event.target.name]:(event.target.value*10),
             });
+            setAmount({
+                ...amount,
+                [event.target.name]:(event.target.value),
+            });
+
+
         }
         if (event.target.name === "user_phone") {
             setData({
                 ...data,
-                [event.target.name]: toString(event.target.value),
+                [event.target.name]: (event.target.value),
             });
         }
         if (event.target.name === "cardNumber") {
             setData({
                 ...data,
-                [event.target.name]: toString(event.target.value),
+                [event.target.name]: (event.target.value),
             });
         }
-        setData({
-            ...data,
-            [event.target.name]: event.target.value,
-        });
-        console.log(data);
+        if (event.target.name === "user_name") {
+            setData({
+                ...data,
+                [event.target.name]: (event.target.value),
+            }) 
+        }
+
+
     };
 
     // Alert message state
@@ -134,7 +147,6 @@ const SellerPanel = () => {
             // console.log("Bearer " + jwtToken);
             const CreateCard_Data = data;
             setload(true);
-            // console.log("load before");
             setButtonDisable(true);
             axios
                 .post(
@@ -144,6 +156,7 @@ const SellerPanel = () => {
                 )
                 .then((response) => {
                     setload(false);
+                    console.log(data)
                     setWelcomeMassage(true);
                     setButtonDisable(false);
                     AlertHandler(); 
@@ -154,7 +167,7 @@ const SellerPanel = () => {
                         primaryAmount: "",
                         cp_id: partnerId, 
                         })
-                     console.log(data)
+                     
                     
                     setIsError_1("");
                 })
@@ -293,11 +306,11 @@ const SellerPanel = () => {
                                     name="primaryAmount"
                                     placeholder="تنها عدد وارد کنید"
                                     type="number"
-                                    value={data.primaryAmount}
+                                    value={amount.primaryAmount}
                                     onChange={changeHandler}
                                 />
                                 {/* removed arrows in input by adding chrome and firefox css direct codes in the css file. */}
-                                <span>ریال</span>
+                                <span>تومان</span>
                             </section>
                             {amountInPersian && (
                                 <span className={styles.amountInPersianSpan}>

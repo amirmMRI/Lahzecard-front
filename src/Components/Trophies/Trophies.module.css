@@ -9,7 +9,7 @@
 .header_pic {
     width: 400px;
     margin-bottom: 2%;
-    user-drag: none;
+    /* user-drag: none; */
     -webkit-user-drag: none;
     user-select: none;
     -moz-user-select: none;
@@ -22,15 +22,14 @@
 }
 
 .pid_sec {
-    width: 40%;
+    width: 70%;
     display: flex;
-    flex-direction: row;
     align-items: center;
-    justify-content: center;
+    justify-content: space-around;
+    /* flex-wrap: wrap; */
 }
 
 .pid_sec img {
-    user-drag: none;
     -webkit-user-drag: none;
     user-select: none;
     -moz-user-select: none;
@@ -38,10 +37,25 @@
     -ms-user-select: none;
 }
 
+.pid_sec section {
+    width: 25%;
+    /* height: 10rem; */
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    margin: 1px;
+}
+
+
+/* .pid_sec a,
+.pid_sec img {
+    width: 1%;
+} */
+
 .Hologram_img {
-    width: 180px;
-    height: 210px;
-    margin-right: 20px;
+    width: 60%;
+    /* height: 90%; */
+    /* margin-right: 20px; */
 }
 
 @media (max-width: 720px) {
@@ -62,7 +76,6 @@
     .pid_sec img {
         width: 150px;
         height: 150px;
-        user-drag: none;
         -webkit-user-drag: none;
         user-select: none;
         -moz-user-select: none;
@@ -78,19 +91,24 @@
     }
     .header_pic {
         width: 300px;
-        margin-bottom: 10%;
+        margin-bottom: 5%;
     }
     .pid_sec {
-        width: 80%;
+        width: 70%;
+        height: fit-content;
+        flex-wrap: wrap;
+    }
+    .pid_sec section {
+        width: 35%;
+        /* height: 10rem; */
         display: flex;
-        flex-direction: row;
         align-items: center;
-        justify-content: center;
+        justify-content: space-around;
+        margin: 4px;
     }
     .pid_sec img {
-        width: 100px;
+        width: 100%;
         height: 100px;
-        user-drag: none;
         -webkit-user-drag: none;
         user-select: none;
         -moz-user-select: none;

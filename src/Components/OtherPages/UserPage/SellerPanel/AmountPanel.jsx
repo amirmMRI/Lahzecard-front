@@ -136,7 +136,7 @@ const AmountPanel = () => {
         setAmountInPersian(Num2persian(event.target.value));
         setAmount({
             ...data,
-            [event.target.name]: (event.target.value),
+            [event.target.name]: (event.target.value*10),
         });
     };
 
@@ -286,7 +286,7 @@ const AmountPanel = () => {
                                     <p>{cardData.cardNumber}</p>
                                     <p>{cardData.user.name}</p>
                                     <p>{cardData.user.phone}</p>
-                                    <p>{cardData.primaryAmount}</p>
+                                    <p>{cardData.primaryAmount/10} تومان</p>
                                     <p>
                                         {cardData.activeDate.substring(0, 10)}
                                     </p>
@@ -314,7 +314,7 @@ const AmountPanel = () => {
                                     <span className={styles.amountInPersianSpan}>
                                     {amountInPersian}
                                 </span>
-                                <span>ریال</span>
+                                <span>تومان</span>
                                 </div>
                                 
                                 

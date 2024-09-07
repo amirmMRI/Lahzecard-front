@@ -375,4 +375,7 @@ a {
         position: relative;
         margin-bottom: 0;
     }
+    .activation_info_div_sec_info_div div p {
+        font-size: 65%;
+    }
 }
