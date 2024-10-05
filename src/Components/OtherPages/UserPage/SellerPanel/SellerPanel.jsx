@@ -75,10 +75,10 @@ const SellerPanel = () => {
     const changeHandler = (event) => {
 
         if (event.target.name === "primaryAmount") {
-            setAmountInPersian(Num2persian(event.target.value));
+            setAmountInPersian(Num2persian(event.target.value/10));
             setData({
                 ...data,
-                [event.target.name]:(event.target.value*10),
+                [event.target.name]:(event.target.value),
             });
             setAmount({
                 ...amount,
@@ -300,7 +300,7 @@ const SellerPanel = () => {
                                 />
                             </section>
                             <section className={styles.activation_input_sec}>
-                                <p>مبلغ شارژ</p>
+                                <p> مبلغ شارژ<i>به ریال</i></p>
                                 <input
                                     className={styles.formInput}
                                     name="primaryAmount"
@@ -310,13 +310,15 @@ const SellerPanel = () => {
                                     onChange={changeHandler}
                                 />
                                 {/* removed arrows in input by adding chrome and firefox css direct codes in the css file. */}
-                                <span>تومان</span>
+                              
                             </section>
+                           <span>
                             {amountInPersian && (
                                 <span className={styles.amountInPersianSpan}>
                                     {amountInPersian}
                                 </span>
-                            )}
+                            )}  <span>تومان</span>
+                            </span> 
                             <section className={styles.err_sec}>
                                 <p>{isError_1}</p>
                             </section>
