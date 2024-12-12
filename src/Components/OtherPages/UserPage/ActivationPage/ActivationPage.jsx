@@ -232,6 +232,8 @@ const ActivationPage = () => {
             {notif ? (
                 <section className={styles.RulesNotif_sec}>
                     <div className={styles.rules_div}>
+                        <div className={styles.textrule}>
+
                         <h2>قوانین و مقررات</h2>
                         <p>
                             متن و یا صدای شما بایستی منطبق با قوانین و مقررات
@@ -256,6 +258,7 @@ const ActivationPage = () => {
                             یا متن شما مورد پذیرش نبوده و لطفا با درنظر گرفتن
                             قوانین مجددا صدا و متن خود را بارگذاری کنید.
                         </p>
+                        </div>
                         <div className={styles.rules_btn_div}>
                             <button
                                 className={styles.cancel_btn}
@@ -366,7 +369,7 @@ const ActivationPage = () => {
                         {os && theVoice ? (
                             <div>
                                 <img src={attetiongrey} alt="attention sign" />
-                                <p>ویس شما با موفقیت آپلود شد.</p>
+                                <p>وویس شما با موفقیت آپلود شد.</p>
                             </div>
                         ) : undefined}
                         {os ? (
