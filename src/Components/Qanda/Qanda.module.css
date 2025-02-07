@@ -16,6 +16,10 @@
     align-items: center;
 }
 
+.qanda_sec span {
+    direction: rtl;
+}
+
 .qanda_img {
     width: 228px;
     margin-bottom: 2%;

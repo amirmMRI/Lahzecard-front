@@ -33,10 +33,11 @@ const Kharidar = () => {
         const error={};
         if(!Data.phone.trim()){
             error.phone=" !شماره تلفن را کامل کنید"
+
         }else
         if(isNaN(Data.phone))
         {
-         error.phone=" !شماره تلفن را درست وارد کنید" 
+         error.phone=" !شماره تلفن را به فرم صحیح وارد کنید" 
         }
         else{
             delete error.phone;
@@ -51,46 +52,71 @@ const Kharidar = () => {
     //check for error
     useEffect(()=>{
         SetError(validate(Data))
-        console.log(error)
+        console.log(State)
+        SetState({
+            isbuttondisabled:false
+        })
+        
     },[Data])
     
     const [Touched,SetTouched]=useState({})
 
     const Focused=event=>{
+        SetErr("")
         SetTouched({...Touched,[event.target.name]:true})
+        
     }
     const Submithandler = (event)=>{
-        // console.log("bekandiii bra")
-        event.preventDefault();
-        setload(true)
-        SetState({
-            isbuttondisabled:true
-        })
-        console.log(Data)
-        axios.post("https://api.lahzecard.com/api/user/login",Data)
-        .then((response)=> {
-            if (response.data.statusCode==400) {
-                setTimeout(() => {        SetState({
-                    isbuttondisabled:false
-                })}, 1000);
-                setload(false)
-                console.log(response);
-                // SetErr(response.data.message)
-                SetErr("!این شماره تلفن ثبت نشده")
-                console.log(err);
-                console.log("hi");
+        console.log(State)
+        console.log(error)
 
-            }
-            else if (response) {
-                setTimeout(() => {        SetState({
-                    isbuttondisabled:false
-                })}, 10000);
-                console.log("post shod")
-                console.log(response)
-                
-                localStorage.setItem('Customerphone', JSON.stringify(Data.phone))
-                
-                setTimeout(()=>Navigate("/customerotp"), 100)
+
+        event.preventDefault();
+        SetError(validate(Data));
+        if(error){
+            if(!Data.phone.trim()){
+                SetErr("!شماره تلفن خالی است")
+                SetState({
+                    isbuttondisabled:true
+                })
+                }else{
+                    
+
+                    SetState({
+                        isbuttondisabled:true
+                    })
+                    setload(true)
+
+                    console.log("error")
+                    axios.post("https://api.lahzecard.com/api/user/login",Data)
+                    .then((response)=> {
+                        if (response.data.statusCode==400) {
+                            setTimeout(() => {        SetState({
+                                isbuttondisabled:false
+                            })}, 1000);
+                            setload(false)
+                            console.log(response);
+                            SetErr(response.data.message)
+                            SetErr("!این اطلاعات ثبت نشده")
+                            // if(!error){
+
+                            //     SetErr("!این شماره تلفن ثبت نشده")
+                            //     console.log(err);
+                            //     console.log("hi");
+                            // }else{
+                            //     SetErr("!شماره تلفن خالی است")
+                            // }
+
+                        }
+                        else if (response) {
+                            setTimeout(() => {        SetState({
+                                isbuttondisabled:false
+                            })}, 10000);
+                            console.log("post shod")
+                            console.log(response)
+
+                                localStorage.setItem('Customerphone', JSON.stringify(Data.phone))
+                            setTimeout(()=>Navigate("/customerotp"), 100)  
             }
         })
 
@@ -111,7 +137,72 @@ const Kharidar = () => {
 
 
         })
-    }
+    
+    
+                }
+                
+            }
+            //این آپدیت باعث پیشگیری از اجازه دادن به کلیک بر سابمیت قبل از ورود عدد میشود.
+            //صفحه فروشنده طبق رفتار قبل مانده تا نتیجه گیری شودکه به این نسخه بروز شود یا خیر
+    // else{
+
+    //                 SetState({
+    //                     isbuttondisabled:true
+    //                 })
+    //                 setload(true)
+
+    //                 console.log("error")
+    //                 axios.post("https://api.lahzecard.com/api/user/login",Data)
+    //                 .then((response)=> {
+    //                     if (response.data.statusCode==400) {
+    //                         setTimeout(() => {        SetState({
+    //                             isbuttondisabled:false
+    //                         })}, 1000);
+    //                         setload(false)
+    //                         console.log(response);
+    //                         // SetErr(response.data.message)
+    //                         if(!error){
+
+    //                             SetErr("!این شماره تلفن ثبت نشده")
+    //                             console.log(err);
+    //                             console.log("hi");
+    //                         }else{
+    //                             SetErr("!شماره تلفن خالی است")
+    //                         }
+
+    //                     }
+    //                     else if (response) {
+    //                         setTimeout(() => {        SetState({
+    //                             isbuttondisabled:false
+    //                         })}, 10000);
+    //                         console.log("post shod")
+    //                         console.log(response)
+
+    //                             localStorage.setItem('Customerphone', JSON.stringify(Data.phone))
+    //                         setTimeout(()=>Navigate("/customerotp"), 100)  
+    //         }
+    //     })
+
+    //             // .catch((errors)=> {
+    //             //     console.log(errors)
+
+    //             // })
+
+    //     .catch((errors)=> {
+    //         setTimeout(() => {        SetState({
+    //             isbuttondisabled:false
+    //         })}, 1000);
+    //         setload(false)
+    //         console.log(errors);
+    //         SetErr(errors.response.data.message)
+    //         console.log(err);
+
+
+
+    //     })
+    
+    // }
+}
 
     return (
 

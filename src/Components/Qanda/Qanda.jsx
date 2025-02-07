@@ -113,7 +113,7 @@ const Qanda = () => {
                   <p>چگونه می توانم برای لحظه کارت خود پیام صوتی یا متنی ثبت کنم؟</p>
                   <img src={q2state ? openmark : closemark} alt="question mark closed icon" />
                </div>
-               <span className={q2state ? styles.span_active : styles.spandeActive}>شما می توانید پس از فعال سازی لحظه کارت خود توسط صندوقدار مرکز یا فروشگاه مربوطه ، qr code پشت کارت خود را اسکن کرده و با وارد کردن شماره تلفن خود برای لحظه کارت خود پیام صوتی یا متنی دلخواه خود را ثبت فرمایید.</span>
+               <span className={q2state ? styles.span_active : styles.spandeActive}>شما می توانید پس از فعال سازی لحظه کارت خود توسط صندوقدار مرکز یا فروشگاه مربوطه ، qr code پشت جلد خود را اسکن کرده و با وارد کردن شماره تلفن و شماره کارت خود برای فردی که هدیه گرفتین پیام صوتی و متنی دلخواه خود را ثبت فرمایید.</span>
             </div>
             <div className={styles.certainq_div}>
                <div onClick={q3Handler}>
@@ -124,18 +124,17 @@ const Qanda = () => {
             </div>
             <div className={styles.certainq_div}>
                <div onClick={q4Handler}>
-                  <p>چگونه می توانم از لحظه کارت استفاده کنم؟</p>
+                  <p>چگونه می توانم کارت هدیه خودم را باز کنم ؟</p>
                   <img src={q4state ? openmark : closemark} alt="question mark closed icon" />
                </div>
-               <span className={q4state ? styles.span_active : styles.spandeActive}>بعد از تحویل هدیه خود ، شما می‌توانید با اسکن qr code پشت کارت خود و وارد کردن رمز کارت که در زیر qr code ثبت شده است ، پیام صوتی یا متنی دوست خود را ببینید . همچنین از مبلغ کارت و باقی مانده اعتبار آن و تاریخ انقضا کارت مطلع شوید . همچنین آدرس مرکز یا فروشگاهی که می‌توانید از امکانات آن استفاده فرمایید در همان صفحه به شما نمایش داده می‌شود. با مراجعه به مکان نمایش داده شده و تحویل کارت به صندوقدار می توانید از لحطه کارت خود استفاده کنید . 
-لحظه کارت ، همراه لحظه های خوش شما</span>
+               <span className={q4state ? styles.span_active : styles.spandeActive}>پس از تحویل هدیه خود، شما با اسکن کردن qrcode روی کارت و یا پشت کارت (لطفا به طرح کارت دقت کنید) و یا وارد شدن به آدرس <a href="https://lahzecard.com/opengiftcardnumvar"><b>https://lahzecard.com/opengiftcardnumvar</b></a> پس از وارد کردن شماره کارتی که در پشت جلد درج شده میتوانید هدیه خود را باز کنید و برای استفاده مالی از آن کافی هست شما، آن شماره کارت را به پیش صندوقدار آن مکان خریداری شده ببرید و  حالا شما میتوانید با مبلغ هدیه گرفته شده به سلیقه خودتان فقط در آن مکان از آن کارت هدیه استفاده کنید </span>
             </div>
             <div className={styles.certainq_div}>
                <div onClick={q5Handler}>
                   <p>آیا لحظه کارت تاریخ انقضاء دارد؟</p>
                   <img src={q5state ? openmark : closemark} alt="question mark closed icon" />
                </div>
-               <span className={q5state ? styles.span_active : styles.spandeActive}>بله ، پس از فعال سازی لحظه کارت شما توسط صندوقدار ، کارت شما به مدت ...... اعتبار دارد . همچنین شما می توانید با اسکن qr code پشت کارت و وارد کردن رمز آن ، از زمان اتمام اعتبار کارت خود مطلع شوید .</span>
+               <span className={q5state ? styles.span_active : styles.spandeActive}>بله، پس از فعالسازی توسط صندوقدار فروشگاه، کارت هدیه شما به مدت ۶ماه اعتبار دارد و پس از انقضا کارت هدیه دیگر قابل استفاده نمی باشد، پس لطفا در استفاده از کارت هدیه دقت کنید</span>
             </div>
             <div className={styles.moreQ_div}>
                <Link to="/QandAPage">

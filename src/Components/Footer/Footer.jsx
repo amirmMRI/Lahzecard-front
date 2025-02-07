@@ -15,6 +15,8 @@ import twitter from "../../Images/twitter.png";
 
 const Footer = () => {
     return (
+        <div className={styles.widthfoot}>
+
         <div className={styles.Footer_Container}>
             <section className={styles.foot_contact_sec}>
                 <h3>راه های ارتباطی</h3>
@@ -60,7 +62,12 @@ const Footer = () => {
                     <img src={logoforfooter} className={styles.logooffooter}alt="Lahzecard Logo" />
                 </a>
             </section>
+            
         </div>
+        <span>
+            تمامی جریان های مالی بین مشتری و فروشنده کارت های لحظه کارت هست و استارتاپ لحظه کارت هیچ مسیولیتی در این قبال ندارد.
+            </span>
+    </div>
     );
 };
 

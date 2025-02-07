@@ -13,6 +13,13 @@
     align-items: flex-end;
 }
 
+.widthfoot {
+    width: 100%;
+    font-size: 0.9rem;
+    color: #3C3C3B;
+    background-color: #e8d0e5;
+}
+
 .foot_logo_sec img {
     width: 100px;
     height: 110px;

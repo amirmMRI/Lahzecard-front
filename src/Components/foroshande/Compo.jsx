@@ -38,7 +38,7 @@ const Compo = () => {
         }else
         if(isNaN(Data.phone))
         {
-         error.phone=" !شماره تلفن را درست وارد کنید" 
+         error.phone=" !شماره تلفن را به فرم صحیح وارد کنید" 
         }
         else{
             delete error.phone;
@@ -59,6 +59,7 @@ const Compo = () => {
     const [Touched,SetTouched]=useState({})
 
     const Focused=event=>{
+        SetErr("")  
         SetTouched({...Touched,[event.target.name]:true})
     }
             
@@ -66,6 +67,7 @@ const Compo = () => {
     const Submithandler = (event)=>{
         setload(true)
         event.preventDefault();
+        SetError(validate(Data));
         console.log(load)
         SetState({
             isbuttondisabled:true
@@ -79,10 +81,16 @@ const Compo = () => {
                 })}, 1000);
                 setload(false)
                 console.log(response);
-                // SetErr(response.data.message)
-                SetErr("!این شماره تلفن ثبت نشده")
-                console.log(err);
-                console.log("hi");
+                SetErr(response.data.message)
+                SetErr("!این اطلاعات ثبت نشده")
+                // if(!error){
+
+                //     SetErr("!این شماره تلفن ثبت نشده")
+                //     console.log(err);
+                //     console.log("hi");
+                // }else{
+                //     SetErr("!شماره تلفن خالی است")
+                // }
 
             }
             else if (response) {
