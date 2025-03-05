@@ -33,6 +33,27 @@
     /* background-color: #525151; */
 }
 
+.user_map_address {
+    background-image: url("../../../../Images/map_animated.gif");
+    background-position: 55% 70%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 82%;
+    font-size: 90%;
+    height: 5rem;
+    border-radius: 10px;
+    margin-bottom: 3%;
+    text-decoration: none;
+    color: #373737;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+}
+
+.user_map_address img {
+    margin: 0 0.2rem;
+}
+
 .rules_div {
     width: 50%;
     height: fit-content;
@@ -255,21 +276,23 @@
     align-items: center;
 }
 
+
+/* 
 .user_map_address {
     width: 80%;
     height: 50%;
     border-radius: 30px;
     margin-bottom: 3%;
     box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
-}
+} */
 
 .activation_input_sec {
-    width: 70%;
+    width: 82%;
     height: 50%;
 }
 
 .activation_input_sec input {
-    width: 100%;
+    width: 90%;
     height: 10rem;
     border-radius: 0 15px 15px 15px;
     font-size: 16px;

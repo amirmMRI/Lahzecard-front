@@ -12,6 +12,7 @@ import instagram from "../../../../Images/instagram.png";
 import phone from "../../../../Images/phone.png";
 import website from "../../../../Images/website.png";
 import map from "../../../../Images/map.png";
+import location from "../../../../Images/location.png";
 import attetiongrey from "../../../../Images/attentiongrey.png";
 import trash from "../../../../Images/trash.png";
 import step1 from "../../../../Images/activationpage1.png";
@@ -125,6 +126,7 @@ const ActivationPage = () => {
     const [partnerName, setPartnerName] = useState();
     const [partnerNumber, setPartnerNumber] = useState();
     const [partnerInsta, setPartnerInsta] = useState();
+    const [partneraddress, setPartneraddress] = useState();
     const [partnerLogo, setPartnerLogo] = useState();
     const [partnerWeb, setPartnerWeb] = useState();
 
@@ -142,7 +144,7 @@ const ActivationPage = () => {
                 )
                 .then((response) => {
                     if (response) {
-                        // console.log(response);
+                        console.log(response);
                         setPartnerName(
                             response.data.cardInfo.contractParties.name
                         );
@@ -157,6 +159,9 @@ const ActivationPage = () => {
                         );
                         setPartnerWeb(
                             response.data.cardInfo.contractParties.webAddress
+                        );
+                        setPartneraddress(
+                            response.data.cardInfo.contractParties.address
                         );
                     }
                 })
@@ -317,11 +322,18 @@ const ActivationPage = () => {
                     </section>
                 </div>
                 <div className={styles.activation_input_div}>
-                    <img
+                    {/* <img
                         src={map}
                         alt="user map address"
                         className={styles.user_map_address}
-                    />
+                    /> */}
+                    <a
+                        className={styles.user_map_address}
+                        href={partneraddress}
+                    >
+                        <img src={location} alt="location" />
+                        <span>برای مسیریابی به {partnerName} کلیک کنید </span>
+                    </a>
                     <section className={styles.activation_input_sec}>
                         <input
                             className={styles.activation_input}
