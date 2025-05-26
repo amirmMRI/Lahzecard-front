@@ -42,6 +42,7 @@
 .card_div1 {
     width: 17%;
     height: 45vh;
+    margin: 5%;
     padding: 3% 1%;
     border-radius: 1em;
     border: 4px solid #D3D70675;
@@ -65,7 +66,7 @@
 .card_div2 {
     width: 17%;
     height: 45vh;
-    margin-right: 5%;
+    margin: 5%;
     padding: 3% 1%;
     border-radius: 1em;
     border: 4px solid #83A9F1;
@@ -89,7 +90,7 @@
 .card_div3 {
     width: 17%;
     height: 45vh;
-    margin-right: 5%;
+    margin: 5%;
     padding: 3% 1%;
     border-radius: 1em;
     border: 4px solid #8EC4A6;
@@ -133,6 +134,7 @@
     }
     .card_div1 {
         width: 20%;
+        margin: 0;
         height: 40vh;
         padding: 3% 1%;
         border-radius: 1em;
@@ -148,7 +150,7 @@
     .card_div2 {
         width: 20%;
         height: 40vh;
-        margin-right: 5%;
+        margin-right: 0%;
         padding: 3% 1%;
         border-radius: 1em;
         border: 4px solid #83A9F1;
@@ -163,7 +165,7 @@
     .card_div3 {
         width: 20%;
         height: 40vh;
-        margin-right: 5%;
+        margin-right: 0%;
         padding: 3% 1%;
         border-radius: 1em;
         border: 4px solid #8EC4A6;
@@ -220,7 +222,7 @@
     .card_div2 {
         width: 60%;
         height: auto;
-        margin-right: 0;
+        margin: 0;
         margin-top: 10%;
         padding: 3% 1%;
         border-radius: 1em;
@@ -236,7 +238,7 @@
     .card_div3 {
         width: 60%;
         height: auto;
-        margin-right: 0%;
+        margin: 0%;
         margin-top: 10%;
         padding: 3% 1%;
         border-radius: 1em;

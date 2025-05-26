@@ -20,7 +20,7 @@ const Trophies = () => {
             />
             <section className={styles.pid_sec}>
                 <section>
-                    <a href="https://ictu.qazvin.iau.ir/">
+                    <a href="https://syntechcenter.ir/">
                         <img src={roshd}
                         style={{width:"100%"}} alt="roshd org logo" />
                     </a>

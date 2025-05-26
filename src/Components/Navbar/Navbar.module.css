@@ -12,8 +12,67 @@ nav {
     justify-content: space-between;
 }
 
+.dropdowncontainer {
+    padding: 0;
+    border: none;
+    text-decoration: none;
+}
+
 .navbared button {
     padding: 2rem;
+    text-decoration: none;
+    background-color: transparent;
+}
+
+.dropdownbutton {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    border: none;
+    padding: 0px;
+    /* border: 1px solid #ccc; */
+    /* background-color: rgb(157, 49, 49); */
+    cursor: pointer;
+    color: #000000;
+    /* border-radius: 6px; */
+    font-size: 14px;
+}
+
+.dropdownbutton img {
+    width: 1.5rem;
+    padding: 0.1rem;
+}
+
+.dropdownmenu {
+    position: absolute;
+    top: 7%;
+    margin: 0 10px;
+    /* left: 0; */
+    background-color: #fff;
+    /* border: 1px solid #ccc; */
+    border-radius: 6px;
+    margin-top: 6px;
+    list-style: none;
+    padding: 0;
+    z-index: 100;
+    min-width: 120px;
+}
+
+.dropdownitem button {
+    width: 100%;
+    padding: 0;
+    border: none;
+    height: fit-content;
+    text-decoration: none;
+}
+
+.dropdownitem {
+    padding: 1px 6px;
+    cursor: pointer;
+}
+
+.dropdownitem:hover {
+    background-color: #f0f0f0;
 }
 
 .logo {

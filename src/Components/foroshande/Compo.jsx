@@ -6,6 +6,8 @@ import Loading from '../Loading/Loading';
  //image
  import giftpic from "../../Images/its your gift.png"
 
+ //multilang
+ import t from "../../../src/Multilanguage.jsx";
 
 const Compo = () => {
     const [load,setload]=useState(false)
@@ -139,13 +141,13 @@ const Compo = () => {
                 <div className={styles.Union}> 
         
                     <div className={styles.customer}>
-                        <Link className={styles.Rectangle130} to="/customer"> خریدار </Link>
-                        <div className={styles.Rectangle130prim}> فروشنده</div>
+                        <Link className={styles.Rectangle130} to="/customer"> {t("buyer")}</Link>
+                        <div className={styles.Rectangle130prim}>{t("seller")}</div>
                     </div>           
 
 
                     <div className={styles.joziyat}>
-                        <div className={styles.header}>ورود به عنوان فروشنده </div>
+                        <div className={styles.header}>{t("loginasseller")}</div>
                         
                         {/* <div className={styles.phone}> */}
                             
@@ -153,11 +155,11 @@ const Compo = () => {
                                 
                                 {/* </div> */}
                                 <form className={styles.phonenumber} onSubmit={Submithandler}>
-                                    <label className={styles.labelrect}>شماره همراه</label>
+                                    <label className={styles.labelrect}>{t("mobilenum")}</label>
                                 <input className={styles.Rectangle131} onChange={Changehandler} value={Data.phone} type="text" name="phone" onFocus={Focused} />
                                 {error.phone && Touched.phone && <span className={styles.error}>{error.phone}</span>}
                                 {err && <span className={styles.error}>{err}</span>}                                
-                                <button disabled={State.isbuttondisabled}  className={styles.Rectangle132prim} type='submit'><span className={styles.links}>ارسال کد</span></button>
+                                <button disabled={State.isbuttondisabled}  className={styles.Rectangle132prim} type='submit'><span className={styles.links}>{t("Sendcode")}</span></button>
                             </form> 
                         {/* </div> */}
                         
@@ -174,7 +176,7 @@ const Compo = () => {
         <div className={styles.Group420}>
     <div className={styles.image4}></div>
     <section>
-        <div className={styles.Group153 }>چند قدم تا ساخت لحظات شیرین برای نزدیکانت با لحظه کارت</div>
+        <div className={styles.Group153 }>{t("justafewtoready")}</div>
         
         <img className={styles.picholder} src={giftpic} alt="gif picture" width="320px" />
     </section>

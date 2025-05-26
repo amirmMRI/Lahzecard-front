@@ -14,8 +14,13 @@ import Cumments from '../Cumments/Cumments';
 import SocialCumments from '../SocialCumments/SocialCumments';
 import Trophies from '../Trophies/Trophies';
 import Footer from '../Footer/Footer';
+import { useTranslation } from 'react-i18next';
 
 const FullPage = () => {
+
+
+
+
 
     return ( 
         <div className={styles.fullpage_container}>

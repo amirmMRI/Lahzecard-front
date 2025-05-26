@@ -4,6 +4,10 @@ import Navbar from '../Navbar/Navbar';
 import Footer from '../Footer/Footer';
 import styles from "./Hamkari.module.css"
 import axios from "axios";
+
+//multilanguage
+import { useTranslation } from 'react-i18next';
+import t from "../../../src/Multilanguage.jsx";
 const Hamkari = () => {
     const [data, setData] = useState({
         name: "",
@@ -80,16 +84,16 @@ const Hamkari = () => {
                 </section>
                 <br />
                 <section className={styles.text}>
-                    <p><h1 className={styles.text_topic}>همکاری با ما</h1></p><br /><br />
-                    <p>لحظه کارت با افتخار به عنوان یکی از استارت آپ های برتر کشور در عرصه فروش گیفت کارت ها مشغول به فعالیت است، هدف اصلی این استارت آپ ساخت هدیه ایی خلاقانه به منظور ایجاد لحظات شاد و خاطره انگیز است.</p><br />
-                    <p><h3 className={styles.text_mein}>لحظه کارت به کسب و کار شما چه کمکی می کند:</h3></p>
-                    <p>ما با هدف کمک کردن به Marketing Campaign شما به تولید گیفت کارت های هوشمند پرداخته ایم و جامعه هدف ما Generation Z یا همان نسل جوان هست و ما با در نظر گرفتن علایق و خواسته های این نسل جوان این گیفت کارت های نوآورانه که با افتخار اعلام میکنیم برای اولین بار در ایران ساخته شده است را طراحی کرده ایم.</p>
+                    <p><h1 className={styles.text_topic}>{t("workwithus")}</h1></p><br /><br />
+                    <p>{t("workwithusparagraph1")}</p><br />
+                    <p><h3 className={styles.text_mein}>{t("workwithusparagraph2")}</h3></p>
+                    <p>{t("workwithusparagraph3")}</p>
                     <ul className={styles.list}>
-                        <header><h1>چرا لحظه کارت:</h1></header>
-                        <li>هر تعداد دلخواهی که بخواید در سراسر ایران براتون ارسال می کنیم</li>
-                        <li>مهم نیست چه کسب و کاری دارید ما برای شما هم گیفت کارت درست می کنیم.</li>
-                        <li>شما حتی میتونید براساس برند و لوگوی خودتون و با سلیقه خودتون لحظه کارت سفارش بدید.</li>
-                        <dl>دیگه بقیه صحبت ها باشه برای وقتی که شمارتونو میذارید و ما باهاتون تماس میگیریم:</dl>
+                        <header><h1>{t("workwithusli1")}</h1></header>
+                        <li>{t("workwithusli2")}</li>
+                        <li>{t("workwithusli3")}</li>
+                        <li>{t("workwithusli4")}</li>
+                        <dl>{t("workwithusli5")}</dl>
                     </ul>
 
     {/* form */}
@@ -99,7 +103,7 @@ const Hamkari = () => {
             <section className={styles.formingresponse}>
                 <section className={styles.formingresponsecol} >
                 <div className={styles.formField}>
-                    <label>نام و نام خانوادگی</label>
+                    <label>{t("name")}</label>
                     <input
                         className={(errors.name && touched.name) ? styles.uncompleted : styles.formInput}
                         type="text"
@@ -113,7 +117,7 @@ const Hamkari = () => {
 
 
                 <div className={styles.formField}>
-                    <label for="city">شهر</label>
+                    <label for="city">{t("city")}</label>
                             <select className={styles.city} name="city">
                                 <option value="تهران">تهران</option>
                                 <option value="گیلان">گیلان</option>
@@ -130,14 +134,14 @@ const Hamkari = () => {
                 </section>
                     <section className={styles.formingresponsecol}>
                         <div className={styles.formField}>
-                                    <label className={styles.labelrect}>شماره همراه</label>
+                                    <label className={styles.labelrect}>{t("mobilenum")}</label>
                                         <input className={styles.Rectangle131} onChange={changeHandler} value={data.phonenumber} type="text" name="phonenumber"  onFocus={focusHanlder}  />
                                         {errors.phonenumber && touched.phonenumber && <span className={styles.error}>{errors.phonenumber}</span>}
                             </div> 
 
 
                             <div className={styles.formField}>
-                                <label>ایمیل</label>
+                                <label>{t("email")}</label>
                                 <input
                                     className={(errors.email && touched.email) ? styles.uncompleted : styles.formInput}
                                     type="text"
@@ -152,7 +156,7 @@ const Hamkari = () => {
             <section className={styles.formingresponse}>
             <section className={styles.formingresponsecol}>
                 <div className={styles.formField}>
-                <label>  حوزه کاری </label>
+                <label>{t("businesstype")}</label>
                     <div className={styles.checkBoxContainer}>
                         <input
                             type="radio"
@@ -160,7 +164,7 @@ const Hamkari = () => {
                             value={"کافی شاپ"}
                             onChange={changeHandler}
                             onFocus={focusHanlder} />
-                            <label>کافی شاپ</label>
+                            <label>{t("cofe")}</label>
                             <br />
                             <input
                             type="radio"
@@ -168,7 +172,7 @@ const Hamkari = () => {
                             value={" رستوران"}
                             onChange={changeHandler}
                             onFocus={focusHanlder} />
-                            <label>رستوران</label>
+                            <label>{t("Restaurant")}</label>
                             <br />
                             <input
                             type="radio"
@@ -176,7 +180,7 @@ const Hamkari = () => {
                             value={" سایر موارد"}
                             onChange={changeHandler}
                             onFocus={focusHanlder} />
-                            <label>سایر موارد</label>
+                            <label>{t("others")}</label>
                         
                     </div>
                     {errors.type && touched.type && <span>{errors.type}</span>}
@@ -186,7 +190,7 @@ const Hamkari = () => {
 
             <section className={styles.formingresponsecol}>
                 <div className={styles.formField}>
-                    <label>تعداد سفارش لحظه کارت</label>   
+                    <label>{t("NumberofLahzeCardOrders")}</label>   
                     <div className={styles.checkBoxContainer}>
                         <input
                             type="radio"
@@ -218,7 +222,7 @@ const Hamkari = () => {
                             value={" سایر موارد"}
                             onChange={changeHandler}
                             onFocus={focusHanlder} />
-                            <label>سایر موارد</label>
+                            <label>{t("others")}</label>
                         
                     </div>
                     {errors.type && touched.type && <span>{errors.type}</span>}
@@ -226,7 +230,7 @@ const Hamkari = () => {
                     </section>
                 </section>
                 <div className={styles.formButtons}>
-                    <button type="submit">ارسال</button>
+                    <button type="submit">{t("send")}</button>
                 </div>
             </form>
 

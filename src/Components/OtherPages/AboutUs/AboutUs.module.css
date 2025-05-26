@@ -1,4 +1,5 @@
 .AboutUs_Container {
+    direction: ltr;
     width: 100%;
     display: flex;
     flex-direction: column;

@@ -11,6 +11,9 @@ import closemark from '../../../Images/plussign.png'
 import Navbar from "../../Navbar/Navbar";
 import Footer from "../../Footer/Footer";
 
+//multi language
+import t from "../../../Multilanguage";
+
 const QandaPage = () => {
 
     // Answer States and Funncs
@@ -102,52 +105,54 @@ const QandaPage = () => {
                     <h1>سوالات متداول</h1>
                     <div className={styles.certainq_div}>
                         <div onClick={q1Handler}>
-                            <p>چگونه می‌توانم لحظه کارت را تهیه کنم؟</p>
+                            <p>{t("q1_howtobuy")}</p>
                             <img src={q1state ? openmark : closemark} alt="question mark closed icon" />
                         </div>
-                        <span className={q1state ? styles.span_active : styles.spandeActive}>شما می توانید با مراجعه به مراکز و فروشگاه های تحت قرارداد با ما ، لحظه کارت خود را تهیه نمایید . همچنین می‌توانید با مراجعه به سایت ما به آدرس .......... از مراکز و فروشگاه های تحت قرار داد با ما آگاهی حاصل فرمایید.</span>
+                        <span className={q1state ? styles.span_active : styles.spandeActive}>{t("a1_howtobuy")}<a href="Lahzecard.com">Lahzecard.com</a>{t("a12_howtobuy")}</span>
                     </div>
                     <div className={styles.certainq_div}>
-                        <div onClick={q2Handler}>
-                            <p>چگونه می توانم برای لحظه کارت خود پیام صوتی یا متنی ثبت کنم؟</p>
-                            <img src={q2state ? openmark : closemark} alt="question mark closed icon" />
-                        </div>
-                        <span className={q2state ? styles.span_active : styles.spandeActive}>شما می توانید پس از فعال سازی لحظه کارت خود توسط صندوقدار مرکز یا فروشگاه مربوطه ، qr code پشت جلد خود را اسکن کرده و با وارد کردن شماره تلفن و شماره کارت خود برای فردی که هدیه گرفتین پیام صوتی و متنی دلخواه خود را ثبت فرمایید.</span>
+                    <div onClick={q2Handler}>
+                        <p>{t("q2_howtorecord")}</p>
+                        <img src={q2state ? openmark : closemark} alt="question mark closed icon" />
+                    </div>
+                    <span className={q2state ? styles.span_active : styles.spandeActive}>{t("a2_howtorecord")}</span>
                     </div>
                     <div className={styles.certainq_div}>
-                        <div onClick={q3Handler}>
-                            <p>آیا میتوان از لحظه کارت خریداری شده برای مراکز های دیگر استفاده کرد؟</p>
-                            <img src={q3state ? openmark : closemark} alt="question mark closed icon" />
-                        </div>
-                        <span className={q3state ? styles.span_active : styles.spandeActive}>خیر ، لحظه کارت فقط قابل استفاده در مرکزی می باشد که کارت از آنجا تهیه شده است می باشد.</span>
+                    <div onClick={q3Handler}>
+                        <p>{t("q3_canmultiuse")}</p>
+                        <img src={q3state ? openmark : closemark} alt="question mark closed icon" />
+                    </div>
+                    <span className={q3state ? styles.span_active : styles.spandeActive}>{t("a3_canmultiuse")}</span>
                     </div>
                     <div className={styles.certainq_div}>
-                        <div onClick={q4Handler}>
-                            <p>چگونه می توانم کارت هدیه خودم را باز کنم ؟</p>
-                            <img src={q4state ? openmark : closemark} alt="question mark closed icon" />
-                        </div>
-                        <span className={q4state ? styles.span_active : styles.spandeActive}>پس از تحویل هدیه خود، شما با اسکن کردن qrcode روی کارت و یا پشت کارت (لطفا به طرح کارت دقت کنید) و یا وارد شدن به آدرس <a href="https://lahzecard.com/opengiftcardnumvar"><b>https://lahzecard.com/opengiftcardnumvar</b></a> پس از وارد کردن شماره کارتی که در پشت جلد درج شده میتوانید هدیه خود را باز کنید و برای استفاده مالی از آن کافی هست شما، آن شماره کارت را به پیش صندوقدار آن مکان خریداری شده ببرید و  حالا شما میتوانید با مبلغ هدیه گرفته شده به سلیقه خودتان فقط در آن مکان از آن کارت هدیه استفاده کنید </span>
+                    <div onClick={q4Handler}>
+                        <p>{t("q4_howtoopen")}</p>
+                        <img src={q4state ? openmark : closemark} alt="question mark closed icon" />
+                    </div>
+                    <span className={q4state ? styles.span_active : styles.spandeActive}>{t("a42_howtoopen")}
+                    <a href="https://lahzecard.com/opengiftcardnumvar"><b>https://lahzecard.com/opengiftcardnumvar</b></a>
+                    {t("a41_howtoopen")}</span>
                     </div>
                     <div className={styles.certainq_div}>
-                        <div onClick={q5Handler}>
-                            <p>آیا لحظه کارت تاریخ انقضاء دارد؟</p>
-                            <img src={q5state ? openmark : closemark} alt="question mark closed icon" />
-                        </div>
-                        <span className={q5state ? styles.span_active : styles.spandeActive}>بله، پس از فعالسازی توسط صندوقدار فروشگاه، کارت هدیه شما به مدت ۶ماه اعتبار دارد و پس از انقضا کارت هدیه دیگر قابل استفاده نمی باشد، پس لطفا در استفاده از کارت هدیه دقت کنید</span>
+                    <div onClick={q5Handler}>
+                        <p>{t("q5_canmultiuse")}</p>
+                        <img src={q5state ? openmark : closemark} alt="question mark closed icon" />
+                    </div>
+                    <span className={q5state ? styles.span_active : styles.spandeActive}>{t("a5_canmultiuse")}</span>
                     </div>
                     <div className={styles.certainq_div}>
                         <div onClick={q6Handler}>
-                            <p>چگونه می توانم از مانده اعتبار لحظه کارت خود مطلع شوم؟</p>
+                            <p>{t("q6_balance")}</p>
                             <img src={q6state ? openmark : closemark} alt="question mark closed icon" />
                         </div>
-                        <span className={q6state ? styles.span_active : styles.spandeActive}>شما می توانید با اسکن qr code پشت کارت و وارد کردن رمز ثبت شده زیر qr code ، از مانده اعتبار لحظه کارت خود مطلع شوید.</span>
+                        <span className={q6state ? styles.span_active : styles.spandeActive}>{t("a6_balance")}</span>
                     </div>
                     <div className={styles.certainq_div}>
                         <div onClick={q7Handler}>
-                            <p>آیا لحظه کارت قابل استرداد است؟</p>
+                            <p>{t("q7_refund")}</p>
                             <img src={q7state ? openmark : closemark} alt="question mark closed icon" />
                         </div>
-                        <span className={q7state ? styles.span_active : styles.spandeActive}>خیر ، لحظه کارت پس از فعال سازی ، قابل استرداد نمی باشد . لطفا هنگام تصمیم گیری خود ، دقت فرمایید.</span>
+                        <span className={q7state ? styles.span_active : styles.spandeActive}>{t("a7_refund")}</span>
                     </div>
                 </section>
             </section>

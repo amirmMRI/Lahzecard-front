@@ -8,8 +8,30 @@ import styles from "./Navbar.module.css";
 import logo from "../../Images/logo3.png";
 import close from "../../Images/close.png";
 import char from "../../Images/char.png";
+import langu from "../../Images/language.png"
+
+//multilanguage
+import { useTranslation } from 'react-i18next';
+import t from "../../../src/Multilanguage.jsx";
+
 
 const Navbar = () => {
+
+
+    const [open, setOpen] = useState(false);
+        //multi language
+        const { t, i18n } = useTranslation();
+
+        const changeLanguage = (lng) => {
+          i18n.changeLanguage(lng);
+          setOpen(!open)
+          if (lng === 'ir' || lng === 'ar') {
+            document.documentElement.dir = 'rtl';
+          } else {
+            document.documentElement.dir = 'ltr';
+          }
+        };
+
     // Hamburge menu functions
     const [active, setActive] = useState(false);
     const hamHandler = () => {
@@ -42,30 +64,69 @@ const Navbar = () => {
                             ""
                         ) : (
                             <Link to="/home">
-                                <button className={styles.btn_nav}>خانه</button>
+                                <button className={styles.btn_nav}>
+                                    {t('home')}
+                                    </button>
                             </Link>
                         )}
                         <Link to="/Coop">
                             <button className={styles.btn_nav}>
-                                همکاری با ما
+                            {t('workwithus')}
                             </button>
                         </Link>
                         <Link to="/QandAPage">
                             <button className={styles.btn_nav}>
-                                سوالات متداول
+                              {t('faq')}
                             </button>
                         </Link>
                         <Link to="/AboutUs">
                             <button className={styles.btn_nav}>
-                                درباره ما
+                              {t('aboutus')}
                             </button>
                         </Link>
                         <Link to="/customer">
                             <button className={styles.btn_account}>
                                 <img src={char} alt="cup icon" />
-                                ورود | ثبت نام
+                                {t('login')}
                             </button>
                         </Link>
+                        <div className={styles.dropdowncontainer}>
+                        <button onClick={() => setOpen(!open)} className={styles.dropdownbutton}>
+                        <img src={langu} alt="language icon" />
+                        <section  className={
+                        active ? styles.nothing : styles.ham_options_off
+                    }>
+                            {t('language')}
+                        </section>
+                        </button>
+
+                        {open && (
+                            <ul className={styles.dropdownmenu}>
+                                <li className={styles.dropdownitem}>
+                                    <button onClick={() => changeLanguage('gr')}>Duetsch</button> 
+                                </li>
+                                <li className={styles.dropdownitem}>
+                                    <button onClick={() => changeLanguage('en')}>English</button> 
+                                </li>
+                                <li className={styles.dropdownitem}>
+                                    <button onClick={() => changeLanguage('ir')}>فارسی</button>
+                                </li>
+                                <li className={styles.dropdownitem}>
+                                    <button onClick={() => changeLanguage('ar')}>العربی</button> 
+                                </li>
+                            </ul>
+                        )}
+                        </div>
+
+                        {/* <section>
+                        <button onClick={() => changeLanguage('en')}>English</button> 
+                        <button onClick={() => changeLanguage('ir')}>فارسی</button>
+                        <button onClick={() => changeLanguage('ar')}>العربی</button> 
+                        <button onClick={() => changeLanguage('gr')}>Duetsch</button> 
+
+ 
+                        </section> */}
+
                     </section>
                 </section>
                 <div className={styles.HanMenu} onClick={hamHandler}>
@@ -84,17 +145,17 @@ const Navbar = () => {
                         <div></div>
                         <Link to="/home">
                             <button className={styles.btn_nav_ham}>
-                                صفحه اصلی
+                            {t('home')}
                             </button>
                         </Link>
                         <Link to="/AboutUs">
                             <button className={styles.btn_nav_ham}>
-                                درباره ما
+                            {t('aboutus')}
                             </button>
                         </Link>
                         <Link to="/Coop">
                             <button className={styles.btn_nav_ham}>
-                                همکاری با ما
+                            {t('workwithus')}
                             </button>
                         </Link>
                         <div></div>
@@ -105,7 +166,7 @@ const Navbar = () => {
                                     src={char}
                                     alt="cup icon"
                                 />
-                                ورود | ثبت نام
+                                {t('login')}
                             </button>
                         </Link>
                         <div></div>

@@ -1,0 +1,83 @@
+{
+    "home": "heim",
+    "workwithus": "Mit uns arbeiten",
+    "faq": "Faq",
+    "aboutus": "Über uns",
+    "login": "Einloggen | registrieren",
+    "language": "Sprache",
+    "lahzecard": "Lahze Card",
+    "lahzesazi_banner": "Verwandeln Sie Ihre Stimme in eine zeitlose Erinnerung",
+    "banner2": "Wir fangen die Momente ein, die die bedeutendsten Wendepunkte Ihres Lebens definieren.",
+    "bannerbutton": "Beginnen Sie mit der Erstellung des perfekten Geschenks",
+    "withus": "arbeiten Lahzecard",
+    "cards_left_title": "QR-Code",
+    "cards_left_text": "Scannen Sie den QR-Code auf der Karte, um Ihr Geschenk zu enthüllen.",
+    "cards_center_title": "Datenschutz",
+    "cards_center_text": "Ihre Stimme bleibt sicher und geschützt im vertrauenswürdigen Zuhause von Lahze Card.",
+    "cards_right_title": "Ein Geschenk wie kein anderes",
+    "cards_right_text": "Mit Lahze Card erstellen Sie ein einzigartiges Geschenk für Ihre Liebsten – zu einem Preis, den Sie wählen.",
+
+    "cardexample1": "../../Images/examplecard1_gr.png",
+
+    "q1_howtobuy": "Wie kann ich eine Lahze Card erhalten?",
+    "a1_howtobuy": "Sie können Ihre Lahze Card in unseren Partnergeschäften und -standorten erwerben. Besuchen Sie unsere Website unter",
+    "a12_howtobuy": "um die vollständige Liste der autorisierten Verkäufer in Ihrer Nähe zu sehen.",
+
+    "q2_howtorecord": "Wie kann ich eine Sprachnachricht oder Textnachricht zu meiner Lahze Card hinzufügen?",
+    "a2_howtorecord": "Nachdem Ihre Karte vom Kassierer im Geschäft aktiviert wurde, scannen Sie einfach den QR-Code auf der Rückseite. Geben Sie dann Ihre Telefonnummer und Kartennummer ein, um eine personalisierte Sprachnachricht oder Textnachricht für den Empfänger Ihres Geschenks aufzunehmen.",
+
+    "q3_canmultiuse": "Kann ich eine gekaufte Lahze Card an einem anderen Standort verwenden?",
+    "a3_canmultiuse": "Nein, die Lahze Card kann nur am gleichen Standort oder Geschäft verwendet werden, an dem sie ursprünglich gekauft wurde.",
+
+    "q4_howtoopen": "Wie öffne ich meine Geschenkkarte?",
+    "a41_howtoopen": "Geben Sie die auf der Rückseite gedruckte Kartennummer ein, um Ihre personalisierte Nachricht und Ihr Geschenk zu enthüllen.Um den Geschenkwert einzulösen, zeigen Sie die Kartennummer dem Kassierer am gleichen Standort, an dem die Karte gekauft wurde. Sie können Ihr Geschenk dann nach Belieben genießen – nur an diesem Standort.",
+    "a42_howtoopen": "Um Ihr Geschenk zu öffnen, scannen Sie einfach den QR-Code auf der Karte oder Rückseite (überprüfen Sie das Kartendesign) oder besuchen Sie:",
+
+    "q5_canmultiuse": "Hat die Lahze Card ein Ablaufdatum?",
+    "a5_canmultiuse": "Ja, nachdem die Karte vom Kassierer im Geschäft aktiviert wurde, ist Ihre Lahze Geschenkkarte 6 Monate gültig. Nach dem Ablaufdatum kann die Karte nicht mehr verwendet werden.Stellen Sie sicher, dass Sie Ihr Geschenk innerhalb des Gültigkeitszeitraums genießen!",
+
+    "q6_expiretest": "Wie kann ich den Kontostand meiner Lahze Card überprüfen?م",
+    "a6_expiretest": "Scannen Sie einfach den QR-Code auf der Rückseite Ihrer Karte und geben Sie den einzigartigen Code ein, der darunter angezeigt wird.Sie sehen sofort Ihr verbleibendes Guthaben und wissen, wie viel von Ihrem Geschenk noch zu genießen ist!",
+
+    "q7_refund": "Ist die Lahze Card erstattungsfähig?",
+    "a7_refund": "Nein, nach der Aktivierung ist die Lahze Card nicht erstattungsfähig.Bitte stellen Sie sicher, dass Sie Ihre Entscheidung sorgfältig treffen, bevor Sie den Kauf abschließen, um ein angenehmes Erlebnis für Sie und Ihre Liebsten zu gewährleisten.",
+
+    "aboutusparageraph1": "Lahze Card ist ein erfolgreiches Startup im Forschungszentrum der Azad-Universität Qazvin. Unser Ziel ist es, eine Umgebung voller Vitalität und Freude zu schaffen.",
+    "aboutusparageraph2": "Das studentische Team von Lahze Card hat in Übereinstimmung mit der modernen Welt der Technologie einzigartige Geschenkkarten geschaffen, die nicht nur süße Momente für Ihre Liebsten bringen, sondern es Ihnen auch ermöglichen, Ihre personalisierte Stimme und Nachricht zu verschenken.",
+    "aboutusparageraph3": "Schließen Sie sich uns bei Lahze Card an und führen Sie uns auf diesem Fortschrittsweg.",
+
+
+    "workwithusparagraph1": "Lahze Card ist stolz darauf, als eines der führenden Startups des Landes im Bereich des Verkaufs von Geschenkkarten tätig zu sein. Das Hauptziel dieses Startups ist es, ein kreatives Geschenk zu schaffen, um fröhliche und unvergessliche Momente zu erzeugen.",
+    "workwithusparagraph2": "Wie Lahze Card Ihrem Unternehmen helfen kann:",
+    "workwithusparagraph3": "Wir haben uns auf die Produktion von intelligenten Geschenkkarten konzentriert, um Ihre Marketingkampagnen zu unterstützen. Unsere Zielgruppe ist die Generation Z, und mit diesem Fokus haben wir diese innovativen Geschenkkarten entworfen, die stolz zum ersten Mal im Iran hergestellt wurden.",
+    "workwithusli1": "Warum Lahze Card?",
+    "workwithusli2": "Anpassbar: Wir können so viele Geschenkkarten liefern, wie Sie benötigen, überall im Iran.",
+    "workwithusli3": "Für jedes Unternehmen: Egal, welche Art von Geschäft Sie haben, wir erstellen Geschenkkarten für Sie.",
+    "workwithusli4": "Markenanpassung: Sie können Lahze Cards bestellen, die mit Ihrer Marke und Ihrem Logo angepasst sind, nach Ihren Wünschen gestaltet.",
+    "workwithusli5": "Wenn Sie an einer Zusammenarbeit mit uns interessiert sind, füllen Sie bitte Ihre Daten aus, und wir werden uns mit Ihnen in Verbindung setzen:",
+
+
+    "socialmedia": "Soziale Medien",
+    "city": "Stadt",
+    "mobilenum": "Handynummer",
+    "email": "E-Mail",
+    "businesstype": "Art des Unternehmens",
+    "others": "Andere",
+    "cofe": "cafe",
+    "Restaurant": "Restaurant",
+    "NumberofLahzeCardOrders": "Anzahl der Lahze Card Bestellungen",
+    "send": "Lieferung",
+    "buyer": "Käufer",
+    "seller": "Verkäufer",
+    "loginasseller": "Einloggen",
+    "Logtopreparegift": "Einloggen, um die Geschenkkarte vorzubereiten",
+    "Sendcode": "Code senden",
+    "justafewtoready": "Nur noch wenige Schritte, um süße Momente für Ihre Liebsten mit Lahze Card zu schaffen",
+
+
+    "address": " Qazvin, Barajin, Sintech Innovationszentrum",
+    "connections": "",
+    "name": "Vollständiger Name",
+    "welcome": "Welcome",
+    "description": "This is an internationalized React app."
+}

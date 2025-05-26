@@ -11,10 +11,23 @@ import AboutUspicforphone from '../../../Images/AboutUsphone.png'
 import Navbar from "../../Navbar/Navbar";
 import Footer from "../../Footer/Footer";
 
+//multi language
+import t from "../../../Multilanguage";
+import { useTranslation } from 'react-i18next';
 const AboutUs = () => {
 
     
+        //multi language
+        const { t, i18n } = useTranslation();
 
+        const changeLanguage = (lng) => {
+          i18n.changeLanguage(lng);
+          if (lng === 'ir' || lng === 'ar') {
+            document.documentElement.dir = 'rtl';
+          } else {
+            document.documentElement.dir = 'ltr';
+          }
+        };
     return ( 
         <div className={styles.AboutUs_Container}>
             <section className={styles.main_qnada_sec}>
@@ -22,10 +35,10 @@ const AboutUs = () => {
                     <  Navbar  />
                 </section>
                 <section className={styles.AboutUs_info_sec}>
-                    <h1>درباره ما</h1>
-                    <p>"لحظه کارت" یک استارتاپ نوپای موفق واقع در مرکز تحقیقات دانشگاه آزاد قزوین است. سعی ما در خلق محیطی سرشار از پویایی و شادابی است.</p>
-                    <p>تیم دانشجویی لحظه کارت همگام با دنیای نوین تکنولوژی، گیفت کارت های منحصر به فردی تولید کرده که علاوه بر خلق لحظات شیرین برای عزیزانتان میتوانید صدا و متنی دلخواه خودتان را به آنها هدیه دهید.</p>
-                    <p>همراه لحظه کارت باشید و در این مسیر پیشرفت ما را هدایت کنید.</p>
+                    <h1>{t("aboutus")}</h1>
+                    <p>{t("aboutusparageraph1")}</p>
+                    <p>{t("aboutusparageraph2")}</p>
+                    <p>{t("aboutusparageraph3")}</p>
                 </section>
                 <img src={AboutUspic} alt="info pic containing names and positions of the names." className={styles.info_pic}/>
                 <img src={AboutUspicforphone} alt="info pic containing names and positions of the names." className={styles.info_pic_for_phone}/>

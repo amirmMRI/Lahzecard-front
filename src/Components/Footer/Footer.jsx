@@ -13,36 +13,49 @@ import instagram from "../../Images/instagram.png";
 import linkedin from "../../Images/linkedin.png";
 import twitter from "../../Images/twitter.png";
 
+//multi language
+import t from "../../../src/Multilanguage.jsx";
 const Footer = () => {
     return (
         <div className={styles.widthfoot}>
 
         <div className={styles.Footer_Container}>
             <section className={styles.foot_contact_sec}>
-                <h3>راه های ارتباطی</h3>
+                <h3>
+                {t("connections")}
+
+                </h3>
                 <section>
                     <img src={email} alt="email" />
-                    <p>Lahzecard@gmail.com</p>
+                    <p className={styles.footloc}>Lahzecard@gmail.com</p>
                 </section>
                 <section>
                     <img src={location} alt="address" />
-                    <p>قزوین ، باراجین ، مرکز واحدهای فناور سینتک</p>
+                    <p className={styles.footloc}>
+                    {t("address")}
+                    </p>
                 </section>
             </section>
             <section className={styles.foot_lahze_sec}>
-                <h3>با لحظه کارت</h3>
+                <h3>
+                {t("withus")}
+
+                </h3>
                 <Link to="/Coop">
-                    <button className={styles.btn_nav}>همکاری با ما</button>
+                    <button className={styles.btn_nav}>{t("workwithus")}</button>
                 </Link>
                 <Link to="/QandAPage">
-                    <button className={styles.btn_nav}>سوالات متداول</button>
+                    <button className={styles.btn_nav}>{t("faq")}</button>
                 </Link>
                 <Link to="/AboutUs">
-                    <button className={styles.btn_nav}>درباره ما</button>
+                    <button className={styles.btn_nav}>{t("aboutus")}</button>
                 </Link>
             </section>
             <section className={styles.foot_social_sec}>
-                <h3>شبکه های اجتماعی</h3>
+                <h3>
+                    {t("socialmedia")}
+                    
+                </h3>
                 <section>
                 
                   <a  className={styles.socials} href="https://t.me/lahzecard">
@@ -64,8 +77,8 @@ const Footer = () => {
             </section>
             
         </div>
-        <span>
-            تمامی جریان های مالی بین مشتری و فروشنده کارت های لحظه کارت هست و استارتاپ لحظه کارت هیچ مسیولیتی در این قبال ندارد.
+        <span className={styles.lastfooter} >
+            تمامی جریان های مالی بین مشتری و فروشنده کارت های لحظه کارت هست و استارتاپ لحظه کارت هیچ مسیولیتی در این قبال ندارد
             </span>
     </div>
     );

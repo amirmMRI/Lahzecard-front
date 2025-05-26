@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 
 // Images
 import qanda from '../../Images/qanda.png'
@@ -11,11 +12,32 @@ import phone2img from '../../Images/phone2.png'
 import phone3img from '../../Images/phone3.png'
 import phone4img from '../../Images/phone4.png'
 
+import phone1imgen from '../../Images/phone1en.png'
+import phone2imgen from '../../Images/phone2en.png'
+import phone3imgen from '../../Images/phone3en.png'
+import phone4imgen from '../../Images/phone4en.png'
+
+import phone1imggr from '../../Images/phone1gr.png'
+import phone2imggr from '../../Images/phone2gr.png'
+import phone3imggr from '../../Images/phone3gr.png'
+import phone4imggr from '../../Images/phone4gr.png'
+
+import phone1imgar from '../../Images/phone1ar.png'
+import phone2imgar from '../../Images/phone2ar.png'
+import phone3imgar from '../../Images/phone3ar.png'
+import phone4imgar from '../../Images/phone4ar.png'
+
 // Styles
 import styles from './Qanda.module.css'
 
-const Qanda = () => {
+//multi language
+import t from "../../../src/Multilanguage.jsx";
 
+const Qanda = () => {
+   const { t, i18n } = useTranslation();
+   const changeLanguage = (lng) => {
+      i18n.changeLanguage(lng);
+      }
    // Answer States and Funncs
    const [q1state, setQ1state] = useState(false);
    const [q2state, setQ2state] = useState(false);
@@ -103,50 +125,79 @@ const Qanda = () => {
             <img src={qanda} alt="q and a icon" className={styles.qanda_img}/>
             <div className={styles.certainq_div}>
                <div onClick={q1Handler}>
-                  <p>چگونه می‌توانم لحظه کارت را تهیه کنم؟</p>
+                  <p>{t("q1_howtobuy")}</p>
                   <img src={q1state ? openmark : closemark} alt="question mark closed icon" />
                </div>
-               <span className={q1state ? styles.span_active : styles.spandeActive}>شما می توانید با مراجعه به مراکز و فروشگاه های تحت قرارداد با ما ، لحظه کارت خود را تهیه نمایید . همچنین می‌توانید با مراجعه به سایت ما به آدرس <a href="Lahzecard.com">Lahzecard.com</a> از مراکز و فروشگاه های تحت قرار داد با ما آگاهی حاصل فرمایید.</span>
+               <span className={q1state ? styles.span_active : styles.spandeActive}>{t("a1_howtobuy")}<a href="Lahzecard.com">Lahzecard.com</a>{t("a12_howtobuy")}</span>
             </div>
             <div className={styles.certainq_div}>
                <div onClick={q2Handler}>
-                  <p>چگونه می توانم برای لحظه کارت خود پیام صوتی یا متنی ثبت کنم؟</p>
+                  <p>{t("q2_howtorecord")}</p>
                   <img src={q2state ? openmark : closemark} alt="question mark closed icon" />
                </div>
-               <span className={q2state ? styles.span_active : styles.spandeActive}>شما می توانید پس از فعال سازی لحظه کارت خود توسط صندوقدار مرکز یا فروشگاه مربوطه ، qr code پشت جلد خود را اسکن کرده و با وارد کردن شماره تلفن و شماره کارت خود برای فردی که هدیه گرفتین پیام صوتی و متنی دلخواه خود را ثبت فرمایید.</span>
+               <span className={q2state ? styles.span_active : styles.spandeActive}>{t("a2_howtorecord")}</span>
             </div>
             <div className={styles.certainq_div}>
                <div onClick={q3Handler}>
-                  <p>آیا میتوان از لحظه کارت خریداری شده برای مراکز های دیگر استفاده کرد؟</p>
+                  <p>{t("q3_canmultiuse")}</p>
                   <img src={q3state ? openmark : closemark} alt="question mark closed icon" />
                </div>
-               <span className={q3state ? styles.span_active : styles.spandeActive}>خیر ، لحظه کارت فقط قابل استفاده در مرکزی می باشد که کارت از آنجا تهیه شده است می باشد.</span>
+               <span className={q3state ? styles.span_active : styles.spandeActive}>{t("a3_canmultiuse")}</span>
             </div>
             <div className={styles.certainq_div}>
                <div onClick={q4Handler}>
-                  <p>چگونه می توانم کارت هدیه خودم را باز کنم ؟</p>
+                  <p>{t("q4_howtoopen")}</p>
                   <img src={q4state ? openmark : closemark} alt="question mark closed icon" />
                </div>
-               <span className={q4state ? styles.span_active : styles.spandeActive}>پس از تحویل هدیه خود، شما با اسکن کردن qrcode روی کارت و یا پشت کارت (لطفا به طرح کارت دقت کنید) و یا وارد شدن به آدرس <a href="https://lahzecard.com/opengiftcardnumvar"><b>https://lahzecard.com/opengiftcardnumvar</b></a> پس از وارد کردن شماره کارتی که در پشت جلد درج شده میتوانید هدیه خود را باز کنید و برای استفاده مالی از آن کافی هست شما، آن شماره کارت را به پیش صندوقدار آن مکان خریداری شده ببرید و  حالا شما میتوانید با مبلغ هدیه گرفته شده به سلیقه خودتان فقط در آن مکان از آن کارت هدیه استفاده کنید </span>
+               <span className={q4state ? styles.span_active : styles.spandeActive}>{t("a42_howtoopen")}
+               <a href="https://lahzecard.com/opengiftcardnumvar"><b>https://lahzecard.com/opengiftcardnumvar</b></a>
+               {t("a41_howtoopen")}</span>
             </div>
             <div className={styles.certainq_div}>
                <div onClick={q5Handler}>
-                  <p>آیا لحظه کارت تاریخ انقضاء دارد؟</p>
+                  <p>{t("q5_canmultiuse")}</p>
                   <img src={q5state ? openmark : closemark} alt="question mark closed icon" />
                </div>
-               <span className={q5state ? styles.span_active : styles.spandeActive}>بله، پس از فعالسازی توسط صندوقدار فروشگاه، کارت هدیه شما به مدت ۶ماه اعتبار دارد و پس از انقضا کارت هدیه دیگر قابل استفاده نمی باشد، پس لطفا در استفاده از کارت هدیه دقت کنید</span>
+               <span className={q5state ? styles.span_active : styles.spandeActive}>{t("a5_canmultiuse")}</span>
             </div>
             <div className={styles.moreQ_div}>
                <Link to="/QandAPage">
-                  <button>سوالات بیشتر...</button>
+                  <button>{t("morequestion")}</button>
                </Link>
             </div>
          </section>
          <section className={styles.phone_sec}>
-            <img src={phone1img} alt="phone png" className={phone1 ? styles.phone_img : styles.phone_img_deactive}/>
-            <img src={phone2img} alt="phone png" className={phone2 ? styles.phone_img : styles.phone_img_deactive}/>
-            <img src={phone3img} alt="phone png" className={phone3 ? styles.phone_img : styles.phone_img_deactive}/>
-            <img src={phone4img} alt="phone png" className={phone4 ? styles.phone_img : styles.phone_img_deactive}/>
+         {i18n.language === 'en' ? (
+               <>
+                  <img src={phone1imgen} alt="phone png" className={phone1 ? styles.phone_img : styles.phone_img_deactive}/>
+                  <img src={phone2imgen} alt="phone png" className={phone2 ? styles.phone_img : styles.phone_img_deactive}/>
+                  <img src={phone3imgen} alt="phone png" className={phone3 ? styles.phone_img : styles.phone_img_deactive}/>
+                  <img src={phone4imgen} alt="phone png" className={phone4 ? styles.phone_img : styles.phone_img_deactive}/>
+               </>
+            ) : i18n.language === 'ar' ? (
+               <>
+                  <img src={phone1imgar} alt="phone png" className={phone1 ? styles.phone_img : styles.phone_img_deactive}/>
+                  <img src={phone2imgar} alt="phone png" className={phone2 ? styles.phone_img : styles.phone_img_deactive}/>
+                  <img src={phone3imgar} alt="phone png" className={phone3 ? styles.phone_img : styles.phone_img_deactive}/>
+                  <img src={phone4imgar} alt="phone png" className={phone4 ? styles.phone_img : styles.phone_img_deactive}/>
+               </>
+            ) : i18n.language === 'gr' ? (
+               <>
+                  <img src={phone1imggr} alt="phone png" className={phone1 ? styles.phone_img : styles.phone_img_deactive}/>
+                  <img src={phone2imggr} alt="phone png" className={phone2 ? styles.phone_img : styles.phone_img_deactive}/>
+                  <img src={phone3imggr} alt="phone png" className={phone3 ? styles.phone_img : styles.phone_img_deactive}/>
+                  <img src={phone4imggr} alt="phone png" className={phone4 ? styles.phone_img : styles.phone_img_deactive}/>
+               </>
+            )
+            :(
+               <>
+                  <img src={phone1img} alt="phone png" className={phone1 ? styles.phone_img : styles.phone_img_deactive}/>
+                  <img src={phone2img} alt="phone png" className={phone2 ? styles.phone_img : styles.phone_img_deactive}/>
+                  <img src={phone3img} alt="phone png" className={phone3 ? styles.phone_img : styles.phone_img_deactive}/>
+                  <img src={phone4img} alt="phone png" className={phone4 ? styles.phone_img : styles.phone_img_deactive}/>
+               </>
+            ) 
+            }
             <div className={styles.buttons_div}>
                <button className={phone4 ? styles.btn_active : styles.btn_deactive} onClick={phone4Handler}></button>
                <button className={phone3 ? styles.btn_active : styles.btn_deactive} onClick={phone3Handler}></button>

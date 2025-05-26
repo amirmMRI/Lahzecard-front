@@ -1,21 +1,28 @@
 .fullpage_container {
     /* overflow-x: hidden; */
+    /* direction: ltr; */
 }
 
+
 /* navbar section */
+
 .Navbar_section {
     margin: 0 5%;
     width: auto;
     height: auto;
 }
 
+
 /* Background section */
+
 .Background_section {
     width: auto;
     height: auto;
 }
 
+
 /* Fullpage styles */
+
 .Landing_section {
     padding: 1% 4% 0% 4%;
 }

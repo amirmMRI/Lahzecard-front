@@ -6,7 +6,8 @@ import Loading from '../Loading/Loading';
  //image
  import giftpic from "../../Images/giftmaking.png"
 
-
+ //multilang
+ import t from "../../../src/Multilanguage.jsx";
 
 const Kharidar = () => {
     const [load,setload]=useState(false)
@@ -221,13 +222,13 @@ const Kharidar = () => {
             <div className={styles.Union}> 
 
                 <div className={styles.customer}>
-                    <div className={styles.Rectangle130}>خریدار</div>
-                    <Link to="/seller" className={styles.Rectangle130prim}>فروشنده</Link>
+                    <div className={styles.Rectangle130}>{t("buyer")}</div>
+                    <Link to="/seller" className={styles.Rectangle130prim}>{t("seller")}</Link>
                  </div>           
 
 
             <div className={styles.joziyat}>
-                <div className={styles.header}>ورود برای آماده سازی کارت هدیه</div>
+                <div className={styles.header}>{t("Logtopreparegift")}</div>
                 
                 {/* <div className={styles.phone}> */}
                     
@@ -235,11 +236,11 @@ const Kharidar = () => {
                         
                         {/* </div> */}
                         <form className={styles.phonenumber} onSubmit={Submithandler}>
-                            <label className={styles.labelrect}>شماره همراه</label>
+                            <label className={styles.labelrect}>{t("mobilenum")}</label>
                         <input  className={styles.Rectangle131} onChange={Changehandler} value={Data.phone} type="text" name="phone"  onFocus={Focused}  />
                         {error.phone && Touched.phone && <span className={styles.error}>{error.phone}</span>}
                         {err && <span className={styles.error}>{err}</span>}
-                        <button disabled={State.isbuttondisabled} className={styles.Rectangle132prim} type='submit'><span className={styles.links}>ارسال کد</span></button>
+                        <button disabled={State.isbuttondisabled} className={styles.Rectangle132prim} type='submit'><span className={styles.links}>{t("Sendcode")}</span></button>
                     </form>
                 {/* </div> */}
                 
@@ -256,7 +257,7 @@ const Kharidar = () => {
 <div className={styles.Group420}>
     <div className={styles.image4}></div>
     <section>
-        <div className={styles.Group153 }>چند قدم تا ساخت لحظات شیرین برای نزدیکانت با لحظه کارت</div>
+        <div className={styles.Group153 }>{t("justafewtoready")}</div>
         
         <img className={styles.picholder} src={giftpic} alt="gif picture" width="320px" />
     </section>

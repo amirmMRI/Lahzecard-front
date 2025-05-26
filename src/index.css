@@ -7,6 +7,20 @@
     --logo_red_much_lighter: #ffadbe;
 }
 
+
+/* multi language changing direction */
+
+[dir="rtl"] body {
+    direction: rtl;
+    text-align: right;
+}
+
+[dir="ltr"] body {
+    /* flex-direction: row-reverse; */
+    direction: ltr;
+    text-align: left;
+}
+
 @font-face {
     font-family: 'iran-sans';
     src: url('./Fonts/IRANSans/IRANSans.ttf') format('truetype');

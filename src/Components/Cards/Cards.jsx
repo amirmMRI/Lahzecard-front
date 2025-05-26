@@ -8,6 +8,8 @@ import gift from '../../Images/gift.png'
 
 // Styles
 import styles from './Cards.module.css'
+//multi language
+import t from "../../../src/Multilanguage.jsx";
 
 const Cards = () => {
 
@@ -20,22 +22,22 @@ const Cards = () => {
                 <div className={styles.card_div1}>
                     <img src={gift} alt="lahze card" />
                     <section className={styles.card_text}>
-                        <h3>هدیه ایی خاص</h3>
-                        <p>با لحظه کارت یک هدیه خاص با قیمت دلخواهتون برای عزیزانتون آماده کنید.</p>
+                        <h3>{t("cards_right_title")}</h3>
+                        <p>{t("cards_right_text")}</p>
                     </section>
                 </div>
                 <div className={styles.card_div2}>
                     <img src={privecy} alt="lahze card" />
                     <section className={styles.card_text}>
-                        <h3>حفظ حریم خصوصی</h3>
-                        <p>صدای شما در خانه امن لحظه کارت باقی میماند.</p>
+                        <h3>{t("cards_center_title")}</h3>
+                        <p>{t("cards_center_text")}</p>
                     </section>
                 </div>
                 <div className={styles.card_div3}>
                     <img src={qrcode} alt="lahze card" />
                     <section className={styles.card_text}>
-                        <h3>بارکد</h3>
-                        <p>با اسکن کردن بارکد روی کارت هدیه تونو باز کنید.</p>
+                        <h3>{t("cards_left_title")}</h3>
+                        <p>{t("cards_left_text")}</p>
                     </section>
                 </div>
             </section>
