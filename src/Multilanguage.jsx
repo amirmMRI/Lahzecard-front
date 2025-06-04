@@ -10,8 +10,9 @@ const Multilanguage = (text) => {
           };
           return (
 
-        <div>
+        <div style={{color: 'white'}}>
             {t(text)}
+            {/*{text}*/}
         </div>
     );
 };
