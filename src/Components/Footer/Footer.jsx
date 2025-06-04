@@ -8,10 +8,7 @@ import './Footer.css'
 import logoforfooter from "../../Images/logoforfooter.png";
 import email from "../../Images/email.png";
 import location from "../../Images/location.png";
-import telegram from "../../Images/telegram.png";
-import instagram from "../../Images/instagram.png";
-import linkedin from "../../Images/linkedin.png";
-import twitter from "../../Images/twitter.png";
+
 
 //multi language
 import t from "../../../src/Multilanguage.jsx";
