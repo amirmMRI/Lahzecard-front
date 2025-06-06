@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {useEffect} from 'react'
 import { Helmet } from 'react-helmet';
 // Stylse
 import styles from './FullPage.module.css'
@@ -17,10 +17,9 @@ import Footer from '../Footer/Footer';
 import { useTranslation } from 'react-i18next';
 
 const FullPage = () => {
-
-
-
-
+    useEffect(() => {
+        localStorage.setItem('language', "ir");
+    }, );
 
     return ( 
         <div className={styles.fullpage_container}>
