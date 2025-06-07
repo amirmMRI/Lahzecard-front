@@ -15,7 +15,6 @@ function Footer() {
     const language = localStorage.getItem('language') ;
     let isRTL = language === 'ar' || language === 'ir';
 
-
     return (
         <div
             className="footer"
