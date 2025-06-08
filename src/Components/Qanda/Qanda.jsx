@@ -4,6 +4,10 @@ import { useTranslation } from 'react-i18next';
 
 // Images
 import qanda from '../../Images/qanda.png'
+import qandaen from '../../Images/qandaen.png'
+import qandaar from '../../Images/qandaar.png'
+import qandagr from '../../Images/qandagr.png'
+
 import openmark from '../../Images/QmarkOpened.png'
 import closemark from '../../Images/QmarkClosed.png'
 
@@ -122,7 +126,18 @@ const Qanda = () => {
    return ( 
       <div className={styles.Qanda_Container}>
          <section className={styles.qanda_sec}>
-            <img src={qanda} alt="q and a icon" className={styles.qanda_img}/>
+           
+            {i18n.language === 'en' ? (
+               <img src={qandaen} alt="q and a icon" className={styles.qanda_img}/>
+            ) : i18n.language === 'ar' ? (
+               <img src={qandaar} alt="q and a icon" className={styles.qanda_img}/>
+            ) : i18n.language === 'gr' ? (
+               <img src={qandagr} alt="q and a icon" className={styles.qanda_img}/>
+            )
+            :(
+               <img src={qanda} alt="q and a icon" className={styles.qanda_img}/>
+            ) 
+            }
             <div className={styles.certainq_div}>
                <div onClick={q1Handler}>
                   <p>{t("q1_howtobuy")}</p>

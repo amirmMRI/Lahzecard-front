@@ -124,7 +124,7 @@ const QandaPage = () => {
                     </div>
                     <span className={q3state ? styles.span_active : styles.spandeActive}>{t("a3_canmultiuse")}</span>
                     </div>
-                    <div className={styles.certainq_div}>
+                    <div className={styles.certainqdiv}>
                     <div onClick={q4Handler}>
                         <p>{t("q4_howtoopen")}</p>
                         <img src={q4state ? openmark : closemark} alt="question mark closed icon" />

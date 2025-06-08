@@ -21,9 +21,8 @@
 }
 
 .qanda_img {
-    width: 228px;
-    margin-bottom: 2%;
-    user-drag: none;
+    width: 320px;
+    margin-bottom: 3%;
     -webkit-user-drag: none;
     user-select: none;
     -moz-user-select: none;

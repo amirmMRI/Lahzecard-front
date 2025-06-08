@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {useEffect} from 'react';
 import { Helmet } from 'react-helmet';
 // Stylse
 import styles from './FullPage.module.css'
@@ -15,9 +15,10 @@ import SocialCumments from '../SocialCumments/SocialCumments';
 import Trophies from '../Trophies/Trophies';
 import Footer from '../Footer/Footer';
 import { useTranslation } from 'react-i18next';
-
 const FullPage = () => {
-
+    useEffect(() => {
+        localStorage.setItem('language', "ir");
+    }, );
 
 
 

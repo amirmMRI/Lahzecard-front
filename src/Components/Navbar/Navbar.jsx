@@ -23,6 +23,7 @@ const Navbar = () => {
         const { t, i18n } = useTranslation();
 
         const changeLanguage = (lng) => {
+        localStorage.setItem("language", lng);
           i18n.changeLanguage(lng);
           setOpen(!open)
           if (lng === 'ir' || lng === 'ar') {
