@@ -1,0 +1,123 @@
+.carousel_container {
+    position: relative;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 60px;
+}
+
+.carousel_button_container.mobile {
+    position: absolute;
+    width: 100%;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    display: flex;
+    justify-content: space-between;
+    padding: 0 10px;
+    pointer-events: none;
+    z-index: 2;
+}
+.carousel_brand_icon{
+    width: 56px !important;
+}
+.carousel_text{
+    direction: rtl;
+    font-weight: 600;
+    text-align: center;
+}
+.carousel_button{
+    cursor: pointer;
+}
+.carousel_stars{
+    display: flex;
+    justify-content: center;
+}
+.carousel_button_container.mobile .carousel_button {
+    pointer-events: auto;
+    position: relative;
+    background: transparent;
+    border: none;
+    width: 61px;
+    height: 61px;
+}
+.carousel-item{
+    padding: 10px;
+}
+.carousel_button_container.desktop {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    z-index: 2;
+}
+
+
+.carousel_button_container.desktop .carousel_button {
+    background: transparent;
+    border: none;
+    width: 61px;
+    height: 61px;
+}
+
+.carousel_button.disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.carousel_container {
+    padding-bottom: 80px;
+}
+
+.testimonial_card {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    width: 258px;
+    height: 299px;
+    margin: 0 auto;
+    background: white;
+    border-radius: 32px;
+    padding: 20px;
+    box-shadow: 0 4px 12px rgba(138, 43, 226, 0.2),
+    0 8px 24px rgba(138, 43, 226, 0.15);
+    position: relative;
+    z-index: 1;
+    transform: translateZ(0);
+}
+.testimonial_card_content{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+.testimonial_card_content_header{
+    font-weight: 700;
+    font-size: 1.3rem;
+}
+.react-multi-carousel-track{
+    padding-bottom: 3rem;
+}
+
+@media (max-width: 900px) {
+    .carousel_brand_icon{
+        width: 39px !important;
+    }
+    .carousel_container {
+        padding: 0 40px;
+    }
+    .carousel_container {
+        padding-bottom: 20px;
+    }
+    .testimonial_card {
+        width: 184px;
+        height: 213px;
+        min-height: 250px;
+    }
+}
+
+:global(.react-multi-carousel-list) {
+    padding: 2rem 0;
+}

@@ -81,5 +81,47 @@
 
     "connections": "connections",
     "welcome": "Welcome",
-    "description": "This is an internationalized React app."
+    "description": "This is an internationalized React app.",
+
+    "infrastructure_title": "Infrastructure Service",
+    "gift_card": "Gift Card",
+    "infrastructure_subtitle": "For advertising agencies and businesses of all sizes",
+    "infrastructure_features": "Secure, customizable, and designed to truly grow your sales.",
+    "consult_button": "Request Consultation",
+    "contact_button": "Contact Us",
+    "trusted_by_title": "Trusted by Leading Companies",
+    "trusted_by_desc": "We’re proud to have worked with these companies:",
+    "benefits_title": "How Can Lahzeh Card Help Your Business?",
+    "benefits_intro": "Looking to gain customers at a low cost? Gift cards are your solution!",
+    "benefits_desc": "Lahzeh Card provides a full infrastructure for creating, printing, and selling customized gift cards.",
+    "benefits_p1": "Custom design of digital and physical gift cards",
+    "benefits_p2": "Creating a new customer cycle with gift cards",
+    "benefits_p3": "Use gift cards as loyalty rewards and discounts",
+    "benefits_p4": "Turn your product and service into a valuable gift",
+    "benefits_p5": "Detailed reporting and full management of active cards",
+    "benefits_p6": "Gift cards with shared credit across multiple brands",
+
+    "agency_title": "Gift Card Sales & Loyalty Club Agency",
+    "agency_target": "For advertising agencies, print houses, and design studios",
+    "agency_desc": "If you work in advertising or printing, you can become a Lahzeh Card representative and easily manage gift card creation, printing, and even operate a sales panel for brands under your own name — powered by Lahzeh Card.",
+    "agency_f1": "Exclusive and private access to the panel",
+    "agency_f2": "Create marketing campaigns for your clients",
+    "agency_f3": "Provide full infrastructure for card numbers and custom gift cards",
+    "agency_f4": "Access to reports, statistics, and developer API",
+    "agency_f5": "Create multifunctional gift cards linked across your clients",
+
+    "agency_footer": "With Lahzeh Card, you can offer professional end-to-end gift card services to your clients.",
+    "cooperation_title": "We’re Ready to Work with You!",
+    "cooperation_desc": "Whether you're a restaurant owner, advertising agency, print shop, or factory — we provide full infrastructure for digital and physical gift cards with the lowest subscription cost.",
+    "testimonials_title": "What Our Clients Say",
+    "testimonials": {
+        "زیویه": "Hello, thank you for your great services. Wishing your professional team lots of success and good moments ahead.",
+        "پدرا": "A very innovative and interesting solution. We used it to gift customers at Pedraa restaurant.",
+        "دکتر پورنگ سازگار": "Great support. I used it for patient gifts on special occasions and was very satisfied."
+    },
+    "final_call": "🎯 Gift cards — a tool for more sales and better customer retention.\nStart with Lahzeh Card today!"
+
+
+
+
 }
