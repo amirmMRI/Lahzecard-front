@@ -20,9 +20,6 @@ const FullPage = () => {
         localStorage.setItem('language', "ir");
     }, );
 
-
-
-
     return ( 
         <div className={styles.fullpage_container}>
         <Helmet>      <header>
