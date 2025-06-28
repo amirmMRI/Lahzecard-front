@@ -63,6 +63,7 @@
 
 .landing_first_btn {
     display: inline-block;
+    /*padding: 2rem;*/
     /* text-align: center; */
     /* default color */
     /* "to left" / "to right" - affects initial color */
@@ -79,6 +80,7 @@
 .landing_first_btn img {
     width: 18px;
     padding: 0 5px 0 0;
+    margin: 0 5px -6px 0;
 }
 
 @media (max-width: 720px) {
@@ -163,9 +165,9 @@
         font-weight: bold;
     }
     .landing_first_btn {
-        font-size: 16px;
+        font-size: 14px;
         width: 85%;
-        height: 4rem;
+        /*height: 4rem;*/
         color: var(--white);
         align-items: center;
         font-family: 'iran-sans';
@@ -177,7 +179,7 @@
         justify-content: center;
         box-shadow: rgb(38, 57, 77) 0px 10px 20px -10px;
         outline: 0;
-        padding: 3% 1%;
+        padding: 2rem!important;
         margin: 10% 0;
         border: none;
         /* text-align: center; */
@@ -185,6 +187,8 @@
     }
     .landing_first_btn img {
         width: 24px;
-        padding: 15px 15px 0 0;
+        /*rotate: 180deg;*/
+        margin: 0 5px 0 0;
+        padding: 0 15px 0 0;
     }
 }

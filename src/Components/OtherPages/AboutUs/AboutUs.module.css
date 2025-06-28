@@ -9,6 +9,7 @@
 }
 
 .main_qnada_sec {
+    margin-bottom: 5rem;
     width: 90%;
     margin-top: 2%;
     border-radius: 35px;
@@ -30,14 +31,14 @@
 .AboutUs_info_sec h1 {
     font-size: 30px;
     font-weight: bold;
-    text-align: right;
+    /*text-align: right;*/
     margin: 3% 0;
 }
 
 .AboutUs_info_sec p {
     font-size: 20px;
     font-weight: 400;
-    text-align: right;
+    /*text-align: right;*/
 }
 
 .info_pic {
