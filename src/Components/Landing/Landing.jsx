@@ -36,6 +36,7 @@ const Landing = () => {
                     <p>{t("banner2")}</p>
                     <Link to="/customer">
                         <button
+
                             style={{
                                 direction: isRTL ? 'rtl' : 'ltr',
                                 marginLeft: isRTL ? '62%' : 0,
@@ -45,6 +46,7 @@ const Landing = () => {
                             <div>
                                 {t("bannerbutton")}
                             </div>
+
                             <img
                                 src={littlearrow}
                                 alt="littlearrow icon"

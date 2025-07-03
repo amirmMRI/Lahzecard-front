@@ -38,8 +38,8 @@
     "q5_canmultiuse": "Hat die Lahze Card ein Ablaufdatum?",
     "a5_canmultiuse": "Ja, nachdem die Karte vom Kassierer im Geschäft aktiviert wurde, ist Ihre Lahze Geschenkkarte 6 Monate gültig. Nach dem Ablaufdatum kann die Karte nicht mehr verwendet werden.Stellen Sie sicher, dass Sie Ihr Geschenk innerhalb des Gültigkeitszeitraums genießen!",
 
-    "q6_expiretest": "Wie kann ich den Kontostand meiner Lahze Card überprüfen?م",
-    "a6_expiretest": "Scannen Sie einfach den QR-Code auf der Rückseite Ihrer Karte und geben Sie den einzigartigen Code ein, der darunter angezeigt wird.Sie sehen sofort Ihr verbleibendes Guthaben und wissen, wie viel von Ihrem Geschenk noch zu genießen ist!",
+    "q6_balance": "Wie kann ich den Kontostand meiner Lahze Card überprüfen?",
+    "a6_balance": "Scannen Sie einfach den QR-Code auf der Rückseite Ihrer Karte und geben Sie den einzigartigen Code ein, der darunter angezeigt wird.Sie sehen sofort Ihr verbleibendes Guthaben und wissen, wie viel von Ihrem Geschenk noch zu genießen ist!",
 
     "q7_refund": "Ist die Lahze Card erstattungsfähig?",
     "a7_refund": "Nein, nach der Aktivierung ist die Lahze Card nicht erstattungsfähig.Bitte stellen Sie sicher, dass Sie Ihre Entscheidung sorgfältig treffen, bevor Sie den Kauf abschließen, um ein angenehmes Erlebnis für Sie und Ihre Liebsten zu gewährleisten.",
