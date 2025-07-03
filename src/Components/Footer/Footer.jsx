@@ -11,10 +11,11 @@ import location from "../../Images/location.png";
 
 //multi language
 import t from "../../../src/Multilanguage.jsx";
+import {useTranslation} from "react-i18next";
 
 const Footer = () => {
-    const language = localStorage.getItem('language') ;
-    let isRTL = language === 'ar' || language === 'ir';
+    const { t, i18n } = useTranslation();
+    let isRTL = i18n.language === 'ar' || i18n.language === 'ir';
 
     return (
     
@@ -117,10 +118,10 @@ const Footer = () => {
 
                 <div
                 
-                    className={`${styles.footer_logo_icon} ${(language === "gr"||language === "en") ? styles.footer_logo_right : styles.footer_logo_left}`}
+                    className={`${styles.footer_logo_icon} ${(!isRTL) ? styles.footer_logo_right : styles.footer_logo_left}`}
                     style={{
-                        left: language === 'ir' || language === 'ar' ? 0 : undefined,
-                        right: language === 'en' || language === 'gr' ? 0 : undefined,}}>
+                        left: isRTL ? 0 : undefined,
+                        right: !isRTL ? 0 : undefined,}}>
                     <Link to={'/home'}>
                         <svg width="250" height="220" viewBox="0 0 269 294" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <mask id="path-1-outside-1_772_2802" maskUnits="userSpaceOnUse" x="-1" y="0" width="270"

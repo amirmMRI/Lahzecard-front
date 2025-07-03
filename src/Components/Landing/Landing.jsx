@@ -22,15 +22,31 @@ const Landing = () => {
             <section className={styles.landing_text_sec}>
                 <h1>{t("lahzecard")}
                     <br/>{t("lahzesazi_banner")}</h1>
-                <img src={arrow} alt="arrow icon" className={styles.arrow_img}/>
+                <img
+                    src={arrow}
+                    alt="arrow icon"
+                    className={styles.arrow_img}
+                    style={{
+                        transform: !isRTL ? 'scaleX(-1)' : undefined,
+                        marginRight: !isRTL ? 0 : undefined,
+                        marginLeft: !isRTL ? '80%' : undefined,
+                    }}
+                />
                 <section className={styles.landing_btn_sec}>
                     <p>{t("banner2")}</p>
                     <Link to="/customer">
                         <button
-                            style={{direction: isRTL ? 'rtl' : 'ltr'}}
+
+                            style={{
+                                direction: isRTL ? 'rtl' : 'ltr',
+                                marginLeft: isRTL ? '62%' : 0,
+                            }}
                             className={styles.landing_first_btn}
                         >
-                            {t("bannerbutton")}
+                            <div>
+                                {t("bannerbutton")}
+                            </div>
+
                             <img
                                 src={littlearrow}
                                 alt="littlearrow icon"

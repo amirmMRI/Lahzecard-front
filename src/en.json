@@ -19,6 +19,8 @@
 
     "cardexample1": "../../Images/examplecard1_en.png",
 
+    "howtobuy_header" : "Gift Preparation",
+    "howtobuy_moreQ" : "more questions...",
     "q1_howtobuy": "How can I get a Lahze Card?",
     "a1_howtobuy": "You can purchase your Lahze Card from our partner stores and locations. Visit our website at ",
     "a12_howtobuy": "to see the full list of authorized sellers near you.",
@@ -57,9 +59,9 @@
     "workwithusli4": "Brand Customization: You can order Lahze Cards customized with your brand and logo, designed according to your preferences.",
     "workwithusli5": "If you are interested in collaborating with us, please fill out your details, and we will get in touch with you:",
 
-    "withus": "with Lahzecard",
+    "withus": "With Lahzecard",
     "address": "Qazvin, Barajin, Sintech Innovation Center",
-    "socialmedia": "social media ",
+    "socialmedia": "Social Media ",
 
     "name": "name",
     "city": "city",
@@ -79,7 +81,7 @@
     "Sendcode": "send code",
     "justafewtoready": "Just a few steps away from creating sweet moments for your loved ones with Lahze Card",
 
-    "connections": "connections",
+    "connections": "Contact Methods",
     "welcome": "Welcome",
     "description": "This is an internationalized React app.",
 

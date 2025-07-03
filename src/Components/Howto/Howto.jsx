@@ -44,6 +44,7 @@ import q4phonegr from '../../Images/q4phonegr.png'
 
 // Styles
 import styles from './Howto.module.css'
+import t from "../../Multilanguage";
 
 const Howto = () => {
    const { t, i18n } = useTranslation();
@@ -87,7 +88,14 @@ const Howto = () => {
 
     return ( 
         <div className={styles.Cards_Container}>
-            <h1>نحوه آماده سازی هدیه:</h1>
+            <h1
+               className={styles.Cards_header}
+               style={{
+
+               }}
+            >
+               {t("howtobuy_header")}
+            </h1>
             {i18n.language === 'en' ? (
                <>
                <img src={q1en} alt="q1 card" onClick={q1Handler} className={q1state ? styles.card_active : styles.card_not_active}/>
