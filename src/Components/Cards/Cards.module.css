@@ -113,7 +113,9 @@
 .card_text p {
     text-align: center;
 }
-
+h3 div{
+    font-weight: bold;
+}
 @media (max-width: 720px) {
     .Cards_Container {
         height: 70vh;

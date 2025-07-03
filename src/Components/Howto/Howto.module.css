@@ -5,10 +5,12 @@
     align-items: center;
     background-color: var(--white);
 }
-
+.Cards_header{
+    font-weight: bold;
+}
 .Cards_Container h1 {
     margin: 0;
-    margin: 10% 0 5% 0;
+    margin: 10% 0 0 0;
 }
 
 .Cards_Container img {

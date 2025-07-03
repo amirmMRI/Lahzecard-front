@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 
 // Styles
 import styles from "./Navbar.module.css";
@@ -16,7 +16,7 @@ import t from "../../../src/Multilanguage.jsx";
 
 
 const Navbar = () => {
-
+    const location = useLocation().pathname;
     const [isRTL, setIsRTL] = useState(true);
     const [open, setOpen] = useState(false);
         //multi language
@@ -50,7 +50,13 @@ const Navbar = () => {
     }, []);
 
     return (
-        <div className={styles.Navbar_container} style={{direction: isRTL ? 'rtl' : 'ltr'}}>
+        <div
+            className={styles.Navbar_container}
+            style={{
+                direction: isRTL ? 'rtl' : 'ltr',
+                padding: location === '/Coop' ? '2rem 9rem 0 9rem' : undefined
+            }}
+        >
             <nav>
                 <section className={styles.navbared}>
                     {" "}
@@ -108,11 +114,11 @@ const Navbar = () => {
                                 style={{
                                     left:
                                         window.location.pathname === '/Coop' && isRTL
-                                            ? 0
+                                            ? '6rem'
                                             : undefined,
                                     right:
                                         window.location.pathname === '/Coop' && !isRTL
-                                            ? 0
+                                            ? '6rem'
                                             : undefined,
                                 }}
 
