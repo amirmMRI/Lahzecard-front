@@ -1,4 +1,4 @@
-.hamkari_container{
+.hamkari_container {
     overflow: hidden;
     position: relative;
     min-height: 100vh;
@@ -17,7 +17,10 @@
         background-image: url('../../Images/HamkariBG.png');
     }
 }
+
+
 /*---------HOME PAGE---------*/
+
 .homePage_container {
     overflow: hidden;
     position: relative;
@@ -30,38 +33,46 @@
     justify-content: space-between;
 }
 
-
-.homePage_divider_svg{
+.homePage_divider_svg {
     display: none;
 }
-.homePage_standalone_image{
+
+.homePage_standalone_image {
     width: 100%;
 }
+
+
 /*-----GIFTCARD SECTION----*/
+
 .giftcardSection_container {
     padding: 6rem;
     /*padding-top: 11rem;*/
 }
+
 @media (min-width: 1024px) {
     .giftcardSection_container {
         /*padding-top: 9rem!important;*/
     }
 }
-.giftcards{
+
+.giftcards {
     /*padding: 3rem;*/
     width: 100%;
     display: flex;
     justify-content: center;
 }
-.giftcards img{
+
+.giftcards img {
     width: 80%;
 }
+
 @media (max-width: 1024px) {
-    .giftcards img{
+    .giftcards img {
         width: 100% !important;
     }
 }
-.giftCardSection_header{
+
+.giftCardSection_header {
     display: flex;
     justify-content: center;
     gap: 1rem;
@@ -70,31 +81,36 @@
     font-size: 1.8rem;
     /*padding-bottom: 0;*/
 }
-.giftCardSection_header span{
-    color: #E67BE6;
 
+.giftCardSection_header span {
+    color: #E67BE6;
 }
+
 @media (min-width: 1024px) {
-    .giftCardSection_header{
+    .giftCardSection_header {
         font-size: 3.5rem!important;
         /*padding: 1.5rem!important;*/
     }
 }
-.giftCardSection_descriptions{
+
+.giftCardSection_descriptions {
     text-align: center;
     font-size: 1rem;
     margin-top: 2rem;
 }
+
 @media (min-width: 1024px) {
-    .giftCardSection_descriptions{
+    .giftCardSection_descriptions {
         font-size: 1.5rem!important;
     }
 }
-.giftCardSection_buttons{
+
+.giftCardSection_buttons {
     text-align: center;
 }
-.giftCardSection_buttons_button1{
-    background-color: #501A60;
+
+.giftCardSection_buttons_button1 {
+    /*background-color: #501A60;*/
     color: white;
     height: 48px;
     width: 372px;
@@ -102,13 +118,22 @@
     cursor: pointer;
     border-radius: 25px;
     border: none;
-
+    background: linear-gradient(to left, #682b72 30%, #562c5d 60%) right;
+    background-size: 200%;
+    transition: .7s ease-out;
 }
+
+.giftCardSection_buttons_button1:hover {
+    background-position: left;
+    border: none;
+}
+
 @media (min-width: 768px) {
-    .giftCardSection_buttons{
+    .giftCardSection_buttons {
         padding-top: 2.5em;
     }
 }
+
 .giftCardSection_button_style {
     background-color: white;
     height: 48px;
@@ -119,39 +144,53 @@
     border: none;
     transition: box-shadow 300ms ease-in-out;
 }
-.giftCardSection_button_style div{
+
+.giftCardSection_button_style div {
     font-weight: 600;
 }
 
 .giftCardSection_button_style:hover {
-    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1),
-    0 8px 10px -6px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1);
 }
+
+
 /*-------FEATURED BRANDS SECTION-----*/
-.featuredBrandsSection_container{
+
+.featuredBrandsSection_container {
     display: flex;
-    justify-content: center ;
+    justify-content: center;
     flex-direction: column;
     padding: 3em;
     align-items: stretch;
     text-align: center;
 }
-.featuredBrandsSection_header{
+
+.featuredBrandsSection_header {
     font-weight: 700;
     font-size: 2rem;
 }
-.featuredBrandsSection_description{
+
+.featuredBrandsSection_description {
     font-size: 1.2rem;
 }
-.featuredBrandsSection_brands{
+
+.featuredBrandsSection_brands {
     text-align: center;
     display: flex;
     align-items: center;
     justify-content: center;
 }
+
 @media (min-width: 768px) {
     margin-top: 1.1em;
 }
+
+.featuredBrandsSection_brands_image {
+    width: 170px;
+    height: 170px;
+    border-radius: 1.5rem;
+}
+
 .featuredBrandsSection_brands_content {
     margin: 0.5rem;
     margin-top: 1.75rem;
@@ -172,20 +211,23 @@
     }
 }
 
+
 /*------BENEFITS SECTION------*/
-.benefitsSection_container{
+
+.benefitsSection_container {
     display: flex;
     justify-content: space-between;
     align-items: center;
     position: relative;
     padding: 3em;
 }
-@media (min-width: 1024px) {
 
-    .featuredBrandsSection_container{
+@media (min-width: 1024px) {
+    .featuredBrandsSection_container {
         padding-top: 11em;
     }
 }
+
 .benefitsSection_content {
     display: flex;
     justify-content: space-between;
@@ -193,6 +235,7 @@
     width: 100%;
     align-items: center;
 }
+
 .benefitsSection_icon svg {
     width: 100%;
     max-width: 500px;
@@ -200,82 +243,100 @@
     display: block;
     margin: 0 auto;
 }
-.benefitsSection_description_header{
+
+.benefitsSection_description_header {
     font-weight: 700;
     font-size: 1.9rem;
     margin-bottom: 1.5rem;
 }
-.benefitsSection_description_header div{
+
+.benefitsSection_description_header div {
     font-weight: bold;
 }
+
 @media (min-width: 768px) {
-    .benefitsSection_description_header{
+    .benefitsSection_description_header {
         font-size: 1.9rem !important;
     }
 }
-.benefitsSection_group{
+
+.benefitsSection_group {
     text-align: start;
     display: flex;
     gap: 1rem;
     /*font-size: 2rem;*/
     margin: 0.5rem 0;
 }
-.benefitsSection_group div{
+
+.benefitsSection_group div {
     font-weight: 600;
     font-size: 1.5rem;
 }
+
 @media (min-width: 640px) {
-    .benefitsSection_group div{
+    .benefitsSection_group div {
         font-size: 1.3rem!important;
     }
 }
+
+
 /*-----FEATURES SECTION-----*/
-.featuresSection_container{
+
+.featuresSection_container {
     display: flex;
     justify-content: space-between;
     align-items: center;
     position: relative;
     padding: 3em;
 }
+
 @media (min-width: 1024px) {
     padding-top: 11em!important;
 }
-.featuresSection_content{
+
+.featuresSection_content {
     display: flex;
     justify-content: space-between;
     z-index: 10;
     width: 100%;
     align-items: center;
 }
-.featuresSection_description_header{
+
+.featuresSection_description_header {
     font-weight: 700;
     font-size: 1.9rem;
     margin-bottom: 1.5rem;
 }
-.featuresSection_description_header div{
+
+.featuresSection_description_header div {
     font-weight: bold;
 }
+
 @media (min-width: 768px) {
-    .featuresSection_description_header{
+    .featuresSection_description_header {
         font-size: 2rem !important;
     }
 }
-.featuresSection_group{
+
+.featuresSection_group {
     text-align: start;
     display: flex;
     gap: 1rem;
     margin: 0.5rem 0;
 }
-.featuresSection_group div{
+
+.featuresSection_group div {
     font-weight: 600;
     font-size: 1.5rem;
 }
+
 @media (min-width: 640px) {
-    .featuresSection_group div{
+    .featuresSection_group div {
         font-size: 1.3rem!important;
     }
 }
-.featuresSection_icon svg{
+
+.featuresSection_icon svg {
     width: 100%;
     max-width: 500px;
     height: auto;
@@ -283,58 +344,56 @@
     margin: 0 auto;
 }
 
+
 /*----COMMENTS CAROUSEL SECTION----*/
-.commentsCarouselSection_container{
+
+.commentsCarouselSection_container {
     margin-bottom: 1.5rem;
 }
+
 @media (min-width: 1024px) {
-    .commentsCarouselSection_container{
+    .commentsCarouselSection_container {
         margin-top: -90px;
     }
 }
-.commentsCarouselSection_header{
+
+.commentsCarouselSection_header {
     font-weight: 700;
     font-size: 2rem;
     text-align: center;
 }
-.commentsCarouselSection_header div{
+
+.commentsCarouselSection_header div {
     font-weight: bold;
 }
-.commentsCarouselSection_description{
+
+.commentsCarouselSection_description {
     margin-bottom: 2em;
     font-size: 1rem;
     /*padding: ;*/
     text-align: center;
 }
 
+
 /*======MEDIA=====*/
+
 @media screen and (max-width: 1024px) {
-    .giftCardSection_buttons a{
+    .giftCardSection_buttons a {
         width: 100%;
     }
-
-    .homePage_divider_svg{
+    .homePage_divider_svg {
         display: flex;
         justify-content: center;
         align-items: center;
     }
     .hero_background {
-        background:
-                radial-gradient(
-                        circle at center,
-                        rgba(255, 182, 255, 0.45) 0%,
-                        rgba(255, 182, 255, 0.3) 35%,
-                        rgba(255, 182, 255, 0.1) 60%,
-                        rgba(255, 255, 255, 0) 75%
-                ),
-                linear-gradient(to bottom, #f7c8ff 0%, white 100%);
+        background: radial-gradient( circle at center, rgba(255, 182, 255, 0.45) 0%, rgba(255, 182, 255, 0.3) 35%, rgba(255, 182, 255, 0.1) 60%, rgba(255, 255, 255, 0) 75%), linear-gradient(to bottom, #f7c8ff 0%, white 100%);
         background-repeat: no-repeat;
         background-size: cover;
         min-height: 100vh;
         position: relative;
         z-index: 0;
     }
-
 }
 
 @media screen and (max-width: 900px) {
@@ -346,68 +405,63 @@
         align-items: center !important;
         flex-direction: column-reverse;
         margin-top: 16px !important;
-
         button {
             width: 70% !important;
         }
     }
-
     .featuredBrandsSection_brands {
         img {
             width: 25% !important;
             height: 25% !important;
         }
     }
-    .benefitsSection_icon{
+    .benefitsSection_icon {
         width: 255px !important;
     }
     .benefitsSection_icon,
     .benefitsSection_shadow {
         max-width: 300px;
     }
-
     .benefitsSection_content {
         flex-direction: column;
     }
-
-    .benefitsSection_group svg{
+    .benefitsSection_group svg {
         width: 15px !important;
         height: 15px !important;
     }
-
-    .featuresSection_icon{
+    .featuresSection_icon {
         width: 255px !important;
     }
     .featuresSection_icon,
     .benefitsSection_shadow {
         max-width: 300px;
     }
-
     .featuresSection_content {
         flex-direction: column-reverse;
     }
-
-    .featuresSection_group svg{
+    .featuresSection_group svg {
         width: 15px !important;
         height: 15px !important;
     }
-
-
 }
+
 body {
-    font-family: 'Vazir', sans-serif; /* or 'Noto Sans Arabic' */
+    font-family: 'Vazir', sans-serif;
+    /* or 'Noto Sans Arabic' */
     direction: rtl;
     text-align: right;
 }
-html{
+
+html {
     font-size: 16px;
 }
-@media screen and (max-width: 900px){
+
+@media screen and (max-width: 900px) {
     html {
         font-size: 10px;
     }
 }
 
-*{
+* {
     font-family: 'iran-sans';
 }

@@ -2,6 +2,9 @@ import React from "react";
 
 // Images
 import trophies from "../../Images/trophies.png";
+import trophiesGR from "../../Images/trophiesGR.png";
+import trophiesEN from "../../Images/trophiesEN.png";
+import trophiesAR from "../../Images/trophiesAR.png";
 import roshd from "../../Images/roshd.png";
 import Hologram from "../../Images/Hologram.png";
 import samane from "../../Images/samane.png";
@@ -9,15 +12,26 @@ import enamad from "../../Images/enamad.png";
 
 // Styles
 import styles from "./Trophies.module.css";
+import {useTranslation} from "react-i18next";
+import t from "../../Multilanguage";
 
 const Trophies = () => {
+    const { t, i18n } = useTranslation();
+    let isRTL = i18n.language === 'ar' || i18n.language === 'ir';
+
     return (
         <div className={styles.Trophies_Container}>
             <img
-                src={trophies}
+                src={
+                    i18n.language === 'ir' ? trophies
+                        : i18n.language === 'ar' ? trophiesAR
+                            : i18n.language === 'en' ? trophiesEN
+                                : trophiesGR
+                }
                 alt="example card"
                 className={styles.header_pic}
             />
+
             <section className={styles.pid_sec}>
                 <section>
                     <a href="https://syntechcenter.ir/">

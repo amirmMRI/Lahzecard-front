@@ -4,17 +4,19 @@ import Footer from "../Footer/Footer";
 import backgroundImage from '../../Images/HamkariBG.png'
 import giftCardsImage from '../../Images/image 7.png'
 //---- Brands Images -----
-import brand1 from "../../Images/brands/16045956227427 1.png"
-import brand2 from "../../Images/brands/16534668626016 1.png"
-import brand3 from "../../Images/brands/CHILI 1.png"
-import brand4 from "../../Images/brands/logo.png"
-import brand5 from "../../Images/brands/NEMOONE 1.png"
-import brand6 from "../../Images/brands/OIP 1.png"
+import brand1 from "../../Images/brands/16045956227427 1.jpg"
+import brand2 from "../../Images/brands/16534668626016 1.jpg"
+import brand3 from "../../Images/brands/Frame 1171275932 1.jpg"
+import brand4 from "../../Images/brands/Frame 1171275933 1.jpg"
+import brand5 from "../../Images/brands/477077730_1026086099345977_2271886345902509349_n 1.jpg"
+
+
 import hamkariImage from "../../Images/image 4.svg"
 
 import t from "../../../src/Multilanguage.jsx";
 import CommentsCarouselComponent from "../CommentsCarousel/CommentsCarouselComponent";
 import Navbar from "../Navbar/Navbar";
+import {useTranslation} from "react-i18next";
 
 const GiftCardSection = () => {
     return (
@@ -58,8 +60,8 @@ const GiftCardSection = () => {
     )
 }
 const FeaturedBrandsSection = () => {
-    const language = localStorage.getItem('language') ;
-    let isRTL = language === 'ar' || language === 'ir';
+    const { t, i18n } = useTranslation();
+    let isRTL = i18n.language === 'ar' || i18n.language === 'ir';
 
     return (
         <div className={styles.featuredBrandsSection_container}>
@@ -75,12 +77,12 @@ const FeaturedBrandsSection = () => {
             </div>
             <div className={styles.featuredBrandsSection_brands}>
                 <div className={styles.featuredBrandsSection_brands_content}>
-                    <img src={brand1} alt=""/>
-                    <img src={brand2} alt=""/>
-                    <img src={brand3} alt=""/>
-                    <img src={brand4} alt=""/>
-                    <img src={brand5} alt=""/>
-                    <img src={brand6} alt=""/>
+                    <img className={styles.featuredBrandsSection_brands_image} src={brand1} alt=""/>
+                    <img className={styles.featuredBrandsSection_brands_image} src={brand2} alt=""/>
+                    <img className={styles.featuredBrandsSection_brands_image} src={brand3} alt=""/>
+                    <img className={styles.featuredBrandsSection_brands_image} src={brand4} alt=""/>
+                    <img className={styles.featuredBrandsSection_brands_image} src={brand5} alt=""/>
+
                 </div>
             </div>
         </div>
@@ -696,6 +698,7 @@ const CarouselSection = () => {
         </div>
     )
 }
+
 const Hamkari = () => {
     return (
         <div
