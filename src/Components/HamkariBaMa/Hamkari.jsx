@@ -4,17 +4,19 @@ import Footer from "../Footer/Footer";
 import backgroundImage from '../../Images/HamkariBG.png'
 import giftCardsImage from '../../Images/image 7.png'
 //---- Brands Images -----
-import brand1 from "../../Images/brands/16045956227427 1.png"
-import brand2 from "../../Images/brands/16534668626016 1.png"
-import brand3 from "../../Images/brands/CHILI 1.png"
-import brand4 from "../../Images/brands/logo.png"
-import brand5 from "../../Images/brands/NEMOONE 1.png"
-import brand6 from "../../Images/brands/OIP 1.png"
+import brand1 from "../../Images/brands/16045956227427 1.jpg"
+import brand2 from "../../Images/brands/16534668626016 1.jpg"
+import brand3 from "../../Images/brands/Frame 1171275932 1.jpg"
+import brand4 from "../../Images/brands/Frame 1171275933 1.jpg"
+import brand5 from "../../Images/brands/477077730_1026086099345977_2271886345902509349_n 1.jpg"
+
+
 import hamkariImage from "../../Images/image 4.svg"
 
 import t from "../../../src/Multilanguage.jsx";
 import CommentsCarouselComponent from "../CommentsCarousel/CommentsCarouselComponent";
 import Navbar from "../Navbar/Navbar";
+import {useTranslation} from "react-i18next";
 
 const GiftCardSection = () => {
     return (
@@ -46,20 +48,23 @@ const GiftCardSection = () => {
                         </div>
                     </button>
                 </a>
-                <button className={styles.giftCardSection_buttons_button1}
 
-                >
-                    <div>
-                        {t("consult_button")}
-                    </div>
-                </button>
+                <a href="https://wa.me/989367663655?text=hey%20can%20you%20help%20me%3F" target="_blank" rel="noopener noreferrer">
+                    <button className={styles.giftCardSection_buttons_button1}
+
+                    >
+                        <div>
+                            {t("consult_button")}
+                        </div>
+                    </button>
+                </a>
             </div>
         </div>
     )
 }
 const FeaturedBrandsSection = () => {
-    const language = localStorage.getItem('language') ;
-    let isRTL = language === 'ar' || language === 'ir';
+    const { t, i18n } = useTranslation();
+    let isRTL = i18n.language === 'ar' || i18n.language === 'ir';
 
     return (
         <div className={styles.featuredBrandsSection_container}>
@@ -68,27 +73,27 @@ const FeaturedBrandsSection = () => {
                     {t("trusted_by_title")}
                 </div>
             </div>
-            <div className="featuredBrandsSection_description" style={{direction: isRTL ? 'rtl' : 'ltr',}}>
+            <div className={styles.featuredBrandsSection_description} style={{direction: isRTL ? 'rtl' : 'ltr',}}>
                 <div>
                     {t("trusted_by_desc")}
                 </div>
             </div>
             <div className={styles.featuredBrandsSection_brands}>
                 <div className={styles.featuredBrandsSection_brands_content}>
-                    <img src={brand1} alt=""/>
-                    <img src={brand2} alt=""/>
-                    <img src={brand3} alt=""/>
-                    <img src={brand4} alt=""/>
-                    <img src={brand5} alt=""/>
-                    <img src={brand6} alt=""/>
+                    <img className={styles.featuredBrandsSection_brands_image} src={brand1} alt=""/>
+                    <img className={styles.featuredBrandsSection_brands_image} src={brand2} alt=""/>
+                    <img className={styles.featuredBrandsSection_brands_image} src={brand3} alt=""/>
+                    <img className={styles.featuredBrandsSection_brands_image} src={brand4} alt=""/>
+                    <img className={styles.featuredBrandsSection_brands_image} src={brand5} alt=""/>
+
                 </div>
             </div>
         </div>
     )
 }
 const BenefitsSection = () => {
-    const language = localStorage.getItem('language') ;
-    let isRTL = language === 'ar' || language === 'ir';
+    const { t, i18n } = useTranslation();
+    let isRTL = i18n.language === 'ar' || i18n.language === 'ir';
 
     return (
         <div className={styles.benefitsSection_container}>
@@ -290,7 +295,7 @@ const BenefitsSection = () => {
                     </svg>
                 </div>
                 <div style={{direction: isRTL ? 'rtl' : 'ltr',}}>
-                    <div className={styles.benefitsSection_description_header}>
+                    <div   style={{textAlign: isRTL ? 'right' : 'left',}} className={styles.benefitsSection_description_header}>
                         {t("benefits_title")}
                     </div>
                     <div className={styles.benefitsSection_group}>
@@ -359,16 +364,15 @@ const BenefitsSection = () => {
     )
 }
 const FeaturesSection = () => {
-    const language = localStorage.getItem('language') ;
-    let isRTL = language === 'ar' || language === 'ir';
+    const { t, i18n } = useTranslation();
+    let isRTL = i18n.language === 'ar' || i18n.language === 'ir';
 
     return (
         <div className={styles.featuresSection_container}>
             <div className={styles.featuresSection_content} >
                 <div style={{direction: isRTL ? 'rtl' : 'ltr',}}>
-                    <div className={styles.featuresSection_description_header}>
+                    <div  style={{textAlign: isRTL ? 'right' : 'left',}} className={styles.featuresSection_description_header}>
                         {t("agency_title")}
-
                     </div>
                     <div className={styles.featuresSection_group}>
                         <div>
@@ -680,8 +684,9 @@ const FeaturesSection = () => {
     )
 }
 const CarouselSection = () => {
-    const language = localStorage.getItem('language') ;
-    let isRTL = language === 'ar' || language === 'ir';
+    const { t, i18n } = useTranslation();
+    let isRTL = i18n.language === 'ar' || i18n.language === 'ir';
+
 
     return (
 
@@ -696,6 +701,7 @@ const CarouselSection = () => {
         </div>
     )
 }
+
 const Hamkari = () => {
     return (
         <div

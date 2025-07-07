@@ -2,7 +2,10 @@ import React from 'react';
 import Carousel from 'react-multi-carousel';
 import 'react-multi-carousel/lib/styles.css';
 import styles from './CommentsCarouselComponent.module.css';
-import brandLogo from "../../Images/logoComment.png"
+import brand_ziviyeh from "../../Images/brands/Frame 1171275933 1.jpg"
+import brand_pedra from "../../Images/brands/16534668626016 1.jpg"
+import brand_sazgardnt from "../../Images/brands/16045956227427 1.jpg"
+
 const ButtonGroup = ({ next, previous, ...rest }) => {
     const { carouselState: { currentSlide, slidesToShow } } = rest;
     const totalSlides = rest.carouselState.totalItems;
@@ -59,9 +62,9 @@ const ButtonGroup = ({ next, previous, ...rest }) => {
 
 const CommentsCarouselComponent = () => {
     const testimonials = [
-        { id: 1, name: " رستوران پدرا", text: "نوآوری خیلی خوب و جالبی بود. برای هدیه دادن به مشتریان از طرف رستوران پدرا استفاده کردیم.", rating: 5, avatar: brandLogo },
-        { id: 2, name: " طافروشی زیویه", text: "سلام، ممنونم از خدمات خوب شما. امیدوارم کلی اتفاق خوب و موفقیت‌های بیشتر در تیم حرفه‌ای‌تون باشه.", rating: 5, avatar: brandLogo },
-        { id: 3, name: " دندان پزشک‌ دکتر پورنگ سازگار", text: "پشتیبانی عالی و خوب. برای هدیه‌های مناسبتی به مریضانم استفاده کردم و خیلی راضی بودم.", rating: 5, avatar: brandLogo },
+        { id: 1, name: " رستوران پدرا", text: "نوآوری خیلی خوب و جالبی بود. برای هدیه دادن به مشتریان از طرف رستوران پدرا استفاده کردیم.", rating: 5, avatar: brand_pedra },
+        { id: 2, name: " طافروشی زیویه", text: "سلام، ممنونم از خدمات خوب شما. امیدوارم کلی اتفاق خوب و موفقیت‌های بیشتر در تیم حرفه‌ای‌تون باشه.", rating: 5, avatar: brand_ziviyeh },
+        { id: 3, name: " دندان پزشک‌ دکتر پورنگ سازگار", text: "پشتیبانی عالی و خوب. برای هدیه‌های مناسبتی به مریضانم استفاده کردم و خیلی راضی بودم.", rating: 5, avatar: brand_sazgardnt },
     ];
 
     const StarIcon = () => (

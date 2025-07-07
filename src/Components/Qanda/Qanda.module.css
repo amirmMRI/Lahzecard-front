@@ -54,8 +54,8 @@
 }
 
 .certainq_div div img {
-    width: 42px;
-    height: 42px;
+    width: 30px;
+    height: 30px;
 }
 
 .span_active {
@@ -169,7 +169,7 @@
         align-items: center;
     }
     .qanda_sec {
-        width: 70%;
+        width: 100%;
         height: 100%;
         padding: 10% 0 0 0;
         display: flex;
