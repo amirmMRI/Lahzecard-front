@@ -177,7 +177,7 @@ const Qanda = () => {
             </div>
             <div className={styles.moreQ_div}>
                <Link to="/QandAPage">
-                  <button>{t("morequestion")}</button>
+                  <button>{t("howtobuy_moreQ")}</button>
                </Link>
             </div>
          </section>
