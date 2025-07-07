@@ -1,7 +1,7 @@
 * {
     margin: 0;
     padding: 0;
-    font-family: 'IRANSans';
+    /*font-family: 'IRANSans';*/
     font-style: normal;
     font-weight: 500;
     line-height: 34px;
@@ -23,6 +23,7 @@
     background: #FFFFFF;
     display: flex;
     direction: ltr;
+    overflow-x: hidden;
 }
 
 .left {
@@ -51,7 +52,7 @@
     justify-content: center;
     margin: 0 -17rem -1rem 0;
     /* position: absolute; */
-    width: 28%;
+    width: 25%;
     height: 34px;
     font-size: 80%;
     /* left: 454px;
@@ -352,7 +353,7 @@ input:focus {
         flex-direction: column-reverse;
         justify-content: flex-end;
         align-items: center;
-        min-width: 420px;
+        /*min-width: 420px;*/
         margin: 0;
         padding: 0;
     }
