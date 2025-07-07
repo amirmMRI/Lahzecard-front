@@ -17,7 +17,7 @@ import Footer from '../Footer/Footer';
 import { useTranslation } from 'react-i18next';
 const FullPage = () => {
     useEffect(() => {
-        localStorage.setItem('language', "ir");
+        // localStorage.setItem('language', "ir");
     }, );
 
     return ( 

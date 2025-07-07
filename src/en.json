@@ -6,7 +6,7 @@
     "login": "login | signup",
     "language": "language",
     "lahzecard": "Lahze Card",
-    "lahzesazi_banner": "We capture the moments that define your life's most meaningful turning points",
+    "lahzesazi_banner": "Crafting moments from the sound of your voice",
     "banner2": "We capture the moments that define your life's most meaningful turning points.",
     "bannerbutton": "Start Creating the Perfect Gift",
     "cards_left_title": "QR Code",
@@ -19,6 +19,8 @@
 
     "cardexample1": "../../Images/examplecard1_en.png",
 
+    "howtobuy_header" : "Gift Preparation",
+    "howtobuy_moreQ" : "more questions...",
     "q1_howtobuy": "How can I get a Lahze Card?",
     "a1_howtobuy": "You can purchase your Lahze Card from our partner stores and locations. Visit our website at ",
     "a12_howtobuy": "to see the full list of authorized sellers near you.",
@@ -57,9 +59,9 @@
     "workwithusli4": "Brand Customization: You can order Lahze Cards customized with your brand and logo, designed according to your preferences.",
     "workwithusli5": "If you are interested in collaborating with us, please fill out your details, and we will get in touch with you:",
 
-    "withus": "with Lahzecard",
+    "withus": "With Lahzecard",
     "address": "Qazvin, Barajin, Sintech Innovation Center",
-    "socialmedia": "social media ",
+    "socialmedia": "Social Media ",
 
     "name": "name",
     "city": "city",
@@ -79,7 +81,7 @@
     "Sendcode": "send code",
     "justafewtoready": "Just a few steps away from creating sweet moments for your loved ones with Lahze Card",
 
-    "connections": "connections",
+    "connections": "Contact Methods",
     "welcome": "Welcome",
     "description": "This is an internationalized React app.",
 
@@ -110,6 +112,7 @@
     "agency_f4": "Access to reports, statistics, and developer API",
     "agency_f5": "Create multifunctional gift cards linked across your clients",
 
+    "financialDisclaimer" : "All financial transactions between the customer and the seller are through Lahze Card cards, and the Lahze Card startup bears no responsibility in this regard.",
     "agency_footer": "With Lahzeh Card, you can offer professional end-to-end gift card services to your clients.",
     "cooperation_title": "We’re Ready to Work with You!",
     "cooperation_desc": "Whether you're a restaurant owner, advertising agency, print shop, or factory — we provide full infrastructure for digital and physical gift cards with the lowest subscription cost.",

@@ -13,25 +13,32 @@
     transform: translateY(-50%);
     display: flex;
     justify-content: space-between;
-    padding: 0 10px;
+    /*padding: 0 10px;*/
     pointer-events: none;
     z-index: 2;
 }
-.carousel_brand_icon{
+
+.carousel_brand_icon {
     width: 56px !important;
+    border: 2px #501A60 solid;
+    border-radius: 50%;
 }
-.carousel_text{
+
+.carousel_text {
     direction: rtl;
     font-weight: 600;
     text-align: center;
 }
-.carousel_button{
+
+.carousel_button {
     cursor: pointer;
 }
-.carousel_stars{
+
+.carousel_stars {
     display: flex;
     justify-content: center;
 }
+
 .carousel_button_container.mobile .carousel_button {
     pointer-events: auto;
     position: relative;
@@ -40,9 +47,11 @@
     width: 61px;
     height: 61px;
 }
-.carousel-item{
+
+.carousel-item {
     padding: 10px;
 }
+
 .carousel_button_container.desktop {
     position: absolute;
     bottom: 0;
@@ -53,7 +62,6 @@
     gap: 20px;
     z-index: 2;
 }
-
 
 .carousel_button_container.desktop .carousel_button {
     background: transparent;
@@ -81,28 +89,31 @@
     background: white;
     border-radius: 32px;
     padding: 20px;
-    box-shadow: 0 4px 12px rgba(138, 43, 226, 0.2),
-    0 8px 24px rgba(138, 43, 226, 0.15);
+    box-shadow: 0 4px 12px rgba(138, 43, 226, 0.2), 0 8px 24px rgba(138, 43, 226, 0.15);
     position: relative;
     z-index: 1;
     transform: translateZ(0);
 }
-.testimonial_card_content{
+
+.testimonial_card_content {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
 }
-.testimonial_card_content_header{
+
+.testimonial_card_content_header {
     font-weight: 700;
     font-size: 1.3rem;
+    text-align: right;
 }
-.react-multi-carousel-track{
+
+.react-multi-carousel-track {
     padding-bottom: 3rem;
 }
 
 @media (max-width: 900px) {
-    .carousel_brand_icon{
+    .carousel_brand_icon {
         width: 39px !important;
     }
     .carousel_container {

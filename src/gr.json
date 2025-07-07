@@ -6,10 +6,10 @@
     "login": "Einloggen | registrieren",
     "language": "Sprache",
     "lahzecard": "Lahze Card",
-    "lahzesazi_banner": "Verwandeln Sie Ihre Stimme in eine zeitlose Erinnerung",
+    "lahzesazi_banner": "Momente gestalten mit dem Klang deiner Stimme",
     "banner2": "Wir fangen die Momente ein, die die bedeutendsten Wendepunkte Ihres Lebens definieren.",
     "bannerbutton": "Beginnen Sie mit der Erstellung des perfekten Geschenks",
-    "withus": "arbeiten Lahzecard",
+    "withus": "Arbeiten Lahzecard",
     "cards_left_title": "QR-Code",
     "cards_left_text": "Scannen Sie den QR-Code auf der Karte, um Ihr Geschenk zu enthüllen.",
     "cards_center_title": "Datenschutz",
@@ -19,6 +19,8 @@
 
     "cardexample1": "../../Images/examplecard1_gr.png",
 
+
+    "howtobuy_header" :"Geschenkvorbereitung",
     "q1_howtobuy": "Wie kann ich eine Lahze Card erhalten?",
     "a1_howtobuy": "Sie können Ihre Lahze Card in unseren Partnergeschäften und -standorten erwerben. Besuchen Sie unsere Website unter",
     "a12_howtobuy": "um die vollständige Liste der autorisierten Verkäufer in Ihrer Nähe zu sehen.",
@@ -41,6 +43,7 @@
 
     "q7_refund": "Ist die Lahze Card erstattungsfähig?",
     "a7_refund": "Nein, nach der Aktivierung ist die Lahze Card nicht erstattungsfähig.Bitte stellen Sie sicher, dass Sie Ihre Entscheidung sorgfältig treffen, bevor Sie den Kauf abschließen, um ein angenehmes Erlebnis für Sie und Ihre Liebsten zu gewährleisten.",
+    "howtobuy_moreQ" : "Weitere Fragen...",
 
     "aboutusparageraph1": "Lahze Card ist ein erfolgreiches Startup im Forschungszentrum der Azad-Universität Qazvin. Unser Ziel ist es, eine Umgebung voller Vitalität und Freude zu schaffen.",
     "aboutusparageraph2": "Das studentische Team von Lahze Card hat in Übereinstimmung mit der modernen Welt der Technologie einzigartige Geschenkkarten geschaffen, die nicht nur süße Momente für Ihre Liebsten bringen, sondern es Ihnen auch ermöglichen, Ihre personalisierte Stimme und Nachricht zu verschenken.",
@@ -76,7 +79,7 @@
 
 
     "address": " Qazvin, Barajin, Sintech Innovationszentrum",
-    "connections": "",
+    "connections": "Kontaktmöglichkeiten",
     "name": "Vollständiger Name",
     "welcome": "Welcome",
     "description": "This is an internationalized React app.",
@@ -107,6 +110,7 @@
     "agency_f4": "Zugriff auf Statistiken, Berichte und eine API für Entwickler",
     "agency_f5": "Erstellen Sie multifunktionale und vernetzte Geschenkkarten für Ihre Kunden",
 
+    "financialDisclaimer": "Alle finanziellen Transaktionen zwischen dem Kunden und dem Verkäufer erfolgen über die Lahze Card-Karten, und das Startup Lahze Card übernimmt hierfür keine Verantwortung.",
     "agency_footer": "Mit Lahzeh Card bieten Sie Ihren Kunden professionelle Geschenkkartendienste von A bis Z.",
     "cooperation_title": "Wir sind bereit, mit Ihnen zusammenzuarbeiten!",
     "cooperation_desc": "Ob Sie ein Restaurant, eine Werbeagentur, eine Druckerei oder eine Fabrik besitzen – wir bieten Ihnen eine vollständige Infrastruktur für digitale und physische Geschenkkarten zu den niedrigsten Abonnementkosten.",
