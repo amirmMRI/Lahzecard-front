@@ -6,7 +6,7 @@
     "login": "login | signup",
     "language": "language",
     "lahzecard": "Lahze Card",
-    "lahzesazi_banner": "We capture the moments that define your life's most meaningful turning points",
+    "lahzesazi_banner": "Crafting moments from the sound of your voice",
     "banner2": "We capture the moments that define your life's most meaningful turning points.",
     "bannerbutton": "Start Creating the Perfect Gift",
     "cards_left_title": "QR Code",
@@ -112,6 +112,7 @@
     "agency_f4": "Access to reports, statistics, and developer API",
     "agency_f5": "Create multifunctional gift cards linked across your clients",
 
+    "financialDisclaimer" : "All financial transactions between the customer and the seller are through Lahze Card cards, and the Lahze Card startup bears no responsibility in this regard.",
     "agency_footer": "With Lahzeh Card, you can offer professional end-to-end gift card services to your clients.",
     "cooperation_title": "We’re Ready to Work with You!",
     "cooperation_desc": "Whether you're a restaurant owner, advertising agency, print shop, or factory — we provide full infrastructure for digital and physical gift cards with the lowest subscription cost.",

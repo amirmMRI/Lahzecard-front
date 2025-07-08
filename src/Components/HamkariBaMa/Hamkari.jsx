@@ -48,13 +48,16 @@ const GiftCardSection = () => {
                         </div>
                     </button>
                 </a>
-                <button className={styles.giftCardSection_buttons_button1}
 
-                >
-                    <div>
-                        {t("consult_button")}
-                    </div>
-                </button>
+                <a href="https://wa.me/989367663655?text=hey%20can%20you%20help%20me%3F" target="_blank" rel="noopener noreferrer">
+                    <button className={styles.giftCardSection_buttons_button1}
+
+                    >
+                        <div>
+                            {t("consult_button")}
+                        </div>
+                    </button>
+                </a>
             </div>
         </div>
     )
@@ -89,8 +92,8 @@ const FeaturedBrandsSection = () => {
     )
 }
 const BenefitsSection = () => {
-    const language = localStorage.getItem('language') ;
-    let isRTL = language === 'ar' || language === 'ir';
+    const { t, i18n } = useTranslation();
+    let isRTL = i18n.language === 'ar' || i18n.language === 'ir';
 
     return (
         <div className={styles.benefitsSection_container}>
@@ -361,8 +364,8 @@ const BenefitsSection = () => {
     )
 }
 const FeaturesSection = () => {
-    const language = localStorage.getItem('language') ;
-    let isRTL = language === 'ar' || language === 'ir';
+    const { t, i18n } = useTranslation();
+    let isRTL = i18n.language === 'ar' || i18n.language === 'ir';
 
     return (
         <div className={styles.featuresSection_container}>
@@ -682,8 +685,9 @@ const FeaturesSection = () => {
     )
 }
 const CarouselSection = () => {
-    const language = localStorage.getItem('language') ;
-    let isRTL = language === 'ar' || language === 'ir';
+    const { t, i18n } = useTranslation();
+    let isRTL = i18n.language === 'ar' || i18n.language === 'ir';
+
 
     return (
 

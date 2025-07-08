@@ -139,9 +139,7 @@ const Footer = () => {
             </div>
 
             <div className={styles.footer_bottom}>
-                تمامی جریان های مالی بین مشتری و فروشنده کارت های لحظه کارت هست و استارتاپ لحظه کارت هیچ مسیولیتی در این
-                قبال
-                ندارد.
+                {t("financialDisclaimer")}
             </div>
         </div>
 
