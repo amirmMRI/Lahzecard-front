@@ -370,11 +370,13 @@
 .commentsCarouselSection_description {
     margin-bottom: 2em;
     font-size: 1rem;
-    /*padding: ;*/
+    padding: 0 3rem;
     text-align: center;
+    line-height: 2.3;
 }
 
-
+.commentsCarouselSection_description div{
+}
 /*======MEDIA=====*/
 
 @media screen and (max-width: 1024px) {
@@ -459,6 +461,10 @@ html {
 @media screen and (max-width: 900px) {
     html {
         font-size: 10px;
+    }
+
+    .giftcardSection_container{
+        padding: 6rem 2rem;
     }
 }
 

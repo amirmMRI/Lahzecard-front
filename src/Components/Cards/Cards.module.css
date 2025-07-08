@@ -183,7 +183,7 @@ h3 div{
 
 @media (max-width: 440px) {
     .Cards_Container {
-        height: 135vh;
+        height: 130vh;
     }
     .gifts_sec {
         position: relative;

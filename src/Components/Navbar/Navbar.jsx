@@ -19,7 +19,9 @@ const Navbar = () => {
     const location = useLocation().pathname;
     const [isRTL, setIsRTL] = useState(true);
     const [open, setOpen] = useState(false);
-        //multi language
+    const [isTabletOrSmaller, setIsTabletOrSmaller] = useState(false);
+
+    //multi language
         const { t, i18n } = useTranslation();
 
         const changeLanguage = (lng) => {
@@ -34,7 +36,19 @@ const Navbar = () => {
             setIsRTL(false)
           }
         };
+    useEffect(() => {
+        const handleResize = () => {
+            setIsTabletOrSmaller(window.innerWidth <= 1024);
+        };
 
+        // Set initial value
+        handleResize();
+
+        // Attach resize listener
+        window.addEventListener('resize', handleResize);
+
+        return () => window.removeEventListener('resize', handleResize);
+    }, []);
     // Hamburge menu functions
     const [active, setActive] = useState(false);
     const hamHandler = () => {
@@ -54,7 +68,12 @@ const Navbar = () => {
             className={styles.Navbar_container}
             style={{
                 direction: isRTL ? 'rtl' : 'ltr',
-                padding: location === '/Coop' ? '2rem 9rem 0 9rem' : undefined
+                padding:
+                    location === '/Coop'
+                        ? isTabletOrSmaller
+                            ? '2rem'
+                            : '2rem 9rem 0 9rem'
+                        : undefined
             }}
         >
             <nav>
@@ -157,6 +176,12 @@ const Navbar = () => {
                 </div>
                 <div></div>
                 <div
+                    style={{
+                        left: isRTL ? '0' : undefined,
+                        display: isRTL && !active ? 'none' : undefined,
+                        // transition: isRTL && !active ? 'ease-in-out' : undefined,
+                        right: !isRTL ? '0' : undefined,
+                    }}
                     className={
                         active ? styles.ham_options : styles.ham_options_off
                     }
@@ -165,23 +190,23 @@ const Navbar = () => {
                         <img onClick={hamHandler} src={close} />
                         <div></div>
                         <Link to="/home">
-                            <button className={styles.btn_nav_ham}>
+                            <button style={{justifyContent: isRTL ? "right" : "left"}} className={styles.btn_nav_ham}>
                             {t('home')}
                             </button>
                         </Link>
                         <Link to="/AboutUs">
-                            <button className={styles.btn_nav_ham}>
+                            <button style={{padding: isRTL? "0 2rem" : undefined, justifyContent: isRTL ? "right" : "left"}} className={styles.btn_nav_ham}>
                             {t('aboutus')}
                             </button>
                         </Link>
                         <Link to="/Coop">
-                            <button className={styles.btn_nav_ham}>
+                            <button style={{padding: isRTL? "0 2rem" : undefined, justifyContent: isRTL ? "right" : "left"}} className={styles.btn_nav_ham}>
                             {t('workwithus')}
                             </button>
                         </Link>
                         <div></div>
                         <Link to="/customer">
-                            <button className={styles.btn_nav_ham}>
+                            <button style={{padding: isRTL? "0 2rem" : undefined, justifyContent: isRTL ? "right" : "left"}} className={styles.btn_nav_ham}>
                                 <img
                                     className={styles.btn_nav_ham_img}
                                     src={char}

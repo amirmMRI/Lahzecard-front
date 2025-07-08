@@ -11,8 +11,13 @@ nav {
     width: 100%;
     display: flex;
     justify-content: space-between;
+    align-items: center;
 }
-
+/*@media  screen and (max-width: 1024px) {*/
+/*    .Navbar_container{*/
+/*        padding: 2rem !important;*/
+/*    }*/
+/*}*/
 .dropdowncontainer {
     padding: 0;
     border: none;
@@ -142,7 +147,7 @@ nav {
 .ham_options {
     width: 50%;
     height: 100vh;
-    left: 0%;
+    /*right: 0;*/
     top: 0;
     position: fixed;
     z-index: 1;
@@ -176,9 +181,11 @@ nav {
 
 .btn_nav_ham {
     font-size: 16px;
+    /*padding: 0 2rem;*/
     text-shadow: -5px 5px 10px var(--background_black_darker);
     color: #261e35;
     align-items: center;
+    padding: 0 2rem!important;
     font-family: 'iran-sans';
     box-sizing: border-box;
     cursor: pointer;
@@ -186,7 +193,7 @@ nav {
     background-color: transparent;
     justify-content: right;
     outline: 0;
-    padding: 0.5% 0;
+    /*padding: 0.5% 0;*/
     border: none;
     margin: 2% 0;
     text-align: center;
@@ -196,7 +203,8 @@ nav {
     transition: all .2s ease-in;
     width: 70%;
 }
-
+.btn_nav_ham button{
+}
 .btn_nav_ham:hover {
     transition: all 150ms ease-in;
     color: var(--text_black);
@@ -223,6 +231,10 @@ nav {
 }
 
 @media (max-width: 950px) {
+    .dropdownbutton img{
+        width: 2.5rem!important;
+        padding-bottom: 2rem;
+    }
     .HanMenu {
         width: 7%;
         display: flex;
