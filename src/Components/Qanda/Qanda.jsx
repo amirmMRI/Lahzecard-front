@@ -38,10 +38,10 @@ import styles from './Qanda.module.css'
 import t from "../../../src/Multilanguage.jsx";
 
 const Qanda = () => {
+   //------Multi Language----
    const { t, i18n } = useTranslation();
-   const changeLanguage = (lng) => {
-      i18n.changeLanguage(lng);
-      }
+   let isRTL = i18n.language === 'ar' || i18n.language === 'ir';
+
    // Answer States and Funncs
    const [q1state, setQ1state] = useState(false);
    const [q2state, setQ2state] = useState(false);
@@ -125,8 +125,8 @@ const Qanda = () => {
 
    return ( 
       <div className={styles.Qanda_Container}>
-         <section className={styles.qanda_sec}>
-           
+         <section
+             className={styles.qanda_sec}>
             {i18n.language === 'en' ? (
                <img src={qandaen} alt="q and a icon" className={styles.qanda_img}/>
             ) : i18n.language === 'ar' ? (
@@ -177,7 +177,7 @@ const Qanda = () => {
             </div>
             <div className={styles.moreQ_div}>
                <Link to="/QandAPage">
-                  <button>{t("morequestion")}</button>
+                  <button>{t("howtobuy_moreQ")}</button>
                </Link>
             </div>
          </section>

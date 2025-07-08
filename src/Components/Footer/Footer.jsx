@@ -1,89 +1,3 @@
-// import React from "react";
-// import { Link } from "react-router-dom";
-
-// // Styles
-// import styles from "./Footer.module.css";
-
-// // Images
-// import logoforfooter from "../../Images/logoforfooter.png";
-// import email from "../../Images/email.png";
-// import location from "../../Images/location.png";
-// import telegram from "../../Images/telegram.png";
-// import instagram from "../../Images/instagram.png";
-// import linkedin from "../../Images/linkedin.png";
-// import twitter from "../../Images/twitter.png";
-
-// //multi language
-// import t from "../../../src/Multilanguage.jsx";
-// const Footer = () => {
-//     return (
-//         <div className={styles.widthfoot}>
-
-//         <div className={styles.Footer_Container}>
-//             <section className={styles.foot_contact_sec}>
-//                 <h3>
-//                 {t("connections")}
-
-//                 </h3>
-//                 <section>
-//                     <img src={email} alt="email" />
-//                     <p className={styles.footloc}>Lahzecard@gmail.com</p>
-//                 </section>
-//                 <section>
-//                     <img src={location} alt="address" />
-//                     <p className={styles.footloc}>
-//                     {t("address")}
-//                     </p>
-//                 </section>
-//             </section>
-//             <section className={styles.foot_lahze_sec}>
-//                 <h3>
-//                 {t("withus")}
-
-//                 </h3>
-//                 <Link to="/Coop">
-//                     <button className={styles.btn_nav}>{t("workwithus")}</button>
-//                 </Link>
-//                 <Link to="/QandAPage">
-//                     <button className={styles.btn_nav}>{t("faq")}</button>
-//                 </Link>
-//                 <Link to="/AboutUs">
-//                     <button className={styles.btn_nav}>{t("aboutus")}</button>
-//                 </Link>
-//             </section>
-//             <section className={styles.foot_social_sec}>
-//                 <h3>
-//                     {t("socialmedia")}
-                    
-//                 </h3>
-//                 <section>
-                
-//                   <a  className={styles.socials} href="https://t.me/lahzecard">
-//                     <img src={telegram} alt="telegram channel" />
-//                 </a>  
-//                 <a href="https://www.instagram.com/lahzecard?igsh=cDJuYnNxZnNlZnUy">
-//                     <img src={instagram} alt="instagram page" />
-//                 </a>
-//                 <a href="https://www.linkedin.com/company/lahze-card/">
-//                     <img src={linkedin} alt="linkedin page" />
-//                 </a>
-                    
-//                 </section>
-//             </section>
-//             <section >
-//                 <a href="/home">
-//                     <img src={logoforfooter} className={styles.logooffooter}alt="Lahzecard Logo" />
-//                 </a>
-//             </section>
-            
-//         </div>
-//         <span className={styles.lastfooter} >
-//             تمامی جریان های مالی بین مشتری و فروشنده کارت های لحظه کارت هست و استارتاپ لحظه کارت هیچ مسیولیتی در این قبال ندارد
-//             </span>
-//     </div>
-//     );
-// };
-
 // export default Footer;
 import React, {useEffect} from "react";
 import {Link} from "react-router-dom";
@@ -97,10 +11,11 @@ import location from "../../Images/location.png";
 
 //multi language
 import t from "../../../src/Multilanguage.jsx";
+import {useTranslation} from "react-i18next";
 
 const Footer = () => {
-    const language = localStorage.getItem('language') ;
-    let isRTL = language === 'ar' || language === 'ir';
+    const { t, i18n } = useTranslation();
+    let isRTL = i18n.language === 'ar' || i18n.language === 'ir';
 
     return (
     
@@ -203,10 +118,10 @@ const Footer = () => {
 
                 <div
                 
-                    className={`${styles.footer_logo_icon} ${(language === "gr"||language === "en") ? styles.footer_logo_right : styles.footer_logo_left}`}
+                    className={`${styles.footer_logo_icon} ${(!isRTL) ? styles.footer_logo_right : styles.footer_logo_left}`}
                     style={{
-                        left: language === 'ir' || language === 'ar' ? 0 : undefined,
-                        right: language === 'en' || language === 'gr' ? 0 : undefined,}}>
+                        left: isRTL ? 0 : undefined,
+                        right: !isRTL ? 0 : undefined,}}>
                     <Link to={'/home'}>
                         <svg width="250" height="220" viewBox="0 0 269 294" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <mask id="path-1-outside-1_772_2802" maskUnits="userSpaceOnUse" x="-1" y="0" width="270"

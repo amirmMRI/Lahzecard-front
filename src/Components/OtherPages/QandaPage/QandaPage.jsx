@@ -13,8 +13,12 @@ import Footer from "../../Footer/Footer";
 
 //multi language
 import t from "../../../Multilanguage";
+import {useTranslation} from 'react-i18next';
 
 const QandaPage = () => {
+    //------Multi Language----
+    const { t, i18n } = useTranslation();
+    let isRTL = i18n.language === 'ar' || i18n.language === 'ir';
 
     // Answer States and Funncs
    const [q1state, setQ1state] = useState(false);
@@ -101,7 +105,10 @@ const QandaPage = () => {
                 <section className={styles.navbar_qnda_sec}>
                     <  Navbar  />
                 </section>
-                <section className={styles.questions_sec}>
+                <section
+                    style={{direction: isRTL ? 'rtl' : 'ltr'}}
+                    className={styles.questions_sec}
+                >
                     <h1>سوالات متداول</h1>
                     <div className={styles.certainq_div}>
                         <div onClick={q1Handler}>
@@ -124,7 +131,7 @@ const QandaPage = () => {
                     </div>
                     <span className={q3state ? styles.span_active : styles.spandeActive}>{t("a3_canmultiuse")}</span>
                     </div>
-                    <div className={styles.certainqdiv}>
+                    <div className={styles.certainq_div}>
                     <div onClick={q4Handler}>
                         <p>{t("q4_howtoopen")}</p>
                         <img src={q4state ? openmark : closemark} alt="question mark closed icon" />
