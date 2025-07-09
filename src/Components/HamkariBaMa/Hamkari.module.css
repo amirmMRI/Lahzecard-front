@@ -81,6 +81,7 @@
     font-size: 2rem;
     /*padding-bottom: 0;*/
 }
+
 .giftCardSection_header div,
 .giftCardSection_header span {
     font-weight: bold;
@@ -101,9 +102,11 @@
     font-size: 1.2rem;
     margin-top: 2rem;
 }
+
 .giftCardSection_descriptions div{
     font-weight: 600;
 }
+
 @media (min-width: 1024px) {
     .giftCardSection_descriptions {
         font-size: 1.5rem!important;
@@ -127,14 +130,21 @@
     background-size: 200%;
     transition: .7s ease-out;
 }
+
 .giftCardSection_buttons_button1 div{
     font-family: "iran-sans";
-
 }
+
 .giftCardSection_buttons_button1:hover {
     background-position: left;
     border: none;
 }
+
+  .giftCardSection_buttons_button1:hover {
+    background-position: left;
+    border: none;
+}
+
 
 @media (min-width: 768px) {
     .giftCardSection_buttons {
@@ -174,13 +184,17 @@
     text-align: center;
 }
 
+
 .featuredBrandsSection_header div{
+
     font-weight: 700;
     font-size: 2rem;
 
 }
 
+
 .featuredBrandsSection_description div {
+
     font-size: 1.2rem;
     font-weight: 600;
 }
@@ -386,6 +400,7 @@
     line-height: 2.3;
 }
 
+
 .commentsCarouselSection_description{
     font-weight: 600;
 }
@@ -460,6 +475,7 @@
 }
 
 body {
+
     /*font-family: 'Vazir', sans-serif;*/
     /* or 'Noto Sans Arabic' */
     direction: rtl;
@@ -478,5 +494,10 @@ html {
     .giftcardSection_container{
         padding: 6rem 2rem;
     }
+}
+
+
+* {
+    font-family: 'iran-sans';
 }
 
