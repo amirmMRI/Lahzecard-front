@@ -73,7 +73,7 @@ const FeaturedBrandsSection = () => {
                     {t("trusted_by_title")}
                 </div>
             </div>
-            <div className="featuredBrandsSection_description" style={{direction: isRTL ? 'rtl' : 'ltr',}}>
+            <div className={styles.featuredBrandsSection_description} style={{direction: isRTL ? 'rtl' : 'ltr',}}>
                 <div>
                     {t("trusted_by_desc")}
                 </div>

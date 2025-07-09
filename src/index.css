@@ -28,7 +28,9 @@
 /*    font-style: normal;*/
 /*    font-display: swap;*/
 /*}*/
-
+/** {*/
+/*    font-family: 'iran-sans';*/
+/*}*/
 body {
     margin: 0;
     direction: rtl;
