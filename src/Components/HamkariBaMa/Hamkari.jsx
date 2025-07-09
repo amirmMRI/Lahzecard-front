@@ -295,7 +295,7 @@ const BenefitsSection = () => {
                     </svg>
                 </div>
                 <div style={{direction: isRTL ? 'rtl' : 'ltr',}}>
-                    <div className={styles.benefitsSection_description_header}>
+                    <div   style={{textAlign: isRTL ? 'right' : 'left',}} className={styles.benefitsSection_description_header}>
                         {t("benefits_title")}
                     </div>
                     <div className={styles.benefitsSection_group}>
@@ -371,9 +371,8 @@ const FeaturesSection = () => {
         <div className={styles.featuresSection_container}>
             <div className={styles.featuresSection_content} >
                 <div style={{direction: isRTL ? 'rtl' : 'ltr',}}>
-                    <div className={styles.featuresSection_description_header}>
+                    <div  style={{textAlign: isRTL ? 'right' : 'left',}} className={styles.featuresSection_description_header}>
                         {t("agency_title")}
-
                     </div>
                     <div className={styles.featuresSection_group}>
                         <div>
