@@ -17,7 +17,7 @@ import t from "../../../src/Multilanguage.jsx";
 
 const Navbar = () => {
     const location = useLocation().pathname;
-    const [isRTL, setIsRTL] = useState(true);
+    const [isRTL, setIsRTL] = useState(localStorage.getItem("i18nextLng") === "ir" || localStorage.getItem("i18nextLng") === 'ar');
     const [open, setOpen] = useState(false);
     const [isTabletOrSmaller, setIsTabletOrSmaller] = useState(false);
 
@@ -25,12 +25,13 @@ const Navbar = () => {
         const { t, i18n } = useTranslation();
 
         const changeLanguage = (lng) => {
-        localStorage.setItem("language", lng);
+        // localStorage.setItem("language", lng);
           i18n.changeLanguage(lng);
           setOpen(!open)
-          if (lng === 'ir' || lng === 'ar'|| localStorage.getItem("language") === 'ar' || localStorage.getItem("language") === 'ir') {
+          if (lng === 'ir' || lng === 'ar'|| localStorage.getItem("i18nextLng") === 'ar' || localStorage.getItem("i18nextLng") === 'ir') {
             document.documentElement.dir = 'rtl';
             setIsRTL(true)
+              console.log(isRTL)
           } else {
             document.documentElement.dir = 'ltr';
             setIsRTL(false)
@@ -177,10 +178,10 @@ const Navbar = () => {
                 <div></div>
                 <div
                     style={{
-                        left: isRTL ? '0' : undefined,
-                        display: isRTL && !active ? 'none' : undefined,
+                        // left: isRTL ? '0' : undefined,
+                        // display: isRTL && !active ? 'none' : undefined,
                         // transition: isRTL && !active ? 'ease-in-out' : undefined,
-                        right: !isRTL ? '0' : undefined,
+                        // right: !isRTL ? '0' : undefined,
                     }}
                     className={
                         active ? styles.ham_options : styles.ham_options_off
