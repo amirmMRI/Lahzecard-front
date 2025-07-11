@@ -17,7 +17,9 @@ import t from "../../../src/Multilanguage.jsx";
 
 const Navbar = () => {
     const location = useLocation().pathname;
+
     const [isRTL, setIsRTL] = useState(localStorage.getItem("i18nextLng") === "ir" || localStorage.getItem("i18nextLng") === 'ar');
+
     const [open, setOpen] = useState(false);
     const [isTabletOrSmaller, setIsTabletOrSmaller] = useState(false);
 
@@ -28,10 +30,11 @@ const Navbar = () => {
         // localStorage.setItem("language", lng);
           i18n.changeLanguage(lng);
           setOpen(!open)
+
           if (lng === 'ir' || lng === 'ar'|| localStorage.getItem("i18nextLng") === 'ar' || localStorage.getItem("i18nextLng") === 'ir') {
             document.documentElement.dir = 'rtl';
             setIsRTL(true)
-              console.log(isRTL)
+
           } else {
             document.documentElement.dir = 'ltr';
             setIsRTL(false)
@@ -69,12 +72,14 @@ const Navbar = () => {
             className={styles.Navbar_container}
             style={{
                 direction: isRTL ? 'rtl' : 'ltr',
+
                 padding:
                     location === '/Coop'
                         ? isTabletOrSmaller
                             ? '2rem'
                             : '2rem 9rem 0 9rem'
                         : undefined
+
             }}
         >
             <nav>

@@ -40,11 +40,13 @@ import t from "../../../src/Multilanguage.jsx";
 const Qanda = () => {
    //------Multi Language----
    const { t, i18n } = useTranslation();
+
    const isRTL = i18n.language === "ar" || i18n.language === "ir";
 
    useEffect(() => {
       document.documentElement.dir = isRTL ? "rtl" : "ltr";
    }, [isRTL]);
+
 
    // Answer States and Funncs
    const [q1state, setQ1state] = useState(false);

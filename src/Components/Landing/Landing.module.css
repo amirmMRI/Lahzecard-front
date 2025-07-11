@@ -171,7 +171,9 @@
         font-weight: bold;
     }
     .landing_first_btn {
+
         font-size: 12px;
+
         width: 85%;
         /*height: 4rem;*/
         color: var(--white);
