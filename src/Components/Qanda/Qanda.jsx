@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, {useEffect, useState} from 'react';
 import { Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 
@@ -40,7 +40,13 @@ import t from "../../../src/Multilanguage.jsx";
 const Qanda = () => {
    //------Multi Language----
    const { t, i18n } = useTranslation();
-   let isRTL = i18n.language === 'ar' || i18n.language === 'ir';
+
+   const isRTL = i18n.language === "ar" || i18n.language === "ir";
+
+   useEffect(() => {
+      document.documentElement.dir = isRTL ? "rtl" : "ltr";
+   }, [isRTL]);
+
 
    // Answer States and Funncs
    const [q1state, setQ1state] = useState(false);
@@ -138,30 +144,30 @@ const Qanda = () => {
                <img src={qanda} alt="q and a icon" className={styles.qanda_img}/>
             ) 
             }
-            <div className={styles.certainq_div}>
+            <div  className={styles.certainq_div}>
                <div onClick={q1Handler}>
-                  <p>{t("q1_howtobuy")}</p>
+                  <p style={{textAlign: isRTL? 'right' : 'left'}}>{t("q1_howtobuy")}</p>
                   <img src={q1state ? openmark : closemark} alt="question mark closed icon" />
                </div>
                <span className={q1state ? styles.span_active : styles.spandeActive}>{t("a1_howtobuy")}<a href="Lahzecard.com">Lahzecard.com</a>{t("a12_howtobuy")}</span>
             </div>
-            <div className={styles.certainq_div}>
+            <div   className={styles.certainq_div}>
                <div onClick={q2Handler}>
-                  <p>{t("q2_howtorecord")}</p>
+                  <p style={{textAlign: isRTL? 'right' : 'left'}}>{t("q2_howtorecord")}</p>
                   <img src={q2state ? openmark : closemark} alt="question mark closed icon" />
                </div>
                <span className={q2state ? styles.span_active : styles.spandeActive}>{t("a2_howtorecord")}</span>
             </div>
-            <div className={styles.certainq_div}>
+            <div   className={styles.certainq_div}>
                <div onClick={q3Handler}>
-                  <p>{t("q3_canmultiuse")}</p>
+                  <p style={{textAlign: isRTL? 'right' : 'left'}}>{t("q3_canmultiuse")}</p>
                   <img src={q3state ? openmark : closemark} alt="question mark closed icon" />
                </div>
                <span className={q3state ? styles.span_active : styles.spandeActive}>{t("a3_canmultiuse")}</span>
             </div>
-            <div className={styles.certainq_div}>
+            <div   className={styles.certainq_div}>
                <div onClick={q4Handler}>
-                  <p>{t("q4_howtoopen")}</p>
+                  <p style={{textAlign: isRTL? 'right' : 'left'}}>{t("q4_howtoopen")}</p>
                   <img src={q4state ? openmark : closemark} alt="question mark closed icon" />
                </div>
                <span className={q4state ? styles.span_active : styles.spandeActive}>{t("a42_howtoopen")}
@@ -170,7 +176,7 @@ const Qanda = () => {
             </div>
             <div className={styles.certainq_div}>
                <div onClick={q5Handler}>
-                  <p>{t("q5_canmultiuse")}</p>
+                  <p style={{textAlign: isRTL? 'right' : 'left'}}>{t("q5_canmultiuse")}</p>
                   <img src={q5state ? openmark : closemark} alt="question mark closed icon" />
                </div>
                <span className={q5state ? styles.span_active : styles.spandeActive}>{t("a5_canmultiuse")}</span>

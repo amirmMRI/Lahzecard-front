@@ -48,13 +48,18 @@ const GiftCardSection = () => {
                         </div>
                     </button>
                 </a>
-                <button className={styles.giftCardSection_buttons_button1}
 
-                >
-                    <div>
-                        {t("consult_button")}
-                    </div>
-                </button>
+
+                <a href="https://wa.me/989367663655?text=hey%20can%20you%20help%20me%3F" target="_blank" rel="noopener noreferrer">
+                    <button className={styles.giftCardSection_buttons_button1}
+
+                    >
+                        <div>
+                            {t("consult_button")}
+                        </div>
+                    </button>
+                </a>
+
             </div>
         </div>
     )
@@ -70,7 +75,9 @@ const FeaturedBrandsSection = () => {
                     {t("trusted_by_title")}
                 </div>
             </div>
-            <div className="featuredBrandsSection_description" style={{direction: isRTL ? 'rtl' : 'ltr',}}>
+
+            <div className={styles.featuredBrandsSection_description} style={{direction: isRTL ? 'rtl' : 'ltr',}}>
+
                 <div>
                     {t("trusted_by_desc")}
                 </div>
@@ -89,8 +96,10 @@ const FeaturedBrandsSection = () => {
     )
 }
 const BenefitsSection = () => {
-    const language = localStorage.getItem('language') ;
-    let isRTL = language === 'ar' || language === 'ir';
+
+    const { t, i18n } = useTranslation();
+    let isRTL = i18n.language === 'ar' || i18n.language === 'ir';
+
 
     return (
         <div className={styles.benefitsSection_container}>
@@ -292,7 +301,9 @@ const BenefitsSection = () => {
                     </svg>
                 </div>
                 <div style={{direction: isRTL ? 'rtl' : 'ltr',}}>
-                    <div className={styles.benefitsSection_description_header}>
+
+                    <div   style={{textAlign: isRTL ? 'right' : 'left',}} className={styles.benefitsSection_description_header}>
+
                         {t("benefits_title")}
                     </div>
                     <div className={styles.benefitsSection_group}>
@@ -354,6 +365,7 @@ const BenefitsSection = () => {
                         <div>
                             {t("benefits_p5")}
                         </div>
+
                     </div>
                 </div>
             </div>
@@ -361,16 +373,15 @@ const BenefitsSection = () => {
     )
 }
 const FeaturesSection = () => {
-    const language = localStorage.getItem('language') ;
-    let isRTL = language === 'ar' || language === 'ir';
+    const { t, i18n } = useTranslation();
+    let isRTL = i18n.language === 'ar' || i18n.language === 'ir';
 
     return (
         <div className={styles.featuresSection_container}>
             <div className={styles.featuresSection_content} >
                 <div style={{direction: isRTL ? 'rtl' : 'ltr',}}>
-                    <div className={styles.featuresSection_description_header}>
+                    <div  style={{textAlign: isRTL ? 'right' : 'left',}} className={styles.featuresSection_description_header}>
                         {t("agency_title")}
-
                     </div>
                     <div className={styles.featuresSection_group}>
                         <div>
@@ -383,6 +394,7 @@ const FeaturesSection = () => {
                         <div>
                             {t("agency_f1")}
                         </div>
+
                     </div>
                     <div className={styles.featuresSection_group}>
                         <div>
@@ -393,7 +405,9 @@ const FeaturesSection = () => {
                             </svg>
                         </div>
                         <div>
+
                             {t("agency_f2")}
+
                         </div>
                     </div>
                     <div className={styles.featuresSection_group}>
@@ -405,7 +419,9 @@ const FeaturesSection = () => {
                             </svg>
                         </div>
                         <div>
+
                             {t("agency_f3")}
+
                         </div>
                     </div>
                     <div className={styles.featuresSection_group}>
@@ -417,6 +433,7 @@ const FeaturesSection = () => {
                             </svg>
                         </div>
                         <div>
+
                             {t("agency_f4")}
 
                         </div>
@@ -682,8 +699,11 @@ const FeaturesSection = () => {
     )
 }
 const CarouselSection = () => {
-    const language = localStorage.getItem('language') ;
-    let isRTL = language === 'ar' || language === 'ir';
+
+    const { t, i18n } = useTranslation();
+    let isRTL = i18n.language === 'ar' || i18n.language === 'ir';
+
+
 
     return (
 

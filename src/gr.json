@@ -6,7 +6,7 @@
     "login": "Einloggen | registrieren",
     "language": "Sprache",
     "lahzecard": "Lahze Card",
-    "lahzesazi_banner": "Verwandeln Sie Ihre Stimme in eine zeitlose Erinnerung",
+    "lahzesazi_banner": "Momente gestalten mit dem Klang deiner Stimme",
     "banner2": "Wir fangen die Momente ein, die die bedeutendsten Wendepunkte Ihres Lebens definieren.",
     "bannerbutton": "Beginnen Sie mit der Erstellung des perfekten Geschenks",
     "withus": "Arbeiten Lahzecard",
@@ -109,6 +109,8 @@
     "agency_f3": "Bereitstellung einer vollständigen Infrastruktur für Kartennummern und individuelle Geschenkkarten",
     "agency_f4": "Zugriff auf Statistiken, Berichte und eine API für Entwickler",
     "agency_f5": "Erstellen Sie multifunktionale und vernetzte Geschenkkarten für Ihre Kunden",
+
+    "financialDisclaimer": "Alle finanziellen Transaktionen zwischen dem Kunden und dem Verkäufer erfolgen über die Lahze Card-Karten, und das Startup Lahze Card übernimmt hierfür keine Verantwortung.",
 
     "agency_footer": "Mit Lahzeh Card bieten Sie Ihren Kunden professionelle Geschenkkartendienste von A bis Z.",
     "cooperation_title": "Wir sind bereit, mit Ihnen zusammenzuarbeiten!",

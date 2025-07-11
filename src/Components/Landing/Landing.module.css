@@ -100,6 +100,7 @@
     }
     .landing_text_sec h1 {
         font-size: 35px;
+        line-height: 1.5;
         margin: 0;
     }
     .arrow_img {
@@ -129,6 +130,7 @@
         padding: 3% 6%;
         border: none;
         /* text-align: center; */
+        width: 50%;
         user-select: none;
     }
     .landing_first_btn img {
@@ -136,7 +138,11 @@
         padding: 0 5px 0 0;
     }
 }
-
+@media (max-width: 590px) {
+    .landing_first_btn{
+        width: 70%;
+    }
+}
 @media (max-width: 440px) {
     .Landing_Container {
         margin-top: 20%;
@@ -165,7 +171,9 @@
         font-weight: bold;
     }
     .landing_first_btn {
-        font-size: 14px;
+
+        font-size: 12px;
+
         width: 85%;
         /*height: 4rem;*/
         color: var(--white);

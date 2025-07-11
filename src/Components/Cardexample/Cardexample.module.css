@@ -26,7 +26,7 @@
 @media (max-width: 720px) {
 
     .Cards_Container {
-        height: 80vh;
+        height: 60vh;
         background-color: var(--white);
     }
     
@@ -63,10 +63,10 @@
 
 }
 
-@media (max-width: 420px) {
+@media screen and (max-width: 420px) {
     
     .Cards_Container {
-        height: 70vh;
+        height: 55vh;
         background-color: var(--white);
     }
 
