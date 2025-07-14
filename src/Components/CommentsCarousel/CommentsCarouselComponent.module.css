@@ -13,7 +13,7 @@
     transform: translateY(-50%);
     display: flex;
     justify-content: space-between;
-    /*padding: 0 10px;*/
+
     pointer-events: none;
     z-index: 2;
 }
@@ -105,7 +105,9 @@
 .testimonial_card_content_header {
     font-weight: 700;
     font-size: 1.3rem;
+
     text-align: right;
+
 }
 
 .react-multi-carousel-track {

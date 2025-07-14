@@ -63,11 +63,13 @@
 .card_div2{
     border: solid 4px #83A9F1;
 }
+
 .card_div3{
     border: solid 4px #8EC4A6;
 }
 @media screen and (max-width: 768px){
     .cards_sec{
+
         flex-direction: column;
         justify-content: center;
         align-items: center;

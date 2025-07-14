@@ -78,6 +78,7 @@
     gap: 1rem;
     width: 100%;
     font-weight: 700;
+
     font-size: 2rem;
     /*padding-bottom: 0;*/
 }
@@ -85,6 +86,7 @@
 .giftCardSection_header span {
     font-weight: bold;
 }
+
 .giftCardSection_header span {
     color: #E67BE6;
 }
@@ -98,12 +100,14 @@
 
 .giftCardSection_descriptions {
     text-align: center;
+
     font-size: 1.2rem;
     margin-top: 2rem;
 }
 .giftCardSection_descriptions div{
     font-weight: 600;
 }
+
 @media (min-width: 1024px) {
     .giftCardSection_descriptions {
         font-size: 1.5rem!important;
@@ -127,14 +131,18 @@
     background-size: 200%;
     transition: .7s ease-out;
 }
+
+
 .giftCardSection_buttons_button1 div{
     font-family: "iran-sans";
 
 }
+
 .giftCardSection_buttons_button1:hover {
     background-position: left;
     border: none;
 }
+
 
 @media (min-width: 768px) {
     .giftCardSection_buttons {
@@ -155,7 +163,7 @@
 
 .giftCardSection_button_style div {
     font-weight: 600;
-    font-family: "iran-sans";
+
 }
 
 .giftCardSection_button_style:hover {
@@ -174,6 +182,7 @@
     text-align: center;
 }
 
+
 .featuredBrandsSection_header div{
     font-weight: 700;
     font-size: 2rem;
@@ -183,6 +192,7 @@
 .featuredBrandsSection_description div {
     font-size: 1.2rem;
     font-weight: 600;
+
 }
 
 .featuredBrandsSection_brands {
@@ -281,7 +291,9 @@
 
 .benefitsSection_group div {
     font-weight: 600;
+
     font-size: 1.2rem;
+
 }
 
 @media (min-width: 640px) {
@@ -339,6 +351,7 @@
 .featuresSection_group div {
     font-weight: 600;
     font-size: 1.2rem;
+
 }
 
 @media (min-width: 640px) {
@@ -384,6 +397,7 @@
     padding: 0 3rem;
     text-align: center;
     line-height: 2.3;
+
 }
 
 .commentsCarouselSection_description{
@@ -460,7 +474,7 @@
 }
 
 body {
-    /*font-family: 'Vazir', sans-serif;*/
+
     /* or 'Noto Sans Arabic' */
     direction: rtl;
     text-align: right;
@@ -475,8 +489,10 @@ html {
         font-size: 10px;
     }
 
+
     .giftcardSection_container{
         padding: 6rem 2rem;
     }
 }
+
 

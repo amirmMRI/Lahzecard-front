@@ -24,6 +24,7 @@ i18n
             order: ['localStorage', 'navigator'],
             caches: ['localStorage'], // ✅ Store language in localStorage
         },
+
         interpolation: {
             escapeValue: false,
         },
