@@ -5,6 +5,7 @@
     flex-direction: row-reverse;
     justify-content: center;
     align-items: center;
+    /*background-color: red;*/
 }
 
 .Landing_Container img {

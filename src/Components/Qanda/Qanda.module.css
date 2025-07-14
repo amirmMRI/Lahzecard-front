@@ -127,6 +127,7 @@
 .buttons_div {
     width: 100%;
     text-align: center;
+    margin-top: 1rem;
 }
 
 .btn_active {
@@ -139,7 +140,7 @@
     cursor: pointer;
     display: inline-flex;
     background-color: #6F4975;
-    border: none;
+    border: solid 3px #6F4975;
     user-select: none;
     -webkit-user-select: none;
     touch-action: manipulation;

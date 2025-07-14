@@ -1,6 +1,11 @@
 .fullpage_container {
      overflow-x: hidden;
+    /*background-color: #6A6A6A;*/
     /* direction: ltr; */
+    /*background-image: url("/src/Images/IMG_8329.JPEG");*/
+    /*width: 100%;*/
+    /*background-repeat: no-repeat;*/
+
 }
 
 
@@ -24,7 +29,8 @@
 /* Fullpage styles */
 
 .Landing_section {
-    padding: 1% 4% 0% 4%;
+    padding: 1% 4% 8% 4%;
+    /*position: relative;*/
 }
 
 .Cards_section {

@@ -125,7 +125,7 @@ const Navbar = () => {
                         <section  className={
                         active ? styles.nothing : styles.ham_options_off
                     }>
-                            {t('language')}
+                            {/*{t('language')}*/}
                         </section>
                         </button>
 
@@ -207,7 +207,7 @@ const Navbar = () => {
                         </Link>
                         <div></div>
                         <Link to="/customer">
-                            <button style={{padding: isRTL? "0 2rem" : undefined, justifyContent: isRTL ? "right" : "left"}} className={styles.btn_nav_ham}>
+                            <button style={{padding: isRTL? "0 1rem" : undefined, justifyContent: isRTL ? "right" : "left"}} className={styles.btn_nav_ham}>
                                 <img
                                     className={styles.btn_nav_ham_img}
                                     src={char}
