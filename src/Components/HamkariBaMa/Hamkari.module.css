@@ -87,6 +87,7 @@
     font-weight: bold;
 }
 
+
 .giftCardSection_header span {
     color: #E67BE6;
 }
@@ -184,12 +185,14 @@
 
 
 .featuredBrandsSection_header div{
+
     font-weight: 700;
     font-size: 2rem;
 
 }
 
 .featuredBrandsSection_description div {
+
     font-size: 1.2rem;
     font-weight: 600;
 
@@ -403,6 +406,7 @@
 .commentsCarouselSection_description{
     font-weight: 600;
 }
+
 /*======MEDIA=====*/
 
 @media screen and (max-width: 1024px) {
@@ -494,5 +498,4 @@ html {
         padding: 6rem 2rem;
     }
 }
-
 

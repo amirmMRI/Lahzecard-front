@@ -66,9 +66,11 @@
 
 .card_div3{
     border: solid 4px #8EC4A6;
+
 }
 @media screen and (max-width: 768px){
     .cards_sec{
+
 
         flex-direction: column;
         justify-content: center;
