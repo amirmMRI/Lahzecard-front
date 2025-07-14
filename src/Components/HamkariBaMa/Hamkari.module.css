@@ -78,9 +78,15 @@
     gap: 1rem;
     width: 100%;
     font-weight: 700;
-    font-size: 1.8rem;
+
+    font-size: 2rem;
     /*padding-bottom: 0;*/
 }
+.giftCardSection_header div,
+.giftCardSection_header span {
+    font-weight: bold;
+}
+
 
 .giftCardSection_header span {
     color: #E67BE6;
@@ -95,8 +101,12 @@
 
 .giftCardSection_descriptions {
     text-align: center;
-    font-size: 1rem;
+
+    font-size: 1.2rem;
     margin-top: 2rem;
+}
+.giftCardSection_descriptions div{
+    font-weight: 600;
 }
 
 @media (min-width: 1024px) {
@@ -123,10 +133,17 @@
     transition: .7s ease-out;
 }
 
+
+.giftCardSection_buttons_button1 div{
+    font-family: "iran-sans";
+
+}
+
 .giftCardSection_buttons_button1:hover {
     background-position: left;
     border: none;
 }
+
 
 @media (min-width: 768px) {
     .giftCardSection_buttons {
@@ -147,6 +164,7 @@
 
 .giftCardSection_button_style div {
     font-weight: 600;
+
 }
 
 .giftCardSection_button_style:hover {
@@ -165,13 +183,19 @@
     text-align: center;
 }
 
-.featuredBrandsSection_header {
+
+.featuredBrandsSection_header div{
+
     font-weight: 700;
     font-size: 2rem;
+
 }
 
-.featuredBrandsSection_description {
+.featuredBrandsSection_description div {
+
     font-size: 1.2rem;
+    font-weight: 600;
+
 }
 
 .featuredBrandsSection_brands {
@@ -270,7 +294,9 @@
 
 .benefitsSection_group div {
     font-weight: 600;
-    font-size: 1.5rem;
+
+    font-size: 1.2rem;
+
 }
 
 @media (min-width: 640px) {
@@ -327,7 +353,8 @@
 
 .featuresSection_group div {
     font-weight: 600;
-    font-size: 1.5rem;
+    font-size: 1.2rem;
+
 }
 
 @media (min-width: 640px) {
@@ -370,10 +397,15 @@
 .commentsCarouselSection_description {
     margin-bottom: 2em;
     font-size: 1rem;
-    /*padding: ;*/
+    padding: 0 3rem;
     text-align: center;
+    line-height: 2.3;
+
 }
 
+.commentsCarouselSection_description{
+    font-weight: 600;
+}
 
 /*======MEDIA=====*/
 
@@ -446,7 +478,7 @@
 }
 
 body {
-    font-family: 'Vazir', sans-serif;
+
     /* or 'Noto Sans Arabic' */
     direction: rtl;
     text-align: right;
@@ -460,8 +492,10 @@ html {
     html {
         font-size: 10px;
     }
+
+
+    .giftcardSection_container{
+        padding: 6rem 2rem;
+    }
 }
 
-* {
-    font-family: 'iran-sans';
-}
