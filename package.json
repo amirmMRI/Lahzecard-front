@@ -30,7 +30,6 @@
         "react-router-dom": "^6.7.0",
         "react-scripts": "5.0.1",
         "reactjs-popup": "^2.0.6",
-        "typescript": "^5.8.3",
         "vue-i18n": "^8.28.2",
         "web-vitals": "^2.1.4"
     },
@@ -57,5 +56,8 @@
             "last 1 firefox version",
             "last 1 safari version"
         ]
+    },
+    "devDependencies": {
+        "typescript": "^4.9.5"
     }
 }
