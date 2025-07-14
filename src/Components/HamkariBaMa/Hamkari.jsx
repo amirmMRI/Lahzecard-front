@@ -704,7 +704,6 @@ const CarouselSection = () => {
     let isRTL = i18n.language === 'ar' || i18n.language === 'ir';
 
 
-
     return (
 
         <div className={styles.commentsCarouselSection_container}>

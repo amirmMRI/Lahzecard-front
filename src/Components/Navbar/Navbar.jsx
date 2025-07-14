@@ -17,7 +17,6 @@ import t from "../../../src/Multilanguage.jsx";
 
 const Navbar = () => {
     const location = useLocation().pathname;
-
     const [isRTL, setIsRTL] = useState(localStorage.getItem("i18nextLng") === "ir" || localStorage.getItem("i18nextLng") === 'ar');
 
     const [open, setOpen] = useState(false);
@@ -30,10 +29,10 @@ const Navbar = () => {
         // localStorage.setItem("language", lng);
           i18n.changeLanguage(lng);
           setOpen(!open)
-
           if (lng === 'ir' || lng === 'ar'|| localStorage.getItem("i18nextLng") === 'ar' || localStorage.getItem("i18nextLng") === 'ir') {
             document.documentElement.dir = 'rtl';
             setIsRTL(true)
+              console.log(isRTL)
 
           } else {
             document.documentElement.dir = 'ltr';
@@ -47,6 +46,7 @@ const Navbar = () => {
 
         // Set initial value
         handleResize();
+
 
         // Attach resize listener
         window.addEventListener('resize', handleResize);
@@ -130,7 +130,7 @@ const Navbar = () => {
                         <section  className={
                         active ? styles.nothing : styles.ham_options_off
                     }>
-                            {t('language')}
+                            {/*{t('language')}*/}
                         </section>
                         </button>
 
@@ -212,7 +212,8 @@ const Navbar = () => {
                         </Link>
                         <div></div>
                         <Link to="/customer">
-                            <button style={{padding: isRTL? "0 2rem" : undefined, justifyContent: isRTL ? "right" : "left"}} className={styles.btn_nav_ham}>
+                            <button style={{padding: isRTL? "0 1rem" : undefined, justifyContent: isRTL ? "right" : "left"}} className={styles.btn_nav_ham}>
+
                                 <img
                                     className={styles.btn_nav_ham_img}
                                     src={char}

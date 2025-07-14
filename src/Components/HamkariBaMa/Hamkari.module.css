@@ -132,6 +132,7 @@
     transition: .7s ease-out;
 }
 
+
 .giftCardSection_buttons_button1 div{
     font-family: "iran-sans";
 
@@ -141,6 +142,7 @@
     background-position: left;
     border: none;
 }
+
 
 @media (min-width: 768px) {
     .giftCardSection_buttons {
@@ -161,8 +163,6 @@
 
 .giftCardSection_button_style div {
     font-weight: 600;
-
-    font-family: "iran-sans";
 
 }
 
@@ -350,7 +350,6 @@
 
 .featuresSection_group div {
     font-weight: 600;
-
     font-size: 1.2rem;
 
 }
@@ -395,16 +394,15 @@
 .commentsCarouselSection_description {
     margin-bottom: 2em;
     font-size: 1rem;
-
     padding: 0 3rem;
     text-align: center;
     line-height: 2.3;
+
 }
 
 .commentsCarouselSection_description{
     font-weight: 600;
 }
-
 /*======MEDIA=====*/
 
 @media screen and (max-width: 1024px) {
@@ -476,8 +474,6 @@
 }
 
 body {
-
-    /*font-family: 'Vazir', sans-serif;*/
 
     /* or 'Noto Sans Arabic' */
     direction: rtl;
