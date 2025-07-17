@@ -10,10 +10,11 @@
     width: 100%;
     top: 50%;
     left: 0;
+    right: 0;
     transform: translateY(-50%);
     display: flex;
     justify-content: space-between;
-    /*padding: 0 10px;*/
+
     pointer-events: none;
     z-index: 2;
 }
@@ -106,6 +107,7 @@
     font-weight: 700;
     font-size: 1.3rem;
     text-align: right;
+
 }
 
 .react-multi-carousel-track {
@@ -120,12 +122,18 @@
         padding: 0 40px;
     }
     .carousel_container {
-        padding-bottom: 20px;
+        padding-bottom: 30px;
     }
     .testimonial_card {
         width: 184px;
         height: 213px;
         min-height: 250px;
+    }
+    .carousel_button:nth-child(1){
+        padding: 0 2rem;
+    }
+      .carousel_button:nth-child(2){
+        padding: 0 0 0 8rem;
     }
 }
 

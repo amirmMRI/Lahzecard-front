@@ -68,6 +68,7 @@
 }
 @media screen and (max-width: 768px){
     .cards_sec{
+
         flex-direction: column;
         justify-content: center;
         align-items: center;

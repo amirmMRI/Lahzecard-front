@@ -18,6 +18,7 @@ import t from "../../../src/Multilanguage.jsx";
 const Navbar = () => {
     const location = useLocation().pathname;
     const [isRTL, setIsRTL] = useState(localStorage.getItem("i18nextLng") === "ir" || localStorage.getItem("i18nextLng") === 'ar');
+
     const [open, setOpen] = useState(false);
     const [isTabletOrSmaller, setIsTabletOrSmaller] = useState(false);
 
@@ -32,6 +33,7 @@ const Navbar = () => {
             document.documentElement.dir = 'rtl';
             setIsRTL(true)
               console.log(isRTL)
+
           } else {
             document.documentElement.dir = 'ltr';
             setIsRTL(false)
@@ -44,6 +46,7 @@ const Navbar = () => {
 
         // Set initial value
         handleResize();
+
 
         // Attach resize listener
         window.addEventListener('resize', handleResize);
@@ -69,12 +72,14 @@ const Navbar = () => {
             className={styles.Navbar_container}
             style={{
                 direction: isRTL ? 'rtl' : 'ltr',
+
                 padding:
                     location === '/Coop'
                         ? isTabletOrSmaller
                             ? '2rem'
                             : '2rem 9rem 0 9rem'
                         : undefined
+
             }}
         >
             <nav>
@@ -208,6 +213,7 @@ const Navbar = () => {
                         <div></div>
                         <Link to="/customer">
                             <button style={{padding: isRTL? "0 1rem" : undefined, justifyContent: isRTL ? "right" : "left"}} className={styles.btn_nav_ham}>
+
                                 <img
                                     className={styles.btn_nav_ham_img}
                                     src={char}

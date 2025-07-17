@@ -58,6 +58,7 @@ const GiftCardSection = () => {
                         </div>
                     </button>
                 </a>
+
             </div>
         </div>
     )
@@ -74,6 +75,7 @@ const FeaturedBrandsSection = () => {
                 </div>
             </div>
             <div className={styles.featuredBrandsSection_description} style={{direction: isRTL ? 'rtl' : 'ltr',}}>
+
                 <div>
                     {t("trusted_by_desc")}
                 </div>
@@ -94,6 +96,7 @@ const FeaturedBrandsSection = () => {
 const BenefitsSection = () => {
     const { t, i18n } = useTranslation();
     let isRTL = i18n.language === 'ar' || i18n.language === 'ir';
+
 
     return (
         <div className={styles.benefitsSection_container}>
@@ -296,6 +299,7 @@ const BenefitsSection = () => {
                 </div>
                 <div style={{direction: isRTL ? 'rtl' : 'ltr',}}>
                     <div   style={{textAlign: isRTL ? 'right' : 'left',}} className={styles.benefitsSection_description_header}>
+
                         {t("benefits_title")}
                     </div>
                     <div className={styles.benefitsSection_group}>
@@ -357,6 +361,7 @@ const BenefitsSection = () => {
                         <div>
                             {t("benefits_p5")}
                         </div>
+
                     </div>
                 </div>
             </div>
@@ -385,6 +390,7 @@ const FeaturesSection = () => {
                         <div>
                             {t("agency_f1")}
                         </div>
+
                     </div>
                     <div className={styles.featuresSection_group}>
                         <div>
@@ -395,7 +401,9 @@ const FeaturesSection = () => {
                             </svg>
                         </div>
                         <div>
+
                             {t("agency_f2")}
+
                         </div>
                     </div>
                     <div className={styles.featuresSection_group}>
@@ -407,7 +415,9 @@ const FeaturesSection = () => {
                             </svg>
                         </div>
                         <div>
+
                             {t("agency_f3")}
+
                         </div>
                     </div>
                     <div className={styles.featuresSection_group}>
@@ -419,6 +429,7 @@ const FeaturesSection = () => {
                             </svg>
                         </div>
                         <div>
+
                             {t("agency_f4")}
 
                         </div>
@@ -684,6 +695,7 @@ const FeaturesSection = () => {
     )
 }
 const CarouselSection = () => {
+
     const { t, i18n } = useTranslation();
     let isRTL = i18n.language === 'ar' || i18n.language === 'ir';
 
