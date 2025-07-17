@@ -49,7 +49,6 @@ const GiftCardSection = () => {
                     </button>
                 </a>
 
-
                 <a href="https://wa.me/989367663655?text=hey%20can%20you%20help%20me%3F" target="_blank" rel="noopener noreferrer">
                     <button className={styles.giftCardSection_buttons_button1}
 
@@ -75,7 +74,6 @@ const FeaturedBrandsSection = () => {
                     {t("trusted_by_title")}
                 </div>
             </div>
-
             <div className={styles.featuredBrandsSection_description} style={{direction: isRTL ? 'rtl' : 'ltr',}}>
 
                 <div>
@@ -96,7 +94,6 @@ const FeaturedBrandsSection = () => {
     )
 }
 const BenefitsSection = () => {
-
     const { t, i18n } = useTranslation();
     let isRTL = i18n.language === 'ar' || i18n.language === 'ir';
 
@@ -301,7 +298,6 @@ const BenefitsSection = () => {
                     </svg>
                 </div>
                 <div style={{direction: isRTL ? 'rtl' : 'ltr',}}>
-
                     <div   style={{textAlign: isRTL ? 'right' : 'left',}} className={styles.benefitsSection_description_header}>
 
                         {t("benefits_title")}

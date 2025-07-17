@@ -80,7 +80,6 @@ const Navbar = () => {
                             : '2rem 9rem 0 9rem'
                         : undefined
 
-
             }}
         >
             <nav>

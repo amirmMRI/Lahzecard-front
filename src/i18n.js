@@ -23,7 +23,6 @@ i18n
         detection: {
             order: ['localStorage', 'navigator'],
             caches: ['localStorage'], // ✅ Store language in localStorage
-
         },
 
         interpolation: {
