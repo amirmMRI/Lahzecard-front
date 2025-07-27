@@ -22,7 +22,8 @@ i18n
         fallbackLng: 'ir',
         detection: {
             order: ['localStorage', 'navigator'],
-            caches: ['localStorage'],
+
+            caches: ['localStorage'], // ✅ Store language in localStorage
         },
 
         interpolation: {
