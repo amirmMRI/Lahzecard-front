@@ -181,7 +181,9 @@ nav {
 
 .btn_nav_ham {
     font-size: 16px;
+
     width: 100%;
+
 
     /*padding: 0 2rem;*/
     text-shadow: -5px 5px 10px var(--background_black_darker);
@@ -205,9 +207,7 @@ nav {
     transition: all .2s ease-in;
     /*width: 70%;*/
 }
-.btn_nav_ham button{
-
-}
+.btn_nav_ham button{}
 .btn_nav_ham:hover {
     transition: all 150ms ease-in;
     color: var(--text_black);

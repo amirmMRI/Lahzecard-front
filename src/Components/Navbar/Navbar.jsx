@@ -17,6 +17,7 @@ import t from "../../../src/Multilanguage.jsx";
 
 const Navbar = () => {
     const location = useLocation().pathname;
+
     const [isRTL, setIsRTL] = useState(localStorage.getItem("i18nextLng") === "ir" || localStorage.getItem("i18nextLng") === 'ar');
 
     const [open, setOpen] = useState(false);
@@ -29,10 +30,12 @@ const Navbar = () => {
         // localStorage.setItem("language", lng);
           i18n.changeLanguage(lng);
           setOpen(!open)
+          
           if (lng === 'ir' || lng === 'ar'|| localStorage.getItem("i18nextLng") === 'ar' || localStorage.getItem("i18nextLng") === 'ir') {
             document.documentElement.dir = 'rtl';
             setIsRTL(true)
               console.log(isRTL)
+
 
           } else {
             document.documentElement.dir = 'ltr';
@@ -50,6 +53,7 @@ const Navbar = () => {
 
         // Attach resize listener
         window.addEventListener('resize', handleResize);
+
 
         return () => window.removeEventListener('resize', handleResize);
     }, []);
