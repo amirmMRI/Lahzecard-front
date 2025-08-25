@@ -20,11 +20,7 @@ nav {
 /*        padding: 2rem !important;*/
 /*    }*/
 /*}*/
-.dropdowncontainer {
-  padding: 0;
-  border: none;
-  text-decoration: none;
-}
+
 
 .navbared button {
   padding: 2rem;
@@ -32,55 +28,80 @@ nav {
   background-color: transparent;
 }
 
-.dropdownbutton {
+.dropdown {
+  position: relative;
+  background-color: #F3EDF780;
+  padding: 0.4rem;
+  border-radius: 0.8rem;
+  width: 4rem;
+  order: -1;
+}
+.dropdown.open{
+    border-radius: 0;
+    border-top-left-radius: 0.8rem;
+    border-top-right-radius: 0.8rem;
+}
+
+.dropdown_icon {
   display: flex;
+  justify-content: space-between;
   align-items: center;
-  text-decoration: none;
-  border: none;
-  padding: 0px;
-  /* border: 1px solid #ccc; */
-  /* background-color: rgb(157, 49, 49); */
+  /* gap: 0.6rem; */
   cursor: pointer;
-  color: #000000;
-  /* border-radius: 6px; */
-  font-size: 14px;
 }
 
-.dropdownbutton img {
-  width: 1.5rem;
-  padding: 0.1rem;
+.dropdown_item {
+  display: flex;
+  gap: 0.6rem;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 1.1rem;
+  padding: 0.4rem 0.6rem;
+  cursor: pointer;
+  transition: background 0.2s ease;
 }
 
-.dropdownmenu {
+.dropdown_item:hover {
+  /* background: rgba(0, 0, 0, 0.05); */
+  border-radius: 0.5rem;
+}
+
+.dropdown_item img {
+  width: 32px;
+  height: 32px;
+}
+
+.dropdown_container {
   position: absolute;
-  /*top: 7%;*/
-  margin: 0 10px;
-  /*left: 0;*/
-  background-color: #fff;
-  /* border: 1px solid #ccc; */
-  border-radius: 6px;
-  /*margin-left: 600px;*/
-  list-style: none;
-  padding: 0;
+  top: 100%;   /* دقیقا زیر dropdown_icon */
+  left: 0;
+  right: 0;
+  background: #F3EDF780;
+  border-radius: 0.8rem;
+  /* margin-top: 0.4rem; */
+  max-height: 0;
+  overflow: hidden;
+  opacity: 0;
+  transition: max-height 0.3s ease, opacity 0.3s ease;
   z-index: 100;
-  min-width: 120px;
 }
 
-.dropdownitem button {
-  width: 100%;
-  padding: 0;
-  border: none;
-  height: fit-content;
-  text-decoration: none;
+.dropdown_container.open {
+  max-height: 500px;
+  opacity: 1;
+  /* border-end-end-radius: 0.8rem; */
+  border-radius: 0;
+  border-bottom-left-radius: 0.8rem;
+  border-bottom-right-radius: 0.8rem;
+}
+.dropdown_arrow {
+  width: 20px;
+  height: 20px;
+  transition: transform 0.3s ease;
 }
 
-.dropdownitem {
-  padding: 1px 6px;
-  cursor: pointer;
-}
-
-.dropdownitem:hover {
-  background-color: #f0f0f0;
+.dropdown_arrow.rotate {
+  transform: rotate(180deg);
 }
 
 .logo {
@@ -89,6 +110,7 @@ nav {
 
 .btnvip {
   display: flex;
+  align-items: center;
 }
 
 .btn_nav {
@@ -207,10 +229,16 @@ nav {
 }
 
 @media (max-width: 950px) {
-  .dropdownbutton img {
+    .dropdown_item{
+        font-size: 1.7rem !important;
+    }
+    .dropdown{
+        width: 6rem !important;
+    }
+  /* .dropdownbutton img {
     width: 2.5rem !important;
     padding-bottom: 2rem;
-  }
+  } */
   /* .HanMenu {
         width: 7%;
         display: flex;

@@ -17,9 +17,23 @@ import { useTranslation } from "react-i18next";
 import t from "../../../src/Multilanguage.jsx";
 import { act } from "react";
 
+//drop down
+import IR from "../../Images/dropdown/IR.svg";
+import EN from "../../Images/dropdown/UK.svg";
+import AR from "../../Images/dropdown/AR.svg";
+import DE from "../../Images/dropdown/DE.svg";
+import arrow from "../../Images/dropdown/closed_dropdown.svg";
+
 const Navbar = () => {
   const location = useLocation().pathname;
-  // const isRTLi18n = i18n.language === 'ar' || i18n.language === 'ir';
+
+  const languages = [
+    { code: "FA", label: "ir", flag: IR },
+    { code: "EN", label: "en", flag: EN },
+    { code: "AR", label: "ar", flag: AR },
+    { code: "DE", label: "gr", flag: DE },
+  ];
+  const [selectedLanguage, setSelectedLanguage] = useState(null);
 
   const [isRTL, setIsRTL] = useState(
     localStorage.getItem("i18nextLng") === "ir" ||
@@ -36,7 +50,7 @@ const Navbar = () => {
     // localStorage.setItem("language", lng);
     i18n.changeLanguage(lng);
     setOpen(!open);
-
+    // setActive(false)
     if (
       lng === "ir" ||
       lng === "ar" ||
@@ -68,7 +82,7 @@ const Navbar = () => {
   const [active, setActive] = useState(false);
   const hamHandler = () => {
     console.log(active, "ham menu");
-
+    setOpen(false);
     setActive(!active);
   };
 
@@ -121,51 +135,56 @@ const Navbar = () => {
                 {t("login")}
               </button>
             </Link>
-            <div className={styles.dropdowncontainer}>
-              <button
-                onClick={() => setOpen(!open)}
-                className={styles.dropdownbutton}
-              >
-                <img src={langu} alt="language icon" />
-                <section
-                  className={active ? styles.nothing : styles.ham_options_off}
-                >
-                  {/*{t('language')}*/}
-                </section>
-              </button>
 
-              {open && (
-                <ul
-                  className={styles.dropdownmenu}
-                  style={{
-                    left:
-                      window.location.pathname === "/Coop" && isRTL
-                        ? "6rem"
-                        : undefined,
-                    right:
-                      window.location.pathname === "/Coop" && !isRTL
-                        ? "6rem"
-                        : undefined,
-                  }}
-                >
-                  <li className={styles.dropdownitem}>
-                    <button onClick={() => changeLanguage("gr")}>
-                      Duetsch
-                    </button>
-                  </li>
-                  <li className={styles.dropdownitem}>
-                    <button onClick={() => changeLanguage("en")}>
-                      English
-                    </button>
-                  </li>
-                  <li className={styles.dropdownitem}>
-                    <button onClick={() => changeLanguage("ir")}>فارسی</button>
-                  </li>
-                  <li className={styles.dropdownitem}>
-                    <button onClick={() => changeLanguage("ar")}>العربی</button>
-                  </li>
-                </ul>
-              )}
+            {/* -------- DropDown --------- */}
+
+            <div
+              className={`${styles.dropdown} ${open ? styles.open : ""}`}
+              style={{
+                direction: isRTL ? "rtl" : "ltr",
+              }}
+            >
+              <div
+                className={styles.dropdown_icon}
+                onClick={() => {
+                  setOpen(!open);
+                  setActive(false);
+                }}
+              >
+                <img
+                  src={arrow} 
+                  alt="dropdown arrow"
+                  className={`${styles.dropdown_arrow} ${
+                    open ? styles.rotate : ""
+                  }`}
+                />
+
+                {languages
+                  .filter((lng) => lng.label === i18n.language)
+                  .map((lng) => (
+                    <img key={lng.code} src={lng.flag} alt={lng.label} />
+                  ))}
+              </div>
+
+              <div
+                className={`${styles.dropdown_container} ${
+                  open ? styles.open : ""
+                }`}
+              >
+                {languages
+                  .filter((lng) => lng.label !== i18n.language)
+                  .map((lng) => (
+                    <div
+                      key={lng.code}
+                      className={styles.dropdown_item}
+                      onClick={() => changeLanguage(lng.label)}
+                    >
+                      <div>{lng.code}</div>
+
+                      <img src={lng.flag} alt={lng.label} />
+                    </div>
+                  ))}
+              </div>
             </div>
 
             {/* <section>
