@@ -109,7 +109,7 @@ const QandaPage = () => {
                     style={{direction: isRTL ? 'rtl' : 'ltr'}}
                     className={styles.questions_sec}
                 >
-                    <h1>سوالات متداول</h1>
+                    <h1>{t("faq_header")}</h1>
                     <div className={styles.certainq_div}>
                         <div onClick={q1Handler}>
                             <p>{t("q1_howtobuy")}</p>
@@ -149,7 +149,7 @@ const QandaPage = () => {
                     </div>
                     <div className={styles.certainq_div}>
                         <div onClick={q6Handler}>
-                            <p>{t("q6_balance")}</p>
+                            <p >{t("q6_balance")}</p>
                             <img src={q6state ? openmark : closemark} alt="question mark closed icon" />
                         </div>
                         <span className={q6state ? styles.span_active : styles.spandeActive}>{t("a6_balance")}</span>
