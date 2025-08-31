@@ -6,169 +6,188 @@ import styles from "./Navbar.module.css";
 
 // Images
 import logo from "../../Images/logo3.png";
-import close from "../../Images/close.png";
+// import close from "../../Images/close.png";
 import char from "../../Images/char.png";
-import langu from "../../Images/language.png"
+import langu from "../../Images/language.png";
+import close from "../../Images/hamburger-menu-closed.svg";
+import opened from "../../Images/hamburger_menu_open.svg";
 
 //multilanguage
-import { useTranslation } from 'react-i18next';
+import { useTranslation } from "react-i18next";
 import t from "../../../src/Multilanguage.jsx";
+import { act } from "react";
 
+//drop down
+import IR from "../../Images/dropdown/IR.svg";
+import EN from "../../Images/dropdown/UK.svg";
+import AR from "../../Images/dropdown/AR.svg";
+import DE from "../../Images/dropdown/DE.svg";
+import arrow from "../../Images/dropdown/closed_dropdown.svg";
 
 const Navbar = () => {
-    const location = useLocation().pathname;
+  const location = useLocation().pathname;
 
-    const [isRTL, setIsRTL] = useState(localStorage.getItem("i18nextLng") === "ir" || localStorage.getItem("i18nextLng") === 'ar');
+  const languages = [
+    { code: "FA", label: "ir", flag: IR },
+    { code: "EN", label: "en", flag: EN },
+    { code: "AR", label: "ar", flag: AR },
+    { code: "DE", label: "gr", flag: DE },
+  ];
+  const [selectedLanguage, setSelectedLanguage] = useState(null);
 
-    const [open, setOpen] = useState(false);
-    const [isTabletOrSmaller, setIsTabletOrSmaller] = useState(false);
+  const [isRTL, setIsRTL] = useState(
+    localStorage.getItem("i18nextLng") === "ir" ||
+      localStorage.getItem("i18nextLng") === "ar"
+  );
 
-    //multi language
-        const { t, i18n } = useTranslation();
+  const [open, setOpen] = useState(false);
+  const [isTabletOrSmaller, setIsTabletOrSmaller] = useState(false);
 
-        const changeLanguage = (lng) => {
-        // localStorage.setItem("language", lng);
-          i18n.changeLanguage(lng);
-          setOpen(!open)
-          
-          if (lng === 'ir' || lng === 'ar'|| localStorage.getItem("i18nextLng") === 'ar' || localStorage.getItem("i18nextLng") === 'ir') {
-            document.documentElement.dir = 'rtl';
-            setIsRTL(true)
-              console.log(isRTL)
+  //multi language
+  const { t, i18n } = useTranslation();
 
-
-          } else {
-            document.documentElement.dir = 'ltr';
-            setIsRTL(false)
-          }
-        };
-    useEffect(() => {
-        const handleResize = () => {
-            setIsTabletOrSmaller(window.innerWidth <= 1024);
-        };
-
-        // Set initial value
-        handleResize();
-
-
-        // Attach resize listener
-        window.addEventListener('resize', handleResize);
-
-
-        return () => window.removeEventListener('resize', handleResize);
-    }, []);
-    // Hamburge menu functions
-    const [active, setActive] = useState(false);
-    const hamHandler = () => {
-        setActive(!active);
+  const changeLanguage = (lng) => {
+    // localStorage.setItem("language", lng);
+    i18n.changeLanguage(lng);
+    setOpen(!open);
+    // setActive(false)
+    if (
+      lng === "ir" ||
+      lng === "ar" ||
+      localStorage.getItem("i18nextLng") === "ar" ||
+      localStorage.getItem("i18nextLng") === "ir"
+    ) {
+      document.documentElement.dir = "rtl";
+      setIsRTL(true);
+      console.log(isRTL);
+    } else {
+      document.documentElement.dir = "ltr";
+      setIsRTL(false);
+    }
+  };
+  useEffect(() => {
+    const handleResize = () => {
+      setIsTabletOrSmaller(window.innerWidth <= 950);
     };
 
-    // url check
-    const [pathIsHome, setPathIsHome] = useState(false);
-    useEffect(() => {
-        if (window.location.pathname === "/home") {
-            setPathIsHome(!pathIsHome);
-        }
-    }, []);
+    // Set initial value
+    handleResize();
 
-    return (
-        <div
-            className={styles.Navbar_container}
-            style={{
-                direction: isRTL ? 'rtl' : 'ltr',
+    // Attach resize listener
+    window.addEventListener("resize", handleResize);
 
-                padding:
-                    location === '/Coop'
-                        ? isTabletOrSmaller
-                            ? '2rem'
-                            : '2rem 9rem 0 9rem'
-                        : undefined
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+  // Hamburge menu functions
+  const [active, setActive] = useState(false);
+  const hamHandler = () => {
+    console.log(active, "ham menu");
+    setOpen(false);
+    setActive(!active);
+  };
 
-            }}
-        >
-            <nav>
-                <section className={styles.navbared}>
-                    {" "}
-                    {/* <div></div> */}
-                    <section className={styles.logo}>
-                        <a href="/home">
-                            <img src={logo} alt="logo" />
-                        </a>
-                    </section>
-                    {/* <div></div>
+  // url check
+  const [pathIsHome, setPathIsHome] = useState(false);
+  useEffect(() => {
+    if (window.location.pathname === "/home") {
+      setPathIsHome(!pathIsHome);
+    }
+  }, []);
+
+  return (
+    <div
+      className={styles.Navbar_container}
+      style={{
+        direction: isRTL ? "rtl" : "ltr",
+      }}
+    >
+      <nav>
+        <section className={styles.navbared}>
+          {" "}
+          {/* <div></div> */}
+          <section className={styles.logo}>
+            <a href="/home">
+              <img src={logo} alt="logo" />
+            </a>
+          </section>
+          {/* <div></div>
                 <div></div> */}
-                    <section className={styles.btnvip}>
-                        {pathIsHome ? (
-                            ""
-                        ) : (
-                            <Link to="/home">
-                                <button className={styles.btn_nav}>
-                                    {t('home')}
-                                    </button>
-                            </Link>
-                        )}
-                        <Link to="/Coop">
-                            <button className={styles.btn_nav}>
-                            {t('workwithus')}
-                            </button>
-                        </Link>
-                        <Link to="/QandAPage">
-                            <button className={styles.btn_nav}>
-                              {t('faq')}
-                            </button>
-                        </Link>
-                        <Link to="/AboutUs">
-                            <button className={styles.btn_nav}>
-                              {t('aboutus')}
-                            </button>
-                        </Link>
-                        <Link to="/customer">
-                            <button className={styles.btn_account}>
-                                <img src={char} alt="cup icon" />
-                                {t('login')}
-                            </button>
-                        </Link>
-                        <div className={styles.dropdowncontainer}>
-                        <button onClick={() => setOpen(!open)} className={styles.dropdownbutton}>
-                        <img src={langu} alt="language icon" />
-                        <section  className={
-                        active ? styles.nothing : styles.ham_options_off
-                    }>
-                            {/*{t('language')}*/}
-                        </section>
-                        </button>
+          <section className={styles.btnvip}>
+            {pathIsHome ? (
+              ""
+            ) : (
+              <Link to="/home">
+                <button className={styles.btn_nav}>{t("home")}</button>
+              </Link>
+            )}
+            <Link to="/Coop">
+              <button className={styles.btn_nav}>{t("workwithus")}</button>
+            </Link>
+            <Link to="/QandAPage">
+              <button className={styles.btn_nav}>{t("faq")}</button>
+            </Link>
+            <Link to="/AboutUs">
+              <button className={styles.btn_nav}>{t("aboutus")}</button>
+            </Link>
+            <Link to="/customer">
+              <button className={styles.btn_account}>
+                <img src={char} alt="cup icon" />
+                {t("login")}
+              </button>
+            </Link>
 
-                        {open && (
-                            <ul className={styles.dropdownmenu}
-                                style={{
-                                    left:
-                                        window.location.pathname === '/Coop' && isRTL
-                                            ? '6rem'
-                                            : undefined,
-                                    right:
-                                        window.location.pathname === '/Coop' && !isRTL
-                                            ? '6rem'
-                                            : undefined,
-                                }}
+            {/* -------- DropDown --------- */}
 
-                            >
-                                <li className={styles.dropdownitem}>
-                                    <button onClick={() => changeLanguage('gr')}>Duetsch</button> 
-                                </li>
-                                <li className={styles.dropdownitem}>
-                                    <button onClick={() => changeLanguage('en')}>English</button> 
-                                </li>
-                                <li className={styles.dropdownitem}>
-                                    <button onClick={() => changeLanguage('ir')}>فارسی</button>
-                                </li>
-                                <li className={styles.dropdownitem}>
-                                    <button onClick={() => changeLanguage('ar')}>العربی</button> 
-                                </li>
-                            </ul>
-                        )}
-                        </div>
+            <div
+              className={`${styles.dropdown} ${open ? styles.open : ""}`}
+              style={{
+                direction: isRTL ? "rtl" : "ltr",
+              }}
+            >
+              <div
+                className={styles.dropdown_icon}
+                onClick={() => {
+                  setOpen(!open);
+                  setActive(false);
+                }}
+              >
+                <img
+                  src={arrow} 
+                  alt="dropdown arrow"
+                  className={`${styles.dropdown_arrow} ${
+                    open ? styles.rotate : ""
+                  }`}
+                />
 
-                        {/* <section>
+                {languages
+                  .filter((lng) => lng.label === i18n.language)
+                  .map((lng) => (
+                    <img key={lng.code} src={lng.flag} alt={lng.label} />
+                  ))}
+              </div>
+
+              <div
+                className={`${styles.dropdown_container} ${
+                  open ? styles.open : ""
+                }`}
+              >
+                {languages
+                  .filter((lng) => lng.label !== i18n.language)
+                  .map((lng) => (
+                    <div
+                      key={lng.code}
+                      className={styles.dropdown_item}
+                      onClick={() => changeLanguage(lng.label)}
+                    >
+                      <div>{lng.code}</div>
+
+                      <img src={lng.flag} alt={lng.label} />
+                    </div>
+                  ))}
+              </div>
+            </div>
+
+            {/* <section>
                         <button onClick={() => changeLanguage('en')}>English</button> 
                         <button onClick={() => changeLanguage('ir')}>فارسی</button>
                         <button onClick={() => changeLanguage('ar')}>العربی</button> 
@@ -176,62 +195,42 @@ const Navbar = () => {
 
  
                         </section> */}
+          </section>
+        </section>
 
-                    </section>
-                </section>
-                <div className={styles.HanMenu} onClick={hamHandler}>
-                    <div className={styles.ham_btn}></div>
-                    <div className={styles.ham_btn}></div>
-                    <div className={styles.ham_btn}></div>
-                </div>
-                <div></div>
-                <div
-                    style={{
-                        // left: isRTL ? '0' : undefined,
-                        // display: isRTL && !active ? 'none' : undefined,
-                        // transition: isRTL && !active ? 'ease-in-out' : undefined,
-                        // right: !isRTL ? '0' : undefined,
-                    }}
-                    className={
-                        active ? styles.ham_options : styles.ham_options_off
-                    }
-                >
-                    <div className={styles.ham_options_div}>
-                        <img onClick={hamHandler} src={close} />
-                        <div></div>
-                        <Link to="/home">
-                            <button style={{justifyContent: isRTL ? "right" : "left"}} className={styles.btn_nav_ham}>
-                            {t('home')}
-                            </button>
-                        </Link>
-                        <Link to="/AboutUs">
-                            <button style={{padding: isRTL? "0 2rem" : undefined, justifyContent: isRTL ? "right" : "left"}} className={styles.btn_nav_ham}>
-                            {t('aboutus')}
-                            </button>
-                        </Link>
-                        <Link to="/Coop">
-                            <button style={{padding: isRTL? "0 2rem" : undefined, justifyContent: isRTL ? "right" : "left"}} className={styles.btn_nav_ham}>
-                            {t('workwithus')}
-                            </button>
-                        </Link>
-                        <div></div>
-                        <Link to="/customer">
-                            <button style={{padding: isRTL? "0 1rem" : undefined, justifyContent: isRTL ? "right" : "left"}} className={styles.btn_nav_ham}>
-
-                                <img
-                                    className={styles.btn_nav_ham_img}
-                                    src={char}
-                                    alt="cup icon"
-                                />
-                                {t('login')}
-                            </button>
-                        </Link>
-                        <div></div>
-                    </div>
-                </div>
-            </nav>
+        <img
+          onClick={hamHandler}
+          className={`${!isTabletOrSmaller ? styles.HanMenu : undefined}`}
+          style={{
+            rotate: !isRTL ? "180deg" : "",
+          }}
+          src={active ? opened : close}
+          alt={active ? "menu open" : "menu closed"}
+        />
+        <div></div>
+      </nav>
+      <div className={`${styles.HamMenu_wrapper} ${active ? styles.open : ""}`}>
+        <div className={`${styles.HamMenu_list} `}>
+          <div className={styles.ham_options_container}>
+            <Link to="/AboutUs">
+              <div>{t("aboutus")}</div>
+            </Link>
+            <Link to="/Coop">
+              <div>{t("workwithus")}</div>
+            </Link>
+            <Link to="/QandAPage">
+              <div>{t("faq")}</div>
+            </Link>
+          </div>
+          <div className={styles.hamMenu_button}>
+            <div>
+              <Link to={"/customer"}>{t("gift_prepration")}</Link>
+            </div>
+          </div>
         </div>
-    );
+      </div>
+    </div>
+  );
 };
 
 export default Navbar;
