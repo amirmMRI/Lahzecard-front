@@ -21,7 +21,7 @@
 }
 
 .navbar_qnda_sec {
-    width: 90%;
+    width: 100%;
 }
 
 .AboutUs_info_sec {
@@ -50,7 +50,16 @@
     display: none;
     width: 80%;
 }
+@media (max-width: 950px) {
 
+    .main_qnada_sec{
+        width: 100%;
+        margin-top: 0;
+        border-radius: 0;
+        margin-bottom: 0;
+        padding-bottom: 7rem;
+    }
+}
 @media (max-width: 720px) {
     .info_pic {
         display: none;

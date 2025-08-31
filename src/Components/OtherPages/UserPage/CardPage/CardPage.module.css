@@ -351,6 +351,7 @@ a {
         justify-content: center;
     }
     .activation_info_div_sec_img {
+        text-align: center;
         width: 50%;
     }
     .activation_info_div_sec_info {
