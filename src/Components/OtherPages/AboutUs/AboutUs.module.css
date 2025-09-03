@@ -1,106 +1,235 @@
 .AboutUs_Container {
-    direction: ltr;
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    background-color: var(--white);
+  direction: ltr;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--white);
 }
-
-.main_qnada_sec {
-    margin-bottom: 5rem;
-    width: 90%;
-    margin-top: 2%;
-    border-radius: 35px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    background-color: #AC91B64A;
-}
-
 .navbar_qnda_sec {
-    width: 100%;
+  background-color: #edc1f5;
+}
+.main_qnada_sec {
+  width: 100%;
+  background-color: transparent;
 }
 
-.AboutUs_info_sec {
-    width: 90%;
+.container {
+  padding: 2rem 2rem 0;
+  background: linear-gradient(
+    to bottom,
+    #edc1f5 0%,
+    rgba(237, 193, 245, 0.7) 7%,
+    transparent 20%
+  );
+}
+.container > * {
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+.info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
-.AboutUs_info_sec h1 {
-    font-size: 30px;
-    font-weight: bold;
-    /*text-align: right;*/
-    margin: 3% 0;
+.info p {
+  flex-basis: 60%;
+}
+.info p,
+.info span {
+  font-weight: 800;
+  font-size: 1rem;
 }
 
-.AboutUs_info_sec p {
-    font-size: 20px;
-    font-weight: 400;
-    /*text-align: right;*/
+.info span {
+  color: var(--text_pink);
+}
+.info img {
+  flex-basis: 30%;
+  width: 100%;
 }
 
-.info_pic {
-    margin: 5% 0;
-    width: 80%;
+.divider_container {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  /* margin-bottom: 3rem; */
 }
 
-.info_pic_for_phone {
-    display: none;
-    width: 80%;
+.divider_line {
+  background-color: var(--text_pink);
+  height: 2px;
+  width: 60%;
+  position: absolute;
+  top: 50%; /* center vertically */
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1;
 }
+
+.divider_text {
+  z-index: 2; /* keeps text above the line */
+  background-color: white; /* mask the line behind the text */
+  padding: 0 1rem;
+  font-weight: 700;
+  font-size: 1.5rem;
+}
+
+.divider_text div {
+  font-weight: 700;
+  font-size: 1.5rem;
+  width: fit-content;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  background-color: white;
+}
+
+.staff_card {
+  margin: 1rem;
+  background-color: #f3edf7;
+  width: fit-content;
+  padding: 2rem 3rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 150px;
+  height: 300px;
+  justify-content: space-around;
+  border-radius: 1.3rem;
+  transition: box-shadow 0.5s ease-in-out;
+}
+
+.staff_card:hover {
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 2px 0px;
+}
+.card_details div {
+  text-align: center;
+}
+.card_pfp {
+}
+.card_details_name div {
+  font-size: 1rem;
+  font-weight: 600;
+}
+.card_social_links {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
+.card_social_links img {
+  cursor: pointer;
+}
+.card_social_links img:hover {
+  cursor: pointer;
+}
+.card_details_role div {
+  font-size: 0.8rem;
+  font-weight: 400;
+}
+.profile_card :hover {
+  /* cursor: pointer; */
+}
+.leaders_container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+.developers_container {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.developers_container > div {
+  width: 60%;
+  text-align: center;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: center;
+  text-align: center;
+  margin-bottom: 4rem !important;
+}
+
+.carousel_container {
+  width: 100%;
+  margin-top: 0;
+  position: relative;
+}
+
+.carousel_container img {
+  width: 100%;
+  transition: opacity 0.8s ease-in-out;
+}
+
+.carousel_indicator_container {
+  background-color: #fef7ff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.3rem;
+  padding: 0.3rem;
+  width: fit-content;
+  position: absolute;
+  bottom: 2rem;
+  left: 50%;
+  direction: ltr;
+  transform: translateX(-50%); /* Better for centering */
+  border-radius: 1rem;
+}
+.carousel_indicator {
+  background-color: #edc1f5;
+  width: 0.7rem;
+  height: 0.7rem;
+  border-radius: 1rem;
+  /* margin: 2px; */
+}
+
+.carousel_active_indicator {
+  width: 2.5rem;
+  background-color: #e67be6;
+  transition: width 0.4s ease-in-out, background-color 0.4s ease-in-out;
+}
+
 @media (max-width: 950px) {
-
-    .main_qnada_sec{
-        width: 100%;
-        margin-top: 0;
-        border-radius: 0;
-        margin-bottom: 0;
-        padding-bottom: 7rem;
-    }
+  .info {
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 1rem;
+  }
+  .info img {
+    width: 50%;
+  }
+  .container * {
+    font-size: 1.3rem !important;
+  }
+  .divider_line {
+    width: 100%;
+  }
+  .developers_container > div {
+    width: 100%;
+  }
 }
-@media (max-width: 720px) {
-    .info_pic {
-        display: none;
-    }
-    .info_pic_for_phone {
-        display: block;
-        margin: 5% 0;
-    }
+@media (max-width: 750px) {
+  .developers_container > div {
+    width: 100%;
+  }
 }
-
-@media (max-width: 420px) {
-    .main_qnada_sec {
-        width: 100%;
-        margin-top: 0;
-        margin-bottom: 5%;
-        padding-top: 5%;
-        border-radius: 0 0 35px 35px;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        background-color: #AC91B64A;
-    }
-    .AboutUs_info_sec {
-        width: 90%;
-        margin-top: 5%;
-    }
-    .AboutUs_info_sec h1 {
-        font-size: 20px;
-        font-weight: bold;
-    }
-    .AboutUs_info_sec p {
-        font-size: 14px;
-        font-weight: 400;
-        padding: 0 2%;
-    }
-    .info_pic {
-        display: none;
-    }
-    .info_pic_for_phone {
-        display: block;
-        margin: 5% 0;
-    }
+@media (max-width: 750px) {
+  .container{
+    background: linear-gradient(
+    to bottom,
+    #edc1f5 0%,
+    rgba(237, 193, 245, 0.7) 1%,
+    transparent 10%
+  ) !important;
+  }
 }
