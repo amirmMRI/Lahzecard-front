@@ -47,10 +47,9 @@
 
     "morequestion": "سوالات بیشتر...",
 
-    "aboutusparageraph1": "Lahze Card is a successful startup located at the Research Center of Azad University of Qazvin. Our goal is to create an environment full of vitality and joy.",
-    "aboutusparageraph2": "The Lahze Card student team, in sync with the modern world of technology, has created unique gift cards that not only bring sweet moments to your loved ones but also allow you to gift them your personalized voice and message.",
-    "aboutusparageraph3": "Join us at Lahze Card and lead us through this journey of progress.",
-
+    "aboutusparageraph": "Lahze Card is a successful young startup based at the Research Center of Azad University of Qazvin. Our goal is to create an environment full of dynamism and joy. The student team of Lahze Card, in line with modern technology, has developed unique gift cards that not only create sweet moments for your loved ones but also allow you to add your own personalized voice and text. Stay with Lahze Card and guide us on this path of growth.",
+    "team_development" : "Development Team",
+    
     "workwithusparagraph1": "Lahze Card proudly operates as one of the top startups in the country in the field of gift card sales. The main goal of this startup is to create a creative gift to generate joyful and memorable moments.",
     "workwithusparagraph2": "How Lahze Card Can Help Your Business:",
     "workwithusparagraph3": "We have focused on producing smart gift cards to support your marketing campaigns. Our target audience is Generation Z, and with this in mind, we have designed these innovative gift cards, proudly created for the first time in Iran.",
@@ -118,14 +117,23 @@
     "cooperation_title": "We’re Ready to Work with You!",
     "cooperation_desc": "Whether you're a restaurant owner, advertising agency, print shop, or factory — we provide full infrastructure for digital and physical gift cards with the lowest subscription cost.",
     "testimonials_title": "What Our Clients Say",
-    "testimonials": {
-        "زیویه": "Hello, thank you for your great services. Wishing your professional team lots of success and good moments ahead.",
-        "پدرا": "A very innovative and interesting solution. We used it to gift customers at Pedraa restaurant.",
-        "دکتر پورنگ سازگار": "Great support. I used it for patient gifts on special occasions and was very satisfied."
+   
+    "final_call": "🎯 Gift cards — a tool for more sales and better customer retention.\nStart with Lahzeh Card today!",
+
+ "testimonials": {
+    "1": {
+      "name": "Pedra Restaurant",
+      "text": "It was a very nice and interesting innovation. We used it as gifts for our customers from Pedra Restaurant."
     },
-    "final_call": "🎯 Gift cards — a tool for more sales and better customer retention.\nStart with Lahzeh Card today!"
-
-
+    "2": {
+      "name": "Ziviyeh Gold Shop",
+      "text": "Hello, thank you for your good services. I wish many good things and more success for your professional team."
+    },
+    "3": {
+      "name": "Dentist Dr. Pourang Sazgar",
+      "text": "Excellent and good support. I used it for occasion gifts for my patients and I was very satisfied."
+    }
+  }
 
 
 }

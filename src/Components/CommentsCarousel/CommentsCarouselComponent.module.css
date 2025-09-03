@@ -17,7 +17,15 @@
     pointer-events: none;
     z-index: 2;
 }
-
+.translation_section{
+    font-weight: 600;
+    font-size: 0.8rem;
+    color: #0099FF;
+    text-align: left;
+}
+.translation_section:hover{
+    cursor: pointer;
+}
 .carousel_brand_icon {
     width: 56px !important;
     border: 2px #501A60 solid;
@@ -100,6 +108,7 @@
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
+    direction: rtl;
 }
 
 .testimonial_card_content_header {
