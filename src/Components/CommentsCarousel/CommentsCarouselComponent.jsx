@@ -215,15 +215,15 @@ const CommentsCarouselComponent = () => {
               style={{
                 direction: testimonial.showTranslation
                   ? i18n.language === "ar"
-                    ? "rtl" // Persian translated to Arabic
-                    : "ltr" // Persian translated to English or German
-                  : "rtl", // original Persian content
+                    ? "rtl" 
+                    : "ltr"
+                  : "rtl",
               }}
               className={styles.carousel_text}
             >
               {testimonial.showTranslation
                 ? i18n.language === "ir"
-                  ? t(testimonial.textKey, { lng: "en-US" }) // force EN when Persian site
+                  ? t(testimonial.textKey, { lng: "en-US" })
                   : t(testimonial.textKey)
                 : testimonial.text}
             </div>
@@ -234,7 +234,7 @@ const CommentsCarouselComponent = () => {
                 className={styles.translation_section}
               >
                 {!testimonial.showTranslation
-                  ? "See Translate"
+                  ? "Show Translation"
                   : "See Original"}
               </div>
 
