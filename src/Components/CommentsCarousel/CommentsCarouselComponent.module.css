@@ -105,7 +105,8 @@
 
 .testimonial_card_content {
     display: flex;
-    flex-direction: row;
+    flex-direction: row-reverse;
+    /* direction: ltr; */
     justify-content: space-between;
     align-items: center;
     direction: rtl;
@@ -134,7 +135,7 @@
     }
     .testimonial_card {
         width: 184px;
-        height: 213px;
+        height: 280px;
         min-height: 250px;
     }
     .carousel_button:nth-child(1){

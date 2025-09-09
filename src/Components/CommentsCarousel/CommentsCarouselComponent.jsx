@@ -174,8 +174,6 @@ const CommentsCarouselComponent = () => {
     },
   };
 
-  const [translatedId, setTranslatedId] = useState(null);
-
   const onClickTranslate = (id) => {
     setTestimonials((prevTestimonials) =>
       prevTestimonials.map((testimonial) =>
@@ -199,16 +197,7 @@ const CommentsCarouselComponent = () => {
       >
         {testimonials.map((testimonial) => (
           <div key={testimonial.id} className={styles.testimonial_card}>
-            <div
-              style={{
-                direction:
-                  testimonial.showTranslation &&
-                  (i18n.language === "gr" || i18n.language === "en-US")
-                    ? "rtl"
-                    : "ltr",
-              }}
-              className={styles.testimonial_card_content}
-            >
+            <div className={styles.testimonial_card_content}>
               <img
                 className={styles.carousel_brand_icon}
                 src={testimonial.avatar}
@@ -216,24 +205,26 @@ const CommentsCarouselComponent = () => {
               />
               <div className={styles.testimonial_card_content_header}>
                 {testimonial.showTranslation
-                  ? t(testimonial.nameKey)
+                  ? i18n.language === "ir"
+                    ? t(testimonial.nameKey, { lng: "en-US" })
+                    : t(testimonial.nameKey)
                   : testimonial.name}
               </div>
             </div>
             <div
               style={{
-                direction:
-                  testimonial.showTranslation &&
-                  (i18n.language === "gr" || i18n.language === "en-US")
-                    ? "ltr"
-                    : i18n.language === "ar" || i18n.language === "ir"
-                    ? "rtl"
-                    : "rtl",
+                direction: testimonial.showTranslation
+                  ? i18n.language === "ar"
+                    ? "rtl" // Persian translated to Arabic
+                    : "ltr" // Persian translated to English or German
+                  : "rtl", // original Persian content
               }}
               className={styles.carousel_text}
             >
               {testimonial.showTranslation
-                ? t(testimonial.textKey)
+                ? i18n.language === "ir"
+                  ? t(testimonial.textKey, { lng: "en-US" }) // force EN when Persian site
+                  : t(testimonial.textKey)
                 : testimonial.text}
             </div>
 

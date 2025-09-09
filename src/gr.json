@@ -47,7 +47,44 @@
   "howtobuy_moreQ": "Weitere Fragen...",
 
   "aboutusparageraph": "Lahze Card ist ein erfolgreiches junges Start-up mit Sitz im Forschungszentrum der Azad-Universität in Qazvin. Unser Ziel ist es, ein Umfeld voller Dynamik und Freude zu schaffen. Das Studententeam von Lahze Card hat in Einklang mit moderner Technologie einzigartige Geschenkkarten entwickelt, die nicht nur schöne Momente für Ihre Liebsten schaffen, sondern Ihnen auch ermöglichen, Ihre eigene Stimme und Ihren eigenen Text hinzuzufügen. Bleiben Sie mit Lahze Card verbunden und begleiten Sie uns auf unserem Weg des Wachstums.",
-  "team_development" : "Entwicklungsteam",
+  "team_development": "Entwicklungsteam",
+  "team_lead": "Führungsteam",
+  "staff": {
+    "sazgar_key": {
+      "name": "Remisa Sazgar",
+      "role": "Gründer"
+    },
+    "farhad_key": {
+      "name": "Ali Farhad",
+      "role": "Gründer"
+    },
+    "khadem_key": {
+      "name": "Sina Khadem",
+      "role": "Front-End Entwickler"
+    },
+    "OG_key": {
+      "name": "Elahe Yaghoubi",
+      "role": "Front-End Entwickler"
+    },
+    "pashaki_key": {
+      "name": "Amir Mohammad Pashaki",
+      "role": "Front-End Entwickler"
+    },
+    "shahroodi_key": {
+      "name": "Kiarash Shahroodi",
+      "role": "Back-End Entwickler"
+    },
+    "khoshzaban_key": {
+      "name": "Sina Khoshzaban",
+      "role": "Back-End Entwickler"
+    },
+    "cheraghali_key": {
+      "name": "Daniyal Cheraghalikhani",
+      "role": "UI/UX Designer"
+    }
+  },
+
+
 
   "workwithusparagraph1": "Lahze Card ist stolz darauf, als eines der führenden Startups des Landes im Bereich des Verkaufs von Geschenkkarten tätig zu sein. Das Hauptziel dieses Startups ist es, ein kreatives Geschenk zu schaffen, um fröhliche und unvergessliche Momente zu erzeugen.",
   "workwithusparagraph2": "Wie Lahze Card Ihrem Unternehmen helfen kann:",
