@@ -122,6 +122,117 @@
         "پدرا": "Eine sehr gute und interessante Innovation. Wir haben es genutzt, um unseren Restaurantkunden Geschenke zu machen.",
         "دکتر پورنگ سازگار": "Ausgezeichneter Support. Ich habe es verwendet, um meinen Patienten zu besonderen Anlässen Geschenke zu machen, und war sehr zufrieden."
     },
-    "final_call": "🎯 Geschenkkarten sind ein Werkzeug für mehr Umsatz und Kundentreue.\nStarten Sie noch heute mit Lahzeh Card!"
+    "farhad_key": {
+      "name": "Ali Farhad",
+      "role": "Gründer"
+    },
+    "khadem_key": {
+      "name": "Sina Khadem",
+      "role": "Front-End Entwickler"
+    },
+    "OG_key": {
+      "name": "Elahe Yaghoubi",
+      "role": "Front-End Entwickler"
+    },
+    "pashaki_key": {
+      "name": "Amir Mohammad Pashaki",
+      "role": "Front-End Entwickler"
+    },
+    "shahroodi_key": {
+      "name": "Kiarash Shahroodi",
+      "role": "Back-End Entwickler"
+    },
+    "khoshzaban_key": {
+      "name": "Sina Khoshzaban",
+      "role": "Back-End Entwickler"
+    },
+    "cheraghali_key": {
+      "name": "Daniyal Cheraghalikhani",
+      "role": "UI/UX Designer"
+    }
+  },
 
+
+
+  "workwithusparagraph1": "Lahze Card ist stolz darauf, als eines der führenden Startups des Landes im Bereich des Verkaufs von Geschenkkarten tätig zu sein. Das Hauptziel dieses Startups ist es, ein kreatives Geschenk zu schaffen, um fröhliche und unvergessliche Momente zu erzeugen.",
+  "workwithusparagraph2": "Wie Lahze Card Ihrem Unternehmen helfen kann:",
+  "workwithusparagraph3": "Wir haben uns auf die Produktion von intelligenten Geschenkkarten konzentriert, um Ihre Marketingkampagnen zu unterstützen. Unsere Zielgruppe ist die Generation Z, und mit diesem Fokus haben wir diese innovativen Geschenkkarten entworfen, die stolz zum ersten Mal im Iran hergestellt wurden.",
+  "workwithusli1": "Warum Lahze Card?",
+  "workwithusli2": "Anpassbar: Wir können so viele Geschenkkarten liefern, wie Sie benötigen, überall im Iran.",
+  "workwithusli3": "Für jedes Unternehmen: Egal, welche Art von Geschäft Sie haben, wir erstellen Geschenkkarten für Sie.",
+  "workwithusli4": "Markenanpassung: Sie können Lahze Cards bestellen, die mit Ihrer Marke und Ihrem Logo angepasst sind, nach Ihren Wünschen gestaltet.",
+  "workwithusli5": "Wenn Sie an einer Zusammenarbeit mit uns interessiert sind, füllen Sie bitte Ihre Daten aus, und wir werden uns mit Ihnen in Verbindung setzen:",
+
+  "socialmedia": "Soziale Medien",
+  "city": "Stadt",
+  "mobilenum": "Handynummer",
+  "email": "E-Mail",
+  "businesstype": "Art des Unternehmens",
+  "others": "Andere",
+  "cofe": "cafe",
+  "Restaurant": "Restaurant",
+  "NumberofLahzeCardOrders": "Anzahl der Lahze Card Bestellungen",
+  "send": "Lieferung",
+  "buyer": "Käufer",
+  "seller": "Verkäufer",
+  "loginasseller": "Einloggen",
+  "Logtopreparegift": "Einloggen, um die Geschenkkarte vorzubereiten",
+  "Sendcode": "Code senden",
+  "justafewtoready": "Nur noch wenige Schritte, um süße Momente für Ihre Liebsten mit Lahze Card zu schaffen",
+
+  "address": " Qazvin, Barajin, Sintech Innovationszentrum",
+  "connections": "Kontaktmöglichkeiten",
+  "name": "Vollständiger Name",
+  "welcome": "Welcome",
+  "description": "This is an internationalized React app.",
+  "infrastructure_title": "Bereitstellung der Verkaufsinfrastruktur",
+  "gift_card": "Geschenkkarte",
+  "infrastructure_subtitle": "Für Werbeagenturen sowie kleine und große Unternehmen",
+  "infrastructure_features": "Sicher, individuell anpassbar und ideal für echtes Wachstum Ihres Verkaufs.",
+  "consult_button": "Beratung anfordern",
+  "contact_button": "Kontaktieren Sie uns",
+  "trusted_by_title": "Vertrauenswürdig für große Unternehmen",
+  "trusted_by_desc": "Wir freuen uns, mit diesen Unternehmen zusammengearbeitet zu haben:",
+  "benefits_title": "Wie kann Lahzeh Card Ihrem Unternehmen helfen?",
+  "benefits_intro": "Wie gewinnt man Kunden mit geringem Budget? Die Geschenkkarte ist Ihre Lösung!",
+  "benefits_desc": "Lahzeh Card bietet eine vollständige Infrastruktur zur Erstellung, zum Druck und Verkauf individueller Geschenkkarten.",
+  "benefits_p1": "Möglichkeit zum individuellen Design von digitalen und physischen Geschenkkarten",
+  "benefits_p2": "Kundengewinnung durch Geschenkkarten",
+  "benefits_p3": "Geschenkkarten als Treueprämien oder Rabatte nutzen",
+  "benefits_p4": "Machen Sie Ihr Produkt oder Ihre Dienstleistung zu einem wertvollen Geschenk",
+  "benefits_p5": "Detaillierte Berichterstattung und vollständige Verwaltung aktiver Karten",
+  "benefits_p6": "Geschenkkarten mit gemeinsamem Guthaben über mehrere Marken",
+
+  "agency_title": "Vertriebspartnerschaft für Geschenkkarten & Kundenclubs",
+  "agency_target": "Für Werbeagenturen, Druckereien und Designstudios",
+  "agency_desc": "Wenn Sie im Bereich Werbung oder Druck tätig sind, können Sie mit einer Lahzeh Card-Partnerschaft individuelle Geschenkkarten erstellen, drucken und verkaufen – unter Ihrem eigenen Markennamen.",
+  "agency_f1": "Exklusiver und privater Zugang zum Verwaltungs-Panel",
+  "agency_f2": "Werbekampagnen für Ihre Kunden erstellen",
+  "agency_f3": "Bereitstellung einer vollständigen Infrastruktur für Kartennummern und individuelle Geschenkkarten",
+  "agency_f4": "Zugriff auf Statistiken, Berichte und eine API für Entwickler",
+  "agency_f5": "Erstellen Sie multifunktionale und vernetzte Geschenkkarten für Ihre Kunden",
+
+  "financialDisclaimer": "Alle finanziellen Transaktionen zwischen dem Kunden und dem Verkäufer erfolgen über die Lahze Card-Karten, und das Startup Lahze Card übernimmt hierfür keine Verantwortung.",
+
+  "agency_footer": "Mit Lahzeh Card bieten Sie Ihren Kunden professionelle Geschenkkartendienste von A bis Z.",
+  "cooperation_title": "Wir sind bereit, mit Ihnen zusammenzuarbeiten!",
+  "cooperation_desc": "Ob Sie ein Restaurant, eine Werbeagentur, eine Druckerei oder eine Fabrik besitzen – wir bieten Ihnen eine vollständige Infrastruktur für digitale und physische Geschenkkarten zu den niedrigsten Abonnementkosten.",
+  "testimonials_title": "Was sagen unsere Kunden über uns?",
+
+  "final_call": "🎯 Geschenkkarten sind ein Werkzeug für mehr Umsatz und Kundentreue.\nStarten Sie noch heute mit Lahzeh Card!",
+
+  "testimonials": {
+    "1": {
+      "name": "Restaurant Pedra",
+      "text": "Es war eine sehr gute und interessante Innovation. Wir haben es als Geschenk für unsere Kunden im Restaurant Pedra verwendet."
+    },
+    "2": {
+      "name": "Ziviyeh Juwelier",
+      "text": "Hallo, vielen Dank für eure guten Dienstleistungen. Ich wünsche viele schöne Ereignisse und noch mehr Erfolg für euer professionelles Team."
+    },
+    "3": {
+      "name": "Zahnarzt Dr. Pourang Sazgar",
+      "text": "Ausgezeichneter und guter Support. Ich habe es für Anlassgeschenke für meine Patienten verwendet und war sehr zufrieden."
+    }
+  }
 }

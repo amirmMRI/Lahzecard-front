@@ -123,9 +123,119 @@
         "پدرا": "A very innovative and interesting solution. We used it to gift customers at Pedraa restaurant.",
         "دکتر پورنگ سازگار": "Great support. I used it for patient gifts on special occasions and was very satisfied."
     },
-    "final_call": "🎯 Gift cards — a tool for more sales and better customer retention.\nStart with Lahzeh Card today!"
+    "farhad_key": {
+      "name": "Ali Farhad",
+      "role": "Founder"
+    },
+    "khadem_key": {
+      "name": "Sina Khadem",
+      "role": "Front-end Developer"
+    },
+    "OG_key": {
+      "name": "Elahe Yaghoubi",
+      "role": "Front-end Developer"
+    },
+    "pashaki_key": {
+      "name": "Amir Mohammad Pashaki",
+      "role": "Front-end Developer"
+    },
+    "shahroodi_key": {
+      "name": "Kiarash Shahroodi",
+      "role": "Back-end Developer"
+    },
+    "khoshzaban_key": {
+      "name": "Sina Khoshzaban",
+      "role": "Back-end Developer"
+    },
+    "cheraghali_key": {
+      "name": "Daniyal Cheraghalikhani",
+      "role": "UI/UX Designer"
+    }
+  },
 
 
+  "workwithusparagraph1": "Lahze Card proudly operates as one of the top startups in the country in the field of gift card sales. The main goal of this startup is to create a creative gift to generate joyful and memorable moments.",
+  "workwithusparagraph2": "How Lahze Card Can Help Your Business:",
+  "workwithusparagraph3": "We have focused on producing smart gift cards to support your marketing campaigns. Our target audience is Generation Z, and with this in mind, we have designed these innovative gift cards, proudly created for the first time in Iran.",
+  "workwithusli1": "Why Lahze Card?",
+  "workwithusli2": "Customizable: We can deliver as many gift cards as you need anywhere in Iran.",
+  "workwithusli3": "For Every Business: No matter the type of business you have, we create gift cards for you",
+  "workwithusli4": "Brand Customization: You can order Lahze Cards customized with your brand and logo, designed according to your preferences.",
+  "workwithusli5": "If you are interested in collaborating with us, please fill out your details, and we will get in touch with you:",
 
+  "withus": "With Lahzecard",
+  "address": "Qazvin, Barajin, Sintech Innovation Center",
+  "socialmedia": "Social Media ",
 
+  "name": "name",
+  "city": "city",
+  "mobilenum": "mobile number",
+  "businesstype": "businesstype",
+  "others": "others",
+  "email": "E-Mail",
+  "cofe": "cofe",
+  "NumberofLahzeCardOrders": "Number of LahzeCard Orders",
+  "Restaurant": "Restaurant",
+  "send": "send",
+
+  "buyer": "buyer",
+  "seller": "seller",
+  "loginasseller": "login as seller",
+  "Logtopreparegift": "Log in to prepare the gift card",
+  "Sendcode": "send code",
+  "justafewtoready": "Just a few steps away from creating sweet moments for your loved ones with Lahze Card",
+
+  "connections": "Contact Methods",
+  "welcome": "Welcome",
+  "description": "This is an internationalized React app.",
+
+  "infrastructure_title": "Infrastructure Service",
+  "gift_card": "Gift Card",
+  "infrastructure_subtitle": "For advertising agencies and businesses of all sizes",
+  "infrastructure_features": "Secure, customizable, and designed to truly grow your sales.",
+  "consult_button": "Request Consultation",
+  "contact_button": "Contact Us",
+  "trusted_by_title": "Trusted by Leading Companies",
+  "trusted_by_desc": "We’re proud to have worked with these companies:",
+  "benefits_title": "How Can Lahzeh Card Help Your Business?",
+  "benefits_intro": "Looking to gain customers at a low cost? Gift cards are your solution!",
+  "benefits_desc": "Lahzeh Card provides a full infrastructure for creating, printing, and selling customized gift cards.",
+  "benefits_p1": "Custom design of digital and physical gift cards",
+  "benefits_p2": "Creating a new customer cycle with gift cards",
+  "benefits_p3": "Use gift cards as loyalty rewards and discounts",
+  "benefits_p4": "Turn your product and service into a valuable gift",
+  "benefits_p5": "Detailed reporting and full management of active cards",
+  "benefits_p6": "Gift cards with shared credit across multiple brands",
+
+  "agency_title": "Gift Card Sales & Loyalty Club Agency",
+  "agency_target": "For advertising agencies, print houses, and design studios",
+  "agency_desc": "If you work in advertising or printing, you can become a Lahzeh Card representative and easily manage gift card creation, printing, and even operate a sales panel for brands under your own name — powered by Lahzeh Card.",
+  "agency_f1": "Exclusive and private access to the panel",
+  "agency_f2": "Create marketing campaigns for your clients",
+  "agency_f3": "Provide full infrastructure for card numbers and custom gift cards",
+  "agency_f4": "Access to reports, statistics, and developer API",
+  "agency_f5": "Create multifunctional gift cards linked across your clients",
+
+  "financialDisclaimer": "All financial transactions between the customer and the seller are through Lahze Card cards, and the Lahze Card startup bears no responsibility in this regard.",
+  "agency_footer": "With Lahzeh Card, you can offer professional end-to-end gift card services to your clients.",
+  "cooperation_title": "We’re Ready to Work with You!",
+  "cooperation_desc": "Whether you're a restaurant owner, advertising agency, print shop, or factory — we provide full infrastructure for digital and physical gift cards with the lowest subscription cost.",
+  "testimonials_title": "What Our Clients Say",
+
+  "final_call": "🎯 Gift cards — a tool for more sales and better customer retention.\nStart with Lahzeh Card today!",
+
+  "testimonials": {
+    "1": {
+      "name": "Pedra Restaurant",
+      "text": "It was a very nice and interesting innovation. We used it as gifts for our customers from Pedra Restaurant."
+    },
+    "2": {
+      "name": "Ziviyeh Gold Shop",
+      "text": "Hello, thank you for your good services. I wish many good things and more success for your professional team."
+    },
+    "3": {
+      "name": "Dentist Dr. Pourang Sazgar",
+      "text": "Excellent and good support. I used it for occasion gifts for my patients and I was very satisfied."
+    }
+  }
 }
