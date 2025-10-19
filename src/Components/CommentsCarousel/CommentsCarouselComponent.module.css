@@ -17,7 +17,15 @@
     pointer-events: none;
     z-index: 2;
 }
-
+.translation_section{
+    font-weight: 600;
+    font-size: 0.8rem;
+    color: #0099FF;
+    text-align: left;
+}
+.translation_section:hover{
+    cursor: pointer;
+}
 .carousel_brand_icon {
     width: 56px !important;
     border: 2px #501A60 solid;
@@ -97,9 +105,11 @@
 
 .testimonial_card_content {
     display: flex;
-    flex-direction: row;
+    flex-direction: row-reverse;
+    /* direction: ltr; */
     justify-content: space-between;
     align-items: center;
+    direction: rtl;
 }
 
 .testimonial_card_content_header {
@@ -125,7 +135,7 @@
     }
     .testimonial_card {
         width: 184px;
-        height: 213px;
+        height: 280px;
         min-height: 250px;
     }
     .carousel_button:nth-child(1){
