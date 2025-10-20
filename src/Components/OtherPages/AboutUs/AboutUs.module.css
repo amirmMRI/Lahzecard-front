@@ -87,6 +87,7 @@
   padding-right: 1rem;
   background-color: white;
 }
+@media (max-width: 950px) {
 
 .staff_card {
   margin: 1rem;
