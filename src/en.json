@@ -47,19 +47,19 @@
 
   "morequestion": "سوالات بیشتر...",
 
-  "aboutusparageraph": "Lahze Card is a successful young startup based at the Research Center of Azad University of Qazvin. Our goal is to create an environment full of dynamism and joy. The student team of Lahze Card, in line with modern technology, has developed unique gift cards that not only create sweet moments for your loved ones but also allow you to add your own personalized voice and text. Stay with Lahze Card and guide us on this path of growth.",
+  "aboutusparageraph": "is a successful young startup based at the Research Center of Azad University of Qazvin. Our goal is to create an environment full of dynamism and joy. The student team of Lahze Card, in line with modern technology, has developed unique gift cards that not only create sweet moments for your loved ones but also allow you to add your own personalized voice and text. Stay with Lahze Card and guide us on this path of growth.",
   "team_development": "Development Team",
   "team_lead": "Leadership Team",
 
 
   "staff": {
     "sazgar_key": {
-      "name": "Remisa Sazgar",
+      "name": "Romisa Sazgar",
       "role": "Founder"
     },
     "farhad_key": {
       "name": "Ali Farhad",
-      "role": "Founder"
+      "role": "Technical Manager"
     },
     "khadem_key": {
       "name": "Sina Khadem",
@@ -70,8 +70,9 @@
       "role": "Front-end Developer"
     },
     "pashaki_key": {
-      "name": "Amir Mohammad Pashaki",
-      "role": "Front-end Developer"
+      "name": "Amir Mohammad Mehri Pashaki",
+      "role": "Front-end Developer",
+      "second_role": "UI/UX Designer"
     },
     "shahroodi_key": {
       "name": "Kiarash Shahroodi",

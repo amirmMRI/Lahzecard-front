@@ -41,13 +41,21 @@ const Divider = ({ text }) => {
 const ProfileCard = ({ person: { image, name, linkdin, github } }) => {
   return (
     <div className={styles.staff_card}>
-      <img className={styles.card_pfp} src={image} alt={name} />
+      <img
+       className={styles.card_pfp} 
+       src={image}
+        alt={name} 
+        // onContextMenu={(e) => e.preventDefault()}
+        />
       <div className={styles.card_details}>
         <div className={styles.card_details_name}>
           {t(`staff.${name}.name`)}
         </div>
         <div className={styles.card_details_role}>
           {t(`staff.${name}.role`)}
+        </div>
+        <div className={styles.card_details_role}>
+          {t(`staff.${name}.second_role`)  }
         </div>
       </div>
       <div className={styles.card_social_links}>

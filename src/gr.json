@@ -46,37 +46,38 @@
   "a7_refund": "Nein, nach der Aktivierung ist die Lahze Card nicht erstattungsfähig.Bitte stellen Sie sicher, dass Sie Ihre Entscheidung sorgfältig treffen, bevor Sie den Kauf abschließen, um ein angenehmes Erlebnis für Sie und Ihre Liebsten zu gewährleisten.",
   "howtobuy_moreQ": "Weitere Fragen...",
 
-  "aboutusparageraph": "Lahze Card ist ein erfolgreiches junges Start-up mit Sitz im Forschungszentrum der Azad-Universität in Qazvin. Unser Ziel ist es, ein Umfeld voller Dynamik und Freude zu schaffen. Das Studententeam von Lahze Card hat in Einklang mit moderner Technologie einzigartige Geschenkkarten entwickelt, die nicht nur schöne Momente für Ihre Liebsten schaffen, sondern Ihnen auch ermöglichen, Ihre eigene Stimme und Ihren eigenen Text hinzuzufügen. Bleiben Sie mit Lahze Card verbunden und begleiten Sie uns auf unserem Weg des Wachstums.",
+  "aboutusparageraph": "ist ein erfolgreiches junges Start-up mit Sitz im Forschungszentrum der Azad-Universität in Qazvin. Unser Ziel ist es, ein Umfeld voller Dynamik und Freude zu schaffen. Das Studententeam von Lahze Card hat in Einklang mit moderner Technologie einzigartige Geschenkkarten entwickelt, die nicht nur schöne Momente für Ihre Liebsten schaffen, sondern Ihnen auch ermöglichen, Ihre eigene Stimme und Ihren eigenen Text hinzuzufügen. Bleiben Sie mit Lahze Card verbunden und begleiten Sie uns auf unserem Weg des Wachstums.",
   "team_development": "Entwicklungsteam",
   "team_lead": "Führungsteam",
   "staff": {
     "sazgar_key": {
-      "name": "Remisa Sazgar",
-      "role": "Gründer"
+      "name": "Romisa Sazgar",
+      "role": "Founder"
     },
     "farhad_key": {
       "name": "Ali Farhad",
-      "role": "Gründer"
+      "role": "Technical Manager"
     },
     "khadem_key": {
       "name": "Sina Khadem",
-      "role": "Front-End Entwickler"
+      "role": "Front-End Developer"
     },
     "OG_key": {
       "name": "Elahe Yaghoubi",
-      "role": "Front-End Entwickler"
+      "role": "Front-End Developer"
     },
     "pashaki_key": {
-      "name": "Amir Mohammad Pashaki",
-      "role": "Front-End Entwickler"
+      "name": "Amir Mohammad Mehri Pashaki",
+      "role": "Front-End Developer",
+      "second_role": "UI/UX Designer"
     },
     "shahroodi_key": {
       "name": "Kiarash Shahroodi",
-      "role": "Back-End Entwickler"
+      "role": "Back-End Developer"
     },
     "khoshzaban_key": {
       "name": "Sina Khoshzaban",
-      "role": "Back-End Entwickler"
+      "role": "Back-End Developer"
     },
     "cheraghali_key": {
       "name": "Daniyal Cheraghalikhani",
