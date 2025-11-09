@@ -104,13 +104,53 @@
 }
 
 .staff_card:hover {
-  box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 2px 0px;
+  cursor: pointer;
+box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 15px 0px;
+/* border: 1px solid #f1ebf5; */
 }
 .card_details div {
   text-align: center;
 }
-.card_pfp {
+.card_container {
+  position: relative;
+  width: 133px;
+  height: 133px;
 }
+
+.pfp_wrapper {
+  position: relative;
+  width: 133px;
+  height: 133px;
+}
+
+.pfp_border {
+  width: 133px;
+  height: 133px;
+  background-color: #612b6a;
+  border-radius: 50%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 0;
+  transition: transform 0.4s cubic-bezier(0.25, 0.1, 0.25, 1); 
+  transform-origin: center center;
+}
+
+.card_pfp {
+  width: 123px;
+  height: 123px;
+  border-radius: 50%;
+  object-fit: cover;
+  position: absolute;
+  top: 5px;
+  left: 5px;
+  z-index: 1;
+}
+
+.staff_card:hover .pfp_border {
+  transform: scale(1.1); 
+}
+
 .card_details_name div {
   font-size: 1rem;
   font-weight: 600;
